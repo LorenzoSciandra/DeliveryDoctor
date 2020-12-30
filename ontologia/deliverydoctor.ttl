@@ -61,51 +61,190 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
+:utilizzaIngrediente rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :utilizzatoInPietanza ;
+                     rdfs:domain :Pietanza ;
+                     rdfs:range :ingrediente .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoInPietanza
+:utilizzatoInPietanza rdf:type owl:ObjectProperty ;
+                      rdfs:domain :ingrediente ;
+                      rdfs:range :Pietanza .
+
+
+#################################################################
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AlimentoVegano
-:AlimentoVegano rdf:type owl:Class ;
-                rdfs:subClassOf :AlimentoVegetariano ;
-                rdfs:comment "Any food that is not of animal origin, not even produced by them."@en ,
-                             "Qualsiasi alimento che non sia di origine animale, neanche da loro prodotto."@it ;
-                rdfs:label "Alimento Vegano"@it ,
-                           "Vegan Food"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AlimentoVegetariano
-:AlimentoVegetariano rdf:type owl:Class ;
-                     rdfs:subClassOf :alimento ;
-                     rdfs:comment "Any food that is not of animal origin, in the sense of compound of animal meat."@en ,
-                                  "Qualsiasi alimento che non sia di origine animale, nell'accezione di composto di carne animale."@it ;
-                     rdfs:label "Alimento Vegetariano"@it ,
-                                "Vegetarian Food"@en .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici
+:FruttiSemplici rdf:type owl:Class ;
+                rdfs:subClassOf :Frutto ;
+                rdfs:comment "Formati esclusivamente dall'ovario del singolo fiore."@it ,
+                             "Fruit derived from the ripening of a simple or compound ovary in a flower with only one pistil."@en ;
+                rdfs:label "Frutti Semplici"@it ,
+                           "Simple Fruit"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Frutto
 :Frutto rdf:type owl:Class ;
-        rdfs:subClassOf :AlimentoVegano ;
+        rdfs:subClassOf :IngredienteVegano ;
+        owl:disjointUnionOf ( :FruttiSemplici
+                              :FruttoAggregato
+                              :Infruttescenza
+                            ) ;
         rdfs:comment "Alimento costituito dal complesso delle parti del fiore, e talora di organi vicini, che accompagnano o racchiudono i semi fino alla loro maturità."@it ,
                      "Food formed by the complex of the parts of the flower, and sometimes of neighboring organs, which accompany or enclose the seeds until their maturity."@en ;
         rdfs:label "Fruit"@en ,
                    "Frutto"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoAggregato
+:FruttoAggregato rdf:type owl:Class ;
+                 rdfs:subClassOf :Frutto ;
+                 rdfs:comment "Frutto derivato da più pistilli dello stesso fiore che rimangono uniti anche nel frutto."@it ,
+                              "ruits form from single flowers that have multiple carpels which are not joined together, i.e. each pistil contains one carpel."@en ;
+                 rdfs:label "Aggregate Fruit"@en ,
+                            "Frutto Aggregato"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoCarnoso
+:FruttoCarnoso rdf:type owl:Class ;
+               rdfs:subClassOf :FruttiSemplici ;
+               rdfs:comment "Fruits with parenchyma rich in water."@en ,
+                            "Frutti con parenchimi ricchi di acqua"@it ;
+               rdfs:label "Fleshy Fruit"@en ,
+                          "Frutto Carnoso"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoSecco
+:FruttoSecco rdf:type owl:Class ;
+             rdfs:subClassOf :FruttiSemplici ;
+             rdfs:comment "Fruits in which at maturity all the layers have scarce parenchyma and a rather low water content."@en ,
+                          "Frutti in cui a maturità tutti gli strati hanno scarsi parenchimi e un contenuto di acqua piuttosto basso."@it ;
+             rdfs:label "Dry Fruit"@en ,
+                        "Frutto Secco"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fungo
+:Fungo rdf:type owl:Class ;
+       rdfs:subClassOf :IngredienteVegano ;
+       rdfs:comment "Heterotrophic, saprophytic or parasitic plant organism, devoid of leaves, flowers, roots, usually of soft and spongy consistency."@en ,
+                    "Organismo vegetale eterotrofo, saprofita o parassita, privo di foglie, di fiori, di radici, di consistenza generalmente molle e spugnosa."@it ;
+       rdfs:label "Fungo"@it ,
+                  "Mushroom"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Infruttescenza
+:Infruttescenza rdf:type owl:Class ;
+                rdfs:subClassOf :Frutto ;
+                rdfs:comment "Insieme dei frutti derivanti dagli ovari di una infiorescenza."@it ,
+                             "The ensemble of fruits derived from the ovaries of an inflorescence."@en ;
+                rdfs:label "Infructescence"@en ,
+                           "Infruttescenza"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetariano
+:IngredienteNonVegetariano rdf:type owl:Class ;
+                           rdfs:subClassOf :ingrediente ;
+                           owl:disjointWith :IngredienteVegetariano ;
+                           rdfs:comment "Any food that is derived from animals, in the sense of compound of animal meat."@en ,
+                                        "Qualsiasi alimento che sia derivato da animali, nell'accezione di composto di carne animale"@it ;
+                           rdfs:label "Ingrediente Non Vegetariano"@it ,
+                                      "Non Vegetarian Ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano
+:IngredienteVegano rdf:type owl:Class ;
+                   rdfs:subClassOf :IngredienteVegetariano ;
+                   owl:disjointWith :Uovo ;
+                   rdfs:comment "Any food that is not of animal origin, not even produced by them."@en ,
+                                "Qualsiasi alimento che non sia di origine animale, neanche da loro prodotto."@it ;
+                   rdfs:label "Ingrediente Vegano"@it ,
+                              "Vegan Ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano
+:IngredienteVegetariano rdf:type owl:Class ;
+                        rdfs:subClassOf :ingrediente ;
+                        rdfs:comment "Any food that is not of animal origin, in the sense of compound of animal meat."@en ,
+                                     "Qualsiasi alimento che non sia di origine animale, nell'accezione di composto di carne animale."@it ;
+                        rdfs:label "Ingrediente Vegetariano"@it ,
+                                   "Vegetarian Ingredient"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio
 :Ortaggio rdf:type owl:Class ;
-          rdfs:subClassOf :AlimentoVegano ;
+          rdfs:subClassOf :IngredienteVegano ;
           rdfs:comment "Insieme di alimenti vegetali, perlopiù coltivati e costituiti da piante intere o da loro parti."@it ,
                        "Set of foods, mostly cultivated and made up of whole plants or their parts."@en ;
           rdfs:label "Ortaggio"@it ,
                      "Vegetable"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#alimento
-:alimento rdf:type owl:Class ;
-          rdfs:comment "Class containing everything that can be eaten and that makes up  all the food preparations."@en ,
-                       "Classe contenente tutto ciò che si può mangiare e che quindi compone le pietanze."@it ;
-          rdfs:label "Alimento"@it ,
-                     "food"@en .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza
+:Pietanza rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :utilizzaIngrediente ;
+                                owl:someValuesFrom :ingrediente
+                              ] ;
+          rdfs:comment "Result of a series of steps in the preparation of one or more ingredients. In the context of this ontology the offer of restaurants, pizzerias, pubs, etc ..."@en ,
+                       "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
+          rdfs:label "Food Preparation"@en ,
+                     "Pietanza"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana
+:PietanzaVegetariana rdf:type owl:Class ;
+                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :utilizzaIngrediente ;
+                                                                  owl:someValuesFrom :IngredienteVegetariano
+                                                                ]
+                                                                [ rdf:type owl:Restriction ;
+                                                                  owl:onProperty :utilizzaIngrediente ;
+                                                                  owl:allValuesFrom :IngredienteVegetariano
+                                                                ]
+                                                              ) ;
+                                           rdf:type owl:Class
+                                         ] ;
+                     rdfs:subClassOf :Pietanza ;
+                     rdfs:comment "Risultato della preparazione di soli ingredienti vegetariani"@it ,
+                                  "The result of the preparation of only vegetarian ingredients"@en ;
+                     rdfs:label "Pietanza Vegetariana"@it ,
+                                "Vegetarian Food Preparation"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uovo
+:Uovo rdf:type owl:Class ;
+      rdfs:subClassOf :IngredienteVegetariano ;
+      rdfs:comment "Female gamete from which the embryo of a new individual develops."@en ,
+                   "Gamete femminile dal quale si sviluppa l'embrione di un nuovo individuo."@it ;
+      rdfs:label "Egg"@en ,
+                 "Uovo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente
+:ingrediente rdf:type owl:Class ;
+             rdfs:comment "Class containing everything that can be eaten and that makes up all the food preparations."@en ,
+                          "Classe contenente tutto ciò che si può mangiare e che quindi compone le pietanze."@it ;
+             rdfs:label "Ingredient"@en ,
+                        "Ingrediente"@it .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :FruttiSemplici
+                :FruttoAggregato
+                :Infruttescenza
+              )
+] .
 
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

@@ -65,6 +65,16 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
+:haRuolo rdf:type owl:ObjectProperty ;
+         rdfs:domain :Persona ;
+         rdfs:range :Ruolo ;
+         rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,
+                      "Proprietà che collega una persona al ruolo che svolge nel contesto di una particolare attivitià"@it ;
+         rdfs:label "Ha Ruolo"@it ,
+                    "Has Role"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
 :localeSituatoIn rdf:type owl:ObjectProperty ;
                  rdfs:domain :EsercizioAlimentare ;
@@ -196,6 +206,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente
 :Cliente rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :haRuolo ;
+                               owl:someValuesFrom :RuoloCliente
+                             ] ;
          rdfs:subClassOf :Persona ;
          rdfs:comment "Person who has consumed at least once at a certain food establishment"@en ,
                       "Persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
@@ -473,6 +487,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensore
 :Recensore rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :haRuolo ;
+                                 owl:someValuesFrom :RuoloRecensore
+                               ] ;
            rdfs:subClassOf :Persona ;
            rdfs:comment "Person who has reviewed the food establishment tried, after a consummation"@en ,
                         "Persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
@@ -532,6 +550,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
 :TitolareImpresa rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :haRuolo ;
+                                       owl:someValuesFrom :RuoloTitolareImpresa
+                                     ] ;
                  rdfs:subClassOf :Persona ;
                  rdfs:comment "Person that owns a food establishment"@en ,
                               "Persona che possiede un esercizio alimentare"@it ;

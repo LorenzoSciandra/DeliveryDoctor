@@ -153,6 +153,15 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                      "Attività"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
+:AvviareImpresa rdf:type owl:Class ;
+                rdfs:subClassOf :Attività ;
+                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
+                             "Inauguration of a food establishment by an owner"@en ;
+                rdfs:label "Avviare Impresa"@it ,
+                           "Start Business"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bar
 :Bar rdf:type owl:Class ;
      rdfs:subClassOf :EsercizioAlimentare ;

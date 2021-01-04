@@ -3,6 +3,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @base <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> .
@@ -64,22 +65,148 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
+:localeSituatoIn rdf:type owl:ObjectProperty ;
+                 rdfs:domain :EsercizioAlimentare ;
+                 rdfs:range :LuogoGeografico ;
+                 rdfs:comment "Property that allows a food establishment to be geographically and uniquely localized"@en ,
+                              "Proprietà che permette di localizzare geograficamente ed univocamente un esercizio alimentare"@it ;
+                 rdfs:label "Local Located In"@en ,
+                            "Locale Situato In"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
 :utilizzaIngrediente rdf:type owl:ObjectProperty ;
                      owl:inverseOf :utilizzatoInPietanza ;
                      rdfs:domain :Pietanza ;
-                     rdfs:range :ingrediente .
+                     rdfs:range :ingrediente ;
+                     rdfs:comment "Property that binds the food preparation with the set of simple or derivative ingredients that compose it."@en ,
+                                  "Proprietà che lega la pietanza con l'insieme degli ingredienti semplici o derivati che la compongono."@it ;
+                     rdfs:label "Use Ingredient"@en ,
+                                "Utilizza Ingrediente"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoInPietanza
 :utilizzatoInPietanza rdf:type owl:ObjectProperty ;
                       rdfs:domain :ingrediente ;
-                      rdfs:range :Pietanza .
+                      rdfs:range :Pietanza ;
+                      rdfs:comment "Property that binds the ingredients to the food preparations in which they are used"@en ,
+                                   "Proprietà che lega gli ingredienti alle pietanze in cui sono utilizzati"@it ;
+                      rdfs:label "Used In Food Preparation"@en ,
+                                 "Utilizzato In Pietanza"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
+:haAbitanti rdf:type owl:DatatypeProperty ,
+                     owl:FunctionalProperty ;
+            rdfs:domain :Città ;
+            rdfs:range xsd:positiveInteger ;
+            rdfs:comment "Property that specifies the number of inhabitants of a city"@en ,
+                         "Proprietà che specifica il numero di abitanti di una città"@it ;
+            rdfs:label "Ha Abitanti"@it ,
+                       "Has Inhabitants"@en .
 
 
 #################################################################
 #    Classes
 #################################################################
+
+###  http://schema.org/BarOrPub
+<http://schema.org/BarOrPub> rdf:type owl:Class ;
+                             owl:equivalentClass :Bar ;
+                             rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+
+
+###  http://schema.org/City
+<http://schema.org/City> rdf:type owl:Class ;
+                         owl:equivalentClass :Città ;
+                         rdfs:subClassOf <http://schema.org/Place> .
+
+
+###  http://schema.org/FoodEstablishment
+<http://schema.org/FoodEstablishment> rdf:type owl:Class ;
+                                      owl:equivalentClass :EsercizioAlimentare ;
+                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://schema.org/Place
+<http://schema.org/Place> rdf:type owl:Class ;
+                          owl:equivalentClass :LuogoGeografico .
+
+
+###  http://schema.org/Restaurant
+<http://schema.org/Restaurant> rdf:type owl:Class ;
+                               owl:equivalentClass :Ristorante ;
+                               rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Attività
+:Attività rdf:type owl:Class ;
+          owl:equivalentClass <http://www.w3.org/ns/prov#Activity> ;
+          rdfs:comment "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities"@en ,
+                       "Un'attività è qualcosa che si verifica in un periodo di tempo e agisce su o con entità; può includere il consumo, l'elaborazione, la trasformazione, la modifica, il trasferimento, l'utilizzo o la generazione di entità"@it ;
+          rdfs:label "Activity"@en ,
+                     "Attività"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bar
+:Bar rdf:type owl:Class ;
+     rdfs:subClassOf :EsercizioAlimentare ;
+     rdfs:comment "Esercizio pubblico in cui si sosta brevemente per consumare generalmente bevande, dolci e cibi leggeri"@it ,
+                  "Public exercise where you stop briefly to generally consume drinks, sweets and light foods"@en ;
+     rdfs:label "Bar"@it ,
+                "Pub"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Città
+:Città rdf:type owl:Class ;
+       rdfs:subClassOf :LuogoGeografico ;
+       rdfs:comment "Centro abitato formato da un aggregato di costruzioni più o meno pianificato, sorto da un accentramento culturale, economico e amministrativo."@it ,
+                    "Inhabited centre formed by a more or less planned aggregate of buildings, which arose from a cultural, economic and administrative centralisation"@en ;
+       rdfs:label "Città"@it ,
+                  "City"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente
+:Cliente rdf:type owl:Class ;
+         rdfs:subClassOf :Ruolo ;
+         rdfs:comment "Person who has consumed at least once at a certain food establishment"@en ,
+                      "Persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
+         rdfs:label "Cliente"@it ,
+                    "Customer"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consegnare
+:Consegnare rdf:type owl:Class ;
+            rdfs:subClassOf :Attività ;
+            rdfs:comment "Activity of delivering a certain food preparation, previously ordered, to a customer"@en ,
+                         "Attività di recapitare ad un cliente una certa portata precedentemente ordinata"@it ;
+            rdfs:label "Consegnare"@it ,
+                       "Deliver"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consumare
+:Consumare rdf:type owl:Class ;
+           rdfs:subClassOf :Attività ;
+           rdfs:comment "Activity that refers to eating a certain ordered food preparation"@en ,
+                        "Attività che fa riferimento al mangiare una certa pietanza ordinata"@it ;
+           rdfs:label "Consumare"@it ,
+                      "Consume"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare
+:EsercizioAlimentare rdf:type owl:Class ;
+                     rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                     rdfs:comment "Attività commerciale a carattere alimentare"@it ,
+                                  "Commercial activity in food sector"@en ,
+                                  "Person who has consumed in a certain food establishment at least once"@en ;
+                     rdfs:label "Esercizio Alimentare"@it ,
+                                "Food Establishment"@en .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici
 :FruttiSemplici rdf:type owl:Class ;
@@ -177,6 +304,41 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                    "Vegetarian Ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LuogoGeografico
+:LuogoGeografico rdf:type owl:Class ;
+                 rdfs:comment "Area spaziale univocamente identificato da coordinate geografiche di latitudine e longitudine"@it ,
+                              "Spatial area uniquely identified by geographic coordinates of latitude and longitude"@en ;
+                 rdfs:label "Geographical Location"@en ,
+                            "Luogo Geografico"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Metropoli
+:Metropoli rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :haAbitanti ;
+                                 owl:someValuesFrom [ rdf:type rdfs:Datatype ;
+                                                      owl:onDatatype xsd:positiveInteger ;
+                                                      owl:withRestrictions ( [ xsd:minInclusive "1000000"^^xsd:positiveInteger
+                                                                             ]
+                                                                           )
+                                                    ]
+                               ] ;
+           rdfs:subClassOf :Città ;
+           rdfs:comment "Città di grandi dimensioni con un'area comunale fortemente popolata, centro economico e culturale di una regione o di un Paese, e spesso nodo di comunicazioni internazionali."@it ,
+                        "Large city with a heavily populated municipal area, economic and cultural center of a region or country, and often a hub for international communications."@en ;
+           rdfs:label "Metropoli"@it ,
+                      "Metropolis"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordinare
+:Ordinare rdf:type owl:Class ;
+          rdfs:subClassOf :Attività ;
+          rdfs:comment "Activity of commissioning a desired food preparation from a certain food establishment"@it ,
+                       "Attività di commissionare ad un certo esercizio alimentare una portata desiderata"@it ;
+          rdfs:label "Order"@en ,
+                     "Ordinare"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio
 :Ortaggio rdf:type owl:Class ;
           rdfs:subClassOf :IngredienteVegano ;
@@ -186,12 +348,41 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                      "Vegetable"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Paninoteca
+:Paninoteca rdf:type owl:Class ;
+            rdfs:subClassOf :EsercizioAlimentare ;
+            rdfs:comment "Luogo specializzato nella preparazione di panini, che risultano generalmente le uniche pietanza servite"@it ,
+                         "Place specialized in the preparation of sandwiches, which are generally the only food preparation served"@en ;
+            rdfs:label "Paninoteca"@it ,
+                       "Sandwich and Burger Shop"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona
+:Persona rdf:type owl:Class ;
+         owl:equivalentClass foaf:Person ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
+         rdfs:comment "Individual of the human species"@en ,
+                      "Individuo della specie umana."@it ;
+         rdfs:label "Person"@en ,
+                    "Persona"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piazza
+:Piazza rdf:type owl:Class ;
+        rdfs:subClassOf :LuogoGeografico ;
+        rdfs:comment "Area libera, limitata in tutto o in parte da costruzioni, con varia funzione urbanistica, all'incrocio di più strade."@it ,
+                     "Free area, limited in whole or in part by buildings, with various urban functions, at the intersection of several roads."@en ;
+        rdfs:label "Piazza"@it ,
+                   "Place"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza
 :Pietanza rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :utilizzaIngrediente ;
                                 owl:someValuesFrom :ingrediente
                               ] ;
+          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
           rdfs:comment "Result of a series of steps in the preparation of one or more ingredients. In the context of this ontology the offer of restaurants, pizzerias, pubs, etc ..."@en ,
                        "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
           rdfs:label "Food Preparation"@en ,
@@ -218,6 +409,60 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                 "Vegetarian Food Preparation"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pizzeria
+:Pizzeria rdf:type owl:Class ;
+          rdfs:subClassOf :Ristorante ;
+          rdfs:comment "Locale pubblico in cui si preparano e si servono ai clienti pizze e simili."@it ,
+                       "Public place in which they prepare and serve to the customers pizzas and similar foods."@en ;
+          rdfs:label "Pizzeria"@en ,
+                     "Pizzeria"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensire
+:Recensire rdf:type owl:Class ;
+           rdfs:subClassOf :Attività ;
+           rdfs:comment "Activity of examining and evaluating a food preparation at a certain food establishment"@en ,
+                        "Attività di esaminare e valutare una pietanza consumata presso un certo esercizio alimentare"@it ;
+           rdfs:label "Recensire"@it ,
+                      "Review"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensore
+:Recensore rdf:type owl:Class ;
+           rdfs:subClassOf :Ruolo ;
+           rdfs:comment "Person who has reviewed the food establishment tried, after a consummation"@en ,
+                        "Persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
+           rdfs:label "Recensore"@it ,
+                      "Reviewer"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ristorante
+:Ristorante rdf:type owl:Class ;
+            rdfs:subClassOf :EsercizioAlimentare ;
+            rdfs:comment "Esercizio pubblico dove si consumano pasti completi che vengono serviti da camerieri su tavoli disposti in un locale apposito."@it ,
+                         "Public exercise where complete meals are consumed, which are served by waiters on tables arranged in a special room."@en ;
+            rdfs:label "Restaurant"@en ,
+                       "Ristorante"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ruolo
+:Ruolo rdf:type owl:Class ;
+       owl:equivalentClass <http://www.w3.org/ns/prov#Role> ;
+       rdfs:comment "Function performed by a person in a certain situation, action ..."@en ,
+                    "Funzione svolta da una persona in un determinato ambito, situazione, azione..."@it ;
+       rdfs:label "Role"@en ,
+                  "Ruolo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
+:TitolareImpresa rdf:type owl:Class ;
+                 rdfs:subClassOf :Ruolo ;
+                 rdfs:comment "Person who owns a food establishment"@en ,
+                              "Persona che possiede un esercizio alimentare"@it ;
+                 rdfs:label "Business Owner"@en ,
+                            "Titolare Impresa"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uovo
 :Uovo rdf:type owl:Class ;
       rdfs:subClassOf :IngredienteVegetariano ;
@@ -227,12 +472,42 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                  "Uovo"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Via
+:Via rdf:type owl:Class ;
+     rdfs:subClassOf :LuogoGeografico ;
+     rdfs:comment "More or less long strip of land with a considerably constant section, equipped for the transit of people and vehicles both in inhabited centers and outside these"@en ,
+                  "Striscia di terreno più o meno lunga e di sezione sensibilmente costante, attrezzata per il transito di persone e di veicoli sia nei centri abitati sia fuori di questi"@it ;
+     rdfs:label "Street"@en ,
+                "Via"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente
 :ingrediente rdf:type owl:Class ;
              rdfs:comment "Class containing everything that can be eaten and that makes up all the food preparations."@en ,
                           "Classe contenente tutto ciò che si può mangiare e che quindi compone le pietanze."@it ;
              rdfs:label "Ingredient"@en ,
                         "Ingrediente"@it .
+
+
+###  http://www.w3.org/ns/prov#Activity
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Agent
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Entity
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+
+
+###  http://www.w3.org/ns/prov#Role
+<http://www.w3.org/ns/prov#Role> rdf:type owl:Class .
+
+
+###  http://xmlns.com/foaf/0.1/Person
+foaf:Person rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> .
 
 
 #################################################################

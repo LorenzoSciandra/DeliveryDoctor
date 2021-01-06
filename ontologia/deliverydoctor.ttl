@@ -6,6 +6,8 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 @base <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> .
 
 <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> rdf:type owl:Ontology ;
@@ -62,17 +64,57 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#starRating
+:starRating rdf:type rdfs:Datatype ;
+            owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                  owl:onDatatype xsd:double ;
+                                  owl:withRestrictions ( [ xsd:minInclusive "1.0"^^xsd:double
+                                                         ]
+                                                         [ xsd:maxInclusive "5.0"^^xsd:double
+                                                         ]
+                                                       )
+                                ] .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://schema.org/reviewRating
+<http://schema.org/reviewRating> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Recensione ;
+                                 rdfs:range <http://schema.org/Rating> .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          rdfs:domain :Persona ;
-         rdfs:range :Ruolo ;
          rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,
                       "Proprietà che collega una persona al ruolo che svolge nel contesto di una particolare attivitià"@it ;
          rdfs:label "Ha Ruolo"@it ,
                     "Has Role"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isMemberOf ;
+           rdfs:domain collectionentity:Collection ;
+           rdfs:range owl:Thing ;
+           rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)."@en ,
+                        "The link to the members of a Set"@en ;
+           rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+           rdfs:label "has member"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range collectionentity:Collection ;
+            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+            rdfs:label "is member of"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
@@ -106,6 +148,30 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                  "Utilizzato In Pietanza"@it .
 
 
+###  http://www.w3.org/ns/prov#hadRole
+<http://www.w3.org/ns/prov#hadRole> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://www.w3.org/ns/prov#Agent> ;
+                                    rdfs:range <http://www.w3.org/ns/prov#Role> .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                 rdfs:range <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                              rdfs:range <http://www.w3.org/ns/prov#Agent> .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                           rdfs:range <http://www.w3.org/ns/prov#Activity> .
+
+
 #################################################################
 #    Data properties
 #################################################################
@@ -119,6 +185,21 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                          "Proprietà che specifica il numero di abitanti di una città"@it ;
             rdfs:label "Ha Abitanti"@it ,
                        "Has Inhabitants"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ratingValue
+:ratingValue rdf:type owl:DatatypeProperty ,
+                      owl:FunctionalProperty ;
+             rdfs:domain <http://schema.org/Rating> ;
+             rdfs:range :starRating .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#size
+:size rdf:type owl:DatatypeProperty ;
+      rdfs:domain collectionentity:Collection ;
+      rdfs:range xsd:integer ;
+      rdfs:comment "size - The number of items belonging to a collection"^^xsd:string ;
+      rdfs:label "size"^^xsd:string .
 
 
 #################################################################
@@ -143,7 +224,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 <http://schema.org/FoodEstablishment> rdf:type owl:Class ;
                                       owl:equivalentClass :EsercizioAlimentare ;
                                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
-                                      owl:disjointWith :Pietanza ,
+                                      owl:disjointWith :Ordine ,
+                                                       :Pietanza ,
                                                        :Recensione .
 
 
@@ -154,26 +236,32 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                            <http://www.w3.org/ns/prov#Entity> .
 
 
+###  http://schema.org/Rating
+<http://schema.org/Rating> rdf:type owl:Class .
+
+
 ###  http://schema.org/Restaurant
 <http://schema.org/Restaurant> rdf:type owl:Class ;
                                owl:equivalentClass :Ristorante ;
                                rdfs:subClassOf <http://schema.org/FoodEstablishment> .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Attività
-:Attività rdf:type owl:Class ;
-          owl:equivalentClass <http://www.w3.org/ns/prov#Activity> ;
-          owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
-                           <http://www.w3.org/ns/prov#Entity> ;
-          rdfs:comment "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities"@en ,
-                       "Un'attività è qualcosa che si verifica in un periodo di tempo e agisce su o con entità; può includere il consumo, l'elaborazione, la trasformazione, la modifica, il trasferimento, l'utilizzo o la generazione di entità"@it ;
-          rdfs:label "Activity"@en ,
-                     "Attività"@it .
+###  http://schema.org/Review
+<http://schema.org/Review> rdf:type owl:Class ;
+                           owl:equivalentClass :Recensione ;
+                           rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+collectionentity:Collection rdf:type owl:Class ;
+                            rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
+                            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                            rdfs:label "Collection"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
 :AvviareImpresa rdf:type owl:Class ;
-                rdfs:subClassOf :Attività ;
+                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                 owl:disjointWith :Consegnare ,
                                  :Consumare ,
                                  :Ordinare ,
@@ -219,7 +307,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consegnare
 :Consegnare rdf:type owl:Class ;
-            rdfs:subClassOf :Attività ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
             owl:disjointWith :Consumare ,
                              :Ordinare ,
                              :Recensire ;
@@ -231,7 +319,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consumare
 :Consumare rdf:type owl:Class ;
-           rdfs:subClassOf :Attività ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
            owl:disjointWith :Ordinare ,
                             :Recensire ;
            rdfs:comment "Activity that refers to eating a certain ordered food preparation"@en ,
@@ -243,7 +331,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare
 :EsercizioAlimentare rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
-                     owl:disjointWith :Pietanza ,
+                     owl:disjointWith :Ordine ,
+                                      :Pietanza ,
                                       :Recensione ;
                      rdfs:comment "Attività commerciale a carattere alimentare"@it ,
                                   "Commercial activity in food sector"@en ,
@@ -378,12 +467,28 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordinare
 :Ordinare rdf:type owl:Class ;
-          rdfs:subClassOf :Attività ;
+          rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
           owl:disjointWith :Recensire ;
           rdfs:comment "Activity of commissioning a desired food preparation from a certain food establishment"@it ,
                        "Attività di commissionare ad un certo esercizio alimentare una portata desiderata"@it ;
           rdfs:label "Order"@en ,
                      "Ordinare"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordine
+:Ordine rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Ordinare
+                            ] ;
+        rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+        owl:disjointWith :Pietanza ,
+                         :Recensione ;
+        rdfs:comment "Any food preparation or drink that can be commissioned to a food establishment"@en ,
+                     "Qualsiasi alimento/bevanda che possa essere commissionata ad un esercizio alimentare"@it ;
+        rdfs:label "Order"@en ,
+                   "Ordine"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio
@@ -426,11 +531,20 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza
 :Pietanza rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty :utilizzaIngrediente ;
-                                owl:someValuesFrom :ingrediente
+          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :utilizzaIngrediente ;
+                                                       owl:someValuesFrom :ingrediente
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasMember ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :ingrediente
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
                               ] ;
-          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+          rdfs:subClassOf :Set ,
+                          <http://www.w3.org/ns/prov#Entity> ;
           owl:disjointWith :Recensione ;
           rdfs:comment "Result of a series of steps in the preparation of one or more ingredients. In the context of this ontology the offer of restaurants, pizzerias, pubs, etc ..."@en ,
                        "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
@@ -469,6 +583,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensione
 :Recensione rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Recensire
+                                ] ;
             rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
             rdfs:comment "Commento di esamina e valutazione di una pietanza consumata presso un certo esercizio alimentare"@it ,
                          "Evaluation of a food preparation consumed in a specific food establishment"@en ;
@@ -478,7 +597,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensire
 :Recensire rdf:type owl:Class ;
-           rdfs:subClassOf :Attività ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
            rdfs:comment "Activity of examining and evaluating a food preparation at a certain food establishment"@en ,
                         "Attività di esaminare e valutare una pietanza consumata presso un certo esercizio alimentare"@it ;
            rdfs:label "Recensire"@it ,
@@ -507,20 +626,9 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                        "Ristorante"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ruolo
-:Ruolo rdf:type owl:Class ;
-       owl:equivalentClass <http://www.w3.org/ns/prov#Role> ;
-       owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
-                        <http://www.w3.org/ns/prov#Entity> ;
-       rdfs:comment "Function performed by a person in a certain situation, action ..."@en ,
-                    "Funzione svolta da una persona in un determinato ambito, situazione, azione..."@it ;
-       rdfs:label "Role"@en ,
-                  "Ruolo"@it .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloCliente
 :RuoloCliente rdf:type owl:Class ;
-              rdfs:subClassOf :Ruolo ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
               owl:disjointWith :RuoloRecensore ,
                                :RuoloTitolareImpresa ;
               rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
@@ -531,7 +639,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensore
 :RuoloRecensore rdf:type owl:Class ;
-                rdfs:subClassOf :Ruolo ;
+                rdfs:subClassOf :RuoloCliente ;
                 owl:disjointWith :RuoloTitolareImpresa ;
                 rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
                              "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
@@ -541,11 +649,18 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloTitolareImpresa
 :RuoloTitolareImpresa rdf:type owl:Class ;
-                      rdfs:subClassOf :Ruolo ;
+                      rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
                       rdfs:comment "Role of a person who owns a food establishment"@en ,
                                    "Ruolo di una persona che possiede un esercizio alimentare"@it ;
                       rdfs:label "Business Owner Role"@en ,
                                  "Ruolo Titolare Impresa"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set
+:Set rdf:type owl:Class ;
+     rdfs:subClassOf collectionentity:Collection ;
+     rdfs:comment "Set - A collection that cannot contain duplicate elements."@en ;
+     rdfs:label "set"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
@@ -613,6 +728,13 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://xmlns.com/foaf/0.1/Person
 foaf:Person rdf:type owl:Class ;
             rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
 
 
 #################################################################

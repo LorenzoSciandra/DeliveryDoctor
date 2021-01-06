@@ -129,6 +129,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
 :utilizzaIngrediente rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasMember ;
                      owl:inverseOf :utilizzatoInPietanza ;
                      rdfs:domain :Pietanza ;
                      rdfs:range :ingrediente ;
@@ -140,6 +141,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoInPietanza
 :utilizzatoInPietanza rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :isMemberOf ;
                       rdfs:domain :ingrediente ;
                       rdfs:range :Pietanza ;
                       rdfs:comment "Property that binds the ingredients to the food preparations in which they are used"@en ,
@@ -185,6 +187,17 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                          "Proprietà che specifica il numero di abitanti di una città"@it ;
             rdfs:label "Ha Abitanti"@it ,
                        "Has Inhabitants"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
+:haNumeroIngredienti rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :size ;
+                     rdfs:domain :Pietanza ;
+                     rdfs:range xsd:positiveInteger ;
+                     rdfs:comment "Data property che specifica il numero di ingredienti che compongono una pietanza"@it ,
+                                  "Data property that specifies the number of ingredients that make up a dish"@en ;
+                     rdfs:label "Ha Numero Ingredienti"@it ,
+                                "Has Number of Ingredients"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ratingValue
@@ -531,17 +544,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza
 :Pietanza rdf:type owl:Class ;
-          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :utilizzaIngrediente ;
-                                                       owl:someValuesFrom :ingrediente
-                                                     ]
-                                                     [ rdf:type owl:Restriction ;
-                                                       owl:onProperty :hasMember ;
-                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                       owl:onClass :ingrediente
-                                                     ]
-                                                   ) ;
-                                rdf:type owl:Class
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :utilizzaIngrediente ;
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ingrediente
                               ] ;
           rdfs:subClassOf :Set ,
                           <http://www.w3.org/ns/prov#Entity> ;
@@ -584,7 +590,7 @@ collectionentity:Collection rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensione
 :Recensione rdf:type owl:Class ;
             owl:equivalentClass [ rdf:type owl:Restriction ;
-                                  owl:onProperty <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                                  owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                   owl:onClass :Recensire
                                 ] ;
@@ -629,8 +635,7 @@ collectionentity:Collection rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloCliente
 :RuoloCliente rdf:type owl:Class ;
               rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
-              owl:disjointWith :RuoloRecensore ,
-                               :RuoloTitolareImpresa ;
+              owl:disjointWith :RuoloTitolareImpresa ;
               rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
                            "Ruolo assunto da una persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
               rdfs:label "Customer Role"@en ,
@@ -640,7 +645,6 @@ collectionentity:Collection rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensore
 :RuoloRecensore rdf:type owl:Class ;
                 rdfs:subClassOf :RuoloCliente ;
-                owl:disjointWith :RuoloTitolareImpresa ;
                 rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
                              "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
                 rdfs:label "Reviewer Role"@en ,

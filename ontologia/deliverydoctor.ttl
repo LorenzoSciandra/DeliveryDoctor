@@ -178,6 +178,10 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 #    Data properties
 #################################################################
 
+###  http://schema.org/ratingValue
+<http://schema.org/ratingValue> rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
 :haAbitanti rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
@@ -200,11 +204,16 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                 "Has Number of Ingredients"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ratingValue
-:ratingValue rdf:type owl:DatatypeProperty ,
-                      owl:FunctionalProperty ;
-             rdfs:domain <http://schema.org/Rating> ;
-             rdfs:range :starRating .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#possiedeStelle
+:possiedeStelle rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <http://schema.org/ratingValue> ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain <http://schema.org/Rating> ;
+                rdfs:range :starRating ;
+                rdfs:comment "Classica valutazione basata da un range di minimo 1 stella ad un massimo di 5. Possono essere assegnate anche valori intermedi."@it ,
+                             "Rating based on a range of minimum 1 star to a maximum of 5. Intermediate values ​​can also be assigned."@en ;
+                rdfs:label "Has Stars"@en ,
+                           "Possiede Stelle"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#size

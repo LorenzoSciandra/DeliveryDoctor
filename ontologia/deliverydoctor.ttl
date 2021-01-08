@@ -98,8 +98,42 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                  rdfs:range <http://schema.org/Rating> .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
+:componeIngredienteDerivato rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :ingredienteDerivatoDa ;
+                            rdfs:domain :ingrediente ;
+                            rdfs:range :IngredienteDerivato ;
+                            rdfs:comment "Property that indicates which derived ingredients use this ingredient."@en ,
+                                         "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
+                            rdfs:label "Compone ingrediente derivato"@it ,
+                                       "Part of derived ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haFattoOrdine
+:haFattoOrdine rdf:type owl:ObjectProperty ;
+               owl:propertyChainAxiom ( [ owl:inverseOf :ordinatoDa
+                                        ]
+                                        [ owl:inverseOf :ordineCreatoDaAzione
+                                        ]
+                                      ) ;
+               rdfs:comment "Property that links the person with the order made"@en ,
+                            "Proprietà che collega la persona con l'ordine che ha fatto"@it ;
+               rdfs:label "Ha Fatto Ordine"@it ,
+                          "Has Made Order"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haFattoRecensione
+:haFattoRecensione rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :recensioneFattaDa ;
+                   rdfs:comment "Property that links the person to the review made"@en ,
+                                "Proprietà che collega la persona alla recensione che ha fatto"@it ;
+                   rdfs:label "Ha Fatto Recensione"@it ,
+                              "Has Made The Review"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
+         owl:equivalentProperty <http://www.w3.org/ns/prov#hadRole> ;
          rdfs:domain :Persona ;
          rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,
                       "Proprietà che collega una persona al ruolo che svolge nel contesto di una particolare attivitià"@it ;
@@ -116,25 +150,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                         "The link to the members of a Set"@en ;
            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
            rdfs:label "has member"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
-:isMemberOf rdf:type owl:ObjectProperty ;
-            rdfs:domain owl:Thing ;
-            rdfs:range collectionentity:Collection ;
-            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
-            rdfs:label "is member of"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
-:componeIngredienteDerivato rdf:type owl:ObjectProperty ;
-                            owl:inverseOf :ingredienteDerivatoDa ;
-                            rdfs:domain :ingrediente ;
-                            rdfs:range :IngredienteDerivato ;
-                            rdfs:comment "Property that indicates which derived ingredients use this ingredient."@en ,
-                                         "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
-                            rdfs:label "Compone ingrediente derivato"@it ,
-                                       "Part of derived ingredient"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
@@ -166,6 +181,40 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                                 "Ingrediente incompatibile con disturbo"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range collectionentity:Collection ;
+            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+            rdfs:label "is member of"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeGestisceOrdine
+:localeGestisceOrdine rdf:type owl:ObjectProperty ;
+                      owl:propertyChainAxiom ( [ owl:inverseOf :ordinareDalLocale
+                                               ]
+                                               [ owl:inverseOf :ordineCreatoDaAzione
+                                               ]
+                                             ) ;
+                      rdfs:comment "Property that links the room to the orders they have managed"@en ,
+                                   "Proprietà che collega il locale agli ordini che hanno gestito"@it ;
+                      rdfs:label "Food Establishment Handles Order"@en ,
+                                 "Locale Gestisce Ordine"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeHaRecensione
+:localeHaRecensione rdf:type owl:ObjectProperty ;
+                    owl:propertyChainAxiom ( [ owl:inverseOf :recensireLocale
+                                             ]
+                                             [ owl:inverseOf :recensioneCreataDaAzione
+                                             ]
+                                           ) ;
+                    rdfs:comment "Property chain che collega direttamente l'esercizio alimentare alle recensioni che ha ricevuto"@it ,
+                                 "Property chain that links the food establishment directly to the reviews it has received"@en ;
+                    rdfs:label "Local Has Review"@en ,
+                               "Locale Ha Recensione"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
 :localeSituatoIn rdf:type owl:ObjectProperty ;
                  rdfs:domain :EsercizioAlimentare ;
@@ -174,6 +223,37 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                               "Proprietà che permette di localizzare geograficamente ed univocamente un esercizio alimentare"@it ;
                  rdfs:label "Local Located In"@en ,
                             "Locale Situato In"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordinareDalLocale
+:ordinareDalLocale rdf:type owl:ObjectProperty ;
+                   rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                   rdfs:domain :Ordinare ;
+                   rdfs:range :EsercizioAlimentare ;
+                   rdfs:comment "Property that links the activity of ordering with the food establishment where the order was placed"@en ,
+                                "Proprietà che collega l'attività di ordinare con il locale presso cui si è fatto l'ordine"@it ;
+                   rdfs:label "Order From The Food Establishment"@en ,
+                              "Ordinare Dal Locale"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordinatoDa
+:ordinatoDa rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+            rdfs:comment "Property that links the order activity with the person that made the order"@en ,
+                         "Proprietà che collega l'attività ordinare con la persona che effettua l'ordine"@it ;
+            rdfs:label "Order By"@en ,
+                       "Ordinato Da"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCreatoDaAzione
+:ordineCreatoDaAzione rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                      rdfs:domain :Ordine ;
+                      rdfs:range :Ordinare ;
+                      rdfs:comment "Property that links the order to the activity that created it"@en ,
+                                   "Proprietà che collega l'ordine all'azione ordinare che l'ha creato"@it ;
+                      rdfs:label "Order Created By Activity"@en ,
+                                 "Ordine Creato Da Azione"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaIncompatibileConDisturbo
@@ -190,6 +270,50 @@ A preparation inherits all the incompatibilities of the ingredients that compose
 Una preparazione eredita tutte le incompatibilità degli ingredienti che la compongono."""@it ;
                                   rdfs:label "Food preparation incompatible with disorder"@en ,
                                              "Pietanza incompatibile con disturbo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensioneCreataDaAzione
+:recensioneCreataDaAzione rdf:type owl:ObjectProperty ;
+                          rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                          rdfs:domain :Recensione ;
+                          rdfs:range :Recensire ;
+                          rdfs:comment "Property that links the review to the action from which it is created"@en ,
+                                       "Proprietà che collega la recensione all'azione dalla quale viene creata"@it ;
+                          rdfs:label "Recensione Creata Da Azione"@it ,
+                                     "Review Created From Activity"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensioneFattaDa
+:recensioneFattaDa rdf:type owl:ObjectProperty ;
+                   owl:propertyChainAxiom ( :recensioneCreataDaAzione
+                                            :recensitoDa
+                                          ) ;
+                   rdfs:comment "Property chain che collega la recensione alla persona che l'ha fatta"@it ,
+                                "Property chain that links the review to the person who did it"@en ;
+                   rdfs:label "Recensione Fatta Da"@it ,
+                              "Review Made By"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensireLocale
+:recensireLocale rdf:type owl:ObjectProperty ;
+                 rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                 rdfs:domain :Recensire ;
+                 rdfs:range :EsercizioAlimentare ;
+                 rdfs:comment "Property that links the activity of reviewing with the food establishment under review"@en ,
+                              "Proprietà che permette di collegare l'attività di recensire con l'esercizio alimentare oggetto della recensione"@it ;
+                 rdfs:label "Recensire Locale"@it ,
+                            "Review Food Establishment"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensitoDa
+:recensitoDa rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+             rdfs:domain :Recensire ;
+             rdfs:range :Persona ;
+             rdfs:comment "Property that links the activity of reviewing to the reviewer"@en ,
+                          "Proprietà che collega l'attività di recensire a colui che fa la recensione"@it ;
+             rdfs:label "Recensito Da"@it ,
+                        "Review By"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
@@ -295,7 +419,9 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
 
 
 ###  http://schema.org/ratingValue
-<http://schema.org/ratingValue> rdf:type owl:DatatypeProperty .
+<http://schema.org/ratingValue> rdf:type owl:DatatypeProperty ;
+                                rdfs:domain <http://schema.org/Rating> ;
+                                rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
@@ -307,10 +433,6 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
                          "Proprietà che specifica il numero di abitanti di una città"@it ;
             rdfs:label "Ha Abitanti"@it ,
                        "Has Inhabitants"@en .
-
-
-###  http://www.w3.org/2004/02/skos/core#notation
-<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
@@ -342,6 +464,10 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
       rdfs:range xsd:integer ;
       rdfs:comment "size - The number of items belonging to a collection"^^xsd:string ;
       rdfs:label "size"^^xsd:string .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
 
 
 #################################################################
@@ -466,19 +592,6 @@ collectionentity:Collection rdf:type owl:Class ;
                             rdfs:label "Collection"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
-:AvviareImpresa rdf:type owl:Class ;
-                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                owl:disjointWith :Consegnare ,
-                                 :Consumare ,
-                                 :Ordinare ,
-                                 :Recensire ;
-                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
-                             "Inauguration of a food establishment by an owner"@en ;
-                rdfs:label "Avviare Impresa"@it ,
-                           "Start Business"@en .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
 :AllergiaAdditivi rdf:type owl:Class ;
                   owl:equivalentClass [ rdf:type owl:Class ;
@@ -569,13 +682,17 @@ collectionentity:Collection rdf:type owl:Class ;
               rdfs:subClassOf :Disturbo .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Attività
-:Attività rdf:type owl:Class ;
-          owl:equivalentClass <http://www.w3.org/ns/prov#Activity> ;
-          rdfs:comment "An activity is something that occurs over a period of time and acts upon or with entities; it may include consuming, processing, transforming, modifying, relocating, using, or generating entities"@en ,
-                       "Un'attività è qualcosa che si verifica in un periodo di tempo e agisce su o con entità; può includere il consumo, l'elaborazione, la trasformazione, la modifica, il trasferimento, l'utilizzo o la generazione di entità"@it ;
-          rdfs:label "Activity"@en ,
-                     "Attività"@it .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
+:AvviareImpresa rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                owl:disjointWith :Consegnare ,
+                                 :Consumare ,
+                                 :Ordinare ,
+                                 :Recensire ;
+                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
+                             "Inauguration of a food establishment by an owner"@en ;
+                rdfs:label "Avviare Impresa"@it ,
+                           "Start Business"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bar
@@ -1004,7 +1121,7 @@ collectionentity:Collection rdf:type owl:Class ;
                                  owl:onProperty :haRuolo ;
                                  owl:someValuesFrom :RuoloRecensore
                                ] ;
-           rdfs:subClassOf :Persona ;
+           rdfs:subClassOf :Cliente ;
            rdfs:comment "Person who has reviewed the food establishment tried, after a consummation"@en ,
                         "Persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
            rdfs:label "Recensore"@it ,
@@ -1048,16 +1165,16 @@ collectionentity:Collection rdf:type owl:Class ;
                                  "Ruolo Titolare Impresa"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
+:Seme rdf:type owl:Class ;
+      rdfs:subClassOf :IngredienteVegano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set
 :Set rdf:type owl:Class ;
      rdfs:subClassOf collectionentity:Collection ;
      rdfs:comment "Set - A collection that cannot contain duplicate elements."@en ;
      rdfs:label "set"^^xsd:string .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
-:Seme rdf:type owl:Class ;
-      rdfs:subClassOf :IngredienteVegano .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
@@ -1178,8 +1295,19 @@ foaf:Person rdf:type owl:Class ;
                                                :AllergiaFruttaSecca .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CapuccinoECroissant
+:CapuccinoECroissant rdf:type owl:NamedIndividual ,
+                              :Ordine ;
+                     :ordineCreatoDaAzione :OrdinareDubai .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
 :Celiachia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai
+:Dubai rdf:type owl:NamedIndividual ,
+                :EsercizioAlimentare .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
@@ -1244,6 +1372,13 @@ foaf:Person rdf:type owl:Class ;
            :ingredienteDerivatoDa :Soia .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
+:Luca rdf:type owl:NamedIndividual ,
+               :Persona ;
+      :haRuolo :RuoloClienteLuca ,
+               :RuoloRecensoreLuca .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
@@ -1260,6 +1395,13 @@ foaf:Person rdf:type owl:Class ;
 :Noce rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
       :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinareDubai
+:OrdinareDubai rdf:type owl:NamedIndividual ,
+                        :Ordinare ;
+               :ordinareDalLocale :Dubai ;
+               :ordinatoDa :Luca .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
@@ -1297,9 +1439,33 @@ foaf:Person rdf:type owl:Class ;
                      :Ortaggio .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
+:RecensionePositivaDubai rdf:type owl:NamedIndividual ,
+                                  :Recensione ;
+                         <http://schema.org/reviewRating> :ValutazionePositivaDubai ;
+                         :recensioneCreataDaAzione :RecensireDubai .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensireDubai
+:RecensireDubai rdf:type owl:NamedIndividual ,
+                         :Recensire ;
+                :recensireLocale :Dubai ;
+                :recensitoDa :Luca .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
 :Riso rdf:type owl:NamedIndividual ,
                :FruttoSecco .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloClienteLuca
+:RuoloClienteLuca rdf:type owl:NamedIndividual ,
+                           :RuoloCliente .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensoreLuca
+:RuoloRecensoreLuca rdf:type owl:NamedIndividual ,
+                             :RuoloRecensore .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
@@ -1319,9 +1485,18 @@ foaf:Person rdf:type owl:Class ;
               :ingredienteDerivatoDa :Pomodoro .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
+:ValutazionePositivaDubai rdf:type owl:NamedIndividual ,
+                                   <http://schema.org/Rating> ;
+                          :possiedeStelle "5.0"^^xsd:double .
+
+
 #################################################################
 #    Annotations
 #################################################################
+
+collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
+
 
 :AllergiaAdditivi rdfs:comment "Allergy due to the consumption of foods or drinks containing particular additives."@en ;
                   rdfs:label "Additives allergy"@en ;
@@ -1360,10 +1535,10 @@ foaf:Person rdf:type owl:Class ;
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Nickel allergy"@en ,
-                           "Allergia al Nickel"@it ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+                rdfs:label "Allergia al Nickel"@it ,
+                           "Nickel allergy"@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -1401,23 +1576,16 @@ foaf:Person rdf:type owl:Class ;
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
+                                                                       "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
                       rdfs:comment "Condizione caratterizzata da disturbi gastrointestinali che insorgono dopo l'ingestione di alimenti contenenti lattosio."@it ;
                       rdfs:label "Intolleranza al Lattosio"@it ;
                       rdfs:comment "A condition characterized by gastrointestinal disorders that occur after ingestion of lactose-containing foods."@en .
-
-
-#################################################################
-#    Annotations
-#################################################################
-
-collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
 
 
 #################################################################

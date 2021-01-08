@@ -1,4 +1,5 @@
 @prefix : <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#> .
+@prefix icd: <http://purl.bioontology.org/ontology/ICD10CM/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -61,9 +62,57 @@ vann:preferedNamespacePrefix rdf:type owl:AnnotationProperty .
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
+###  http://www.w3.org/2004/02/skos/core#altLabel
+<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+
+
 #################################################################
 #    Object Properties
 #################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
+:componeIngredienteDerivato rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :ingredienteDerivatoDa ;
+                            rdfs:domain :ingrediente ;
+                            rdfs:range :IngredienteDerivato ;
+                            rdfs:comment "Property that indicates which derived ingredients use this ingredient."@en ,
+                                         "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
+                            rdfs:label "Compone ingrediente derivato"@it ,
+                                       "Part of derived ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
+:ingredienteDerivatoDa rdf:type owl:ObjectProperty ,
+                                owl:IrreflexiveProperty ;
+                       rdfs:domain :IngredienteDerivato ;
+                       rdfs:range :ingrediente ;
+                       rdfs:comment """Property that specifies from which ingredient another ingredient derives.
+When used multiple times for the same individual, it indicates that an ingredient is made up of multiple ingredients."""@en ,
+                                    """Proprietà che specifica da quale ingrediente deriva un altro ingrediente.
+Se usata multiple volte per un individuo, indica che un ingrediente è composto da più ingredienti."""@it ;
+                       rdfs:label "Ingredient derived from"@en ,
+                                  "Ingrediente derivato da"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteIncompatibileConDisturbo
+:ingredienteIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
+                                     rdfs:subPropertyOf owl:topObjectProperty ;
+                                     rdfs:domain :ingrediente ;
+                                     rdfs:range :Disturbo ;
+                                     owl:propertyChainAxiom ( :ingredienteDerivatoDa
+                                                              :ingredienteIncompatibileConDisturbo
+                                                            ) ;
+                                     rdfs:comment """Property that associates an ingredient with the disorders that a person may have, thus discouraging its intake.
+Ingredients that derive from other ingredients inherit this property."""@en ,
+                                                  """Proprietà che associa un ingrediente ai disturbi che una persona può avere, sconsigliandone l'assunzione.
+La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."""@it ;
+                                     rdfs:label "Ingredient incompatible with disorder"@en ,
+                                                "Ingrediente incompatibile con disturbo"@it .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
 :localeSituatoIn rdf:type owl:ObjectProperty ;
@@ -73,6 +122,22 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Proprietà che permette di localizzare geograficamente ed univocamente un esercizio alimentare"@it ;
                  rdfs:label "Local Located In"@en ,
                             "Locale Situato In"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaIncompatibileConDisturbo
+:pietanzaIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:domain :Pietanza ;
+                                  rdfs:range :Disturbo ;
+                                  owl:propertyChainAxiom ( :utilizzaIngrediente
+                                                           :ingredienteIncompatibileConDisturbo
+                                                         ) ;
+                                  rdfs:comment """Property that associates a preparation with the ailments that a person may have, not recommending its intake.
+A preparation inherits all the incompatibilities of the ingredients that compose it."""@en ,
+                                               """Proprietà che associa una preparazione ai disturbi che una persona può avere, sconsigliandone l'assunzione.
+Una preparazione eredita tutte le incompatibilità degli ingredienti che la compongono."""@it ;
+                                  rdfs:label "Food preparation incompatible with disorder"@en ,
+                                             "Pietanza incompatibile con disturbo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
@@ -86,6 +151,25 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                 "Utilizza Ingrediente"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngredienteIndirettamente
+:utilizzaIngredienteIndirettamente rdf:type owl:ObjectProperty ;
+                                   owl:inverseOf :utilizzatoIndirettamenteInPietanza ;
+                                   rdfs:domain :Pietanza ;
+                                   rdfs:range :ingrediente ;
+                                   owl:propertyChainAxiom ( :utilizzaIngrediente
+                                                            :ingredienteDerivatoDa
+                                                          ) ,
+                                                          ( :utilizzaIngredienteIndirettamente
+                                                            :ingredienteDerivatoDa
+                                                          ) ;
+                                   rdfs:comment """Property that indicates for a given preparation all the ingredients it uses indirectly.
+By \"indirect ingredients\" we mean all the ingredients not directly used in the preparation, but that make up the derived ingredients that the preparation uses."""@en ,
+                                                """Proprietà che indica per una data preparazione tutti gli ingredienti che utilizza indirettamente. 
+Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttamente utilizzati dalla preparazione, ma che compongono degli ingredienti derivati di cui la preparazione si avvale."""@it ;
+                                   rdfs:label "Indirectly uses ingredient"@en ,
+                                              "Utilizza indirettamente ingrediente"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoInPietanza
 :utilizzatoInPietanza rdf:type owl:ObjectProperty ;
                       rdfs:domain :ingrediente ;
@@ -96,9 +180,41 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                  "Utilizzato In Pietanza"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoIndirettamenteInPietanza
+:utilizzatoIndirettamenteInPietanza rdf:type owl:ObjectProperty ;
+                                    rdfs:domain :ingrediente ;
+                                    rdfs:range :Pietanza ;
+                                    rdfs:comment """Property that indicates for a given ingredient all the preparations that use it indirectly.
+By \"indirect ingredients\" we mean all the ingredients not directly used in the preparation, but that make up the derived ingredients that the preparation uses."""@en ,
+                                                 """Proprietà che indica per un dato ingrediente tutte le preparazioni che lo utilizzano indirettamente. 
+Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttamente utilizzati dalla preparazione, ma che compongono degli ingredienti derivati di cui la preparazione si avvale."""@it ;
+                                    rdfs:label "Indirectly used in food preparation"@en ,
+                                               "Utilizzato indirettamente in pietanza"@it .
+
+
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://purl.bioontology.org/ontology/ICD10CM/CODE_ALSO
+icd:CODE_ALSO rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/EXCLUDES1
+icd:EXCLUDES1 rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/EXCLUDES2
+icd:EXCLUDES2 rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/ORDER_NO
+icd:ORDER_NO rdf:type owl:DatatypeProperty .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/USE_ADDITIONAL
+icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
 :haAbitanti rdf:type owl:DatatypeProperty ,
@@ -111,9 +227,72 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                        "Has Inhabitants"@en .
 
 
+###  http://www.w3.org/2004/02/skos/core#notation
+<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
+
+
 #################################################################
 #    Classes
 #################################################################
+
+###  http://purl.bioontology.org/ontology/ICD10CM/D55.0
+icd:D55.0 rdf:type owl:Class ;
+          owl:equivalentClass :Favismo ;
+          rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/E73
+icd:E73 rdf:type owl:Class ;
+        owl:equivalentClass :IntolleranzaLattosio ;
+        rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/E74.10
+icd:E74.10 rdf:type owl:Class ;
+           owl:equivalentClass :IntolleranzaFruttosio ;
+           rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/K90.0
+icd:K90.0 rdf:type owl:Class ;
+          owl:equivalentClass :Celiachia ;
+          rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/K90.41
+icd:K90.41 rdf:type owl:Class ;
+           owl:equivalentClass :AllergiaGlutine ;
+           rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/L23.0
+icd:L23.0 rdf:type owl:Class ;
+          owl:equivalentClass :AllergiaNickel ;
+          rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/Z91.010
+icd:Z91.010 rdf:type owl:Class ;
+            owl:equivalentClass :AllergiaArachidi ;
+            rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/Z91.012
+icd:Z91.012 rdf:type owl:Class ;
+            owl:equivalentClass :AllergiaUova ;
+            rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/Z91.013
+icd:Z91.013 rdf:type owl:Class ;
+            owl:equivalentClass :AllergiaFruttiDiMare ;
+            rdfs:subClassOf :Disturbo .
+
+
+###  http://purl.bioontology.org/ontology/ICD10CM/Z91.018
+icd:Z91.018 rdf:type owl:Class ;
+            rdfs:subClassOf :Disturbo .
+
 
 ###  http://schema.org/BarOrPub
 <http://schema.org/BarOrPub> rdf:type owl:Class ;
@@ -133,6 +312,12 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                       rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
 
 
+###  http://schema.org/LandmarksOrHistoricalBuildings
+<http://schema.org/LandmarksOrHistoricalBuildings> rdf:type owl:Class ;
+                                                   owl:equivalentClass :PuntoRiferimentoOEdificioStorico ;
+                                                   rdfs:subClassOf <http://schema.org/Place> .
+
+
 ###  http://schema.org/Place
 <http://schema.org/Place> rdf:type owl:Class ;
                           owl:equivalentClass :LuogoGeografico .
@@ -142,6 +327,96 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 <http://schema.org/Restaurant> rdf:type owl:Class ;
                                owl:equivalentClass :Ristorante ;
                                rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
+:AllergiaAdditivi rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( :AllergiaAdditivi
+                                                  )
+                                      ] ;
+                  rdfs:subClassOf icd:Z91.018 .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi
+:AllergiaArachidi rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( :AllergiaArachidi
+                                                  )
+                                      ] ;
+                  rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei
+:AllergiaCrostacei rdf:type owl:Class ;
+                   owl:equivalentClass [ rdf:type owl:Class ;
+                                         owl:oneOf ( :AllergiaCrostacei
+                                                   )
+                                       ] ;
+                   rdfs:subClassOf icd:Z91.018 .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca
+:AllergiaFruttaSecca rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Class ;
+                                           owl:oneOf ( :AllergiaFruttaSecca
+                                                     )
+                                         ] ;
+                     rdfs:subClassOf icd:Z91.018 .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare
+:AllergiaFruttiDiMare rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:oneOf ( :AllergiaFruttiDiMare
+                                                      )
+                                          ] ;
+                      rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine
+:AllergiaGlutine rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:oneOf ( :AllergiaGlutine
+                                                 )
+                                     ] ;
+                 rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel
+:AllergiaNickel rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :AllergiaNickel
+                                                )
+                                    ] ;
+                rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce
+:AllergiaPesce rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Class ;
+                                     owl:oneOf ( :AllergiaPesce
+                                               )
+                                   ] ;
+               rdfs:subClassOf icd:Z91.018 .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia
+:AllergiaSoia rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :AllergiaSoia
+                                              )
+                                  ] ;
+              rdfs:subClassOf icd:Z91.018 .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova
+:AllergiaUova rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :AllergiaUova
+                                              )
+                                  ] ;
+              rdfs:subClassOf :Disturbo .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Attività
@@ -160,6 +435,20 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                   "Public exercise where you stop briefly to generally consume drinks, sweets and light foods"@en ;
      rdfs:label "Bar"@it ,
                 "Pub"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carne
+:Carne rdf:type owl:Class ;
+       rdfs:subClassOf :IngredienteNonVegetariano .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
+:Celiachia rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:oneOf ( :Celiachia
+                                           )
+                               ] ;
+           rdfs:subClassOf :Disturbo .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Città
@@ -198,6 +487,14 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                       "Consume"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo
+:Disturbo rdf:type owl:Class ;
+          rdfs:comment "Class representing the various disorders that make intakes of certain foods incompatible or unwelcome for a person's health."@en ,
+                       "Classe rappresentante diversi disturbi che rendono incompatibile o sgradita per la propria salute l'assunzione di determinati alimenti."@it ;
+          rdfs:label "Disorder"@en ,
+                     "Disturbo"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare
 :EsercizioAlimentare rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
@@ -206,6 +503,15 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                   "Person who has consumed in a certain food establishment at least once"@en ;
                      rdfs:label "Esercizio Alimentare"@it ,
                                 "Food Establishment"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo
+:Favismo rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:oneOf ( :Favismo
+                                         )
+                             ] ;
+         rdfs:subClassOf :Disturbo .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici
@@ -275,6 +581,15 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                            "Infruttescenza"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteDerivato
+:IngredienteDerivato rdf:type owl:Class ;
+                     owl:equivalentClass [ rdf:type owl:Restriction ;
+                                           owl:onProperty :ingredienteDerivatoDa ;
+                                           owl:someValuesFrom :ingrediente
+                                         ] ;
+                     rdfs:subClassOf :ingrediente .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetariano
 :IngredienteNonVegetariano rdf:type owl:Class ;
                            rdfs:subClassOf :ingrediente ;
@@ -302,6 +617,51 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                      "Qualsiasi alimento che non sia di origine animale, nell'accezione di composto di carne animale."@it ;
                         rdfs:label "Ingrediente Vegetariano"@it ,
                                    "Vegetarian Ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
+:IntolleranzaFruttosio rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( :IntolleranzaFruttosio
+                                                       )
+                                           ] ;
+                       rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio
+:IntolleranzaLattosio rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:oneOf ( :IntolleranzaLattosio
+                                                      )
+                                          ] ;
+                      rdfs:subClassOf :Disturbo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAnimale
+:LatteAnimale rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :LatteAsina
+                                                :LatteBufala
+                                                :LatteCapra
+                                                :LatteMucca
+                                              )
+                                  ] ;
+              rdfs:subClassOf :IngredienteVegetariano ;
+              rdfs:comment "Liquido bianco secreto dalla ghiandola mammaria delle femmine dei mammiferi. Costituisce l'alimento indispensabile dei neonati di questa classe zoologica."@it ,
+                           "White liquid secreted by the mammary gland of female mammals. It constitutes the indispensable food of the newborns of this zoological class."@en ;
+              rdfs:label "Latte"@it ,
+                         "Milk"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteVegetale
+:LatteVegetale rdf:type owl:Class ;
+               rdfs:subClassOf :IngredienteVegano ;
+               rdfs:comment "Bevanda simile al latte animale."@it ,
+                            "Drink similar to animal milk."@en ;
+               <http://www.w3.org/2004/02/skos/core#altLabel> "Nut milk"@en ,
+                                                              "Vegan milk"@en ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Latte vegetale"@it ,
+                                                               "Plant milk"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LuogoGeografico
@@ -367,9 +727,14 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                     "Persona"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pesce
+:Pesce rdf:type owl:Class ;
+       rdfs:subClassOf :IngredienteNonVegetariano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piazza
 :Piazza rdf:type owl:Class ;
-        rdfs:subClassOf :LuogoGeografico ;
+        rdfs:subClassOf :PuntoRiferimentoOEdificioStorico ;
         rdfs:comment "Area libera, limitata in tutto o in parte da costruzioni, con varia funzione urbanistica, all'incrocio di più strade."@it ,
                      "Free area, limited in whole or in part by buildings, with various urban functions, at the intersection of several roads."@en ;
         rdfs:label "Piazza"@it ,
@@ -418,6 +783,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                      "Pizzeria"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PuntoRiferimentoOEdificioStorico
+:PuntoRiferimentoOEdificioStorico rdf:type owl:Class ;
+                                  rdfs:subClassOf :LuogoGeografico .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensire
 :Recensire rdf:type owl:Class ;
            rdfs:subClassOf :Attività ;
@@ -452,6 +822,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                     "Funzione svolta da una persona in un determinato ambito, situazione, azione..."@it ;
        rdfs:label "Role"@en ,
                   "Ruolo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
+:Seme rdf:type owl:Class ;
+      rdfs:subClassOf :IngredienteVegano .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
@@ -511,8 +886,303 @@ foaf:Person rdf:type owl:Class ;
 
 
 #################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
+:AllergiaAdditivi rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi
+:AllergiaArachidi rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei
+:AllergiaCrostacei rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca
+:AllergiaFruttaSecca rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare
+:AllergiaFruttiDiMare rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine
+:AllergiaGlutine rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel
+:AllergiaNickel rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce
+:AllergiaPesce rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia
+:AllergiaSoia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova
+:AllergiaUova rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide
+:Arachide rdf:type owl:NamedIndividual ,
+                   :FruttoSecco ;
+          :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
+                                               :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
+:Celiachia rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
+:FarinaGranoTenero rdf:type owl:NamedIndividual ;
+                   :ingredienteDerivatoDa :Grano .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo
+:Favismo rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Grano
+:Grano rdf:type owl:NamedIndividual ,
+                :FruttoSecco ;
+       :ingredienteIncompatibileConDisturbo :AllergiaGlutine ,
+                                            :Celiachia .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
+:IntolleranzaFruttosio rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio
+:IntolleranzaLattosio rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAsina
+:LatteAsina rdf:type owl:NamedIndividual ;
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteBufala
+:LatteBufala rdf:type owl:NamedIndividual ;
+             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteCapra
+:LatteCapra rdf:type owl:NamedIndividual ;
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMandorla
+:LatteMandorla rdf:type owl:NamedIndividual ,
+                        :LatteVegetale ;
+               :ingredienteDerivatoDa :Mandorla .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca
+:LatteMucca rdf:type owl:NamedIndividual ;
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteRiso
+:LatteRiso rdf:type owl:NamedIndividual ,
+                    :LatteVegetale ;
+           :ingredienteDerivatoDa :Riso .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteSoia
+:LatteSoia rdf:type owl:NamedIndividual ,
+                    :LatteVegetale ;
+           :ingredienteDerivatoDa :Soia .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
+:Mandorla rdf:type owl:NamedIndividual ,
+                   :FruttoSecco ;
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
+:Nocciola rdf:type owl:NamedIndividual ,
+                   :FruttoSecco ;
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
+:Noce rdf:type owl:NamedIndividual ,
+               :FruttoSecco ;
+      :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
+:Pane rdf:type owl:NamedIndividual ;
+      :ingredienteDerivatoDa :FarinaGranoTenero .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
+:Pistacchio rdf:type owl:NamedIndividual ,
+                     :FruttoSecco ;
+            :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette
+:Polpette rdf:type owl:NamedIndividual ;
+          :ingredienteDerivatoDa :FarinaGranoTenero ,
+                                 :LatteMucca ,
+                                 :Pane ,
+                                 :Prezzemolo .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo
+:PolpetteAlSugo rdf:type owl:NamedIndividual ;
+                :utilizzaIngrediente :Polpette ,
+                                     :SugoPomodoro .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
+:Pomodoro rdf:type owl:NamedIndividual ,
+                   :Ortaggio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
+:Prezzemolo rdf:type owl:NamedIndividual ,
+                     :Ortaggio .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
+:Riso rdf:type owl:NamedIndividual ,
+               :FruttoSecco .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
+:Sesamo rdf:type owl:NamedIndividual ,
+                 :Seme ;
+        :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
+:Soia rdf:type owl:NamedIndividual ,
+               :FruttoSecco ;
+      :ingredienteIncompatibileConDisturbo :AllergiaSoia .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
+:SugoPomodoro rdf:type owl:NamedIndividual ;
+              :ingredienteDerivatoDa :Pomodoro .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+:AllergiaAdditivi rdfs:comment "Allergy due to the consumption of foods or drinks containing particular additives."@en ;
+                  rdfs:label "Additives allergy"@en ;
+                  rdfs:comment "Allergia dovuta alla consumazione di alimenti o bevande contenenti particolari additivi."@it ;
+                  rdfs:label "Allergia agli Additivi"@it .
+
+
+:AllergiaArachidi rdfs:label "Allergia alle Arachidi"@it ;
+                  rdfs:comment "Ipersensibilità immunitaria e/o potenziale reazione anafilattica alle arachidi"@it ;
+                  rdfs:label "Peanut allergy"@en ;
+                  rdfs:comment "Immune hypersensitivity and/or potential anaphylactic reaction to peanuts"@en .
+
+
+:AllergiaCrostacei rdfs:comment "Allergy that causes an immune response following the intake of crustaceans."@en ;
+                   rdfs:label "Allergia ai Crostacei"@it ,
+                              "Crustaceans allergy"@en ;
+                   rdfs:comment "Allergia che provoca una risposta immunitaria in seguito all'assunzione di crostacei."@it .
+
+
+:AllergiaFruttaSecca rdfs:label "Allergia alla Frutta Secca"@it ;
+                     rdfs:comment "Allergia che provoca una risposta immunitaria in seguito all'assunzione di frutta secca."@it ,
+                                  "Allergy that causes an immune response following the intake of nuts."@en ;
+                     rdfs:label "Nuts allergy"@en .
+
+
+:AllergiaFruttiDiMare rdfs:comment "Immune hypersensitivity or potential anaphylactic reaction to seafood."@en ;
+                      rdfs:label "Allergia ai Frutti di Mare"@it ;
+                      rdfs:comment "Ipersensibilità immunitaria o potenziale reazione anafilattica ai frutti di mare."@it ,
+                                   "Seafood allergy"@en .
+
+
+:AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
+                              "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
+
+
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
+                rdfs:label "Nickel allergy"@en ,
+                           "Allergia al Nickel"@it ;
+                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
+
+
+:AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
+               rdfs:label "Allergia al Pesce"@it ,
+                          "Fish allergy"@en ;
+               rdfs:comment "Reazione anafilattica dovuta alla consumazione di pesce."@it .
+
+
+:AllergiaSoia rdfs:label "Allergia alla Soia"@it ;
+              rdfs:comment "Reazione anafilattica dovuta alla consumazione di soia o dei suoi derivati."@it ;
+              rdfs:label "Soy allergy"@en ;
+              rdfs:comment "Anaphylactic reaction due to the consumption of soy or soy derivatives."@en .
+
+
+:AllergiaUova rdfs:label "Egg allergy"@en ;
+              rdfs:comment "Immune hypersensitivity to proteins found in chicken eggs, and possibly goose, duck, or turkey eggs."@en ;
+              rdfs:label "Allergia alle Uova"@it ;
+              rdfs:comment "Ipersensibilità immunitaria alle proteine presenti nelle uova di gallina e possibilmente nelle uova di oca, anatra o tacchino."@it .
+
+
+:Celiachia <http://www.w3.org/2004/02/skos/core#altLabel> "Coeliac disease"@en ;
+           rdfs:comment "Infiammazione cronica dell'intestino tenue, scatenata dall'ingestione di glutine in soggetti geneticamente predisposti."@it ,
+                        "Chronic inflammation of the small intestine, triggered by the ingestion of gluten in genetically predisposed individuals."@en ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Celiac disease"@en ,
+                                                           "Celiachia"@it .
+
+
+:Favismo rdfs:comment "Clinical manifestation characterized by a haemolytic crisis in response to the consumption of broad beans."@en ;
+         <http://www.w3.org/2004/02/skos/core#altLabel> "Glucose-6-phosphate dehydrogenase deficiency"@en ,
+                                                        "Carenza di glucosio-6-fosfato deidrogenasi"@it ;
+         rdfs:comment "Manifestazione clinica caratterizzata da una crisi emolitica in risposta al consumo di fave."@it ;
+         <http://www.w3.org/2004/02/skos/core#prefLabel> "Favism"@en ,
+                                                         "Favismo"@it .
+
+
+:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
+                       rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
+
+
+:IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
+                      rdfs:comment "Condizione caratterizzata da disturbi gastrointestinali che insorgono dopo l'ingestione di alimenti contenenti lattosio."@it ;
+                      rdfs:label "Intolleranza al Lattosio"@it ;
+                      rdfs:comment "A condition characterized by gastrointestinal disorders that occur after ingestion of lactose-containing foods."@en .
+
+
+#################################################################
 #    General axioms
 #################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :AllergiaAdditivi
+                :AllergiaCrostacei
+                :AllergiaFruttaSecca
+                :AllergiaPesce
+              )
+] .
+
 
 [ rdf:type owl:AllDisjointClasses ;
   owl:members ( :FruttiSemplici

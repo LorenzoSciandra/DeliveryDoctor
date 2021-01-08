@@ -764,6 +764,19 @@ icd:Z91.018 rdf:type owl:Class ;
                                       "Non Vegetarian Ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetarianoDerivato
+:IngredienteNonVegetarianoDerivato rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                              [ rdf:type owl:Class ;
+                                                                                owl:complementOf :IngredienteVegetarianoDerivato
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :IngredienteDerivato ,
+                                                   :IngredienteNonVegetariano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano
 :IngredienteVegano rdf:type owl:Class ;
                    rdfs:subClassOf :IngredienteVegetariano ;
@@ -774,6 +787,19 @@ icd:Z91.018 rdf:type owl:Class ;
                               "Vegan Ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVeganoDerivato
+:IngredienteVeganoDerivato rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ingredienteDerivatoDa ;
+                                                                        owl:allValuesFrom :IngredienteVegano
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :IngredienteVegano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano
 :IngredienteVegetariano rdf:type owl:Class ;
                         rdfs:subClassOf :ingrediente ;
@@ -781,6 +807,22 @@ icd:Z91.018 rdf:type owl:Class ;
                                      "Qualsiasi alimento che non sia di origine animale, nell'accezione di composto di carne animale."@it ;
                         rdfs:label "Ingrediente Vegetariano"@it ,
                                    "Vegetarian Ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetarianoDerivato
+:IngredienteVegetarianoDerivato rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                           [ rdf:type owl:Class ;
+                                                                             owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :ingredienteDerivatoDa ;
+                                                                                                owl:someValuesFrom :IngredienteNonVegetariano
+                                                                                              ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :IngredienteDerivato ,
+                                                :IngredienteVegetariano .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio

@@ -7,6 +7,8 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 @base <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> .
 
 <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> rdf:type owl:Ontology ;
@@ -71,8 +73,58 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 #################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#starRating
+:starRating rdf:type rdfs:Datatype ;
+            owl:equivalentClass [ rdf:type rdfs:Datatype ;
+                                  owl:onDatatype xsd:double ;
+                                  owl:withRestrictions ( [ xsd:minInclusive "1.0"^^xsd:double
+                                                         ]
+                                                         [ xsd:maxInclusive "5.0"^^xsd:double
+                                                         ]
+                                                       )
+                                ] .
+
+
+#################################################################
 #    Object Properties
 #################################################################
+
+###  http://schema.org/reviewRating
+<http://schema.org/reviewRating> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain :Recensione ;
+                                 rdfs:range <http://schema.org/Rating> .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
+:haRuolo rdf:type owl:ObjectProperty ;
+         rdfs:domain :Persona ;
+         rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,
+                      "Proprietà che collega una persona al ruolo che svolge nel contesto di una particolare attivitià"@it ;
+         rdfs:label "Ha Ruolo"@it ,
+                    "Has Role"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#hasMember
+:hasMember rdf:type owl:ObjectProperty ;
+           owl:inverseOf :isMemberOf ;
+           rdfs:domain collectionentity:Collection ;
+           rdfs:range owl:Thing ;
+           rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)."@en ,
+                        "The link to the members of a Set"@en ;
+           rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+           rdfs:label "has member"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range collectionentity:Collection ;
+            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+            rdfs:label "is member of"@en .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
 :componeIngredienteDerivato rdf:type owl:ObjectProperty ;
@@ -142,6 +194,7 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
 :utilizzaIngrediente rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasMember ;
                      owl:inverseOf :utilizzatoInPietanza ;
                      rdfs:domain :Pietanza ;
                      rdfs:range :ingrediente ;
@@ -164,7 +217,7 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
                                                           ) ;
                                    rdfs:comment """Property that indicates for a given preparation all the ingredients it uses indirectly.
 By \"indirect ingredients\" we mean all the ingredients not directly used in the preparation, but that make up the derived ingredients that the preparation uses."""@en ,
-                                                """Proprietà che indica per una data preparazione tutti gli ingredienti che utilizza indirettamente. 
+                                                """Proprietà che indica per una data preparazione tutti gli ingredienti che utilizza indirettamente.
 Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttamente utilizzati dalla preparazione, ma che compongono degli ingredienti derivati di cui la preparazione si avvale."""@it ;
                                    rdfs:label "Indirectly uses ingredient"@en ,
                                               "Utilizza indirettamente ingrediente"@it .
@@ -172,6 +225,7 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoInPietanza
 :utilizzatoInPietanza rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :isMemberOf ;
                       rdfs:domain :ingrediente ;
                       rdfs:range :Pietanza ;
                       rdfs:comment "Property that binds the ingredients to the food preparations in which they are used"@en ,
@@ -186,10 +240,34 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
                                     rdfs:range :Pietanza ;
                                     rdfs:comment """Property that indicates for a given ingredient all the preparations that use it indirectly.
 By \"indirect ingredients\" we mean all the ingredients not directly used in the preparation, but that make up the derived ingredients that the preparation uses."""@en ,
-                                                 """Proprietà che indica per un dato ingrediente tutte le preparazioni che lo utilizzano indirettamente. 
+                                                 """Proprietà che indica per un dato ingrediente tutte le preparazioni che lo utilizzano indirettamente.
 Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttamente utilizzati dalla preparazione, ma che compongono degli ingredienti derivati di cui la preparazione si avvale."""@it ;
                                     rdfs:label "Indirectly used in food preparation"@en ,
                                                "Utilizzato indirettamente in pietanza"@it .
+
+
+###  http://www.w3.org/ns/prov#hadRole
+<http://www.w3.org/ns/prov#hadRole> rdf:type owl:ObjectProperty ;
+                                    rdfs:domain <http://www.w3.org/ns/prov#Agent> ;
+                                    rdfs:range <http://www.w3.org/ns/prov#Role> .
+
+
+###  http://www.w3.org/ns/prov#used
+<http://www.w3.org/ns/prov#used> rdf:type owl:ObjectProperty ;
+                                 rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                 rdfs:range <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://www.w3.org/ns/prov#wasAssociatedWith
+<http://www.w3.org/ns/prov#wasAssociatedWith> rdf:type owl:ObjectProperty ;
+                                              rdfs:domain <http://www.w3.org/ns/prov#Activity> ;
+                                              rdfs:range <http://www.w3.org/ns/prov#Agent> .
+
+
+###  http://www.w3.org/ns/prov#wasGeneratedBy
+<http://www.w3.org/ns/prov#wasGeneratedBy> rdf:type owl:ObjectProperty ;
+                                           rdfs:domain <http://www.w3.org/ns/prov#Entity> ;
+                                           rdfs:range <http://www.w3.org/ns/prov#Activity> .
 
 
 #################################################################
@@ -216,6 +294,10 @@ icd:ORDER_NO rdf:type owl:DatatypeProperty .
 icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
 
 
+###  http://schema.org/ratingValue
+<http://schema.org/ratingValue> rdf:type owl:DatatypeProperty .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
 :haAbitanti rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
@@ -229,6 +311,37 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
 
 ###  http://www.w3.org/2004/02/skos/core#notation
 <http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
+:haNumeroIngredienti rdf:type owl:DatatypeProperty ;
+                     rdfs:subPropertyOf :size ;
+                     rdfs:domain :Pietanza ;
+                     rdfs:range xsd:positiveInteger ;
+                     rdfs:comment "Data property che specifica il numero di ingredienti che compongono una pietanza"@it ,
+                                  "Data property that specifies the number of ingredients that make up a dish"@en ;
+                     rdfs:label "Ha Numero Ingredienti"@it ,
+                                "Has Number of Ingredients"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#possiedeStelle
+:possiedeStelle rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf <http://schema.org/ratingValue> ;
+                rdf:type owl:FunctionalProperty ;
+                rdfs:domain <http://schema.org/Rating> ;
+                rdfs:range :starRating ;
+                rdfs:comment "Classica valutazione basata da un range di minimo 1 stella ad un massimo di 5. Possono essere assegnate anche valori intermedi."@it ,
+                             "Rating based on a range of minimum 1 star to a maximum of 5. Intermediate values ​​can also be assigned."@en ;
+                rdfs:label "Has Stars"@en ,
+                           "Possiede Stelle"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#size
+:size rdf:type owl:DatatypeProperty ;
+      rdfs:domain collectionentity:Collection ;
+      rdfs:range xsd:integer ;
+      rdfs:comment "size - The number of items belonging to a collection"^^xsd:string ;
+      rdfs:label "size"^^xsd:string .
 
 
 #################################################################
@@ -303,13 +416,18 @@ icd:Z91.018 rdf:type owl:Class ;
 ###  http://schema.org/City
 <http://schema.org/City> rdf:type owl:Class ;
                          owl:equivalentClass :Città ;
-                         rdfs:subClassOf <http://schema.org/Place> .
+                         rdfs:subClassOf <http://schema.org/Place> ;
+                         owl:disjointWith :Piazza ,
+                                          :Via .
 
 
 ###  http://schema.org/FoodEstablishment
 <http://schema.org/FoodEstablishment> rdf:type owl:Class ;
                                       owl:equivalentClass :EsercizioAlimentare ;
-                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                                      owl:disjointWith :Ordine ,
+                                                       :Pietanza ,
+                                                       :Recensione .
 
 
 ###  http://schema.org/LandmarksOrHistoricalBuildings
@@ -320,13 +438,45 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://schema.org/Place
 <http://schema.org/Place> rdf:type owl:Class ;
-                          owl:equivalentClass :LuogoGeografico .
+                          owl:equivalentClass :LuogoGeografico ;
+                          owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
+                                           <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://schema.org/Rating
+<http://schema.org/Rating> rdf:type owl:Class .
 
 
 ###  http://schema.org/Restaurant
 <http://schema.org/Restaurant> rdf:type owl:Class ;
                                owl:equivalentClass :Ristorante ;
                                rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+
+
+###  http://schema.org/Review
+<http://schema.org/Review> rdf:type owl:Class ;
+                           owl:equivalentClass :Recensione ;
+                           rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
+collectionentity:Collection rdf:type owl:Class ;
+                            rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
+                            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                            rdfs:label "Collection"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
+:AvviareImpresa rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                owl:disjointWith :Consegnare ,
+                                 :Consumare ,
+                                 :Ordinare ,
+                                 :Recensire ;
+                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
+                             "Inauguration of a food establishment by an owner"@en ;
+                rdfs:label "Avviare Impresa"@it ,
+                           "Start Business"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -454,6 +604,8 @@ icd:Z91.018 rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Città
 :Città rdf:type owl:Class ;
        rdfs:subClassOf :LuogoGeografico ;
+       owl:disjointWith :Piazza ,
+                        :Via ;
        rdfs:comment "Centro abitato formato da un aggregato di costruzioni più o meno pianificato, sorto da un accentramento culturale, economico e amministrativo."@it ,
                     "Inhabited centre formed by a more or less planned aggregate of buildings, which arose from a cultural, economic and administrative centralisation"@en ;
        rdfs:label "Città"@it ,
@@ -462,7 +614,11 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente
 :Cliente rdf:type owl:Class ;
-         rdfs:subClassOf :Ruolo ;
+         owl:equivalentClass [ rdf:type owl:Restriction ;
+                               owl:onProperty :haRuolo ;
+                               owl:someValuesFrom :RuoloCliente
+                             ] ;
+         rdfs:subClassOf :Persona ;
          rdfs:comment "Person who has consumed at least once at a certain food establishment"@en ,
                       "Persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
          rdfs:label "Cliente"@it ,
@@ -471,7 +627,10 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consegnare
 :Consegnare rdf:type owl:Class ;
-            rdfs:subClassOf :Attività ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+            owl:disjointWith :Consumare ,
+                             :Ordinare ,
+                             :Recensire ;
             rdfs:comment "Activity of delivering a certain food preparation, previously ordered, to a customer"@en ,
                          "Attività di recapitare ad un cliente una certa portata precedentemente ordinata"@it ;
             rdfs:label "Consegnare"@it ,
@@ -480,7 +639,9 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consumare
 :Consumare rdf:type owl:Class ;
-           rdfs:subClassOf :Attività ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+           owl:disjointWith :Ordinare ,
+                            :Recensire ;
            rdfs:comment "Activity that refers to eating a certain ordered food preparation"@en ,
                         "Attività che fa riferimento al mangiare una certa pietanza ordinata"@it ;
            rdfs:label "Consumare"@it ,
@@ -498,6 +659,9 @@ icd:Z91.018 rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare
 :EsercizioAlimentare rdf:type owl:Class ;
                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                     owl:disjointWith :Ordine ,
+                                      :Pietanza ,
+                                      :Recensione ;
                      rdfs:comment "Attività commerciale a carattere alimentare"@it ,
                                   "Commercial activity in food sector"@en ,
                                   "Person who has consumed in a certain food establishment at least once"@en ;
@@ -666,6 +830,8 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LuogoGeografico
 :LuogoGeografico rdf:type owl:Class ;
+                 owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
+                                  <http://www.w3.org/ns/prov#Entity> ;
                  rdfs:comment "Area spaziale univocamente identificato da coordinate geografiche di latitudine e longitudine"@it ,
                               "Spatial area uniquely identified by geographic coordinates of latitude and longitude"@en ;
                  rdfs:label "Geographical Location"@en ,
@@ -692,11 +858,28 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordinare
 :Ordinare rdf:type owl:Class ;
-          rdfs:subClassOf :Attività ;
+          rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+          owl:disjointWith :Recensire ;
           rdfs:comment "Activity of commissioning a desired food preparation from a certain food establishment"@it ,
                        "Attività di commissionare ad un certo esercizio alimentare una portata desiderata"@it ;
           rdfs:label "Order"@en ,
                      "Ordinare"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordine
+:Ordine rdf:type owl:Class ;
+        owl:equivalentClass [ rdf:type owl:Restriction ;
+                              owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass :Ordinare
+                            ] ;
+        rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+        owl:disjointWith :Pietanza ,
+                         :Recensione ;
+        rdfs:comment "Any food preparation or drink that can be commissioned to a food establishment"@en ,
+                     "Qualsiasi alimento/bevanda che possa essere commissionata ad un esercizio alimentare"@it ;
+        rdfs:label "Order"@en ,
+                   "Ordine"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio
@@ -735,6 +918,7 @@ icd:Z91.018 rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piazza
 :Piazza rdf:type owl:Class ;
         rdfs:subClassOf :PuntoRiferimentoOEdificioStorico ;
+        owl:disjointWith :Via ;
         rdfs:comment "Area libera, limitata in tutto o in parte da costruzioni, con varia funzione urbanistica, all'incrocio di più strade."@it ,
                      "Free area, limited in whole or in part by buildings, with various urban functions, at the intersection of several roads."@en ;
         rdfs:label "Piazza"@it ,
@@ -745,9 +929,12 @@ icd:Z91.018 rdf:type owl:Class ;
 :Pietanza rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :utilizzaIngrediente ;
-                                owl:someValuesFrom :ingrediente
+                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                owl:onClass :ingrediente
                               ] ;
-          rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+          rdfs:subClassOf :Set ,
+                          <http://www.w3.org/ns/prov#Entity> ;
+          owl:disjointWith :Recensione ;
           rdfs:comment "Result of a series of steps in the preparation of one or more ingredients. In the context of this ontology the offer of restaurants, pizzerias, pubs, etc ..."@en ,
                        "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
           rdfs:label "Food Preparation"@en ,
@@ -788,9 +975,23 @@ icd:Z91.018 rdf:type owl:Class ;
                                   rdfs:subClassOf :LuogoGeografico .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensione
+:Recensione rdf:type owl:Class ;
+            owl:equivalentClass [ rdf:type owl:Restriction ;
+                                  owl:onProperty <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onClass :Recensire
+                                ] ;
+            rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+            rdfs:comment "Commento di esamina e valutazione di una pietanza consumata presso un certo esercizio alimentare"@it ,
+                         "Evaluation of a food preparation consumed in a specific food establishment"@en ;
+            rdfs:label "Recensione"@it ,
+                       "Review"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensire
 :Recensire rdf:type owl:Class ;
-           rdfs:subClassOf :Attività ;
+           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
            rdfs:comment "Activity of examining and evaluating a food preparation at a certain food establishment"@en ,
                         "Attività di esaminare e valutare una pietanza consumata presso un certo esercizio alimentare"@it ;
            rdfs:label "Recensire"@it ,
@@ -799,7 +1000,11 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensore
 :Recensore rdf:type owl:Class ;
-           rdfs:subClassOf :Ruolo ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :haRuolo ;
+                                 owl:someValuesFrom :RuoloRecensore
+                               ] ;
+           rdfs:subClassOf :Persona ;
            rdfs:comment "Person who has reviewed the food establishment tried, after a consummation"@en ,
                         "Persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
            rdfs:label "Recensore"@it ,
@@ -815,13 +1020,39 @@ icd:Z91.018 rdf:type owl:Class ;
                        "Ristorante"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ruolo
-:Ruolo rdf:type owl:Class ;
-       owl:equivalentClass <http://www.w3.org/ns/prov#Role> ;
-       rdfs:comment "Function performed by a person in a certain situation, action ..."@en ,
-                    "Funzione svolta da una persona in un determinato ambito, situazione, azione..."@it ;
-       rdfs:label "Role"@en ,
-                  "Ruolo"@it .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloCliente
+:RuoloCliente rdf:type owl:Class ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
+              owl:disjointWith :RuoloTitolareImpresa ;
+              rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
+                           "Ruolo assunto da una persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
+              rdfs:label "Customer Role"@en ,
+                         "Ruolo Cliente"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensore
+:RuoloRecensore rdf:type owl:Class ;
+                rdfs:subClassOf :RuoloCliente ;
+                rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
+                             "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
+                rdfs:label "Reviewer Role"@en ,
+                           "Ruolo Recensore"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloTitolareImpresa
+:RuoloTitolareImpresa rdf:type owl:Class ;
+                      rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
+                      rdfs:comment "Role of a person who owns a food establishment"@en ,
+                                   "Ruolo di una persona che possiede un esercizio alimentare"@it ;
+                      rdfs:label "Business Owner Role"@en ,
+                                 "Ruolo Titolare Impresa"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set
+:Set rdf:type owl:Class ;
+     rdfs:subClassOf collectionentity:Collection ;
+     rdfs:comment "Set - A collection that cannot contain duplicate elements."@en ;
+     rdfs:label "set"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
@@ -831,10 +1062,14 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
 :TitolareImpresa rdf:type owl:Class ;
-                 rdfs:subClassOf :Ruolo ;
-                 rdfs:comment "Person who owns a food establishment"@en ,
+                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                       owl:onProperty :haRuolo ;
+                                       owl:someValuesFrom :RuoloTitolareImpresa
+                                     ] ;
+                 rdfs:subClassOf :Persona ;
+                 rdfs:comment "Person that owns a food establishment"@en ,
                               "Persona che possiede un esercizio alimentare"@it ;
-                 rdfs:label "Business Owner"@en ,
+                 rdfs:label "Food Establishment Owner"@en ,
                             "Titolare Impresa"@it .
 
 
@@ -858,6 +1093,8 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente
 :ingrediente rdf:type owl:Class ;
+             owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
+                              <http://www.w3.org/ns/prov#Entity> ;
              rdfs:comment "Class containing everything that can be eaten and that makes up all the food preparations."@en ,
                           "Classe contenente tutto ciò che si può mangiare e che quindi compone le pietanze."@it ;
              rdfs:label "Ingredient"@en ,
@@ -865,15 +1102,20 @@ icd:Z91.018 rdf:type owl:Class ;
 
 
 ###  http://www.w3.org/ns/prov#Activity
-<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class .
+<http://www.w3.org/ns/prov#Activity> rdf:type owl:Class ;
+                                     owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
+                                                      <http://www.w3.org/ns/prov#Entity> .
 
 
 ###  http://www.w3.org/ns/prov#Agent
-<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class .
+<http://www.w3.org/ns/prov#Agent> rdf:type owl:Class ;
+                                  owl:disjointWith <http://www.w3.org/ns/prov#Entity> ,
+                                                   <http://www.w3.org/ns/prov#Role> .
 
 
 ###  http://www.w3.org/ns/prov#Entity
-<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class .
+<http://www.w3.org/ns/prov#Entity> rdf:type owl:Class ;
+                                   owl:disjointWith <http://www.w3.org/ns/prov#Role> .
 
 
 ###  http://www.w3.org/ns/prov#Role
@@ -1169,6 +1411,13 @@ foaf:Person rdf:type owl:Class ;
                       rdfs:comment "Condizione caratterizzata da disturbi gastrointestinali che insorgono dopo l'ingestione di alimenti contenenti lattosio."@it ;
                       rdfs:label "Intolleranza al Lattosio"@it ;
                       rdfs:comment "A condition characterized by gastrointestinal disorders that occur after ingestion of lactose-containing foods."@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
 
 
 #################################################################

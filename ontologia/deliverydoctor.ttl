@@ -151,6 +151,21 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Has Been Reviewed By"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FrittoCon
+:FrittoCon rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :utilizzaIngrediente ;
+           rdfs:domain :Pietanza ;
+           rdfs:range :ingrediente ;
+           rdfs:comment "Property that indicates with which ingredients the food preparation has been deep fried."@en ,
+                        "Proprietà che indica con quali ingredienti la pietanza è stata fritta."@it ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Deep fried using"@en ,
+                                                          "Deep fried with"@en ,
+                                                          "Fritto in"@it ,
+                                                          "Fritto usando"@it ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Deep fried in"@en ,
+                                                           "Fritto con"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaAvviatoImpresa
 :HaAvviatoImpresa rdf:type owl:ObjectProperty ;
                   owl:inverseOf :LocaleAvviatoDa ;

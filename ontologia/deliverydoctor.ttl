@@ -291,17 +291,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Has Made The Review"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
-:componeIngredienteDerivato rdf:type owl:ObjectProperty ;
-                            owl:inverseOf :ingredienteDerivatoDa ;
-                            rdfs:domain :ingrediente ;
-                            rdfs:range :IngredienteDerivato ;
-                            rdfs:comment "Property that indicates which derived ingredients use this ingredient."@en ,
-                                         "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
-                            rdfs:label "Compone ingrediente derivato"@it ,
-                                       "Part of derived ingredient"@en .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          owl:equivalentProperty <http://www.w3.org/ns/prov#hadRole> ;
@@ -316,7 +305,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#hasMember
 :hasMember rdf:type owl:ObjectProperty ;
            owl:inverseOf :isMemberOf ;
-           rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+           rdfs:domain collectionentity:Collection ;
            rdfs:range owl:Thing ;
            rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)."@en ,
                         "The link to the members of a Set"@en ;
@@ -385,14 +374,6 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                  "Property chain that links the food establishment directly to the reviews it has received"@en ;
                     rdfs:label "Local Has Review"@en ,
                                "Locale Ha Recensione"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
-:isMemberOf rdf:type owl:ObjectProperty ;
-            rdfs:domain owl:Thing ;
-            rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
-            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
-            rdfs:label "is member of"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
@@ -644,7 +625,7 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#size
 :size rdf:type owl:DatatypeProperty ;
-      rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+      rdfs:domain collectionentity:Collection ;
       rdfs:range xsd:integer ;
       rdfs:comment "size - The number of items belonging to a collection"^^xsd:string ;
       rdfs:label "size"^^xsd:string .
@@ -770,10 +751,10 @@ icd:Z91.018 rdf:type owl:Class ;
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
-<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class ;
-                                                                               rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
-                                                                               rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
-                                                                               rdfs:label "Collection"@en .
+collectionentity:Collection rdf:type owl:Class ;
+                            rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
+                            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                            rdfs:label "Collection"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -870,18 +851,6 @@ icd:Z91.018 rdf:type owl:Class ;
 :AvviareImpresa rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                 owl:disjointWith :Consegnare ,
-                                 :Ordinare ,
-                                 :Recensire ;
-                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
-                             "Inauguration of a food establishment by an owner"@en ;
-                rdfs:label "Avviare Impresa"@it ,
-                           "Start Business"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
-:AvviareImpresa rdf:type owl:Class ;
-                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
-                owl:disjointWith :Consegnare ,
                                  :Consumare ,
                                  :Ordinare ,
                                  :Recensire ;
@@ -947,6 +916,10 @@ icd:Z91.018 rdf:type owl:Class ;
                          "Attività di recapitare ad un cliente una certa portata precedentemente ordinata"@it ;
             rdfs:label "Consegnare"@it ,
                        "Deliver"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consumare
+:Consumare rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo
@@ -1420,7 +1393,7 @@ icd:Z91.018 rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set
 :Set rdf:type owl:Class ;
-     rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+     rdfs:subClassOf collectionentity:Collection ;
      rdfs:comment "Set - A collection that cannot contain duplicate elements."@en ;
      rdfs:label "set"^^xsd:string .
 
@@ -1759,9 +1732,6 @@ foaf:Person rdf:type owl:Class ;
 #    Annotations
 #################################################################
 
-<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> rdfs:comment "The link to the members of a Set"^^xsd:string .
-
-
 collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
 
 
@@ -1802,10 +1772,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Allergia al Nickel"@it ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Nickel allergy"@en .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+                rdfs:label "Nickel allergy"@en ,
+                           "Allergia al Nickel"@it .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;

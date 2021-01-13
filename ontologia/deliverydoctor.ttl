@@ -315,7 +315,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
 :ingredienteDerivatoDa rdf:type owl:ObjectProperty ,
-                                owl:IrreflexiveProperty ;
+                                owl:TransitiveProperty ;
                        rdfs:domain :IngredienteDerivato ;
                        rdfs:range :ingrediente ;
                        rdfs:comment """Property that specifies from which ingredient another ingredient derives.
@@ -377,7 +377,8 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
-:localeSituatoIn rdf:type owl:ObjectProperty ;
+:localeSituatoIn rdf:type owl:ObjectProperty ,
+                          owl:FunctionalProperty ;
                  rdfs:domain :EsercizioAlimentare ;
                  rdfs:range :LuogoGeografico ;
                  rdfs:comment "Property that allows a food establishment to be geographically and uniquely localized"@en ,
@@ -1824,6 +1825,15 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                 :FruttoAggregato
                 :Infruttescenza
               )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :LatteAsina
+                        :LatteBufala
+                        :LatteCapra
+                        :LatteMucca
+                      )
 ] .
 
 

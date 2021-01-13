@@ -1512,7 +1512,8 @@ foaf:Person rdf:type owl:Class ;
 :Arachide rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
           :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
-                                               :AllergiaFruttaSecca .
+                                               :AllergiaFruttaSecca ;
+          rdfs:label "Arachide"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CapuccinoECroissant

@@ -880,7 +880,11 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carne
 :Carne rdf:type owl:Class ;
-       rdfs:subClassOf :IngredienteNonVegetariano .
+       rdfs:subClassOf :IngredienteNonVegetariano ;
+       rdfs:comment "Any edible part of animals"@en ,
+                    "Qualsiasi parte commestibile degli animali"@it ;
+       rdfs:label "Carne"@it ,
+                  "Meat"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
@@ -1047,7 +1051,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                            owl:onProperty :ingredienteDerivatoDa ;
                                            owl:someValuesFrom :ingrediente
                                          ] ;
-                     rdfs:subClassOf :ingrediente .
+                     rdfs:subClassOf :ingrediente ;
+                     rdfs:comment "Ingredient derived from other simple or derived derivatives"@en ,
+                                  "Ingrediente derivato da altri ingredienti semplici o a loro vo0lta derivati"@it ;
+                     rdfs:label "Derived Ingredient"@en ,
+                                "Ingrediente Derivato"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetariano
@@ -1062,15 +1070,17 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetarianoDerivato
 :IngredienteNonVegetarianoDerivato rdf:type owl:Class ;
-                                   owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
-                                                                              [ rdf:type owl:Class ;
-                                                                                owl:complementOf :IngredienteVegetarianoDerivato
-                                                                              ]
-                                                                            ) ;
-                                                         rdf:type owl:Class
+                                   owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                         owl:onProperty :ingredienteDerivatoDa ;
+                                                         owl:someValuesFrom :IngredienteNonVegetariano
                                                        ] ;
                                    rdfs:subClassOf :IngredienteDerivato ,
-                                                   :IngredienteNonVegetariano .
+                                                   :IngredienteNonVegetariano ;
+                                   owl:disjointWith :IngredienteVegetarianoDerivato ;
+                                   rdfs:comment "Ingredient that is derived from other simple or derivatives non vegetarian ingredients"@en ,
+                                                "Ingrediente che viene derivato da altri ingredienti semplici o a loro derivati non vegetariani"@it ;
+                                   rdfs:label "Ingrediente Non Vegetariano Derivato"@it ,
+                                              "Non Vegetarian Derived Ingredient"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano
@@ -1085,15 +1095,27 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVeganoDerivato
 :IngredienteVeganoDerivato rdf:type owl:Class ;
-                           owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
+                                                                        owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                           owl:onProperty :ingredienteDerivatoDa ;
+                                                                                           owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                                owl:complementOf :IngredienteVegano
+                                                                                                              ]
+                                                                                         ]
+                                                                      ]
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty :ingredienteDerivatoDa ;
-                                                                        owl:allValuesFrom :IngredienteVegano
+                                                                        owl:someValuesFrom :IngredienteVegano
                                                                       ]
                                                                     ) ;
                                                  rdf:type owl:Class
                                                ] ;
-                           rdfs:subClassOf :IngredienteVegano .
+                           rdfs:subClassOf :IngredienteVegano ,
+                                           :IngredienteVegetarianoDerivato ;
+                           rdfs:comment "Ingredient derived from only basic or derivatives vegan ingredients"@en ,
+                                        "Ingrediente derivato da soli ingredienti base o derivati vegani"@it ;
+                           rdfs:label "Ingrediente Vegano Derivato"@it ,
+                                      "Vegan Derived Ingredient"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano
@@ -1107,18 +1129,25 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetarianoDerivato
 :IngredienteVegetarianoDerivato rdf:type owl:Class ;
-                                owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
-                                                                           [ rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
                                                                              owl:complementOf [ rdf:type owl:Restriction ;
                                                                                                 owl:onProperty :ingredienteDerivatoDa ;
                                                                                                 owl:someValuesFrom :IngredienteNonVegetariano
                                                                                               ]
                                                                            ]
+                                                                           [ rdf:type owl:Restriction ;
+                                                                             owl:onProperty :ingredienteDerivatoDa ;
+                                                                             owl:someValuesFrom :IngredienteVegetariano
+                                                                           ]
                                                                          ) ;
                                                       rdf:type owl:Class
                                                     ] ;
                                 rdfs:subClassOf :IngredienteDerivato ,
-                                                :IngredienteVegetariano .
+                                                :IngredienteVegetariano ;
+                                rdfs:comment "Ingredient derived from only basic or derivatives vegetarian ingredients"@en ,
+                                             "Ingrediente derivato da soli altri ingredienti semplici o derivati vegetariani"@it ;
+                                rdfs:label "Ingrediente Vegetariano Derivato"@it ,
+                                           "Vegetarian Derived Ingredient"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
@@ -1251,7 +1280,11 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pesce
 :Pesce rdf:type owl:Class ;
-       rdfs:subClassOf :IngredienteNonVegetariano .
+       rdfs:subClassOf :Carne ;
+       rdfs:comment "Any edible part derived directly from a fish"@en ,
+                    "Qualsiasi parte commestibile derivata direttamente da un pesce"@it ;
+       rdfs:label "Fish"@en ,
+                  "Pesce"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piazza
@@ -1277,6 +1310,39 @@ collectionentity:Collection rdf:type owl:Class ;
                        "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
           rdfs:label "Food Preparation"@en ,
                      "Pietanza"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana
+:PietanzaNonVegetariana rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                              owl:onProperty :utilizzaIngrediente ;
+                                              owl:someValuesFrom :IngredienteNonVegetariano
+                                            ] ;
+                        rdfs:subClassOf :Pietanza ;
+                        rdfs:comment "Food Preparation that uses at least one non-vegetarian ingredient"@en ,
+                                     "Preparazione che usa almeno un ingrediente non vegetariano"@it ;
+                        rdfs:label "Non Vegetarian Food Preparation"@en ,
+                                   "Pietanza Non Vegetariana"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana
+:PietanzaVegana rdf:type owl:Class ;
+                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :utilizzaIngrediente ;
+                                                             owl:someValuesFrom :IngredienteVegano
+                                                           ]
+                                                           [ rdf:type owl:Restriction ;
+                                                             owl:onProperty :utilizzaIngrediente ;
+                                                             owl:allValuesFrom :IngredienteVegano
+                                                           ]
+                                                         ) ;
+                                      rdf:type owl:Class
+                                    ] ;
+                rdfs:subClassOf :PietanzaVegetariana ;
+                rdfs:comment "Risultato della preparazione di soli ingredienti vegetariani"@it ,
+                             "The result of the preparation of only vegan ingredients"@en ;
+                rdfs:label "Pietanza Vegana"@it ,
+                           "Vegan Food Preparation"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana
@@ -1406,7 +1472,11 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
 :Seme rdf:type owl:Class ;
-      rdfs:subClassOf :IngredienteVegano .
+      rdfs:subClassOf :IngredienteVegano ;
+      rdfs:comment "In plants with visible reproductive organs, fertilized egg containing the embryo and the nutrients needed to make it develop"@en ,
+                   "Nelle piante con organi riproduttivi visibili, ovulo fecondato contenente l'embrione e le sostanze nutritive atte a farlo sviluppare"@it ;
+      rdfs:label "Seed"@en ,
+                 "Seme"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set

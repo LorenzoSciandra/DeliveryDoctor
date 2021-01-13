@@ -1220,6 +1220,11 @@ foaf:Person rdf:type owl:Class ;
                                                :AllergiaFruttaSecca .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
+:CarneVitello rdf:type owl:NamedIndividual ,
+                       :Carne .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
 :Celiachia rdf:type owl:NamedIndividual .
 
@@ -1286,6 +1291,11 @@ foaf:Person rdf:type owl:Class ;
            :ingredienteDerivatoDa :Soia .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello
+:MacinatoCarneVitello rdf:type owl:NamedIndividual ;
+                      :ingredienteDerivatoDa :CarneVitello .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
@@ -1319,6 +1329,7 @@ foaf:Person rdf:type owl:Class ;
 :Polpette rdf:type owl:NamedIndividual ;
           :ingredienteDerivatoDa :FarinaGranoTenero ,
                                  :LatteMucca ,
+                                 :MacinatoCarneVitello ,
                                  :Pane ,
                                  :Prezzemolo .
 

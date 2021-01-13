@@ -563,26 +563,6 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 #    Data properties
 #################################################################
 
-###  http://purl.bioontology.org/ontology/ICD10CM/CODE_ALSO
-icd:CODE_ALSO rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.bioontology.org/ontology/ICD10CM/EXCLUDES1
-icd:EXCLUDES1 rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.bioontology.org/ontology/ICD10CM/EXCLUDES2
-icd:EXCLUDES2 rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.bioontology.org/ontology/ICD10CM/ORDER_NO
-icd:ORDER_NO rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.bioontology.org/ontology/ICD10CM/USE_ADDITIONAL
-icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
-
-
 ###  http://schema.org/ratingValue
 <http://schema.org/ratingValue> rdf:type owl:DatatypeProperty ;
                                 rdfs:domain <http://schema.org/Rating> ;

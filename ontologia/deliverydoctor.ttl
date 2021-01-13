@@ -291,6 +291,17 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Has Made The Review"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
+:componeIngredienteDerivato rdf:type owl:ObjectProperty ;
+                            owl:inverseOf :ingredienteDerivatoDa ;
+                            rdfs:domain :ingrediente ;
+                            rdfs:range :IngredienteDerivato ;
+                            rdfs:comment "Property that indicates which derived ingredients use this ingredient."@en ,
+                                         "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
+                            rdfs:label "Compone ingrediente derivato"@it ,
+                                       "Part of derived ingredient"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          owl:equivalentProperty <http://www.w3.org/ns/prov#hadRole> ;
@@ -305,7 +316,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#hasMember
 :hasMember rdf:type owl:ObjectProperty ;
            owl:inverseOf :isMemberOf ;
-           rdfs:domain collectionentity:Collection ;
+           rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
            rdfs:range owl:Thing ;
            rdfs:comment "A relation between collections and entities, e.g. 'my collection of saxophones includes an old Adolphe Sax original alto' (i.e. my collection has member an Adolphe Sax alto)."@en ,
                         "The link to the members of a Set"@en ;
@@ -374,6 +385,14 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                  "Property chain that links the food establishment directly to the reviews it has received"@en ;
                     rdfs:label "Local Has Review"@en ,
                                "Locale Ha Recensione"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#isMemberOf
+:isMemberOf rdf:type owl:ObjectProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
+            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+            rdfs:label "is member of"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
@@ -493,6 +512,7 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngredienteIndirettamente
 :utilizzaIngredienteIndirettamente rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf :hasMember ;
                                    owl:inverseOf :utilizzatoIndirettamenteInPietanza ;
                                    rdfs:domain :Pietanza ;
                                    rdfs:range :ingrediente ;
@@ -523,6 +543,7 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzatoIndirettamenteInPietanza
 :utilizzatoIndirettamenteInPietanza rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf :isMemberOf ;
                                     rdfs:domain :ingrediente ;
                                     rdfs:range :Pietanza ;
                                     rdfs:comment """Property that indicates for a given ingredient all the preparations that use it indirectly.
@@ -623,7 +644,7 @@ icd:USE_ADDITIONAL rdf:type owl:DatatypeProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#size
 :size rdf:type owl:DatatypeProperty ;
-      rdfs:domain collectionentity:Collection ;
+      rdfs:domain <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
       rdfs:range xsd:integer ;
       rdfs:comment "size - The number of items belonging to a collection"^^xsd:string ;
       rdfs:label "size"^^xsd:string .
@@ -749,10 +770,10 @@ icd:Z91.018 rdf:type owl:Class ;
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
-collectionentity:Collection rdf:type owl:Class ;
-                            rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
-                            rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
-                            rdfs:label "Collection"@en .
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> rdf:type owl:Class ;
+                                                                               rdfs:comment "Any container for entities that share one or more common properties. E.g. \"stone objects\", \"the nurses\", \"the Louvre Aegyptian collection\". A collection is not a logical class: a collection is a first-order entity, while a class is a second-order one."@en ;
+                                                                               rdfs:isDefinedBy <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl> ;
+                                                                               rdfs:label "Collection"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -849,6 +870,19 @@ collectionentity:Collection rdf:type owl:Class ;
 :AvviareImpresa rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                 owl:disjointWith :Consegnare ,
+                                 :Ordinare ,
+                                 :Recensire ;
+                rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
+                             "Inauguration of a food establishment by an owner"@en ;
+                rdfs:label "Avviare Impresa"@it ,
+                           "Start Business"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresa
+:AvviareImpresa rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
+                owl:disjointWith :Consegnare ,
+                                 :Consumare ,
                                  :Ordinare ,
                                  :Recensire ;
                 rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
@@ -1044,6 +1078,19 @@ collectionentity:Collection rdf:type owl:Class ;
                                       "Non Vegetarian Ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetarianoDerivato
+:IngredienteNonVegetarianoDerivato rdf:type owl:Class ;
+                                   owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                              [ rdf:type owl:Class ;
+                                                                                owl:complementOf :IngredienteVegetarianoDerivato
+                                                                              ]
+                                                                            ) ;
+                                                         rdf:type owl:Class
+                                                       ] ;
+                                   rdfs:subClassOf :IngredienteDerivato ,
+                                                   :IngredienteNonVegetariano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano
 :IngredienteVegano rdf:type owl:Class ;
                    rdfs:subClassOf :IngredienteVegetariano ;
@@ -1054,6 +1101,19 @@ collectionentity:Collection rdf:type owl:Class ;
                               "Vegan Ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVeganoDerivato
+:IngredienteVeganoDerivato rdf:type owl:Class ;
+                           owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                      [ rdf:type owl:Restriction ;
+                                                                        owl:onProperty :ingredienteDerivatoDa ;
+                                                                        owl:allValuesFrom :IngredienteVegano
+                                                                      ]
+                                                                    ) ;
+                                                 rdf:type owl:Class
+                                               ] ;
+                           rdfs:subClassOf :IngredienteVegano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano
 :IngredienteVegetariano rdf:type owl:Class ;
                         rdfs:subClassOf :ingrediente ;
@@ -1061,6 +1121,22 @@ collectionentity:Collection rdf:type owl:Class ;
                                      "Qualsiasi alimento che non sia di origine animale, nell'accezione di composto di carne animale."@it ;
                         rdfs:label "Ingrediente Vegetariano"@it ,
                                    "Vegetarian Ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetarianoDerivato
+:IngredienteVegetarianoDerivato rdf:type owl:Class ;
+                                owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                                           [ rdf:type owl:Class ;
+                                                                             owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty :ingredienteDerivatoDa ;
+                                                                                                owl:someValuesFrom :IngredienteNonVegetariano
+                                                                                              ]
+                                                                           ]
+                                                                         ) ;
+                                                      rdf:type owl:Class
+                                                    ] ;
+                                rdfs:subClassOf :IngredienteDerivato ,
+                                                :IngredienteVegetariano .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
@@ -1344,7 +1420,7 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set
 :Set rdf:type owl:Class ;
-     rdfs:subClassOf collectionentity:Collection ;
+     rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection> ;
      rdfs:comment "Set - A collection that cannot contain duplicate elements."@en ;
      rdfs:label "set"^^xsd:string .
 
@@ -1473,6 +1549,11 @@ foaf:Person rdf:type owl:Class ;
                      :ordineCreatoDaAzione :OrdinareDubai .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
+:CarneVitello rdf:type owl:NamedIndividual ,
+                       :Carne .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
 :Celiachia rdf:type owl:NamedIndividual .
 
@@ -1556,6 +1637,11 @@ foaf:Person rdf:type owl:Class ;
                :RuoloRecensoreLuca .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello
+:MacinatoCarneVitello rdf:type owl:NamedIndividual ;
+                      :ingredienteDerivatoDa :CarneVitello .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
@@ -1596,6 +1682,7 @@ foaf:Person rdf:type owl:Class ;
 :Polpette rdf:type owl:NamedIndividual ;
           :ingredienteDerivatoDa :FarinaGranoTenero ,
                                  :LatteMucca ,
+                                 :MacinatoCarneVitello ,
                                  :Pane ,
                                  :Prezzemolo .
 
@@ -1672,6 +1759,9 @@ foaf:Person rdf:type owl:Class ;
 #    Annotations
 #################################################################
 
+<http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#hasMember> rdfs:comment "The link to the members of a Set"^^xsd:string .
+
+
 collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:string .
 
 
@@ -1713,9 +1803,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Nickel allergy"@en ;
+                rdfs:label "Allergia al Nickel"@it ;
                 rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Allergia al Nickel"@it .
+                rdfs:label "Nickel allergy"@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -1752,9 +1842,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                                                      "Hereditary fructose intolerance"@en ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
                                                                        "Fructose intollerance"@en .
 

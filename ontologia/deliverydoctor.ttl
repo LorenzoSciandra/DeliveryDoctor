@@ -255,6 +255,13 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                             "Locale Avviato Da"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LocaleServePietanza
+:LocaleServePietanza rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :PietanzaServitaInLocale ;
+                     rdfs:domain :EsercizioAlimentare ;
+                     rdfs:range :Pietanza .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineCompostaDaPietanza
 :OrdineCompostaDaPietanza rdf:type owl:ObjectProperty ;
                           rdfs:domain :Ordine ;
@@ -271,6 +278,12 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                  "Proprietà che collega l'ordine al fattorino che l'ha consegnato"@it ;
                     rdfs:label "Order Deliverd By"@en ,
                                "Ordine Consegnato Da"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaServitaInLocale
+:PietanzaServitaInLocale rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Pietanza ;
+                         rdfs:range :EsercizioAlimentare .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato

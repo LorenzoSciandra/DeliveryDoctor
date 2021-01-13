@@ -1395,6 +1395,15 @@ collectionentity:Collection rdf:type owl:Class ;
                                  "Ruolo Titolare Impresa"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SelfService
+:SelfService rdf:type owl:Class ;
+             rdfs:subClassOf :Ristorante ;
+             rdfs:comment "Sales system in which the customer serves himself in shops, restaurants and other public establishments, without the assistance of shop assistants, waiters and the like."@en ,
+                          "Sistema di vendita per il quale il cliente si serve da solo in negozi, ristoranti e altri pubblici esercizi, senza l'assistenza di commessi, camerieri e simili."@it ;
+             rdfs:label "Ristorante Self Service"@it ,
+                        "Self Service Restaurant"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Seme
 :Seme rdf:type owl:Class ;
       rdfs:subClassOf :IngredienteVegano .
@@ -1522,7 +1531,31 @@ foaf:Person rdf:type owl:Class ;
                    :FruttoSecco ;
           :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
                                                :AllergiaFruttaSecca ;
-          rdfs:label "Arachide"@it .
+          rdfs:comment "Legume often used to produce oil or as a paste for other preparations."@en ,
+                       "Legume spesso utilizzato per produrre olio o come pasta per altre preparazioni."@it ;
+          rdfs:label "Arachide"@it ,
+                     "Peanut"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella
+:Besciamella rdf:type owl:NamedIndividual ;
+             :ingredienteDerivatoDa :Burro ,
+                                    :FarinaGranoTenero ,
+                                    :LatteMucca ,
+                                    :NoceMoscata ;
+             rdfs:comment "Basic sauce of Italian cuisine, composed of flour, butter, milk and flavored with nutmeg."@en ,
+                          "Salsa base della cucina italiana, composta da farina, burro, latte e aromatizzata con noce moscata."@it ;
+             rdfs:label "Bechamel"@en ,
+                        "Besciamella"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro
+:Burro rdf:type owl:NamedIndividual ;
+       :ingredienteDerivatoDa :LatteMucca ;
+       rdfs:comment "Fat part of the milk, separated from the buttermilk by a phase inversion process, deriving from the cream."@en ,
+                    "Parte grassa del latte, separata dal latticello tramite un processo di inversione di fase, derivante dalla panna"@it ;
+       rdfs:label "Burro"@it ,
+                  "Butter"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CapuccinoECroissant
@@ -1534,7 +1567,11 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
 :CarneVitello rdf:type owl:NamedIndividual ,
-                       :Carne .
+                       :Carne ;
+              rdfs:comment "Carne ricavata dal vitello."@it ,
+                           "Meat made from calf."@en ;
+              rdfs:label "Calf meat"@en ,
+                         "Carne di vitello"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
@@ -1543,28 +1580,53 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
 :Croissant rdf:type owl:NamedIndividual ,
-                    :Pietanza .
+                    :Pietanza ;
+           :utilizzaIngrediente :Burro ,
+                                :FarinaGranoTenero ,
+                                :LievitoBirra ,
+                                :Zucchero ;
+           rdfs:comment "Il croissant è un prodotto da forno di origine austriaca, la cui versione di pasta sfoglia è stata sviluppata in Francia, e così chiamato per la forma di mezzaluna crescente."@it ,
+                        "The croissant is a baked product of Austrian origin, whose puff pastry version was developed in France, and so named for the crescent shape."@en ;
+           rdfs:label "Croissant"@en ,
+                      "Croissant"@fr ,
+                      "Croissant"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai
 :Dubai rdf:type owl:NamedIndividual ,
-                :EsercizioAlimentare .
+                :Bar ,
+                :SelfService ;
+       :LocaleServePietanza :Croissant ,
+                            :LasagneAlForno ,
+                            :PolpetteAlSugo ;
+       rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
+                    "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
+       rdfs:label "Dubai Coffee Lounge"@en ,
+                  "Dubai Coffee Lounge"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
 :FarinaGranoTenero rdf:type owl:NamedIndividual ;
-                   :ingredienteDerivatoDa :Grano .
+                   :ingredienteDerivatoDa :GranoTenero ;
+                   rdfs:comment "Farina prodotta dalla macinazione del grano tenero. E' facilmente impastabile e ha una buona elasticità."@it ,
+                                "Flour produced by grinding soft wheat. It is easily kneaded and has good elasticity."@en ;
+                   rdfs:label "Farina di grano tenero"@it ,
+                              "Wheat flour"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo
 :Favismo rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Grano
-:Grano rdf:type owl:NamedIndividual ,
-                :FruttoSecco ;
-       :ingredienteIncompatibileConDisturbo :AllergiaGlutine ,
-                                            :Celiachia .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
+:GranoTenero rdf:type owl:NamedIndividual ,
+                      :FruttoSecco ;
+             :ingredienteIncompatibileConDisturbo :AllergiaGlutine ,
+                                                  :Celiachia ;
+             rdfs:comment "Specie di frumento più impiegata al mondo nella panificazione e nella produzione di paste alimentari fresche."@it ,
+                          "Wheat species most used in the world in baking and in the production of fresh pasta."@en ;
+             rdfs:label "Grano tenero"@it ,
+                        "Wheat"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
@@ -1575,42 +1637,108 @@ foaf:Person rdf:type owl:Class ;
 :IntolleranzaLattosio rdf:type owl:NamedIndividual .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lasagne
+:Lasagne rdf:type owl:NamedIndividual ;
+         :ingredienteDerivatoDa :FarinaGranoTenero ,
+                                :UovoGallina ;
+         rdfs:comment "Particolare formato di impasto, ottenuto tagliando in grossi quadrati, o rettangoli, la sfoglia di pasta all'uovo."@it ,
+                      "Particular shape of dough, obtained by cutting the sheet of egg pasta into large squares or rectangles."@en ;
+         rdfs:label "Lasagne"@en ,
+                    "Lasagne"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno
+:LasagneAlForno rdf:type owl:NamedIndividual ,
+                         :Pietanza ;
+                :utilizzaIngrediente :Besciamella ,
+                                     :Lasagne ,
+                                     :OlioExtraOliva ,
+                                     :ParmigianoReggiano ,
+                                     :Pomodoro ;
+                rdfs:comment "Baked lasagna consists of a sheet of egg pasta, cut into roughly rectangular sheets which, once boiled and drained, are arranged in a variable sequence of layers, each of which separated by a filling that varies according to the different local traditions."@en ,
+                             "Le lasagne al forno sono costituite da una sfoglia di pasta all'uovo, tagliata in fogli grossolanamente rettangolari che, una volta bollite e scolate, vengono disposte in una sequenza variabile di strati, ognuno dei quali separato da una farcitura che varia in relazione alle diverse tradizioni locali."@it ;
+                rdfs:label "Lasagne al forno"@it ,
+                           "Oven Lasagne"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAsina
 :LatteAsina rdf:type owl:NamedIndividual ;
-            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
+            rdfs:comment "Donkey milk is the milk from the domesticated donkey."@en ,
+                         "Il latte di asina è il latte prodotto dalla specie asinina."@it ;
+            rdfs:label "Donkey milk"@en ,
+                       "Latte d'Asina"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteBufala
 :LatteBufala rdf:type owl:NamedIndividual ;
-             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
+             rdfs:comment "Latte di bufala di razza mediterranea italiana."@it ,
+                          "Milk from Italian buffalos."@en ;
+             <http://www.w3.org/2004/02/skos/core#altLabel> "Latte bufalino"@it ,
+                                                            "Latte di bufala mediterranea italiana"@it ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Italian buffalo's milk"@en ,
+                                                             "Latte di Bufala"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteCapra
 :LatteCapra rdf:type owl:NamedIndividual ;
-            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
+            rdfs:comment "Latte generato dalle capre."@it ,
+                         "Milk that comes from goats."@en ;
+            <http://www.w3.org/2004/02/skos/core#altLabel> "Latte caprino"@it ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Goat milk"@en ,
+                                                            "Latte di Capra"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMandorla
 :LatteMandorla rdf:type owl:NamedIndividual ,
                         :LatteVegetale ;
-               :ingredienteDerivatoDa :Mandorla .
+               :ingredienteDerivatoDa :Mandorla ;
+               rdfs:comment "Bevanda analcolica dolce realizzata mettendo in infusione in acqua le mandorle finemente tritate e spremendo poi le stesse per farne uscire tutto il succo"@it ,
+                            "Sweet non-alcoholic drink made by infusing finely chopped almonds in water and then squeezing them to release all the juice"@en ;
+               rdfs:label "Almond milk"@en ,
+                          "Latte di Mandorla"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca
 :LatteMucca rdf:type owl:NamedIndividual ;
-            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio .
+            :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
+            rdfs:comment "Latte ricavato dalla mungitura della vacca."@it ,
+                         "Milk obtained from the milking of the cow."@en ;
+            <http://www.w3.org/2004/02/skos/core#altLabel> "Latte di mucca"@it ;
+            <http://www.w3.org/2004/02/skos/core#prefLabel> "Cow milk"@en ,
+                                                            "Latte vaccino"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteRiso
 :LatteRiso rdf:type owl:NamedIndividual ,
                     :LatteVegetale ;
-           :ingredienteDerivatoDa :Riso .
+           :ingredienteDerivatoDa :Riso ;
+           rdfs:comment "Bevanda alimentare vegetale a base di riso."@it ,
+                        "Plant milk made from rice."@en ;
+           rdfs:label "Latte di Riso"@it ,
+                      "Rice Milk"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteSoia
 :LatteSoia rdf:type owl:NamedIndividual ,
                     :LatteVegetale ;
-           :ingredienteDerivatoDa :Soia .
+           :ingredienteDerivatoDa :Soia ;
+           rdfs:comment "Latte vegetale a base di soia."@it ,
+                        "Plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates."@en ;
+           rdfs:label "Latte di Soia"@it ,
+                      "Soy milk"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra
+:LievitoBirra rdf:type owl:NamedIndividual ,
+                       :IngredienteVegano ;
+              rdfs:comment "Lievito più importante nell'ambito dell'alimentazione umana. Il suo utilizzo è noto fin dall'antichità per la panificazione, la vinificazione e la produzione di birra."@it ,
+                           "Most important yeast in human nutrition. Its use has been known since ancient times for bread making, wine making and beer production."@en ;
+              <http://www.w3.org/2004/02/skos/core#altLabel> "Saccharomyces cerevisiae" ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Beer yeast"@en ,
+                                                              "Lievito di birra"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
@@ -1622,25 +1750,78 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello
 :MacinatoCarneVitello rdf:type owl:NamedIndividual ;
-                      :ingredienteDerivatoDa :CarneVitello .
+                      :ingredienteDerivatoDa :CarneVitello ;
+                      rdfs:comment "Ground meat composed of calf meat."@en ,
+                                   "Macinato ottenuto macinando carne di vitello."@it ;
+                      rdfs:label "Ground calf meat"@en ,
+                                 "Macinato di carne di vitello"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
-          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+          rdfs:comment "Edible seed grown from the almond tree."@en ,
+                       "Seme commestibile del mandorlo."@it ;
+          rdfs:label "Almond"@en ,
+                     "Mandorla"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
 :Nocciola rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
-          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+          rdfs:comment "Fruit of the hazel."@en ,
+                       "Frutto del nocciolo."@it ;
+          rdfs:label "Hazel"@it ,
+                     "Hazelnut"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
 :Noce rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+      :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+      rdfs:comment "Frutto degli alberi del genere Juglans, spesso riferito al Juglans regia."@it ,
+                   "Nut of any tree of the genus Juglans, particularly the Persian or English walnut, Juglans regia."@en ;
+      rdfs:label "Noce"@it ,
+                 "Walnut"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#NoceMoscata
+:NoceMoscata rdf:type owl:NamedIndividual ,
+                      :Seme ;
+             rdfs:comment "Seed or ground spice of several species of the genus Myristica (particularly, of Myristica fragrans)."@en ,
+                          "Seme decorticato della Myristica fragrans."@it ;
+             rdfs:label "Noce moscata"@it ,
+                        "Nutmeg"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi
+:OlioArachidi rdf:type owl:NamedIndividual ;
+              :ingredienteDerivatoDa :Arachide ;
+              rdfs:comment "Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi."@it ,
+                           "Vegetable oil that is obtained by pressure or by means of solvents from peanut seeds."@en ;
+              <http://www.w3.org/2004/02/skos/core#altLabel> "Olio di semi di Arachide"@it ;
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Olio d'Arachidi"@it ,
+                                                              "Peanut oil"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva
+:OlioExtraOliva rdf:type owl:NamedIndividual ;
+                :ingredienteDerivatoDa :Oliva ;
+                rdfs:comment "Olio d'oliva estratto con soli processi meccanici."@it ,
+                             "Olive oil extracted only by mechanical means"@en ;
+                <http://www.w3.org/2004/02/skos/core#prefLabel> "Extra-virgin olive oil"@en ,
+                                                                "Olio extra-vergine d'oliva"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva
+:Oliva rdf:type owl:NamedIndividual ,
+                :FruttoCarnoso ;
+       rdfs:comment "Fruit of the olive tree used for food both directly, after adequate processing, and as a raw material for oil extraction."@en ,
+                    "Frutto dell'ulivo usato a scopo alimentare sia direttamente, dopo adeguata trasformazione, sia come materia prima per l'estrazione dell'olio."@it ;
+       rdfs:label "Oliva"@it ,
+                  "Olive"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinareDubai
@@ -1652,13 +1833,30 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
 :Pane rdf:type owl:NamedIndividual ;
-      :ingredienteDerivatoDa :FarinaGranoTenero .
+      :ingredienteDerivatoDa :FarinaGranoTenero ;
+      rdfs:comment "Food product obtained from fermentation, from forming followed by leavening, and subsequent baking in the oven of a dough based on flour (normal or wholemeal) of cereals, water, packaged in different ways, enriched and frequently characterized by different ingredients depending on of the place and traditions where it is prepared."@en ,
+                   "Prodotto alimentare ottenuto dalla fermentazione, dalla formatura a cui segue una lievitazione, e successiva cottura in forno di un impasto a base di farina (normale o integrale) di cereali, acqua, confezionato con diverse modalità, arricchito e caratterizzato frequentemente da ingredienti differenti a seconda del luogo e delle tradizioni dove viene preparato."@it ;
+      rdfs:label "Bread"@en ,
+                 "Pane"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ParmigianoReggiano
+:ParmigianoReggiano rdf:type owl:NamedIndividual ;
+                    :ingredienteDerivatoDa :LatteMucca ;
+                    rdfs:comment "Formaggio a pasta dura DOP, prodotto con latte vaccino crudo, parzialmente scremato per affioramento, senza l'aggiunta di additivi."@it ,
+                                 "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
+                    rdfs:label "Parmigiano Reggiano"@it ,
+                               "Parmigiano-Reggiano"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
 :Pistacchio rdf:type owl:NamedIndividual ,
                      :FruttoSecco ;
-            :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+            :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+            rdfs:comment "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@en ,
+                         "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@it ;
+            rdfs:label "Pistacchio"@it ,
+                       "Pistachio"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette
@@ -1667,23 +1865,41 @@ foaf:Person rdf:type owl:Class ;
                                  :LatteMucca ,
                                  :MacinatoCarneVitello ,
                                  :Pane ,
-                                 :Prezzemolo .
+                                 :Prezzemolo ,
+                                 :UovoGallina ;
+          rdfs:comment "Dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round."@en ,
+                       "Pietanza a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante."@it ;
+          rdfs:label "Meatballs"@en ,
+                     "Polpette"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo
 :PolpetteAlSugo rdf:type owl:NamedIndividual ;
+                :FrittoCon :OlioArachidi ;
                 :utilizzaIngrediente :Polpette ,
-                                     :SugoPomodoro .
+                                     :SugoPomodoro ;
+                rdfs:comment "Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce."@en ,
+"Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro."@it ;
+                rdfs:label "Meatballs"@en ,
+"Polpette"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
-                   :Ortaggio .
+                   :Ortaggio ;
+                   rdfs:comment "Berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ,
+                                "Bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo. "@it ;
+                   rdfs:label "Tomato"@en ,
+                              "Pomodoro"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
 :Prezzemolo rdf:type owl:NamedIndividual ,
-                     :Ortaggio .
+                     :Ortaggio ;
+            rdfs:comment "Biennial herbaceous plant in temperate zones and annual in tropical ones."@en ,
+"Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
+            rdfs:label "Parsley"@en ,
+"Prezzemolo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
@@ -1702,7 +1918,11 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
 :Riso rdf:type owl:NamedIndividual ,
-               :FruttoSecco .
+               :FruttoSecco ;
+      rdfs:comment "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ,
+"Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ;
+      rdfs:label "Rice"@en ,
+"Riso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloClienteLuca
@@ -1718,24 +1938,55 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
-        :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca .
+        :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+        rdfs:comment "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ,
+"Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ;
+        rdfs:label "Sesame"@en ,
+"Sesamo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
 :Soia rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :ingredienteIncompatibileConDisturbo :AllergiaSoia .
+      :ingredienteIncompatibileConDisturbo :AllergiaSoia ;
+      rdfs:comment "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ,
+"Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ;
+      rdfs:label "Soy"@en ,
+"Soia"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
 :SugoPomodoro rdf:type owl:NamedIndividual ;
-              :ingredienteDerivatoDa :Pomodoro .
+              :ingredienteDerivatoDa :Pomodoro ;
+              rdfs:comment "Sauce made by cooking tomatoes."@en ,
+"Salsa prodotta spremendo e cuocendo pomodori."@it ;
+              rdfs:label "Tomato sauce"@en ,
+"Sugo di pomodoro"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
+:UovoGallina rdf:type owl:NamedIndividual ,
+                      :Uovo ;
+             :ingredienteIncompatibileConDisturbo :AllergiaUova ;
+             rdfs:comment "Egg produced by a hen."@en ,
+"Uovo prodotto da una gallina."@it ;
+             rdfs:label "Chicken egg"@en ,
+"Uovo di gallina"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
 :ValutazionePositivaDubai rdf:type owl:NamedIndividual ,
                                    <http://schema.org/Rating> ;
                           :possiedeStelle "5.0"^^xsd:double .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
+:Zucchero rdf:type owl:NamedIndividual ,
+                   :IngredienteVegano ;
+          rdfs:comment "Sweetener used in the food industry, especially confectionery and pastry."@en ,
+"Dolcificante utilizzato nell'ambito dell'industria alimentare, specialmente dolciaria e pasticciera."@it ;
+          rdfs:label "Sugar"@en ,
+"Zucchero"@it .
 
 
 #################################################################

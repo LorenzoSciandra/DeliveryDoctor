@@ -2259,7 +2259,32 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :LatteAsina
+  owl:distinctMembers ( :AllergiaAdditivi
+                        :AllergiaArachidi
+                        :AllergiaCrostacei
+                        :AllergiaFruttaSecca
+                        :AllergiaFruttiDiMare
+                        :AllergiaGlutine
+                        :AllergiaNickel
+                        :AllergiaPesce
+                        :AllergiaSoia
+                        :AllergiaUova
+                        :Arachide
+                        :Besciamella
+                        :Burro
+                        :CapuccinoECroissant
+                        :CarneVitello
+                        :Celiachia
+                        :Croissant
+                        :Dubai
+                        :FarinaGranoTenero
+                        :Favismo
+                        :GranoTenero
+                        :IntolleranzaFruttosio
+                        :IntolleranzaLattosio
+                        :Lasagne
+                        :LasagneAlForno
+                        :LatteAsina
                         :LatteBufala
                         :LatteCapra
                         :LatteMandorla

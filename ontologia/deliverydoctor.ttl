@@ -1306,6 +1306,40 @@ collectionentity:Collection rdf:type owl:Class ;
                                    "Pietanza Non Vegetariana"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine
+:PietanzaSenzaGlutine rdf:type owl:Class ;
+                      owl:equivalentClass [ owl:intersectionOf ( :Pietanza
+                                                                 [ rdf:type owl:Class ;
+                                                                   owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                      owl:onProperty :pietanzaIncompatibileConDisturbo ;
+                                                                                      owl:someValuesFrom [ rdf:type owl:Class ;
+                                                                                                           owl:unionOf ( :AllergiaGlutine
+                                                                                                                         :Celiachia
+                                                                                                                       )
+                                                                                                         ]
+                                                                                    ]
+                                                                 ]
+                                                               ) ;
+                                            rdf:type owl:Class
+                                          ] ;
+                      rdfs:subClassOf :Pietanza .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio
+:PietanzaSenzaLattosio rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( :Pietanza
+                                                                  [ rdf:type owl:Class ;
+                                                                    owl:complementOf [ rdf:type owl:Restriction ;
+                                                                                       owl:onProperty :pietanzaIncompatibileConDisturbo ;
+                                                                                       owl:someValuesFrom :IntolleranzaLattosio
+                                                                                     ]
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf :Pietanza .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana
 :PietanzaVegana rdf:type owl:Class ;
                 owl:equivalentClass [ owl:intersectionOf ( :Pietanza

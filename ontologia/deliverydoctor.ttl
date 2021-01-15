@@ -2102,7 +2102,12 @@ foaf:Person rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
-:SugoPomodoro rdf:type owl:NamedIndividual ;
+:SugoPomodoro rdf:type owl:NamedIndividual ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ingredienteDerivatoDa ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :ingrediente
+                       ] ;
               :ingredienteDerivatoDa :Pomodoro ;
               rdfs:comment "Sauce made by cooking tomatoes."@en ,
 "Salsa prodotta spremendo e cuocendo pomodori."@it ;

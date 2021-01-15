@@ -1866,8 +1866,8 @@ foaf:Person rdf:type owl:Class ;
           :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
           rdfs:comment "Fruit of the hazel."@en ,
                        "Frutto del nocciolo."@it ;
-          rdfs:label "Hazel"@it ,
-                     "Hazelnut"@en .
+          rdfs:label "Hazelnut"@en ,
+                     "Nocciola"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
@@ -2014,27 +2014,27 @@ foaf:Person rdf:type owl:Class ;
                 :utilizzaIngrediente :Polpette ,
                                      :SugoPomodoro ;
                 rdfs:comment "Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce."@en ,
-"Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro."@it ;
+                             "Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro."@it ;
                 rdfs:label "Meatballs"@en ,
-"Polpette"@it .
+                           "Polpette"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-                   rdfs:comment "Berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ,
-                                "Bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo. "@it ;
-                   rdfs:label "Tomato"@en ,
-                              "Pomodoro"@it .
+          rdfs:comment "Bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo. "@it ,
+                       "Berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
+          rdfs:label "Pomodoro"@it ,
+                     "Tomato"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
 :Prezzemolo rdf:type owl:NamedIndividual ,
                      :Ortaggio ;
             rdfs:comment "Biennial herbaceous plant in temperate zones and annual in tropical ones."@en ,
-"Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
+                         "Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
             rdfs:label "Parsley"@en ,
-"Prezzemolo"@it .
+                       "Prezzemolo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
@@ -2054,10 +2054,10 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
 :Riso rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      rdfs:comment "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ,
-"Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ;
+      rdfs:comment "Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ,
+                   "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ;
       rdfs:label "Rice"@en ,
-"Riso"@it .
+                 "Riso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RisottoSugo
@@ -2085,20 +2085,20 @@ foaf:Person rdf:type owl:Class ;
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
         :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
-        rdfs:comment "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ,
-"Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ;
+        rdfs:comment "Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ,
+                     "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ;
         rdfs:label "Sesame"@en ,
-"Sesamo"@it .
+                   "Sesamo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
 :Soia rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
       :ingredienteIncompatibileConDisturbo :AllergiaSoia ;
-      rdfs:comment "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ,
-"Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ;
-      rdfs:label "Soy"@en ,
-"Soia"@it .
+      rdfs:comment "Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ,
+                   "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ;
+      rdfs:label "Soia"@it ,
+                 "Soy"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
@@ -2109,10 +2109,10 @@ foaf:Person rdf:type owl:Class ;
                          owl:onClass :ingrediente
                        ] ;
               :ingredienteDerivatoDa :Pomodoro ;
-              rdfs:comment "Sauce made by cooking tomatoes."@en ,
-"Salsa prodotta spremendo e cuocendo pomodori."@it ;
-              rdfs:label "Tomato sauce"@en ,
-"Sugo di pomodoro"@it .
+              rdfs:comment "Salsa prodotta spremendo e cuocendo pomodori."@it ,
+                           "Sauce made by cooking tomatoes."@en ;
+              rdfs:label "Sugo di pomodoro"@it ,
+                         "Tomato sauce"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
@@ -2120,9 +2120,9 @@ foaf:Person rdf:type owl:Class ;
                       :Uovo ;
              :ingredienteIncompatibileConDisturbo :AllergiaUova ;
              rdfs:comment "Egg produced by a hen."@en ,
-"Uovo prodotto da una gallina."@it ;
+                          "Uovo prodotto da una gallina."@it ;
              rdfs:label "Chicken egg"@en ,
-"Uovo di gallina"@it .
+                        "Uovo di gallina"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
@@ -2184,10 +2184,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
-                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Nickel allergy"@en ,
-                           "Allergia al Nickel"@it .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
+                rdfs:label "Allergia al Nickel"@it ,
+                           "Nickel allergy"@en ;
+                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -2224,11 +2224,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                                                      "Hereditary fructose intolerance"@en ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
-                                                                       "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
@@ -2262,7 +2262,40 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
   owl:distinctMembers ( :LatteAsina
                         :LatteBufala
                         :LatteCapra
+                        :LatteMandorla
                         :LatteMucca
+                        :LatteRiso
+                        :LatteSoia
+                        :LievitoBirra
+                        :Luca
+                        :MacinatoCarneVitello
+                        :Mandorla
+                        :Nocciola
+                        :Noce
+                        :NoceMoscata
+                        :OlioArachidi
+                        :OlioExtraOliva
+                        :Oliva
+                        :OrdinareDubai
+                        :Pane
+                        :PaneSemiSesamo
+                        :ParmigianoReggiano
+                        :Pistacchio
+                        :Polpette
+                        :PolpetteAlSugo
+                        :Pomodoro
+                        :Prezzemolo
+                        :RecensionePositivaDubai
+                        :RecensireDubai
+                        :Riso
+                        :RuoloClienteLuca
+                        :RuoloRecensoreLuca
+                        :Sesamo
+                        :Soia
+                        :SugoPomodoro
+                        :UovoGallina
+                        :ValutazionePositivaDubai
+                        :Zucchero
                       )
 ] .
 

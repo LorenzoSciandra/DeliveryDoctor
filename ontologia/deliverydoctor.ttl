@@ -1295,8 +1295,7 @@ collectionentity:Collection rdf:type owl:Class ;
 :Pietanza rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :utilizzaIngrediente ;
-                                owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                owl:onClass :ingrediente
+                                owl:someValuesFrom :ingrediente
                               ] ;
           rdfs:subClassOf :Set ;
           owl:disjointWith :Recensione ;
@@ -1321,10 +1320,7 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana
 :PietanzaVegana rdf:type owl:Class ;
-                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                             owl:onProperty :utilizzaIngrediente ;
-                                                             owl:someValuesFrom :IngredienteVegano
-                                                           ]
+                owl:equivalentClass [ owl:intersectionOf ( :Pietanza
                                                            [ rdf:type owl:Restriction ;
                                                              owl:onProperty :utilizzaIngrediente ;
                                                              owl:allValuesFrom :IngredienteVegano
@@ -1341,10 +1337,7 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana
 :PietanzaVegetariana rdf:type owl:Class ;
-                     owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                                  owl:onProperty :utilizzaIngrediente ;
-                                                                  owl:someValuesFrom :IngredienteVegetariano
-                                                                ]
+                     owl:equivalentClass [ owl:intersectionOf ( :Pietanza
                                                                 [ rdf:type owl:Restriction ;
                                                                   owl:onProperty :utilizzaIngrediente ;
                                                                   owl:allValuesFrom :IngredienteVegetariano

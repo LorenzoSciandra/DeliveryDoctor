@@ -859,7 +859,6 @@ collectionentity:Collection rdf:type owl:Class ;
 :AvviareImpresa rdf:type owl:Class ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
                 owl:disjointWith :Consegnare ,
-                                 :Consumare ,
                                  :Ordinare ,
                                  :Recensire ;
                 rdfs:comment "Attività di inaugurazione di un esercizio alimentare da parte di un proprietario"@it ,
@@ -928,10 +927,6 @@ collectionentity:Collection rdf:type owl:Class ;
                          "Attività di recapitare ad un cliente una certa portata precedentemente ordinata"@it ;
             rdfs:label "Consegnare"@it ,
                        "Deliver"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consumare
-:Consumare rdf:type owl:Class .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo

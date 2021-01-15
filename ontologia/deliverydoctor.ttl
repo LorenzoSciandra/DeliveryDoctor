@@ -1089,17 +1089,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVeganoDerivato
 :IngredienteVeganoDerivato rdf:type owl:Class ;
-                           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                        owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                           owl:onProperty :ingredienteDerivatoDa ;
-                                                                                           owl:someValuesFrom [ rdf:type owl:Class ;
-                                                                                                                owl:complementOf :IngredienteVegano
-                                                                                                              ]
-                                                                                         ]
-                                                                      ]
+                           owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
                                                                       [ rdf:type owl:Restriction ;
                                                                         owl:onProperty :ingredienteDerivatoDa ;
-                                                                        owl:someValuesFrom :IngredienteVegano
+                                                                        owl:allValuesFrom :IngredienteVegano
                                                                       ]
                                                                     ) ;
                                                  rdf:type owl:Class
@@ -1123,15 +1116,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetarianoDerivato
 :IngredienteVegetarianoDerivato rdf:type owl:Class ;
-                                owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Class ;
-                                                                             owl:complementOf [ rdf:type owl:Restriction ;
-                                                                                                owl:onProperty :ingredienteDerivatoDa ;
-                                                                                                owl:someValuesFrom :IngredienteNonVegetariano
-                                                                                              ]
-                                                                           ]
+                                owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
                                                                            [ rdf:type owl:Restriction ;
                                                                              owl:onProperty :ingredienteDerivatoDa ;
-                                                                             owl:someValuesFrom :IngredienteVegetariano
+                                                                             owl:allValuesFrom :IngredienteVegetariano
                                                                            ]
                                                                          ) ;
                                                       rdf:type owl:Class

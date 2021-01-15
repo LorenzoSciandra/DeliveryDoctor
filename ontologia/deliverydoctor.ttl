@@ -321,7 +321,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
-         owl:equivalentProperty <http://www.w3.org/ns/prov#hadRole> ;
+         rdfs:subPropertyOf <http://www.w3.org/ns/prov#hadRole> ;
          rdfs:domain :Persona ;
          rdfs:range <http://www.w3.org/ns/prov#Role> ;
          rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,

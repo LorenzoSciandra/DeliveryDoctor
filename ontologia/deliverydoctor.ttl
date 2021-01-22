@@ -370,7 +370,6 @@ Se usata multiple volte per un individuo, indica che un ingrediente è composto 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteIncompatibileConDisturbo
 :ingredienteIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf owl:topObjectProperty ;
                                      rdfs:domain :ingrediente ;
                                      rdfs:range :Disturbo ;
                                      owl:propertyChainAxiom ( :ingredienteDerivatoDa
@@ -1803,6 +1802,11 @@ foaf:Person rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
+:AcidoTartarico rdf:type owl:NamedIndividual ,
+                         :Additivo .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
 :AllergiaAdditivi rdf:type owl:NamedIndividual .
 
@@ -1871,6 +1875,29 @@ foaf:Person rdf:type owl:Class ;
                         "Besciamella"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotti
+:Biscotti rdf:type owl:NamedIndividual ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :ingredienteDerivatoDa ;
+                     owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                     owl:onClass :ingrediente
+                   ] ;
+          :ingredienteDerivatoDa :AcidoTartarico ,
+                                 :FarinaGranoTenero ,
+                                 :OlioArachidi ,
+                                 :Zucchero .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati
+:BiscottiTritati rdf:type owl:NamedIndividual ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ingredienteDerivatoDa ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ingrediente
+                          ] ;
+                 :ingredienteDerivatoDa :Biscotti .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro
 :Burro rdf:type owl:NamedIndividual ,
                 [ rdf:type owl:Restriction ;
@@ -1885,11 +1912,48 @@ foaf:Person rdf:type owl:Class ;
                   "Butter"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CapuccinoECroissant
-:CapuccinoECroissant rdf:type owl:NamedIndividual ,
-                              :Ordine ;
-                     :OrdineCompostaDaPietanza :Croissant ;
-                     :ordineCreatoDaAzione :OrdinareDubai .
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè
+:Caffè rdf:type owl:NamedIndividual ,
+                :FruttoCarnoso ;
+       rdfs:comment "Fruit of the coffee plant, used to produce coffee-based drinks."@en ,
+                    "Frutto della Coffea, utilizzato per la produzione di Caffè."@it ;
+       <http://www.w3.org/2004/02/skos/core#prefLabel> "Caffè in chicchi"@it ,
+                                                       "Coffee bean"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CaffèMacinato
+:CaffèMacinato rdf:type owl:NamedIndividual ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ingredienteDerivatoDa ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :ingrediente
+                        ] ;
+               :ingredienteDerivatoDa :Caffè ;
+               rdfs:comment "Polvere ricavata dalla macinatura del caffè in chicchi."@it ,
+                            "Powder produced by grinding cofee beans."@en ;
+               rdfs:label "Caffè macinato"@it ,
+                          "Ground coffee"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant
+:CappuccinoECroissant rdf:type owl:NamedIndividual ,
+                               :Ordine ;
+                      :OrdineCompostaDaPietanza :CappuccinoSpeciale ,
+                                                :Croissant ;
+                      :ordineCreatoDaAzione :OrdinareDubai .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoSpeciale
+:CappuccinoSpeciale rdf:type owl:NamedIndividual ,
+                             :PietanzaSenzaGlutine ,
+                             :PietanzaSenzaLattosio ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :utilizzaIngrediente ;
+                               owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                               owl:onClass :ingrediente
+                             ] ;
+                    :utilizzaIngrediente :CaffèMacinato ,
+                                         :LatteRiso .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
@@ -1905,8 +1969,35 @@ foaf:Person rdf:type owl:Class ;
 :Celiachia rdf:type owl:NamedIndividual .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia
+:CheesecakeCiliegia rdf:type owl:NamedIndividual ,
+                             :PietanzaSenzaSoia ,
+                             :PietanzaSenzaUova ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :utilizzaIngrediente ;
+                               owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                               owl:onClass :ingrediente
+                             ] ;
+                    :utilizzaIngrediente :BiscottiTritati ,
+                                         :Ciliegia ,
+                                         :FormaggioCremoso ,
+                                         :Zucchero .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia
+:Ciliegia rdf:type owl:NamedIndividual ,
+                   :FruttoCarnoso ;
+          :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
+          rdfs:comment "Il frutto del ciliegio, drupa di colore diverso secondo le varietà, ma per lo più rosso vivo."@it ,
+                       "The fruit of the cherry tree, a drupe of different color according to the variety, but mostly bright red."@en ;
+          rdfs:label "Cherry"@en ,
+                     "Ciliegia"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
 :Croissant rdf:type owl:NamedIndividual ,
+                    :PietanzaSenzaSoia ,
+                    :PietanzaSenzaUova ,
                     [ rdf:type owl:Restriction ;
                       owl:onProperty :utilizzaIngrediente ;
                       owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
@@ -1954,6 +2045,16 @@ foaf:Person rdf:type owl:Class ;
 :Favismo rdf:type owl:NamedIndividual .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso
+:FormaggioCremoso rdf:type owl:NamedIndividual ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :ingredienteDerivatoDa ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass :ingrediente
+                           ] ;
+                  :ingredienteDerivatoDa :LatteMucca .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
 :GranoTenero rdf:type owl:NamedIndividual ,
                       :FruttoSecco ;
@@ -1992,11 +2093,12 @@ foaf:Person rdf:type owl:Class ;
 :LasagneAlForno rdf:type owl:NamedIndividual ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :utilizzaIngrediente ;
-                           owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                           owl:qualifiedCardinality "6"^^xsd:nonNegativeInteger ;
                            owl:onClass :ingrediente
                          ] ;
                 :utilizzaIngrediente :Besciamella ,
                                      :Lasagne ,
+                                     :MacinatoCarneVitello ,
                                      :OlioExtraOliva ,
                                      :ParmigianoReggiano ,
                                      :Pomodoro ;
@@ -2172,7 +2274,7 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi."@it ,
                            "Vegetable oil that is obtained by pressure or by means of solvents from peanut seeds."@en ;
               <http://www.w3.org/2004/02/skos/core#altLabel> "Olio di semi di Arachide"@it ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "Olio d'Arachidi"@it ,
+              <http://www.w3.org/2004/02/skos/core#prefLabel> "Olio di Arachidi"@it ,
                                                               "Peanut oil"@en .
 
 
@@ -2334,6 +2436,15 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RisottoSugo
 :RisottoSugo rdf:type owl:NamedIndividual ,
+                      :PietanzaSenzaAdditivi ,
+                      :PietanzaSenzaArachidi ,
+                      :PietanzaSenzaFave ,
+                      :PietanzaSenzaFruttaSecca ,
+                      :PietanzaSenzaGlutine ,
+                      :PietanzaSenzaLattosio ,
+                      :PietanzaSenzaMare ,
+                      :PietanzaSenzaSoia ,
+                      :PietanzaSenzaUova ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :utilizzaIngrediente ;
                         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
@@ -2390,11 +2501,15 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
 :UovoGallina rdf:type owl:NamedIndividual ,
                       :Uovo ;
-             :ingredienteIncompatibileConDisturbo :AllergiaUova ;
              rdfs:comment "Egg produced by a hen."@en ,
                           "Uovo prodotto da una gallina."@it ;
              rdfs:label "Chicken egg"@en ,
                         "Uovo di gallina"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
+:Uva rdf:type owl:NamedIndividual ;
+     :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
@@ -2406,6 +2521,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
 :Zucchero rdf:type owl:NamedIndividual ,
                    :IngredienteVegano ;
+          :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
           rdfs:comment "Dolcificante utilizzato nell'ambito dell'industria alimentare, specialmente dolciaria e pasticciera."@it ,
                        "Sweetener used in the food industry, especially confectionery and pastry."@en ;
           rdfs:label "Sugar"@en ,
@@ -2451,15 +2567,15 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ,
-                                                                 "Non-celiac gluten sensitivity"@en ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Allergia al Nickel"@it ,
-                           "Nickel allergy"@en ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
+                rdfs:label "Allergia al Nickel"@it ;
+                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+                rdfs:label "Nickel allergy"@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -2531,7 +2647,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :AllergiaAdditivi
+  owl:distinctMembers ( :AcidoTartarico
+                        :AllergiaAdditivi
                         :AllergiaArachidi
                         :AllergiaCrostacei
                         :AllergiaFruttaSecca
@@ -2543,14 +2660,22 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaUova
                         :Arachide
                         :Besciamella
+                        :Biscotti
+                        :BiscottiTritati
                         :Burro
-                        :CapuccinoECroissant
+                        :Caffè
+                        :CaffèMacinato
+                        :CappuccinoECroissant
+                        :CappuccinoSpeciale
                         :CarneVitello
                         :Celiachia
+                        :CheesecakeCiliegia
+                        :Ciliegia
                         :Croissant
                         :Dubai
                         :FarinaGranoTenero
                         :Favismo
+                        :FormaggioCremoso
                         :GranoTenero
                         :IntolleranzaFruttosio
                         :IntolleranzaLattosio
@@ -2585,12 +2710,14 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
+                        :RisottoSugo
                         :RuoloClienteLuca
                         :RuoloRecensoreLuca
                         :Sesamo
                         :Soia
                         :SugoPomodoro
                         :UovoGallina
+                        :Uva
                         :ValutazionePositivaDubai
                         :Zucchero
                       )

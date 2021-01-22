@@ -1267,8 +1267,8 @@ collectionentity:Collection rdf:type owl:Class ;
 :Ordinare rdf:type owl:Class ;
           rdfs:subClassOf <http://www.w3.org/ns/prov#Activity> ;
           owl:disjointWith :Recensire ;
-          rdfs:comment "Activity of commissioning a desired food preparation from a certain food establishment"@it ,
-                       "Attività di commissionare ad un certo esercizio alimentare una portata desiderata"@it ;
+          rdfs:comment "Activity of commissioning one or more desired food preparations from a certain food establishment"@en ,
+                       "Attività di commissionare ad un certo esercizio alimentare una o più portate desiderate."@it ;
           rdfs:label "Order"@en ,
                      "Ordinare"@it .
 
@@ -1283,8 +1283,8 @@ collectionentity:Collection rdf:type owl:Class ;
         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
         owl:disjointWith :Pietanza ,
                          :Recensione ;
-        rdfs:comment "Any food preparation or drink that can be commissioned to a food establishment"@en ,
-                     "Qualsiasi alimento/bevanda che possa essere commissionata ad un esercizio alimentare"@it ;
+        rdfs:comment "Any number of food preparations or drinks that can be commissioned to a food establishment"@en ,
+                     "Qualsiasi numero di alimenti/bevande che possa essere commissionata ad un esercizio alimentare"@it ;
         rdfs:label "Order"@en ,
                    "Ordine"@it .
 
@@ -1821,7 +1821,11 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
 :AcidoTartarico rdf:type owl:NamedIndividual ,
-                         :Additivo .
+                         :Additivo ;
+                rdfs:comment "Acido organico diprotico cristallino bianco."@it ,
+                             "Crystalline organic acid that occurs naturally in many fruits"@en ;
+                rdfs:label "Acido tartarico"@it ,
+                           "Tartaric acid"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -1912,17 +1916,11 @@ foaf:Person rdf:type owl:Class ;
           :ingredienteDerivatoDa :AcidoTartarico ,
                                  :FarinaGranoTenero ,
                                  :OlioArachidi ,
-                                 :Zucchero .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati
-:BiscottiTritati rdf:type owl:NamedIndividual ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :ingredienteDerivatoDa ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :ingrediente
-                          ] ;
-                 :ingredienteDerivatoDa :Biscotti .
+                                 :Zucchero ;
+          rdfs:comment "Preparazione di cucina e di pasticceria dolce, di dimensioni ridotte (5–10 cm) e di forma geometrica variamente decorata, solitamente cotta nel forno sino a perdere quasi ogni traccia di umidità."@it ,
+                       "Sweet pastry, small in size (5-10 cm) and with a variously decorated geometric shape, usually baked in the oven until almost all traces of humidity are lost."@en ;
+          rdfs:label "Biscotto"@it ,
+                     "Biscuit"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro
@@ -1967,7 +1965,11 @@ foaf:Person rdf:type owl:Class ;
                                :Ordine ;
                       :OrdineCompostaDaPietanza :CappuccinoSpeciale ,
                                                 :Croissant ;
-                      :ordineCreatoDaAzione :OrdinareDubai .
+                      :ordineCreatoDaAzione :OrdinareDubai ;
+                      rdfs:comment "Luca's order for a cappuccino and a croissant at \"Dubai\"."@en ,
+                                   "Ordine di un cappuccino e un croissant effettuato da Luca al \"Dubai\"."@it ;
+                      rdfs:label "Capp&croiss order Luca @ Dubai"@en ,
+                                 "Ordine capp&croiss Luca @ Dubai"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoSpeciale
@@ -1980,7 +1982,11 @@ foaf:Person rdf:type owl:Class ;
                                owl:onClass :ingrediente
                              ] ;
                     :utilizzaIngrediente :CaffèMacinato ,
-                                         :LatteRiso .
+                                         :LatteRiso ;
+                    rdfs:comment "Cappuccino preparato con latte di riso, quindi senza lattosio."@it ,
+                                 "Cappuccino prepared with rice milk, therefore lactose free."@en ;
+                    rdfs:label "Cappuccino senza lattosio"@it ,
+                               "Lactose-free cappuccino"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
@@ -2008,7 +2014,11 @@ foaf:Person rdf:type owl:Class ;
                     :utilizzaIngrediente :BiscottiTritati ,
                                          :Ciliegia ,
                                          :FormaggioCremoso ,
-                                         :Zucchero .
+                                         :Zucchero ;
+                    rdfs:comment "Cold dessert consisting of a base of biscuit dough on which rests a high layer of fresh cream cheese. On top, a cherry jam."@en ,
+                                 "Dolce freddo composto da una base di pasta biscotto su cui poggia un alto strato di crema di formaggio fresco. In cima, una confettura alle ciliegie."@it ;
+                    rdfs:label "Cheesecake alla ciliegia"@it ,
+                               "Cherry cheesecake"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia
@@ -2080,7 +2090,11 @@ foaf:Person rdf:type owl:Class ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :ingrediente
                            ] ;
-                  :ingredienteDerivatoDa :LatteMucca .
+                  :ingredienteDerivatoDa :LatteMucca ;
+                  rdfs:comment "Formaggio tipo quark."@it ,
+                               "Quark-like cheese."@en ;
+                  rdfs:label "Creamy cheese"@en ,
+                             "Formaggio cremoso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2235,7 +2249,12 @@ foaf:Person rdf:type owl:Class ;
 :Luca rdf:type owl:NamedIndividual ,
                :Persona ;
       :haRuolo :RuoloClienteLuca ,
-               :RuoloRecensoreLuca .
+               :RuoloRecensoreLuca ;
+      foaf:givenName "Luca" ;
+      rdfs:comment "Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome."@it ,
+                   "You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance)."@en ;
+      rdfs:label "Luca"@en ,
+                 "Luca"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello
@@ -2333,7 +2352,11 @@ foaf:Person rdf:type owl:Class ;
 :OrdinareDubai rdf:type owl:NamedIndividual ,
                         :Ordinare ;
                :ordinareDalLocale :Dubai ;
-               :ordinatoDa :Luca .
+               :ordinatoDa :Luca ;
+               rdfs:comment "L'ordine di Luca @ \"Dubai\""@it ,
+                            "Luca's order @ \"Dubai\""@en ;
+               rdfs:label "Luca Order Dubai"@en ,
+                          "Ordinazione Luca Dubai"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
@@ -2359,7 +2382,11 @@ foaf:Person rdf:type owl:Class ;
                            owl:onClass :ingrediente
                          ] ;
                 :utilizzaIngrediente :Pane ,
-                                     :Sesamo .
+                                     :Sesamo ;
+                rdfs:comment "Bread with sesame seeds sprinkled on the surface."@en ,
+                             "Pagnotta con semi di sesamo sparsi sulla superficie."@it ;
+                rdfs:label "Bread with sesame seeds"@en ,
+                           "Pane con semi di sesamo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ParmigianoReggiano
@@ -2443,14 +2470,23 @@ foaf:Person rdf:type owl:Class ;
 :RecensionePositivaDubai rdf:type owl:NamedIndividual ,
                                   :Recensione ;
                          <http://schema.org/reviewRating> :ValutazionePositivaDubai ;
-                         :recensioneCreataDaAzione :RecensireDubai .
+                         :recensioneCreataDaAzione :RecensireDubai ;
+                         <http://schema.org/reviewBody> "Ottima cheesecake, cappuccino gustoso! (nonostante senza latte)"^^xsd:string ;
+                         rdfs:comment "Luca's review about his order at \"Dubai\""@en ,
+                                      "Recensione di Luca per il suo ordine al \"Dubai\"."@it ;
+                         rdfs:label "Luca's Review for \"Dubai\""@en ,
+                                    "Recensione Luca per \"Dubai\""@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensireDubai
 :RecensireDubai rdf:type owl:NamedIndividual ,
                          :Recensire ;
                 :recensireLocale :Dubai ;
-                :recensitoDa :Luca .
+                :recensitoDa :Luca ;
+                rdfs:comment "Azione di recensione del \"Dubai\" da parte di Luca."@it ,
+                             "Review action for \"Dubai\" made by Luca."@en ;
+                rdfs:label "Azione di recensire di Luca"@it ,
+                           "Luca's review action"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
@@ -2479,7 +2515,13 @@ foaf:Person rdf:type owl:Class ;
                         owl:onClass :ingrediente
                       ] ;
              :utilizzaIngrediente :Riso ,
-                                  :SugoPomodoro .
+                                  :SugoPomodoro ;
+             rdfs:comment "Risotto fatto con riso e sugo di pomodoro."@it ,
+                          "Risotto made with rice and tomato sauce."@en ;
+             <http://www.w3.org/2004/02/skos/core#altLabel> "Risotto al pomodoro"@it ,
+                                                            "Tomato risotto"@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Risotto al sugo"@it ,
+                                                             "Risotto with tomato sauce"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloClienteLuca
@@ -2537,13 +2579,21 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
 :Uva rdf:type owl:NamedIndividual ;
-     :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio .
+     :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
+     rdfs:comment "Fruit of the vine, recovered from the bunch."@en ,
+                  "Frutto della vite, recuperato dal grappolo."@it ;
+     rdfs:label "Grapes"@en ,
+                "Uva"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
 :ValutazionePositivaDubai rdf:type owl:NamedIndividual ,
                                    <http://schema.org/Rating> ;
-                          :possiedeStelle "5.0"^^xsd:double .
+                          :possiedeStelle "5.0"^^xsd:double ;
+                          rdfs:comment "La valutazione positiva di Luca riguardo il suo ordine al \"Dubai\""@it ,
+                                       "Luca's positive rating about his order from \"Dubai\"."@en ;
+                          rdfs:label "Positive Rating Luca \"Dubai\""@en ,
+                                     "Valutazione Positiva Luca \"Dubai\""@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
@@ -2688,8 +2738,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaUova
                         :Arachide
                         :Besciamella
-                        :Biscotti
                         :BiscottiTritati
+                        :Biscotto
                         :Burro
                         :Caffè
                         :CaffèMacinato

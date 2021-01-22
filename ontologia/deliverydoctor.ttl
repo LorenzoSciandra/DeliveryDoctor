@@ -1892,8 +1892,18 @@ foaf:Person rdf:type owl:Class ;
                         "Besciamella"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotti
-:Biscotti rdf:type owl:NamedIndividual ,
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati
+:BiscottiTritati rdf:type owl:NamedIndividual ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ingredienteDerivatoDa ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ingrediente
+                          ] ;
+                 :ingredienteDerivatoDa :Biscotto .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotto
+:Biscotto rdf:type owl:NamedIndividual ,
                    [ rdf:type owl:Restriction ;
                      owl:onProperty :ingredienteDerivatoDa ;
                      owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;

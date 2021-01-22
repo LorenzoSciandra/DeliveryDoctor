@@ -356,7 +356,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
-:ingredienteDerivatoDa rdf:type owl:ObjectProperty ;
+:ingredienteDerivatoDa rdf:type owl:ObjectProperty ,
+                                owl:IrreflexiveProperty ;
                        rdfs:domain :IngredienteDerivato ;
                        rdfs:range :ingrediente ;
                        rdfs:comment """Property that specifies from which ingredient another ingredient derives.

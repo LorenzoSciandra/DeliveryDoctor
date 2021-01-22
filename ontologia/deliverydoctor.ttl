@@ -297,6 +297,20 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                        "Part of derived ingredient"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#disturboLimitaAssunzioneDiIngrediente
+:disturboLimitaAssunzioneDiIngrediente rdf:type owl:ObjectProperty ;
+                                       owl:inverseOf :ingredienteIncompatibileConDisturbo ;
+                                       rdfs:domain :Disturbo ;
+                                       rdfs:range :ingrediente .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#disturboLimitaConsumazioneDiPietanza
+:disturboLimitaConsumazioneDiPietanza rdf:type owl:ObjectProperty ;
+                                      owl:inverseOf :pietanzaIncompatibileConDisturbo ;
+                                      rdfs:domain :Disturbo ;
+                                      rdfs:range :Pietanza .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haFattoOrdine
 :haFattoOrdine rdf:type owl:ObjectProperty ;
                owl:propertyChainAxiom ( [ owl:inverseOf :ordinatoDa

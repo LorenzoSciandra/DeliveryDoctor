@@ -786,6 +786,19 @@ collectionentity:Collection rdf:type owl:Class ;
                             rdfs:label "Collection"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Additivo
+:Additivo rdf:type owl:Class ;
+          owl:equivalentClass [ owl:intersectionOf ( :Additivo
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :ingredienteIncompatibileConDisturbo ;
+                                                       owl:someValuesFrom :AllergiaAdditivi
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
+                              ] ;
+          rdfs:subClassOf :IngredienteVegano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
 :AllergiaAdditivi rdf:type owl:Class ;
                   owl:equivalentClass [ rdf:type owl:Class ;

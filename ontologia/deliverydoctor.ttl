@@ -617,6 +617,12 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
                                 rdfs:range xsd:double .
 
 
+###  http://schema.org/reviewBody
+<http://schema.org/reviewBody> rdf:type owl:DatatypeProperty ;
+                               rdfs:domain <http://schema.org/Review> ;
+                               rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
 :haAbitanti rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
@@ -661,6 +667,12 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 ###  http://www.w3.org/2004/02/skos/core#notation
 <http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
+
+
+###  http://xmlns.com/foaf/0.1/givenName
+foaf:givenName rdf:type owl:DatatypeProperty ;
+               rdfs:domain foaf:Person ;
+               rdfs:range xsd:string .
 
 
 #################################################################

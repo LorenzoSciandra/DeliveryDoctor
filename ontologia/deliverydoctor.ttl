@@ -1005,6 +1005,11 @@ collectionentity:Collection rdf:type owl:Class ;
          rdfs:subClassOf :Disturbo .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Formaggio
+:Formaggio rdf:type owl:Class ;
+           rdfs:subClassOf :IngredienteVegetariano .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici
 :FruttiSemplici rdf:type owl:Class ;
                 rdfs:subClassOf :Frutto ;
@@ -2047,6 +2052,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso
 :FormaggioCremoso rdf:type owl:NamedIndividual ,
+                           :Formaggio ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :ingredienteDerivatoDa ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;

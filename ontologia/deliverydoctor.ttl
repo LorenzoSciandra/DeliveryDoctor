@@ -462,6 +462,12 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                  "Ordine Creato Da Azione"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaCompatibileConDisturbo
+:pietanzaCompatibileConDisturbo rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Pietanza ;
+                                rdfs:range :Disturbo .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaIncompatibileConDisturbo
 :pietanzaIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
                                   rdfs:subPropertyOf owl:topObjectProperty ;

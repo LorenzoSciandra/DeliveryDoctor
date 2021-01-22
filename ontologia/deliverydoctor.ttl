@@ -1740,6 +1740,14 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uovo
 :Uovo rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( :Uovo
+                                                 [ rdf:type owl:Restriction ;
+                                                   owl:onProperty :ingredienteIncompatibileConDisturbo ;
+                                                   owl:someValuesFrom :AllergiaUova
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
       rdfs:subClassOf :IngredienteVegetariano ;
       rdfs:comment "Female gamete from which the embryo of a new individual develops."@en ,
                    "Gamete femminile dal quale si sviluppa l'embrione di un nuovo individuo."@it ;

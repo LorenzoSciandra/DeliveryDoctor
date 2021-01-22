@@ -1336,7 +1336,8 @@ collectionentity:Collection rdf:type owl:Class ;
                                 owl:someValuesFrom :ingrediente
                               ] ;
           rdfs:subClassOf :Set ;
-          owl:disjointWith :Recensione ;
+          owl:disjointWith :Recensione ,
+                           :ingrediente ;
           rdfs:comment "Result of a series of steps in the preparation of one or more ingredients. In the context of this ontology the offer of restaurants, pizzerias, pubs, etc ..."@en ,
                        "Risultato di una serie di passaggi di preparazione di uno o più ingredienti. Nel contesto di questa ontologia le proposte dei vari ristoranti, pizzerie, pub, ecc..."@it ;
           rdfs:label "Food Preparation"@en ,

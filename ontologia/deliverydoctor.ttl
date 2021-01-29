@@ -157,14 +157,22 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 :disturboLimitaAssunzioneDiIngrediente rdf:type owl:ObjectProperty ;
                                        owl:inverseOf :ingredienteIncompatibileConDisturbo ;
                                        rdfs:domain :Disturbo ;
-                                       rdfs:range :ingrediente .
+                                       rdfs:range :ingrediente ;
+                                       rdfs:comment "Property that specifies which ingredients are not recommended for a certain disorder."@en ,
+                                                    "Proprietà che specifica quali ingredienti sono sconsigliati per un determinato disturbo."@it ;
+                                       rdfs:label "Limita l'assunzione di"@it ,
+                                                  "Limits the assumption of"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#disturboLimitaConsumazioneDiPietanza
 :disturboLimitaConsumazioneDiPietanza rdf:type owl:ObjectProperty ;
                                       owl:inverseOf :pietanzaIncompatibileConDisturbo ;
                                       rdfs:domain :Disturbo ;
-                                      rdfs:range :Pietanza .
+                                      rdfs:range :Pietanza ;
+                                          rdfs:comment "Property that specifies which Food Preparations are not recommended for a certain disorder."@en ,
+                                                       "Proprietà che specifica quali Pietanze sono sconsigliate per un determinato disturbo."@it ;
+                                          rdfs:label "Limita il consumo di"@it ,
+                                                       "Limits the consumption of"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#eStatoRecensitoDa

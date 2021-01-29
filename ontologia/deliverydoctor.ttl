@@ -1368,7 +1368,7 @@ collectionentity:Collection rdf:type owl:Class ;
                                             ] ;
                         rdfs:subClassOf :Pietanza ;
                         rdfs:comment "Food Preparation that uses at least one non-vegetarian ingredient"@en ,
-                                     "Preparazione che usa almeno un ingrediente non vegetariano"@it ;
+                                     "Una Pietanza che usa almeno un ingrediente non vegetariano"@it ;
                         rdfs:label "Non Vegetarian Food Preparation"@en ,
                                    "Pietanza Non Vegetariana"@it .
 
@@ -1389,7 +1389,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                                 ) ;
                                              rdf:type owl:Class
                                            ] ;
-                       rdfs:subClassOf :Pietanza .
+                       rdfs:subClassOf :Pietanza ;
+                       rdfs:comment "Food preparation that doesn't use particular food additives."@en ,
+                                    "Una Pietanza che non usa alcun genere di additivo alimentare."@it ;
+                       rdfs:label "Additive free Food Preparation"@en ,
+                                  "Pietanza senza Additivi"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi
@@ -1408,7 +1412,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                                 ) ;
                                              rdf:type owl:Class
                                            ] ;
-                       rdfs:subClassOf :Pietanza .
+                       rdfs:subClassOf :Pietanza ;
+                       rdfs:comment "A food preparation that doesn't contain peanuts or peanut derivatives."@en ,
+                                    "Una pietanza che non contiene arachidi o suoi derivati."@it ;
+                       rdfs:label "Peanut free Food Preparation"@en ,
+                                  "Pietanza senza Arachidi"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave
@@ -1427,7 +1435,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:subClassOf :Pietanza .
+                   rdfs:subClassOf :Pietanza ;
+                   rdfs:comment "A food preparation that doesn't contain broad beans or any of its derivatives."@en ,
+                                "Una pietanza che non contiene fave o suoi derivati."@it ;
+                   rdfs:label "Broad Bean free Food Preparation"@en ,
+                              "Pietanza senza Fave"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca
@@ -1446,7 +1458,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                                    ) ;
                                                 rdf:type owl:Class
                                               ] ;
-                          rdfs:subClassOf :Pietanza .
+                          rdfs:subClassOf :Pietanza ;
+                          rdfs:comment "A food preparation that doesn't contain nuts or any of its derivatives."@en ,
+                                       "Una pietanza che non contiene frutta secca o suoi derivati."@it ;
+                          rdfs:label "Nut free Food Preparation"@en ,
+                                     "Pietanza senza Frutta Secca"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine
@@ -1479,7 +1495,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                                ) ;
                                             rdf:type owl:Class
                                           ] ;
-                      rdfs:subClassOf :Pietanza .
+                      rdfs:subClassOf :Pietanza ;
+                      rdfs:comment "A food preparation that doesn't contain gluten."@en ,
+                                   "Una pietanza che non contiene glutine."@it ;
+                      rdfs:label "Gluten free Food Preparation"@en ,
+                                 "Pietanza senza Glutine"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio
@@ -1498,7 +1518,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                                 ) ;
                                              rdf:type owl:Class
                                            ] ;
-                       rdfs:subClassOf :Pietanza .
+                       rdfs:subClassOf :Pietanza ;
+                       rdfs:comment "A food preparation that doesn't contain lactose."@en ,
+                                    "Una pietanza che non contiene lattosio."@it ;
+                       rdfs:label "Lactose free Food Preparation"@en ,
+                                  "Pietanza senza Lattosio"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare
@@ -1545,7 +1569,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:subClassOf :Pietanza .
+                   rdfs:subClassOf :Pietanza ;
+                   rdfs:comment "A food preparation that doesn't contain crustaceans/fish/seafood or any of their derivatives."@en ,
+                                "Una pietanza che non contiene crostacei/pesce/frutti di mare o loro derivati."@it ;
+                   rdfs:label "Pietanza senza prodotti marini"@it ,
+                              "Sea product free Food Preparation"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia
@@ -1564,7 +1592,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:subClassOf :Pietanza .
+                   rdfs:subClassOf :Pietanza ;
+                   rdfs:comment "A food preparation that doesn't contain soy or any of its derivatives."@en ,
+                                "Una pietanza che non contiene soia o suoi derivati."@it ;
+                   rdfs:label "Pietanza senza Soia"@it ,
+                              "Soy free Food Preparation"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova
@@ -1583,7 +1615,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                             ) ;
                                          rdf:type owl:Class
                                        ] ;
-                   rdfs:subClassOf :Pietanza .
+                   rdfs:subClassOf :Pietanza ;
+                   rdfs:comment "A food preparation that doesn't contain broad beans or any of its derivatives."@en ,
+                                "Una pietanza che non contiene uova o suoi derivati."@it ;
+                   rdfs:label "Broad Bean free Food Preparation"@en ,
+                              "Pietanza senza Uova"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana
@@ -1631,7 +1667,11 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PuntoRiferimentoOEdificioStorico
 :PuntoRiferimentoOEdificioStorico rdf:type owl:Class ;
-                                  rdfs:subClassOf :LuogoGeografico .
+                                  rdfs:subClassOf :LuogoGeografico ;
+                                  rdfs:comment "An historical landmark or building."@en ,
+                                               "Un punto di riferimento storico, o un edificio."@it ;
+                                  rdfs:label "Landmark or Historical Building"@en ,
+                                             "Punto di Riferimento Storico o Edificio"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensione
@@ -2084,7 +2124,6 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso
 :FormaggioCremoso rdf:type owl:NamedIndividual ,
-                           :Formaggio ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :ingredienteDerivatoDa ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -2645,15 +2684,15 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ,
+                                                                 "Non-celiac gluten sensitivity"@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Allergia al Nickel"@it ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Nickel allergy"@en .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+                rdfs:label "Allergia al Nickel"@it ,
+                           "Nickel allergy"@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;

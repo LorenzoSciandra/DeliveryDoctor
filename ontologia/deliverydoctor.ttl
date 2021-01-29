@@ -359,7 +359,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 :ingredienteCoagulatoDa rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :ingredienteDerivatoDa ;
                         rdfs:domain :IngredienteDerivato ;
-                        rdfs:range :LatteAnimale .
+                        rdfs:range :LatteAnimale ;
+                            rdfs:comment """Property that specifies that one ingredient is derived from another via protein coagulation mechanisms."""@en ,
+                                         "Proprietà che specifica che un ingrediente è derivato da un altro tramite meccanismi di coagulazione delle proteine."@it ;
+                            rdfs:label "Ingredient obtained by coagulating"@en ,
+                                         "Ingrediente ottenuto dalla coagulazione di"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa

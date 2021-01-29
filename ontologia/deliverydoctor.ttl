@@ -98,8 +98,8 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                  rdfs:range <http://schema.org/Rating> .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareIlLocale
-:AvviareIlLocale rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#avviareIlLocale
+:avviareIlLocale rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
                  rdfs:domain :AvviareImpresa ;
                  rdfs:range :EsercizioAlimentare ;
@@ -107,183 +107,6 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Proprietà che collega l'attività di aprire un esercizio alimentare con il locale coinvolto"@it ;
                  rdfs:label "Avviare Il Locale"@it ,
                             "Start The Food Establishment"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnareAlCliente
-:ConsegnareAlCliente rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
-                     rdfs:domain :Consegnare ;
-                     rdfs:range :Cliente ;
-                     rdfs:comment "Activity that links the activity of delivering an order to the customer who made that order"@en ,
-                                  "Attività che collega l'attività di consegnare un ordine al cliente che ha fatto quell'ordine"@it ;
-                     rdfs:label "Consegnare Al Cliente"@it ,
-                                "Deliver To The Customer"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnareOrdine
-:ConsegnareOrdine rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
-                  rdfs:domain :Consegnare ;
-                  rdfs:range :Ordine ;
-                  rdfs:comment "Property that links the delivering activity with the order to be delivered"@en ,
-                               "Proprietà che collega l'attività di consegnare con l'ordine che deve essere consegnato"@it ;
-                  rdfs:label "Consegnare Ordine"@it ,
-                             "Deliver The Order"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnatoDa
-:ConsegnatoDa rdf:type owl:ObjectProperty ;
-              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
-              rdfs:domain :Consegnare ;
-              rdfs:range :Fattorino ;
-              rdfs:comment "Property that links the delivery activity with the person who has to do the delivery"@en ,
-                           "Proprietà che collega l'attività di consegnare con la persona che deve fare la consegna"@it ;
-              rdfs:label "Consegnato Da"@it ,
-                         "Delivered By"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EStatoRecensitoDa
-:EStatoRecensitoDa rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :HaFattoRecensioneAlLocale ;
-                   rdfs:comment "Property that links a food establishment with the person who reviewed it"@en ,
-                                "Proprietà che collega un esercizio alimentare con la persona che l'ha recensito"@it ;
-                   rdfs:label "E Stato Recensito Da"@it ,
-                              "Has Been Reviewed By"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FrittoCon
-:FrittoCon rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf :utilizzaIngrediente ;
-           rdfs:domain :Pietanza ;
-           rdfs:range :ingrediente ;
-           rdfs:comment "Property that indicates with which ingredients the food preparation has been deep fried."@en ,
-                        "Proprietà che indica con quali ingredienti la pietanza è stata fritta."@it ;
-           <http://www.w3.org/2004/02/skos/core#altLabel> "Deep fried using"@en ,
-                                                          "Deep fried with"@en ,
-                                                          "Fritto in"@it ,
-                                                          "Fritto usando"@it ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "Deep fried in"@en ,
-                                                           "Fritto con"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaAvviatoImpresa
-:HaAvviatoImpresa rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :LocaleAvviatoDa ;
-                  owl:propertyChainAxiom ( [ owl:inverseOf :ImpresaAvviataDa
-                                           ]
-                                           :AvviareIlLocale
-                                         ) ;
-                  rdfs:comment "Property that links the person with the food establishments that he has started"@en ,
-                               "Proprietà che collega la persona con i vari esercizi alimentari che ha avviato"@it ;
-                  rdfs:label "Ha Avviato Impresa"@it ,
-                             "Has Opened The Food Establishment"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaConsegnatoOrdine
-:HaConsegnatoOrdine rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :OrdineConsegnatoDa ;
-                    owl:propertyChainAxiom ( [ owl:inverseOf :ConsegnatoDa
-                                             ]
-                                             :ConsegnareOrdine
-                                           ) ;
-                    rdfs:comment "Property that links the delivery guy with the orders delivered"@en ,
-                                 "Proprietà che collega il fattorino con gli ordini che ha consegnato"@it ;
-                    rdfs:label "Ha Consengato Ordine"@it ,
-                               "Has Delivered Order"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaFattoRecensioneAlLocale
-:HaFattoRecensioneAlLocale rdf:type owl:ObjectProperty ;
-                           owl:propertyChainAxiom ( [ owl:inverseOf :recensitoDa
-                                                    ]
-                                                    :recensireLocale
-                                                  ) ;
-                           rdfs:comment "Property that links the person to the place they reviewed"@en ,
-                                        "Proprietà che collega la persona al locale di cui ha fatto una recensione"@it ;
-                           rdfs:label "Ha Fatto Recensione Al Locale"@it ,
-                                      "Has Reviewed The Food Establishment"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaOrdinatoDalLocale
-:HaOrdinatoDalLocale rdf:type owl:ObjectProperty ;
-                     owl:inverseOf :HaRicevutoOrdineDa ;
-                     owl:propertyChainAxiom ( [ owl:inverseOf :ordinatoDa
-                                              ]
-                                              :ordinareDalLocale
-                                            ) ;
-                     rdfs:comment "Property that connects the person to the place where he placed an order"@en ,
-                                  "Proprietà che collega la persona al locale presso cui ha fatto un ordine"@it ;
-                     rdfs:label "Ha Ordinato Dal Locale"@it ,
-                                "Has Ordered From The Food Establishment"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaOrdinatoPietanza
-:HaOrdinatoPietanza rdf:type owl:ObjectProperty ;
-                    owl:propertyChainAxiom ( :haFattoOrdine
-                                             :OrdineCompostaDaPietanza
-                                           ) ;
-                    rdfs:comment "Property that links the person to the food preparation that makes up one of his orders"@en ,
-                                 "Proprietà che collega la persona alla pietanza che compone uno dei suoi ordini"@it ;
-                    rdfs:label "Ha Ordinato Pietanza"@it ,
-                               "Has Ordered Food Preparation"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HaRicevutoOrdineDa
-:HaRicevutoOrdineDa rdf:type owl:ObjectProperty ;
-                    rdfs:comment "Property that links the food establishment with the customer who placed an order"@en ,
-                                 "Proprietà che collega il locale con il cliente che ha effettuato un ordine"@it ;
-                    rdfs:label "Ha Ricevuto Ordine Da"@it ,
-                               "Has Received Order By"@en .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ImpresaAvviataDa
-:ImpresaAvviataDa rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
-                  rdfs:domain :AvviareImpresa ;
-                  rdfs:range :TitolareImpresa ;
-                  rdfs:comment "Property that links the starting a new food establishment with the corrispective owner"@en ,
-                               "Proprietà che collega l'attività di avviare un impresa con il corrispettivo proprietario"@it ;
-                  rdfs:label "Food Establishment Started By"@en ,
-                             "Impresa Avviata Da"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LocaleAvviatoDa
-:LocaleAvviatoDa rdf:type owl:ObjectProperty ;
-                 rdfs:comment "Property that links the food establishment with the owner"@en ,
-                              "Proprietà che collega il locale con il proprietario"@it ;
-                 rdfs:label "Food Establishment Started By"@en ,
-                            "Locale Avviato Da"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LocaleServePietanza
-:LocaleServePietanza rdf:type owl:ObjectProperty ;
-                     owl:inverseOf :PietanzaServitaInLocale ;
-                     rdfs:domain :EsercizioAlimentare ;
-                     rdfs:range :Pietanza .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineCompostaDaPietanza
-:OrdineCompostaDaPietanza rdf:type owl:ObjectProperty ;
-                          rdfs:domain :Ordine ;
-                          rdfs:range :Pietanza ;
-                          rdfs:comment "Property that links the order to the food preparations that compose it"@en ,
-                                       "Proprietà che lega l'ordine alle pietanza che lo compongono"@it ;
-                          rdfs:label "Order Consisting Of Food Preparation"@en ,
-                                     "Ordine Composto Da Pietanza"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineConsegnatoDa
-:OrdineConsegnatoDa rdf:type owl:ObjectProperty ;
-                    rdfs:comment "Property that links the order to the delivery guy who delivered it"@en ,
-                                 "Proprietà che collega l'ordine al fattorino che l'ha consegnato"@it ;
-                    rdfs:label "Order Deliverd By"@en ,
-                               "Ordine Consegnato Da"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaServitaInLocale
-:PietanzaServitaInLocale rdf:type owl:ObjectProperty ;
-                         rdfs:domain :Pietanza ;
-                         rdfs:range :EsercizioAlimentare .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#componeIngredienteDerivato
@@ -295,6 +118,39 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                          "Proprietà che indica quali ingredienti derivati utilizzano questo ingrediente."@it ;
                             rdfs:label "Compone ingrediente derivato"@it ,
                                        "Part of derived ingredient"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareAlCliente
+:consegnareAlCliente rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                     rdfs:domain :Consegnare ;
+                     rdfs:range :Cliente ;
+                     rdfs:comment "Activity that links the activity of delivering an order to the customer who made that order"@en ,
+                                  "Attività che collega l'attività di consegnare un ordine al cliente che ha fatto quell'ordine"@it ;
+                     rdfs:label "Consegnare Al Cliente"@it ,
+                                "Deliver To The Customer"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareOrdine
+:consegnareOrdine rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                  rdfs:domain :Consegnare ;
+                  rdfs:range :Ordine ;
+                  rdfs:comment "Property that links the delivering activity with the order to be delivered"@en ,
+                               "Proprietà che collega l'attività di consegnare con l'ordine che deve essere consegnato"@it ;
+                  rdfs:label "Consegnare Ordine"@it ,
+                             "Deliver The Order"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnatoDa
+:consegnatoDa rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+              rdfs:domain :Consegnare ;
+              rdfs:range :Fattorino ;
+              rdfs:comment "Property that links the delivery activity with the person who has to do the delivery"@en ,
+                           "Proprietà che collega l'attività di consegnare con la persona che deve fare la consegna"@it ;
+              rdfs:label "Consegnato Da"@it ,
+                         "Delivered By"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#disturboLimitaAssunzioneDiIngrediente
@@ -309,6 +165,56 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                                       owl:inverseOf :pietanzaIncompatibileConDisturbo ;
                                       rdfs:domain :Disturbo ;
                                       rdfs:range :Pietanza .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#eStatoRecensitoDa
+:eStatoRecensitoDa rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :haFattoRecensioneAlLocale ;
+                   rdfs:comment "Property that links a food establishment with the person who reviewed it"@en ,
+                                "Proprietà che collega un esercizio alimentare con la persona che l'ha recensito"@it ;
+                   rdfs:label "E Stato Recensito Da"@it ,
+                              "Has Been Reviewed By"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#frittoCon
+:frittoCon rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf :utilizzaIngrediente ;
+           rdfs:domain :Pietanza ;
+           rdfs:range :ingrediente ;
+           rdfs:comment "Property that indicates with which ingredients the food preparation has been deep fried."@en ,
+                        "Proprietà che indica con quali ingredienti la pietanza è stata fritta."@it ;
+           <http://www.w3.org/2004/02/skos/core#altLabel> "Deep fried using"@en ,
+                                                          "Deep fried with"@en ,
+                                                          "Fritto in"@it ,
+                                                          "Fritto usando"@it ;
+           <http://www.w3.org/2004/02/skos/core#prefLabel> "Deep fried in"@en ,
+                                                           "Fritto con"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAvviatoImpresa
+:haAvviatoImpresa rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :localeAvviatoDa ;
+                  owl:propertyChainAxiom ( [ owl:inverseOf :impresaAvviataDa
+                                           ]
+                                           :avviareIlLocale
+                                         ) ;
+                  rdfs:comment "Property that links the person with the food establishments that he has started"@en ,
+                               "Proprietà che collega la persona con i vari esercizi alimentari che ha avviato"@it ;
+                  rdfs:label "Ha Avviato Impresa"@it ,
+                             "Has Opened The Food Establishment"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haConsegnatoOrdine
+:haConsegnatoOrdine rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :ordineConsegnatoDa ;
+                    owl:propertyChainAxiom ( [ owl:inverseOf :consegnatoDa
+                                             ]
+                                             :consegnareOrdine
+                                           ) ;
+                    rdfs:comment "Property that links the delivery guy with the orders delivered"@en ,
+                                 "Proprietà che collega il fattorino con gli ordini che ha consegnato"@it ;
+                    rdfs:label "Ha Consengato Ordine"@it ,
+                               "Has Delivered Order"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haFattoOrdine
@@ -333,6 +239,50 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
                               "Has Made The Review"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haFattoRecensioneAlLocale
+:haFattoRecensioneAlLocale rdf:type owl:ObjectProperty ;
+                           owl:propertyChainAxiom ( [ owl:inverseOf :recensitoDa
+                                                    ]
+                                                    :recensireLocale
+                                                  ) ;
+                           rdfs:comment "Property that links the person to the place they reviewed"@en ,
+                                        "Proprietà che collega la persona al locale di cui ha fatto una recensione"@it ;
+                           rdfs:label "Ha Fatto Recensione Al Locale"@it ,
+                                      "Has Reviewed The Food Establishment"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haOrdinatoDalLocale
+:haOrdinatoDalLocale rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :haRicevutoOrdineDa ;
+                     owl:propertyChainAxiom ( [ owl:inverseOf :ordinatoDa
+                                              ]
+                                              :ordinareDalLocale
+                                            ) ;
+                     rdfs:comment "Property that connects the person to the place where he placed an order"@en ,
+                                  "Proprietà che collega la persona al locale presso cui ha fatto un ordine"@it ;
+                     rdfs:label "Ha Ordinato Dal Locale"@it ,
+                                "Has Ordered From The Food Establishment"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haOrdinatoPietanza
+:haOrdinatoPietanza rdf:type owl:ObjectProperty ;
+                    owl:propertyChainAxiom ( :haFattoOrdine
+                                             :ordineCompostaDaPietanza
+                                           ) ;
+                    rdfs:comment "Property that links the person to the food preparation that makes up one of his orders"@en ,
+                                 "Proprietà che collega la persona alla pietanza che compone uno dei suoi ordini"@it ;
+                    rdfs:label "Ha Ordinato Pietanza"@it ,
+                               "Has Ordered Food Preparation"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRicevutoOrdineDa
+:haRicevutoOrdineDa rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Property that links the food establishment with the customer who placed an order"@en ,
+                                 "Proprietà che collega il locale con il cliente che ha effettuato un ordine"@it ;
+                    rdfs:label "Ha Ricevuto Ordine Da"@it ,
+                               "Has Received Order By"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://www.w3.org/ns/prov#hadRole> ;
@@ -355,15 +305,26 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
            rdfs:label "has member"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#impresaAvviataDa
+:impresaAvviataDa rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
+                  rdfs:domain :AvviareImpresa ;
+                  rdfs:range :TitolareImpresa ;
+                  rdfs:comment "Property that links the starting a new food establishment with the corrispective owner"@en ,
+                               "Proprietà che collega l'attività di avviare un impresa con il corrispettivo proprietario"@it ;
+                  rdfs:label "Food Establishment Started By"@en ,
+                             "Impresa Avviata Da"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteCoagulatoDa
 :ingredienteCoagulatoDa rdf:type owl:ObjectProperty ;
                         rdfs:subPropertyOf :ingredienteDerivatoDa ;
                         rdfs:domain :IngredienteDerivato ;
                         rdfs:range :LatteAnimale ;
-                            rdfs:comment """Property that specifies that one ingredient is derived from another via protein coagulation mechanisms."""@en ,
-                                         "Proprietà che specifica che un ingrediente è derivato da un altro tramite meccanismi di coagulazione delle proteine."@it ;
-                            rdfs:label "Ingredient obtained by coagulating"@en ,
-                                         "Ingrediente ottenuto dalla coagulazione di"@it .
+                        rdfs:comment "Property that specifies that one ingredient is derived from another via protein coagulation mechanisms."@en ,
+                                     "Proprietà che specifica che un ingrediente è derivato da un altro tramite meccanismi di coagulazione delle proteine."@it ;
+                        rdfs:label "Ingredient obtained by coagulating"@en ,
+                                   "Ingrediente ottenuto dalla coagulazione di"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
@@ -402,6 +363,14 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
             rdfs:label "is member of"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeAvviatoDa
+:localeAvviatoDa rdf:type owl:ObjectProperty ;
+                 rdfs:comment "Property that links the food establishment with the owner"@en ,
+                              "Proprietà che collega il locale con il proprietario"@it ;
+                 rdfs:label "Food Establishment Started By"@en ,
+                            "Locale Avviato Da"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeGestisceOrdine
 :localeGestisceOrdine rdf:type owl:ObjectProperty ;
                       owl:propertyChainAxiom ( [ owl:inverseOf :ordinareDalLocale
@@ -426,6 +395,13 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                  "Property chain that links the food establishment directly to the reviews it has received"@en ;
                     rdfs:label "Local Has Review"@en ,
                                "Locale Ha Recensione"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeServePietanza
+:localeServePietanza rdf:type owl:ObjectProperty ;
+                     owl:inverseOf :pietanzaServitaInLocale ;
+                     rdfs:domain :EsercizioAlimentare ;
+                     rdfs:range :Pietanza .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
@@ -461,6 +437,24 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                        "Ordinato Da"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCompostaDaPietanza
+:ordineCompostaDaPietanza rdf:type owl:ObjectProperty ;
+                          rdfs:domain :Ordine ;
+                          rdfs:range :Pietanza ;
+                          rdfs:comment "Property that links the order to the food preparations that compose it"@en ,
+                                       "Proprietà che lega l'ordine alle pietanza che lo compongono"@it ;
+                          rdfs:label "Order Consisting Of Food Preparation"@en ,
+                                     "Ordine Composto Da Pietanza"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineConsegnatoDa
+:ordineConsegnatoDa rdf:type owl:ObjectProperty ;
+                    rdfs:comment "Property that links the order to the delivery guy who delivered it"@en ,
+                                 "Proprietà che collega l'ordine al fattorino che l'ha consegnato"@it ;
+                    rdfs:label "Order Deliverd By"@en ,
+                               "Ordine Consegnato Da"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCreatoDaAzione
 :ordineCreatoDaAzione rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
@@ -492,6 +486,12 @@ A preparation inherits all the incompatibilities of the ingredients that compose
 Una preparazione eredita tutte le incompatibilità degli ingredienti che la compongono."""@it ;
                                   rdfs:label "Food preparation incompatible with disorder"@en ,
                                              "Pietanza incompatibile con disturbo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaServitaInLocale
+:pietanzaServitaInLocale rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Pietanza ;
+                         rdfs:range :EsercizioAlimentare .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensioneCreataDaAzione
@@ -2022,7 +2022,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant
 :CappuccinoECroissant rdf:type owl:NamedIndividual ,
                                :Ordine ;
-                      :OrdineCompostaDaPietanza :CappuccinoSpeciale ,
+                      :ordineCompostaDaPietanza :CappuccinoSpeciale ,
                                                 :Croissant ;
                       :ordineCreatoDaAzione :OrdinareDubai ;
                       rdfs:comment "Luca's order for a cappuccino and a croissant at \"Dubai\"."@en ,
@@ -2114,7 +2114,7 @@ foaf:Person rdf:type owl:Class ;
 :Dubai rdf:type owl:NamedIndividual ,
                 :Bar ,
                 :SelfService ;
-       :LocaleServePietanza :Croissant ,
+       :localeServePietanza :Croissant ,
                             :LasagneAlForno ,
                             :PolpetteAlSugo ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
@@ -2497,7 +2497,7 @@ foaf:Person rdf:type owl:Class ;
                            owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
                            owl:onClass :ingrediente
                          ] ;
-                :FrittoCon :OlioArachidi ;
+                :frittoCon :OlioArachidi ;
                 :utilizzaIngrediente :Polpette ,
                                      :SugoPomodoro ;
                 rdfs:comment "Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce."@en ,

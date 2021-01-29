@@ -355,6 +355,13 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
            rdfs:label "has member"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteCoagulatoDa
+:ingredienteCoagulatoDa rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf :ingredienteDerivatoDa ;
+                        rdfs:domain :IngredienteDerivato ;
+                        rdfs:range :LatteAnimale .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa
 :ingredienteDerivatoDa rdf:type owl:ObjectProperty ,
                                 owl:IrreflexiveProperty ;
@@ -1019,6 +1026,14 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Formaggio
 :Formaggio rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :IngredienteDerivato
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :ingredienteCoagulatoDa ;
+                                                        owl:someValuesFrom :LatteAnimale
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
            rdfs:subClassOf :IngredienteVegetariano .
 
 
@@ -2129,7 +2144,7 @@ foaf:Person rdf:type owl:Class ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :ingrediente
                            ] ;
-                  :ingredienteDerivatoDa :LatteMucca ;
+                  :ingredienteCoagulatoDa :LatteMucca ;
                   rdfs:comment "Formaggio tipo quark."@it ,
                                "Quark-like cheese."@en ;
                   rdfs:label "Creamy cheese"@en ,

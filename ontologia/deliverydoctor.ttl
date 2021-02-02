@@ -1963,7 +1963,19 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
 :Asti rdf:type owl:NamedIndividual ,
-               :Città .
+               :Città ;
+      rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
+                   "Italian town and capital of the Piedmontese province of the same name. Renowned for its food and wine events."@en ;
+      rdfs:label "Asti" .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico
+:Basilico rdf:type owl:NamedIndividual ,
+                   :Ortaggio ;
+          rdfs:comment "Basil is a culinary herb of the family Lamiaceae (mints)."@en ,
+                       "Il basilico è una pianta erbacea annuale, appartenente alla famiglia delle Lamiaceae, normalmente coltivata come pianta aromatica."@it ;
+          rdfs:label "Basil"@en ,
+                     "Basilico"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella
@@ -1990,7 +2002,13 @@ foaf:Person rdf:type owl:Class ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :ingrediente
                           ] ;
-                 :ingredienteDerivatoDa :Biscotto .
+                 :ingredienteDerivatoDa :Biscotto ;
+                 rdfs:comment "Biscotti sbriciolati tramite processi meccanici. In genere, rotti a mano o con un robot da cucina."@it ,
+                              "Crumbled biscuits by mechanical processes. Typically broken by hand or with a food processor."@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "Biscotti sbriciolati"@it ,
+                                                                "Crumbled biscuits"@en ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Biscotti tritati"@it ,
+                                                                 "Crushed cookies"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotto
@@ -2188,7 +2206,10 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger
 :GalaxyBurger rdf:type owl:NamedIndividual ,
                        :EsercizioAlimentare ;
-              :localeSituatoInCitta :Asti .
+              :localeSituatoInCitta :Asti ;
+              rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
+                           "Hamburgeria situata in centro ad Asti."@it ;
+              rdfs:label "Galaxy Burger"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2200,6 +2221,16 @@ foaf:Person rdf:type owl:Class ;
                           "Wheat species most used in the world in baking and in the production of fresh pasta."@en ;
              rdfs:label "Grano tenero"@it ,
                         "Wheat"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ImpastoPizza
+:ImpastoPizza rdf:type owl:NamedIndividual ;
+              :ingredienteDerivatoDa :FarinaGranoTenero ,
+                                     :LievitoBirra ;
+              rdfs:comment "Dough that, once risen and stretched, is used for the preparation of pizzas or fried."@en ,
+                           "Impasto che, una volta lievitato e steso, viene usato per la preparazione di pizze o fritti."@it ;
+              rdfs:label "Impasto per la Pizza"@it ,
+                         "Pizza dough"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
@@ -2237,7 +2268,7 @@ foaf:Person rdf:type owl:Class ;
                                      :MacinatoCarneVitello ,
                                      :OlioExtraOliva ,
                                      :ParmigianoReggiano ,
-                                     :Pomodoro ;
+                                     :SugoPomodoro ;
                 rdfs:comment "Baked lasagna consists of a sheet of egg pasta, cut into roughly rectangular sheets which, once boiled and drained, are arranged in a variable sequence of layers, each of which separated by a filling that varies according to the different local traditions."@en ,
                              "Le lasagne al forno sono costituite da una sfoglia di pasta all'uovo, tagliata in fogli grossolanamente rettangolari che, una volta bollite e scolate, vengono disposte in una sequenza variabile di strati, ognuno dei quali separato da una farcitura che varia in relazione alle diverse tradizioni locali."@it ;
                 rdfs:label "Lasagne al forno"@it ,
@@ -2378,14 +2409,21 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
 :Mozzarella rdf:type owl:NamedIndividual ,
                      :ingrediente ;
-            :ingredienteCoagulatoDa :LatteMucca .
+            :ingredienteCoagulatoDa :LatteMucca ;
+            rdfs:comment "La mozzarella è un latticino a pasta filata originario dell'Italia meridionale e prodotta da secoli anche in Italia centrale. Essendo prodotta con latte vaccino e non di bufala, è chiamata \"fior di latte\"."@it ,
+                         "Mozzarella is a stretched curd dairy product originally from southern Italy and produced for centuries also in central Italy. Being produced with cow's milk and not buffalo's milk, it is called \"fior di latte\"."@en ;
+            rdfs:label "Fior di latte Mozzarella cheese"@en ,
+                       "Mozzarella fior di latte"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Napples
 :Napples rdf:type owl:NamedIndividual ,
                   :EsercizioAlimentare ;
          :localeServePietanza :PizzaMargherita ;
-         :localeSituatoInCitta :Torino .
+         :localeSituatoInCitta :Torino ;
+         rdfs:comment "Restaurant serving pizza and fried fish and seafood in a refined setting, with details related to the New York of yesteryear."@en ,
+                      "Ristorante che serve pizza e fritture di mare e di terra in un ambiente curato, con dettagli legati alla New York d'altri tempi."@it ;
+         rdfs:label "Napples" .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
@@ -2523,8 +2561,16 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita
 :PizzaMargherita rdf:type owl:NamedIndividual ,
                           :Pietanza ;
-                 :utilizzaIngrediente :FarinaGranoTenero ,
-                                      :SugoPomodoro .
+                 :utilizzaIngrediente :Basilico ,
+                                      :ImpastoPizza ,
+                                      :Mozzarella ,
+                                      :OlioExtraOliva ,
+                                      :SugoPomodoro ;
+                 rdfs:comment "La pizza Margherita è la tipica pizza napoletana, condita con pomodoro, mozzarella (tradizionalmente è usato il fior di latte, non quella di bufala), basilico fresco e olio d'oliva; è, assieme alla pizza marinara, la più popolare pizza italiana."@it ,
+                              "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil and extra-virgin olive oil."@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "Margherita"@it ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Margherita Pizza"@en ,
+                                                                 "Pizza Margherita"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette
@@ -2565,10 +2611,12 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          rdfs:comment "Bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo. "@it ,
-                       "Berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
-          rdfs:label "Pomodoro"@it ,
-                     "Tomato"@en .
+          rdfs:comment """Il pomodoro di San Marzano dell'agro sarnese-nocerino (DOP) è una varietà di pomodoro riconosciuta come prodotto ortofrutticolo italiano a Denominazione di origine protetta.
+Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."""@it ,
+                       """The San Marzano tomato from the Sarnese-Nocerino area (PDO) is a variety of tomato recognized as an Italian fruit and vegetable product with a Protected Designation of Origin.
+These are berries with a characteristic red color, widely used in the food sector in many countries of the world."""@en ;
+          rdfs:label "Pomodoro San Marzano"@it ,
+                     "San Marzano Tomato"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
@@ -2685,7 +2733,11 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
 :Torino rdf:type owl:NamedIndividual ,
                  :Città ;
-        :cittaHaNome "Torino"^^xsd:string .
+        :cittaHaNome "Torino"^^xsd:string ;
+        rdfs:comment "Comune Italiano e capoluogo dell'omonima città metropolitana e della regione Piemonte. E' il terzo complesso economico-produttivo del Paese e costituisce uno dei maggiori poli universitari, artistici, turistici, scientifici e culturali d'Italia."@it ,
+                     "Italian municipality and capital of the homonymous metropolitan city and of the Piedmont region. It is the third economic-productive complex in the country and is one of the major university, artistic, tourist, scientific and cultural centers in Italy."@en ;
+        rdfs:label "Torino"@it ,
+                   "Turin"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina

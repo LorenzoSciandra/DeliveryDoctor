@@ -2910,6 +2910,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaUova
                         :Arachide
                         :Asti
+                        :Basilico
                         :Besciamella
                         :BiscottiTritati
                         :Biscotto
@@ -2929,6 +2930,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :FormaggioCremoso
                         :GalaxyBurger
                         :GranoTenero
+                        :ImpastoPizza
                         :IntolleranzaFruttosio
                         :IntolleranzaLattosio
                         :Lasagne

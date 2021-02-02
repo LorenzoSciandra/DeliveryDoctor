@@ -2224,7 +2224,12 @@ foaf:Person rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ImpastoPizza
-:ImpastoPizza rdf:type owl:NamedIndividual ;
+:ImpastoPizza rdf:type owl:NamedIndividual ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :ingredienteDerivatoDa ;
+                         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                         owl:onClass :ingrediente
+                       ] ;
               :ingredienteDerivatoDa :FarinaGranoTenero ,
                                      :LievitoBirra ;
               rdfs:comment "Dough that, once risen and stretched, is used for the preparation of pizzas or fried."@en ,
@@ -2560,7 +2565,11 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita
 :PizzaMargherita rdf:type owl:NamedIndividual ,
-                          :Pietanza ;
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :utilizzaIngrediente ;
+                            owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ingrediente
+                          ] ;
                  :utilizzaIngrediente :Basilico ,
                                       :ImpastoPizza ,
                                       :Mozzarella ,

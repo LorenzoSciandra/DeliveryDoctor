@@ -2857,6 +2857,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaSoia
                         :AllergiaUova
                         :Arachide
+                        :Asti
                         :Besciamella
                         :BiscottiTritati
                         :Biscotto
@@ -2874,6 +2875,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :FarinaGranoTenero
                         :Favismo
                         :FormaggioCremoso
+                        :GalaxyBurger
                         :GranoTenero
                         :IntolleranzaFruttosio
                         :IntolleranzaLattosio
@@ -2890,6 +2892,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Luca
                         :MacinatoCarneVitello
                         :Mandorla
+                        :Mozzarella
+                        :Napples
                         :Nocciola
                         :Noce
                         :NoceMoscata
@@ -2901,6 +2905,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :PaneSemiSesamo
                         :ParmigianoReggiano
                         :Pistacchio
+                        :PizzaMargherita
                         :Polpette
                         :PolpetteAlSugo
                         :Pomodoro
@@ -2914,17 +2919,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Sesamo
                         :Soia
                         :SugoPomodoro
+                        :Torino
                         :UovoGallina
                         :Uva
                         :ValutazionePositivaDubai
                         :Zucchero
-                      )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :Asti
-                        :Torino
                       )
 ] .
 

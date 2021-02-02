@@ -2765,9 +2765,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ,
-                                                                 "Non-celiac gluten sensitivity"@en ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
@@ -2811,10 +2811,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
+                                                                       "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

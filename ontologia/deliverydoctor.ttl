@@ -2127,8 +2127,7 @@ foaf:Person rdf:type owl:Class ;
                             :PolpetteAlSugo ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
                     "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
-       rdfs:label "Dubai Coffee Lounge"@en ,
-                  "Dubai Coffee Lounge"@it .
+       rdfs:label "Dubai Coffee Lounge" .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero

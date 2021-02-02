@@ -275,7 +275,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haOrdinatoPietanza
 :haOrdinatoPietanza rdf:type owl:ObjectProperty ;
                     owl:propertyChainAxiom ( :haFattoOrdine
-                                             :ordineCompostaDaPietanza
+                                             :ordineCompostoDaPietanza
                                            ) ;
                     rdfs:comment "Property that links the person to the food preparation that makes up one of his orders"@en ,
                                  "Proprietà che collega la persona alla pietanza che compone uno dei suoi ordini"@it ;
@@ -423,6 +423,14 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                             "Locale Situato In"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoInCitta
+:localeSituatoInCitta rdf:type owl:ObjectProperty ;
+                      rdfs:subPropertyOf :localeSituatoIn ;
+                      rdfs:domain :EsercizioAlimentare ;
+                      rdfs:range :Città ;
+                      rdfs:label "Locale Situato In Citta"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordinareDalLocale
 :ordinareDalLocale rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
@@ -445,8 +453,8 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                        "Ordinato Da"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCompostaDaPietanza
-:ordineCompostaDaPietanza rdf:type owl:ObjectProperty ;
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCompostoDaPietanza
+:ordineCompostoDaPietanza rdf:type owl:ObjectProperty ;
                           rdfs:domain :Ordine ;
                           rdfs:range :Pietanza ;
                           rdfs:comment "Property that links the order to the food preparations that compose it"@en ,
@@ -640,6 +648,13 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 <http://schema.org/reviewBody> rdf:type owl:DatatypeProperty ;
                                rdfs:domain <http://schema.org/Review> ;
                                rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#cittaHaNome
+:cittaHaNome rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Città ;
+             rdfs:range xsd:string ;
+             rdfs:label "Citta Ha Nome"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
@@ -1946,6 +1961,11 @@ foaf:Person rdf:type owl:Class ;
                      "Peanut"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
+:Asti rdf:type owl:NamedIndividual ,
+               :Città .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella
 :Besciamella rdf:type owl:NamedIndividual ,
                       [ rdf:type owl:Restriction ;
@@ -2030,7 +2050,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant
 :CappuccinoECroissant rdf:type owl:NamedIndividual ,
                                :Ordine ;
-                      :ordineCompostaDaPietanza :CappuccinoSpeciale ,
+                      :ordineCompostoDaPietanza :CappuccinoSpeciale ,
                                                 :Croissant ;
                       :ordineCreatoDaAzione :OrdinareDubai ;
                       rdfs:comment "Luca's order for a cappuccino and a croissant at \"Dubai\"."@en ,
@@ -2122,9 +2142,12 @@ foaf:Person rdf:type owl:Class ;
 :Dubai rdf:type owl:NamedIndividual ,
                 :Bar ,
                 :SelfService ;
-       :localeServePietanza :Croissant ,
+       :localeServePietanza :CappuccinoSpeciale ,
+                            :Croissant ,
                             :LasagneAlForno ,
-                            :PolpetteAlSugo ;
+                            :PolpetteAlSugo ,
+                            :RisottoSugo ;
+       :localeSituatoInCitta :Torino ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
                     "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
        rdfs:label "Dubai Coffee Lounge" .
@@ -2160,6 +2183,12 @@ foaf:Person rdf:type owl:Class ;
                                "Quark-like cheese."@en ;
                   rdfs:label "Creamy cheese"@en ,
                              "Formaggio cremoso"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger
+:GalaxyBurger rdf:type owl:NamedIndividual ,
+                       :EsercizioAlimentare ;
+              :localeSituatoInCitta :Asti .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2346,6 +2375,19 @@ foaf:Person rdf:type owl:Class ;
                      "Mandorla"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
+:Mozzarella rdf:type owl:NamedIndividual ,
+                     :ingrediente ;
+            :ingredienteCoagulatoDa :LatteMucca .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Napples
+:Napples rdf:type owl:NamedIndividual ,
+                  :EsercizioAlimentare ;
+         :localeServePietanza :PizzaMargherita ;
+         :localeSituatoInCitta :Torino .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
 :Nocciola rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
@@ -2476,6 +2518,13 @@ foaf:Person rdf:type owl:Class ;
                          "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@it ;
             rdfs:label "Pistacchio"@it ,
                        "Pistachio"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita
+:PizzaMargherita rdf:type owl:NamedIndividual ,
+                          :Pietanza ;
+                 :utilizzaIngrediente :FarinaGranoTenero ,
+                                      :SugoPomodoro .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette
@@ -2633,6 +2682,12 @@ foaf:Person rdf:type owl:Class ;
                          "Tomato sauce"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
+:Torino rdf:type owl:NamedIndividual ,
+                 :Città ;
+        :cittaHaNome "Torino"^^xsd:string .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
 :UovoGallina rdf:type owl:NamedIndividual ,
                       :Uovo ;
@@ -2710,9 +2765,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ,
+                                                                 "Non-celiac gluten sensitivity"@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
@@ -2756,10 +2811,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
                        <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
-                                                                       "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
@@ -2863,6 +2918,13 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Uva
                         :ValutazionePositivaDubai
                         :Zucchero
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :Asti
+                        :Torino
                       )
 ] .
 

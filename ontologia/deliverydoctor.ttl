@@ -2462,7 +2462,7 @@ foaf:Person rdf:type owl:Class ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass :ingrediente
                              ] ;
-                    :ingredienteDerivatoDa :LatteMucca ;
+                    :ingredienteCoagulatoDa :LatteMucca ;
                     rdfs:comment "Formaggio a pasta dura DOP, prodotto con latte vaccino crudo, parzialmente scremato per affioramento, senza l'aggiunta di additivi."@it ,
                                  "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
                     rdfs:label "Parmigiano Reggiano"@it ,

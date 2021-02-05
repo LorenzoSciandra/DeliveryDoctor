@@ -101,6 +101,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#avviareIlLocale
 :avviareIlLocale rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                 rdf:type owl:FunctionalProperty ;
                  rdfs:domain :AvviareImpresa ;
                  rdfs:range :EsercizioAlimentare ;
                  rdfs:comment "Property that links the activity of opening a food establishment with the local involved"@en ,
@@ -123,6 +124,7 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareAlCliente
 :consegnareAlCliente rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                     rdf:type owl:FunctionalProperty ;
                      rdfs:domain :Consegnare ;
                      rdfs:range :Cliente ;
                      rdfs:comment "Activity that links the activity of delivering an order to the customer who made that order"@en ,
@@ -434,6 +436,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordinareDalLocale
 :ordinareDalLocale rdf:type owl:ObjectProperty ;
                    rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                   rdf:type owl:FunctionalProperty ;
                    rdfs:domain :Ordinare ;
                    rdfs:range :EsercizioAlimentare ;
                    rdfs:comment "Property that links the activity of ordering with the food establishment where the order was placed"@en ,
@@ -474,6 +477,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCreatoDaAzione
 :ordineCreatoDaAzione rdf:type owl:ObjectProperty ;
                       rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                      rdf:type owl:FunctionalProperty ;
                       rdfs:domain :Ordine ;
                       rdfs:range :Ordinare ;
                       rdfs:comment "Property that links the order to the activity that created it"@en ,
@@ -513,6 +517,8 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensioneCreataDaAzione
 :recensioneCreataDaAzione rdf:type owl:ObjectProperty ;
                           rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasGeneratedBy> ;
+                          owl:inverseOf :scrivereRecensione ;
+                          rdf:type owl:FunctionalProperty ;
                           rdfs:domain :Recensione ;
                           rdfs:range :Recensire ;
                           rdfs:comment "Property that links the review to the action from which it is created"@en ,
@@ -535,6 +541,7 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensireLocale
 :recensireLocale rdf:type owl:ObjectProperty ;
                  rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                 rdf:type owl:FunctionalProperty ;
                  rdfs:domain :Recensire ;
                  rdfs:range :EsercizioAlimentare ;
                  rdfs:comment "Property that links the activity of reviewing with the food establishment under review"@en ,

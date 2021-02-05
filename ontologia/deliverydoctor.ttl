@@ -2622,8 +2622,8 @@ foaf:Person rdf:type owl:Class ;
                                  :Pane ,
                                  :Prezzemolo ,
                                  :UovoGallina ;
-          rdfs:comment "Dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round."@en ,
-                       "Pietanza a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante."@it ;
+          rdfs:comment "Ingredient based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round."@en ,
+                       "Ingrediente a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante."@it ;
           rdfs:label "Meatballs"@en ,
                      "Polpette"@it .
 

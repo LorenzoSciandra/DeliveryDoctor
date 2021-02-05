@@ -2649,7 +2649,7 @@ These are berries with a characteristic red color, widely used in the food secto
                                   :Recensione ;
                          <http://schema.org/reviewRating> :ValutazionePositivaDubai ;
                          :recensioneCreataDaAzione :RecensireDubai ;
-                         <http://schema.org/reviewBody> "Ottima cheesecake, cappuccino gustoso! (nonostante senza latte)"^^xsd:string ;
+                         <http://schema.org/reviewBody> "Servono un'ottima cheesecake e dei cappuccini gustosissimi (nonostante non usino latte)!"^^xsd:string ;
                          rdfs:comment "Luca's review about his order at \"Dubai\""@en ,
                                       "Recensione di Luca per il suo ordine al \"Dubai\"."@it ;
                          rdfs:label "Luca's Review for \"Dubai\""@en ,

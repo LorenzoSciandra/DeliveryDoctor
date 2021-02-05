@@ -2165,6 +2165,14 @@ foaf:Person rdf:type owl:Class ;
                      "Ciliegia"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLuca
+:ConsegnaOrdineLuca rdf:type owl:NamedIndividual ,
+                             :Consegnare ;
+                    :consegnareAlCliente :Luca ;
+                    :consegnareOrdine :CappuccinoECroissant ;
+                    :consegnatoDa :Gianni .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
 :Croissant rdf:type owl:NamedIndividual ,
                     :PietanzaSenzaSoia ,
@@ -2195,9 +2203,10 @@ foaf:Person rdf:type owl:Class ;
                             :PolpetteAlSugo ,
                             :RisottoSugo ;
        :localeSituatoInCitta :Torino ;
+       :haNome "Dubai Coffee Lounge"^^xsd:string ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
                     "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
-       rdfs:label "Dubai Coffee Lounge" .
+       rdfs:label "Dubai Coffee Lounge"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
@@ -2239,6 +2248,12 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
                            "Hamburgeria situata in centro ad Asti."@it ;
               rdfs:label "Galaxy Burger"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni
+:Gianni rdf:type owl:NamedIndividual ,
+                 :Persona ;
+        :haNome "Gianni"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2453,9 +2468,10 @@ foaf:Person rdf:type owl:Class ;
                   :EsercizioAlimentare ;
          :localeServePietanza :PizzaMargherita ;
          :localeSituatoInCitta :Torino ;
+         :haNome "Napples"^^xsd:string ;
          rdfs:comment "Restaurant serving pizza and fried fish and seafood in a refined setting, with details related to the New York of yesteryear."@en ,
                       "Ristorante che serve pizza e fritture di mare e di terra in un ambiente curato, con dettagli legati alla New York d'altri tempi."@it ;
-         rdfs:label "Napples" .
+         rdfs:label "Napples"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola

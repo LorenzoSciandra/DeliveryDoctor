@@ -2405,8 +2405,6 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
 :Luca rdf:type owl:NamedIndividual ,
                :Persona ;
-      :haRuolo :RuoloClienteLuca ,
-               :RuoloRecensoreLuca ;
       foaf:givenName "Luca" ;
       rdfs:comment "Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome."@it ,
                    "You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance)."@en ;
@@ -2722,16 +2720,6 @@ These are berries with a characteristic red color, widely used in the food secto
                                                              "Risotto with tomato sauce"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloClienteLuca
-:RuoloClienteLuca rdf:type owl:NamedIndividual ,
-                           :RuoloCliente .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensoreLuca
-:RuoloRecensoreLuca rdf:type owl:NamedIndividual ,
-                             :RuoloRecensore .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
@@ -3005,8 +2993,6 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :RecensireDubai
                         :Riso
                         :RisottoSugo
-                        :RuoloClienteLuca
-                        :RuoloRecensoreLuca
                         :Sesamo
                         :Soia
                         :SugoPomodoro

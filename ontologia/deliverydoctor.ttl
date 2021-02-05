@@ -561,6 +561,18 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
                         "Review By"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#scrivereRecensione
+:scrivereRecensione rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:domain :Recensire ;
+                    rdfs:range :Recensione ;
+                    rdfs:comment "Property that links the action of writing a review with the review produced."@en ,
+                                 "Proprietà che collega l'azione di scrivere una recensione con la recensione prodotta."@it ;
+                    rdfs:label "Scrivere Recensione"@it ,
+                               "Write Review"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente
 :utilizzaIngrediente rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :hasMember ;

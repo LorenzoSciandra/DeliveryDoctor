@@ -413,7 +413,11 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
 :localeServePietanza rdf:type owl:ObjectProperty ;
                      owl:inverseOf :pietanzaServitaInLocale ;
                      rdfs:domain :EsercizioAlimentare ;
-                     rdfs:range :Pietanza .
+                     rdfs:range :Pietanza ;
+                     rdfs:comment "Property that associates a room with the dishes it serves."@en ,
+                                  "Proprietà che associa un locale alle pietanze che serve."@it ;
+                     rdfs:label "Food Establishment serves Food Preparation"@en ,
+                                "Locale serve pietanza"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
@@ -2664,12 +2668,10 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          rdfs:comment """Il pomodoro di San Marzano dell'agro sarnese-nocerino (DOP) è una varietà di pomodoro riconosciuta come prodotto ortofrutticolo italiano a Denominazione di origine protetta.
-Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."""@it ,
-                       """The San Marzano tomato from the Sarnese-Nocerino area (PDO) is a variety of tomato recognized as an Italian fruit and vegetable product with a Protected Designation of Origin.
-These are berries with a characteristic red color, widely used in the food sector in many countries of the world."""@en ;
-          rdfs:label "Pomodoro San Marzano"@it ,
-                     "San Marzano Tomato"@en .
+          rdfs:comment "Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."@it ,
+                       "These are berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
+          rdfs:label "Pomodoro"@it ,
+                     "Tomato"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo

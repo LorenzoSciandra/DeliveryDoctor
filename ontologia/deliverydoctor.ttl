@@ -2141,6 +2141,14 @@ foaf:Person rdf:type owl:Class ;
                      "Ciliegia"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLuca
+:ConsegnaOrdineLuca rdf:type owl:NamedIndividual ,
+                             :Consegnare ;
+                    :consegnareAlCliente :Luca ;
+                    :consegnareOrdine :CappuccinoECroissant ;
+                    :consegnatoDa :Gianni .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
 :Croissant rdf:type owl:NamedIndividual ,
                     :PietanzaSenzaSoia ,
@@ -2171,9 +2179,10 @@ foaf:Person rdf:type owl:Class ;
                             :PolpetteAlSugo ,
                             :RisottoSugo ;
        :localeSituatoInCitta :Torino ;
+       :haNome "Dubai Coffee Lounge"^^xsd:string ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
                     "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
-       rdfs:label "Dubai Coffee Lounge" .
+       rdfs:label "Dubai Coffee Lounge"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
@@ -2215,6 +2224,12 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
                            "Hamburgeria situata in centro ad Asti."@it ;
               rdfs:label "Galaxy Burger"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni
+:Gianni rdf:type owl:NamedIndividual ,
+                 :Persona ;
+        :haNome "Gianni"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2432,9 +2447,10 @@ foaf:Person rdf:type owl:Class ;
                   :EsercizioAlimentare ;
          :localeServePietanza :PizzaMargherita ;
          :localeSituatoInCitta :Torino ;
+         :haNome "Napples"^^xsd:string ;
          rdfs:comment "Restaurant serving pizza and fried fish and seafood in a refined setting, with details related to the New York of yesteryear."@en ,
                       "Ristorante che serve pizza e fritture di mare e di terra in un ambiente curato, con dettagli legati alla New York d'altri tempi."@it ;
-         rdfs:label "Napples" .
+         rdfs:label "Napples"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
@@ -2877,11 +2893,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                                                      "Hereditary fructose intolerance"@en ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
-                                                                       "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

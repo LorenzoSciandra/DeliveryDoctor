@@ -225,7 +225,7 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
                                            ) ;
                     rdfs:comment "Property that links the delivery guy with the orders delivered"@en ,
                                  "Proprietà che collega il fattorino con gli ordini che ha consegnato"@it ;
-                    rdfs:label "Ha Consengato Ordine"@it ,
+                    rdfs:label "Ha Consegnato Ordine"@it ,
                                "Has Delivered Order"@en .
 
 

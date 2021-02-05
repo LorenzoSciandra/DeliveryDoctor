@@ -6,6 +6,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
@@ -65,11 +66,11 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#altLabel
-<http://www.w3.org/2004/02/skos/core#altLabel> rdf:type owl:AnnotationProperty .
+skos:altLabel rdf:type owl:AnnotationProperty .
 
 
 ###  http://www.w3.org/2004/02/skos/core#prefLabel
-<http://www.w3.org/2004/02/skos/core#prefLabel> rdf:type owl:AnnotationProperty .
+skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -193,12 +194,12 @@ vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
            rdfs:range :ingrediente ;
            rdfs:comment "Property that indicates with which ingredients the food preparation has been deep fried."@en ,
                         "Proprietà che indica con quali ingredienti la pietanza è stata fritta."@it ;
-           <http://www.w3.org/2004/02/skos/core#altLabel> "Deep fried using"@en ,
-                                                          "Deep fried with"@en ,
-                                                          "Fritto in"@it ,
-                                                          "Fritto usando"@it ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "Deep fried in"@en ,
-                                                           "Fritto con"@it .
+           skos:altLabel "Deep fried using"@en ,
+                         "Deep fried with"@en ,
+                         "Fritto in"@it ,
+                         "Fritto usando"@it ;
+           skos:prefLabel "Deep fried in"@en ,
+                          "Fritto con"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAvviatoImpresa
@@ -724,7 +725,7 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 
 ###  http://www.w3.org/2004/02/skos/core#notation
-<http://www.w3.org/2004/02/skos/core#notation> rdf:type owl:DatatypeProperty .
+skos:notation rdf:type owl:DatatypeProperty .
 
 
 ###  http://xmlns.com/foaf/0.1/givenName
@@ -1296,10 +1297,10 @@ collectionentity:Collection rdf:type owl:Class ;
                rdfs:subClassOf :IngredienteVegano ;
                rdfs:comment "Bevanda simile al latte animale."@it ,
                             "Drink similar to animal milk."@en ;
-               <http://www.w3.org/2004/02/skos/core#altLabel> "Nut milk"@en ,
-                                                              "Vegan milk"@en ;
-               <http://www.w3.org/2004/02/skos/core#prefLabel> "Latte vegetale"@it ,
-                                                               "Plant milk"@en .
+               skos:altLabel "Nut milk"@en ,
+                             "Vegan milk"@en ;
+               skos:prefLabel "Latte vegetale"@it ,
+                              "Plant milk"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LuogoGeografico
@@ -2032,10 +2033,10 @@ foaf:Person rdf:type owl:Class ;
                  :ingredienteDerivatoDa :Biscotto ;
                  rdfs:comment "Biscotti sbriciolati tramite processi meccanici. In genere, rotti a mano o con un robot da cucina."@it ,
                               "Crumbled biscuits by mechanical processes. Typically broken by hand or with a food processor."@en ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "Biscotti sbriciolati"@it ,
-                                                                "Crumbled biscuits"@en ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Biscotti tritati"@it ,
-                                                                 "Crushed cookies"@en .
+                 skos:altLabel "Biscotti sbriciolati"@it ,
+                               "Crumbled biscuits"@en ;
+                 skos:prefLabel "Biscotti tritati"@it ,
+                                "Crushed cookies"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotto
@@ -2074,8 +2075,8 @@ foaf:Person rdf:type owl:Class ;
                 :FruttoCarnoso ;
        rdfs:comment "Fruit of the coffee plant, used to produce coffee-based drinks."@en ,
                     "Frutto della Coffea, utilizzato per la produzione di Caffè."@it ;
-       <http://www.w3.org/2004/02/skos/core#prefLabel> "Caffè in chicchi"@it ,
-                                                       "Coffee bean"@en .
+       skos:prefLabel "Caffè in chicchi"@it ,
+                      "Coffee bean"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CaffèMacinato
@@ -2321,10 +2322,10 @@ foaf:Person rdf:type owl:Class ;
              :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
              rdfs:comment "Latte di bufala di razza mediterranea italiana."@it ,
                           "Milk from Italian buffalos."@en ;
-             <http://www.w3.org/2004/02/skos/core#altLabel> "Latte bufalino"@it ,
-                                                            "Latte di bufala mediterranea italiana"@it ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "Italian buffalo's milk"@en ,
-                                                             "Latte di Bufala"@it .
+             skos:altLabel "Latte bufalino"@it ,
+                           "Latte di bufala mediterranea italiana"@it ;
+             skos:prefLabel "Italian buffalo's milk"@en ,
+                            "Latte di Bufala"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteCapra
@@ -2332,9 +2333,9 @@ foaf:Person rdf:type owl:Class ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte generato dalle capre."@it ,
                          "Milk that comes from goats."@en ;
-            <http://www.w3.org/2004/02/skos/core#altLabel> "Latte caprino"@it ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "Goat milk"@en ,
-                                                            "Latte di Capra"@it .
+            skos:altLabel "Latte caprino"@it ;
+            skos:prefLabel "Goat milk"@en ,
+                           "Latte di Capra"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMandorla
@@ -2357,9 +2358,9 @@ foaf:Person rdf:type owl:Class ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte ricavato dalla mungitura della vacca."@it ,
                          "Milk obtained from the milking of the cow."@en ;
-            <http://www.w3.org/2004/02/skos/core#altLabel> "Latte di mucca"@it ;
-            <http://www.w3.org/2004/02/skos/core#prefLabel> "Cow milk"@en ,
-                                                            "Latte vaccino"@it .
+            skos:altLabel "Latte di mucca"@it ;
+            skos:prefLabel "Cow milk"@en ,
+                           "Latte vaccino"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteRiso
@@ -2397,9 +2398,9 @@ foaf:Person rdf:type owl:Class ;
                        :IngredienteVegano ;
               rdfs:comment "Lievito più importante nell'ambito dell'alimentazione umana. Il suo utilizzo è noto fin dall'antichità per la panificazione, la vinificazione e la produzione di birra."@it ,
                            "Most important yeast in human nutrition. Its use has been known since ancient times for bread making, wine making and beer production."@en ;
-              <http://www.w3.org/2004/02/skos/core#altLabel> "Saccharomyces cerevisiae" ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "Beer yeast"@en ,
-                                                              "Lievito di birra"@it .
+              skos:altLabel "Saccharomyces cerevisiae" ;
+              skos:prefLabel "Beer yeast"@en ,
+                             "Lievito di birra"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
@@ -2495,9 +2496,9 @@ foaf:Person rdf:type owl:Class ;
               :ingredienteDerivatoDa :Arachide ;
               rdfs:comment "Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi."@it ,
                            "Vegetable oil that is obtained by pressure or by means of solvents from peanut seeds."@en ;
-              <http://www.w3.org/2004/02/skos/core#altLabel> "Olio di semi di Arachide"@it ;
-              <http://www.w3.org/2004/02/skos/core#prefLabel> "Olio di Arachidi"@it ,
-                                                              "Peanut oil"@en .
+              skos:altLabel "Olio di semi di Arachide"@it ;
+              skos:prefLabel "Olio di Arachidi"@it ,
+                             "Peanut oil"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva
@@ -2510,8 +2511,8 @@ foaf:Person rdf:type owl:Class ;
                 :ingredienteDerivatoDa :Oliva ;
                 rdfs:comment "Olio d'oliva estratto con soli processi meccanici."@it ,
                              "Olive oil extracted only by mechanical means"@en ;
-                <http://www.w3.org/2004/02/skos/core#prefLabel> "Extra-virgin olive oil"@en ,
-                                                                "Olio extra-vergine d'oliva"@it .
+                skos:prefLabel "Extra-virgin olive oil"@en ,
+                               "Olio extra-vergine d'oliva"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva
@@ -2602,9 +2603,9 @@ foaf:Person rdf:type owl:Class ;
                                       :SugoPomodoro ;
                  rdfs:comment "La pizza Margherita è la tipica pizza napoletana, condita con pomodoro, mozzarella (tradizionalmente è usato il fior di latte, non quella di bufala), basilico fresco e olio d'oliva; è, assieme alla pizza marinara, la più popolare pizza italiana."@it ,
                               "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil and extra-virgin olive oil."@en ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "Margherita"@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Margherita Pizza"@en ,
-                                                                 "Pizza Margherita"@it .
+                 skos:altLabel "Margherita"@it ;
+                 skos:prefLabel "Margherita Pizza"@en ,
+                                "Pizza Margherita"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette
@@ -2714,10 +2715,10 @@ These are berries with a characteristic red color, widely used in the food secto
                                   :SugoPomodoro ;
              rdfs:comment "Risotto fatto con riso e sugo di pomodoro."@it ,
                           "Risotto made with rice and tomato sauce."@en ;
-             <http://www.w3.org/2004/02/skos/core#altLabel> "Risotto al pomodoro"@it ,
-                                                            "Tomato risotto"@en ;
-             <http://www.w3.org/2004/02/skos/core#prefLabel> "Risotto al sugo"@it ,
-                                                             "Risotto with tomato sauce"@en .
+             skos:altLabel "Risotto al pomodoro"@it ,
+                           "Tomato risotto"@en ;
+             skos:prefLabel "Risotto al sugo"@it ,
+                            "Risotto with tomato sauce"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
@@ -2842,9 +2843,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
+                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ;
+                 skos:altLabel "NCGS" ;
+                 skos:prefLabel "Non-celiac gluten sensitivity"@en .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
@@ -2871,27 +2872,27 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
               rdfs:comment "Ipersensibilità immunitaria alle proteine presenti nelle uova di gallina e possibilmente nelle uova di oca, anatra o tacchino."@it .
 
 
-:Celiachia <http://www.w3.org/2004/02/skos/core#altLabel> "Coeliac disease"@en ;
+:Celiachia skos:altLabel "Coeliac disease"@en ;
            rdfs:comment "Infiammazione cronica dell'intestino tenue, scatenata dall'ingestione di glutine in soggetti geneticamente predisposti."@it ,
                         "Chronic inflammation of the small intestine, triggered by the ingestion of gluten in genetically predisposed individuals."@en ;
-           <http://www.w3.org/2004/02/skos/core#prefLabel> "Celiac disease"@en ,
-                                                           "Celiachia"@it .
+           skos:prefLabel "Celiac disease"@en ,
+                          "Celiachia"@it .
 
 
 :Favismo rdfs:comment "Clinical manifestation characterized by a haemolytic crisis in response to the consumption of broad beans."@en ;
-         <http://www.w3.org/2004/02/skos/core#altLabel> "Glucose-6-phosphate dehydrogenase deficiency"@en ,
-                                                        "Carenza di glucosio-6-fosfato deidrogenasi"@it ;
+         skos:altLabel "Glucose-6-phosphate dehydrogenase deficiency"@en ,
+                       "Carenza di glucosio-6-fosfato deidrogenasi"@it ;
          rdfs:comment "Manifestazione clinica caratterizzata da una crisi emolitica in risposta al consumo di fave."@it ;
-         <http://www.w3.org/2004/02/skos/core#prefLabel> "Favism"@en ,
-                                                         "Favismo"@it .
+         skos:prefLabel "Favism"@en ,
+                        "Favismo"@it .
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                                                      "Hereditary fructose intolerance"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                     "Hereditary fructose intolerance"@en ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
+                       skos:prefLabel "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

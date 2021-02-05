@@ -1943,6 +1943,20 @@ foaf:Person rdf:type owl:Class ;
 #    Individuals
 #################################################################
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcetoVinoBianco
+:AcetoVinoBianco rdf:type owl:NamedIndividual ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :ingredienteDerivatoDa ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onClass :ingrediente
+                          ] ;
+                 :ingredienteFermentatoDa :Uva ;
+                 rdfs:comment "Viene definito aceto il liquido acido che è ottenuto grazie all'azione di batteri Gram-negativi del genere Acetobacter, che, in presenza di aria e acqua, ossidano l'etanolo contenuto nel vino."@it ,
+                              "Vinegar is defined as the acidic liquid obtained thanks to the action of Gram-negative bacteria of the genus Acetobacter, which, in the presence of air and water, oxidize the ethanol contained in the wine."@en ;
+                 rdfs:label "Aceto di Vino Bianco"@it ,
+                            "Wine Vinegar"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
 :AcidoTartarico rdf:type owl:NamedIndividual ,
                          :Additivo ;
@@ -2224,6 +2238,16 @@ foaf:Person rdf:type owl:Class ;
        rdfs:label "Dubai Coffee Lounge"^^xsd:string .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam
+:Edam rdf:type owl:NamedIndividual ;
+      :ingredienteCoagulatoDa :LatteMucca ;
+      rdfs:comment "Edam is a semi-hard cheese that originated in the Netherlands, traditionally sold in flat ended spheres with a pale yellow interior and a coat, or rind, of red paraffin wax."@en ,
+                   "L'edam è un formaggio a base di latte vaccino con l'aggiunta di caglio animale tipico dei Paesi Bassi, venduto in forme dalla pasta giallo tenue e con una sottile protezione di cera rossastra."@it ;
+      skos:altLabel "Edam"@it ;
+      skos:prefLabel "Edam Cheese"@en ,
+                     "Edamer"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
 :FarinaGranoTenero rdf:type owl:NamedIndividual ,
                             [ rdf:type owl:Restriction ;
@@ -2259,6 +2283,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger
 :GalaxyBurger rdf:type owl:NamedIndividual ,
                        :EsercizioAlimentare ;
+              :localeServePietanza :HamburgerLuna ;
               :localeSituatoInCitta :Asti ;
               :haNome "Galaxy Burger"^^xsd:string ;
               rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
@@ -2283,6 +2308,25 @@ foaf:Person rdf:type owl:Class ;
                         "Wheat"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna
+:HamburgerLuna rdf:type owl:NamedIndividual ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :utilizzaIngrediente ;
+                          owl:qualifiedCardinality "7"^^xsd:nonNegativeInteger ;
+                          owl:onClass :ingrediente
+                        ] ;
+               :utilizzaIngrediente :Edam ,
+                                    :Insalata ,
+                                    :Ketchup ,
+                                    :MacinatoCarneVitello ,
+                                    :Maionese ,
+                                    :Pane ,
+                                    :Pomodoro ;
+               rdfs:comment "Edamer cheese embellishes the fassone hamburger, accompanied by salad and fresh tomato and garnished with mayonnaise and ketchup."@en ,
+                            "Filante formaggio edamer impreziosisce l'hamburger di fassone, accompagnato da insalata e pomodoro fresco e guarnito con maionese e ketchup."@it ;
+               rdfs:label "Luna (Hamburger)" .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ImpastoPizza
 :ImpastoPizza rdf:type owl:NamedIndividual ,
                        [ rdf:type owl:Restriction ;
@@ -2298,12 +2342,36 @@ foaf:Person rdf:type owl:Class ;
                          "Pizza dough"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata
+:Insalata rdf:type owl:NamedIndividual ,
+                   :Ortaggio ;
+          rdfs:comment "L'insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite."@it ,
+                       "The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned."@en ;
+          rdfs:label "Insalata"@it ,
+                     "Salad"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
 :IntolleranzaFruttosio rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio
 :IntolleranzaLattosio rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup
+:Ketchup rdf:type owl:NamedIndividual ,
+                  [ rdf:type owl:Restriction ;
+                    owl:onProperty :ingredienteDerivatoDa ;
+                    owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                    owl:onClass :ingrediente
+                  ] ;
+         :ingredienteDerivatoDa :AcetoVinoBianco ,
+                                :Pomodoro ,
+                                :Zucchero ;
+         rdfs:comment "Il ketchup è una salsa agrodolce a base di pomodoro, di origine asiatica e tradizionalmente utilizzata per accompagnare patatine fritte e altri fritti, oppure per insaporire panini farciti."@it ,
+                      "Ketchup is a tomato-based sweet and sour sauce of Asian origin and traditionally used to accompany fries and other fried foods, or to flavor stuffed sandwiches."@en ;
+         rdfs:label "Ketchup" .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lasagne
@@ -2457,6 +2525,22 @@ foaf:Person rdf:type owl:Class ;
                                    "Macinato ottenuto macinando carne di vitello."@it ;
                       rdfs:label "Ground calf meat"@en ,
                                  "Macinato di carne di vitello"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese
+:Maionese rdf:type owl:NamedIndividual ,
+                   [ rdf:type owl:Restriction ;
+                     owl:onProperty :ingredienteDerivatoDa ;
+                     owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                     owl:onClass :ingrediente
+                   ] ;
+          :ingredienteDerivatoDa :OlioExtraOliva ,
+                                 :UovoGallina ;
+          rdfs:comment "La maionese è una salsa cremosa e omogenea, generalmente di colore bianco o giallo pallido, che viene consumata fredda. Si tratta di un'emulsione stabile di olio vegetale frazionato in acqua, con tuorlo d'uovo e aromatizzato con aceto o succo di limone."@it ,
+                       "Mayonnaise is a smooth, creamy sauce, generally white or pale yellow in color, which is eaten cold. It is a stable emulsion of vegetable oil fractionated in water, with egg yolk and flavored with vinegar or lemon juice"@en ;
+          skos:altLabel "Mayo"@en ;
+          skos:prefLabel "Maionese"@it ,
+                         "Mayonnaise"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
@@ -2955,7 +3039,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :AcidoTartarico
+  owl:distinctMembers ( :AcetoVinoBianco
+                        :AcidoTartarico
                         :AllergiaAdditivi
                         :AllergiaArachidi
                         :AllergiaCrostacei
@@ -2981,16 +3066,22 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Celiachia
                         :CheesecakeCiliegia
                         :Ciliegia
+                        :ConsegnaOrdineLuca
                         :Croissant
                         :Dubai
+                        :Edam
                         :FarinaGranoTenero
                         :Favismo
                         :FormaggioCremoso
                         :GalaxyBurger
+                        :Gianni
                         :GranoTenero
+                        :HamburgerLuna
                         :ImpastoPizza
+                        :Insalata
                         :IntolleranzaFruttosio
                         :IntolleranzaLattosio
+                        :Ketchup
                         :Lasagne
                         :LasagneAlForno
                         :LatteAsina
@@ -3003,6 +3094,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :LievitoBirra
                         :Luca
                         :MacinatoCarneVitello
+                        :Maionese
                         :Mandorla
                         :Mozzarella
                         :Napples

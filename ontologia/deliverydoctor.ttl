@@ -2807,7 +2807,8 @@ foaf:Person rdf:type owl:Class ;
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
-:Uva rdf:type owl:NamedIndividual ;
+:Uva rdf:type owl:NamedIndividual ,
+              :Infruttescenza ;
      :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
      rdfs:comment "Fruit of the vine, recovered from the bunch."@en ,
                   "Frutto della vite, recuperato dal grappolo."@it ;

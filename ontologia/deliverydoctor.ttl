@@ -729,6 +729,7 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 ###  http://xmlns.com/foaf/0.1/givenName
 foaf:givenName rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf <http://schema.org/Name> ;
                rdfs:domain foaf:Person ;
                rdfs:range xsd:string .
 

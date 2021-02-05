@@ -638,6 +638,11 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 #    Data properties
 #################################################################
 
+###  http://schema.org/Name
+<http://schema.org/Name> rdf:type owl:DatatypeProperty ;
+                         owl:equivalentProperty :haNome .
+
+
 ###  http://schema.org/ratingValue
 <http://schema.org/ratingValue> rdf:type owl:DatatypeProperty ;
                                 rdfs:domain <http://schema.org/Rating> ;
@@ -650,13 +655,6 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
                                rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#cittaHaNome
-:cittaHaNome rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Città ;
-             rdfs:range xsd:string ;
-             rdfs:label "Citta Ha Nome"@it .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
 :haAbitanti rdf:type owl:DatatypeProperty ,
                      owl:FunctionalProperty ;
@@ -666,6 +664,13 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
                          "Proprietà che specifica il numero di abitanti di una città"@it ;
             rdfs:label "Ha Abitanti"@it ,
                        "Has Inhabitants"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNome
+:haNome rdf:type owl:DatatypeProperty ;
+        rdfs:domain owl:Thing ;
+        rdfs:range xsd:string ;
+        rdfs:label "Ha Nome"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
@@ -2380,7 +2385,8 @@ foaf:Person rdf:type owl:Class ;
                :Persona ;
       :haRuolo :RuoloClienteLuca ,
                :RuoloRecensoreLuca ;
-      foaf:givenName "Luca" ;
+      :haNome "Luca"^^xsd:string ;
+      foaf:givenName "Luca"^^xsd:string ;
       rdfs:comment "Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome."@it ,
                    "You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance)."@en ;
       rdfs:label "Luca"@en ,
@@ -2742,7 +2748,7 @@ These are berries with a characteristic red color, widely used in the food secto
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
 :Torino rdf:type owl:NamedIndividual ,
                  :Città ;
-        :cittaHaNome "Torino"^^xsd:string ;
+        :haNome "Torino"^^xsd:string ;
         rdfs:comment "Comune Italiano e capoluogo dell'omonima città metropolitana e della regione Piemonte. E' il terzo complesso economico-produttivo del Paese e costituisce uno dei maggiori poli universitari, artistici, turistici, scientifici e culturali d'Italia."@it ,
                      "Italian municipality and capital of the homonymous metropolitan city and of the Piedmont region. It is the third economic-productive complex in the country and is one of the major university, artistic, tourist, scientific and cultural centers in Italy."@en ;
         rdfs:label "Torino"@it ,
@@ -2826,9 +2832,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ;
-                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" ;
-                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
+                 <http://www.w3.org/2004/02/skos/core#prefLabel> "Sensibilità non celiaca al Glutine"@it ,
+                                                                 "Non-celiac gluten sensitivity"@en ;
+                 <http://www.w3.org/2004/02/skos/core#altLabel> "NCGS" .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
@@ -2871,9 +2877,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                                                      "Hereditary fructose intolerance"@en ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
                                                                        "Fructose intollerance"@en .
 

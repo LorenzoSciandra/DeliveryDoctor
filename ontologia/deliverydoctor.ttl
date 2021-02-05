@@ -2838,10 +2838,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  <http://www.w3.org/2004/02/skos/core#prefLabel> "Non-celiac gluten sensitivity"@en .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Nickel allergy"@en ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Allergia al Nickel"@it .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+                rdfs:label "Nickel allergy"@en ,
+                           "Allergia al Nickel"@it .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -2878,11 +2878,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       <http://www.w3.org/2004/02/skos/core#altLabel> "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                                                      "Hereditary fructose intolerance"@en ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       <http://www.w3.org/2004/02/skos/core#altLabel> "Hereditary fructose intolerance"@en ;
-                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Intolleranza al Fruttosio"@it ,
-                                                                       "Fructose intollerance"@en .
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

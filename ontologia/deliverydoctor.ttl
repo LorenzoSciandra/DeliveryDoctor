@@ -2245,6 +2245,7 @@ foaf:Person rdf:type owl:Class ;
 :GalaxyBurger rdf:type owl:NamedIndividual ,
                        :EsercizioAlimentare ;
               :localeSituatoInCitta :Asti ;
+              :haNome "Galaxy Burger"^^xsd:string ;
               rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
                            "Hamburgeria situata in centro ad Asti."@it ;
               rdfs:label "Galaxy Burger"@it .
@@ -2253,7 +2254,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni
 :Gianni rdf:type owl:NamedIndividual ,
                  :Persona ;
-        :haNome "Gianni"^^xsd:string .
+        foaf:givenName "Gianni"^^xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2640,8 +2641,8 @@ foaf:Person rdf:type owl:Class ;
                                  :UovoGallina ;
           rdfs:comment "Ingredient based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round."@en ,
                        "Ingrediente a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante."@it ;
-          rdfs:label "Meatballs"@en ,
-                     "Polpette"@it .
+          rdfs:label "Meatballs (raw)"@en ,
+                     "Polpette (crude)"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo

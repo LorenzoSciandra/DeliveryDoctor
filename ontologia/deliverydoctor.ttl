@@ -352,6 +352,17 @@ Se usata multiple volte per un individuo, indica che un ingrediente è composto 
                                   "Ingrediente derivato da"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteFermentatoDa
+:ingredienteFermentatoDa rdf:type owl:ObjectProperty ;
+                         rdfs:subPropertyOf :ingredienteDerivatoDa ;
+                         rdfs:domain :IngredienteDerivato ;
+                         rdfs:range :ingrediente ;
+                         rdfs:comment "Property that specifies that one ingredient is derived from another via sugar fermentation mechanisms."@en ,
+                                      "Proprietà che specifica che un ingrediente è derivato da un altro tramite meccanismi di fermentazione degli zuccheri."@it ;
+                         rdfs:label "Ingredient obtained by fermenting"@en ,
+                                    "Ingrediente ottenuto dalla fermentazione di"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteIncompatibileConDisturbo
 :ingredienteIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
                                      rdfs:domain :ingrediente ;

@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix schema: <http://schema.org/> .
 @prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
 @base <http://www.semanticweb.org/progettomodsem2020/deliverydoctor> .
@@ -94,9 +95,9 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 #################################################################
 
 ###  http://schema.org/reviewRating
-<http://schema.org/reviewRating> rdf:type owl:ObjectProperty ;
-                                 rdfs:domain :Recensione ;
-                                 rdfs:range <http://schema.org/Rating> .
+schema:reviewRating rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Recensione ;
+                    rdfs:range schema:Rating .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#avviareIlLocale
@@ -659,20 +660,20 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 #################################################################
 
 ###  http://schema.org/Name
-<http://schema.org/Name> rdf:type owl:DatatypeProperty ;
-                         owl:equivalentProperty :haNome .
+schema:Name rdf:type owl:DatatypeProperty ;
+            owl:equivalentProperty :haNome .
 
 
 ###  http://schema.org/ratingValue
-<http://schema.org/ratingValue> rdf:type owl:DatatypeProperty ;
-                                rdfs:domain <http://schema.org/Rating> ;
-                                rdfs:range xsd:double .
+schema:ratingValue rdf:type owl:DatatypeProperty ;
+                   rdfs:domain schema:Rating ;
+                   rdfs:range xsd:double .
 
 
 ###  http://schema.org/reviewBody
-<http://schema.org/reviewBody> rdf:type owl:DatatypeProperty ;
-                               rdfs:domain <http://schema.org/Review> ;
-                               rdfs:range xsd:string .
+schema:reviewBody rdf:type owl:DatatypeProperty ;
+                  rdfs:domain schema:Review ;
+                  rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haAbitanti
@@ -706,9 +707,9 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#possiedeStelle
 :possiedeStelle rdf:type owl:DatatypeProperty ;
-                rdfs:subPropertyOf <http://schema.org/ratingValue> ;
+                rdfs:subPropertyOf schema:ratingValue ;
                 rdf:type owl:FunctionalProperty ;
-                rdfs:domain <http://schema.org/Rating> ;
+                rdfs:domain schema:Rating ;
                 rdfs:range :starRating ;
                 rdfs:comment "Classica valutazione basata da un range di minimo 1 stella ad un massimo di 5. Possono essere assegnate anche valori intermedi."@it ,
                              "Rating based on a range of minimum 1 star to a maximum of 5. Intermediate values ​​can also be assigned."@en ;
@@ -730,7 +731,7 @@ skos:notation rdf:type owl:DatatypeProperty .
 
 ###  http://xmlns.com/foaf/0.1/givenName
 foaf:givenName rdf:type owl:DatatypeProperty ;
-               rdfs:subPropertyOf <http://schema.org/Name> ;
+               rdfs:subPropertyOf schema:Name ;
                rdfs:domain foaf:Person ;
                rdfs:range xsd:string .
 
@@ -799,55 +800,55 @@ icd:Z91.018 rdf:type owl:Class ;
 
 
 ###  http://schema.org/BarOrPub
-<http://schema.org/BarOrPub> rdf:type owl:Class ;
-                             owl:equivalentClass :Bar ;
-                             rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+schema:BarOrPub rdf:type owl:Class ;
+                owl:equivalentClass :Bar ;
+                rdfs:subClassOf schema:FoodEstablishment .
 
 
 ###  http://schema.org/City
-<http://schema.org/City> rdf:type owl:Class ;
-                         owl:equivalentClass :Città ;
-                         rdfs:subClassOf <http://schema.org/Place> ;
-                         owl:disjointWith :Piazza ,
-                                          :Via .
+schema:City rdf:type owl:Class ;
+            owl:equivalentClass :Città ;
+            rdfs:subClassOf schema:Place ;
+            owl:disjointWith :Piazza ,
+                             :Via .
 
 
 ###  http://schema.org/FoodEstablishment
-<http://schema.org/FoodEstablishment> rdf:type owl:Class ;
-                                      owl:equivalentClass :EsercizioAlimentare ;
-                                      rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
-                                      owl:disjointWith :Ordine ,
-                                                       :Pietanza ,
-                                                       :Recensione .
+schema:FoodEstablishment rdf:type owl:Class ;
+                         owl:equivalentClass :EsercizioAlimentare ;
+                         rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> ;
+                         owl:disjointWith :Ordine ,
+                                          :Pietanza ,
+                                          :Recensione .
 
 
 ###  http://schema.org/LandmarksOrHistoricalBuildings
-<http://schema.org/LandmarksOrHistoricalBuildings> rdf:type owl:Class ;
-                                                   owl:equivalentClass :PuntoRiferimentoOEdificioStorico ;
-                                                   rdfs:subClassOf <http://schema.org/Place> .
+schema:LandmarksOrHistoricalBuildings rdf:type owl:Class ;
+                                      owl:equivalentClass :PuntoRiferimentoOEdificioStorico ;
+                                      rdfs:subClassOf schema:Place .
 
 
 ###  http://schema.org/Place
-<http://schema.org/Place> rdf:type owl:Class ;
-                          owl:equivalentClass :LuogoGeografico ;
-                          owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
-                                           <http://www.w3.org/ns/prov#Entity> .
+schema:Place rdf:type owl:Class ;
+             owl:equivalentClass :LuogoGeografico ;
+             owl:disjointWith <http://www.w3.org/ns/prov#Agent> ,
+                              <http://www.w3.org/ns/prov#Entity> .
 
 
 ###  http://schema.org/Rating
-<http://schema.org/Rating> rdf:type owl:Class .
+schema:Rating rdf:type owl:Class .
 
 
 ###  http://schema.org/Restaurant
-<http://schema.org/Restaurant> rdf:type owl:Class ;
-                               owl:equivalentClass :Ristorante ;
-                               rdfs:subClassOf <http://schema.org/FoodEstablishment> .
+schema:Restaurant rdf:type owl:Class ;
+                  owl:equivalentClass :Ristorante ;
+                  rdfs:subClassOf schema:FoodEstablishment .
 
 
 ###  http://schema.org/Review
-<http://schema.org/Review> rdf:type owl:Class ;
-                           owl:equivalentClass :Recensione ;
-                           rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
+schema:Review rdf:type owl:Class ;
+              owl:equivalentClass :Recensione ;
+              rdfs:subClassOf <http://www.w3.org/ns/prov#Entity> .
 
 
 ###  http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection
@@ -2666,9 +2667,9 @@ These are berries with a characteristic red color, widely used in the food secto
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
 :RecensionePositivaDubai rdf:type owl:NamedIndividual ,
                                   :Recensione ;
-                         <http://schema.org/reviewRating> :ValutazionePositivaDubai ;
+                         schema:reviewRating :ValutazionePositivaDubai ;
                          :recensioneCreataDaAzione :RecensireDubai ;
-                         <http://schema.org/reviewBody> "Servono un'ottima cheesecake e dei cappuccini gustosissimi (nonostante non usino latte)!"^^xsd:string ;
+                         schema:reviewBody "Servono un'ottima cheesecake e dei cappuccini gustosissimi (nonostante non usino latte)!"^^xsd:string ;
                          rdfs:comment "Luca's review about his order at \"Dubai\""@en ,
                                       "Recensione di Luca per il suo ordine al \"Dubai\"."@it ;
                          rdfs:label "Luca's Review for \"Dubai\""@en ,
@@ -2786,7 +2787,7 @@ These are berries with a characteristic red color, widely used in the food secto
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
 :ValutazionePositivaDubai rdf:type owl:NamedIndividual ,
-                                   <http://schema.org/Rating> ;
+                                   schema:Rating ;
                           :possiedeStelle "5.0"^^xsd:double ;
                           rdfs:comment "La valutazione positiva di Luca riguardo il suo ordine al \"Dubai\""@it ,
                                        "Luca's positive rating about his order from \"Dubai\"."@en ;

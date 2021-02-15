@@ -53,7 +53,7 @@
                 <select @change="loadRequiredData" v-model="action" class="form-select" aria-label="Selezione azione"
                         style="overflow: hidden; text-overflow: ellipsis">
                     <option selected value="0">Ricerca locali in una Città</option>
-                    <option value="1">Ricerca locali in una Città con pietanza per celiachi</option>
+                    <option value="1">Ricerca locali in una Città con pietanza per celiaci</option>
                     <option value="2">Riepilogo di tutti gli ordini effettuati</option>
                 </select>
 
@@ -121,7 +121,7 @@
                 const vue = this;
                 let query = '';
 
-                // Richiedi gli ordini del locale
+                // Ricerca locali in una Città
                 if (this.action == 0) {
                     query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 
@@ -132,7 +132,7 @@
                             }`;
                 }
 
-                // Richiedi tutte le recensioni del locale
+                // Ricerca locali in una Città con pietanza per celiaci
                 if (this.action == 1) {
                     query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 
@@ -147,7 +147,7 @@
                             }`;
                 }
 
-                // Richiedi le pietanze servite nel locale e il numero di ingredienti direttamente utilizzati
+                // Riepilogo di tutti gli ordini effettuati
                 if (this.action == 2) {
                     query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 

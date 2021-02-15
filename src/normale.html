@@ -6,6 +6,8 @@
     <title>Delivery Doctor</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.0.2/dist/vue.global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <style>
     body {
@@ -13,37 +15,223 @@
         font-size: 18px;
     }
 
-    .card:hover {
-        box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.7);
+    /* Trucchi con le proprietà flex per centrare il contenuto di un div */
+    #centeredContent {
+        width: 450px;
+        min-width: 450px;
+        flex: 0 1 auto;
+    }
+
+    #leftSpacer {
+        flex: 1 1 auto;
+    }
+
+    #rightSpacer {
+        flex: 1 1 0;
     }
 </style>
 <body>
-    <div class="container-fluid">
 
-        <header style="background-color: #AAD3FF; border-bottom-left-radius: 80%; border-bottom-right-radius: 80%;">
-            <div style="text-align: center; padding-bottom: 1%; margin-bottom: 5%;">
-                <img src="files/motorino.PNG" alt="logo Delivery Doctor" style="width: 10%;">
-                <h1 style=" color: white; text-shadow: 2px 2px black; font-size: 300%;">DELIVERY DOCTOR</h1>
-            </div>
-        </header>
-        <article>
-            <div style="text-align: center;font-size: 175%;">
-                Utente Normale
-            </div>
-            <div style="text-align: center;">
-                <select class="form-select" aria-label="Default select example" style="margin-top:2%;">
-                    <option selected value="0">Ricerca locali a Torino</option>
-                    <option value="1">Ricerca locali a Torino con pietanza per celiachi</option>
-                    <option value="2">Riepilogo di tutti gli ordini effettuati</option>
-                  </select>
-                  <button type="button" class="btn btn-outline-primary" style="margin-top: 2%;">Esegui</button>
-            </div>
-        </article>
-        <footer>
-            <div style="text-align: center; opacity: 0.5; margin-top: 12%">
-                Copyright &copy; 2020
-            </div>
-        </footer>
+<header style="background-color: #AAD3FF; border-bottom-left-radius: 80%; border-bottom-right-radius: 80%;"
+        class="container-fluid mb-3">
+    <div class="d-flex flex-column align-items-center p-3">
+        <img src="files/motorino.PNG" alt="logo Delivery Doctor" style="width: 10%;">
+        <a style="color: white; text-shadow: 2px 2px black; font-size: 300%;" class="text-decoration-none"
+           href="index.html">
+            DELIVERY DOCTOR
+        </a>
     </div>
+</header>
+<div class="container">
+    <article id="app" class="d-flex">
+        <div id="leftSpacer"></div>
+        <div id="centeredContent">
+            <h1 style="text-align: center">
+                Utente Normale
+            </h1>
+            <div class="d-flex flex-column align-items-center">
+                <select @change="loadRequiredData" v-model="action" class="form-select" aria-label="Selezione azione"
+                        style="overflow: hidden; text-overflow: ellipsis">
+                    <option selected value="0">Ricerca locali in una Città</option>
+                    <option value="1">Ricerca locali in una Città con pietanza per celiachi</option>
+                    <option value="2">Riepilogo di tutti gli ordini effettuati</option>
+                </select>
+
+                <select @change="runQuery" v-model="secondSelection" class="form-select m-2">
+                    <option v-for="est in names" :value="est">{{est}}</option>
+                </select>
+
+                <!-- Sto usando il doppio = perchè il === NON FUNZIONA! -->
+                <div v-if="result != null && result.rows.length > 0">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th v-for="title in result.titles" scope="col">{{title}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="row in result.rows">
+                            <th v-for="el in row">{{el}}</th>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div v-else-if="result != null && result.rows.length == 0" class="text-danger fs-3">
+                    Nessun risultato.
+                </div>
+                <div v-else-if="secondSelection != ''" class="spinner-border" role="status"></div>
+                <div v-else style="color: #FFB900; text-align: center">
+                    ⚠ Precisare un valore per il secondo campo per avviare la ricerca!
+                </div>
+            </div>
+        </div>
+        <div id="rightSpacer"></div>
+    </article>
+    <footer>
+        <div style="text-align: center; opacity: 0.5; margin-top: 12%">
+            Copyright &copy; 2020
+        </div>
+    </footer>
+</div>
 </body>
-</html>        
+</html>
+<script>
+    Vue.createApp({
+        data() {
+            return {
+                action: 0,
+                names: [],
+                secondSelection: '',
+                result: null
+            }
+        },
+        mounted() {
+            this.loadRequiredData();
+        },
+        methods: {
+            runQuery() {
+                if (this.secondSelection === '') {
+                    console.log("NO SELECTION");
+                    return;
+                }
+
+                this.result = null;
+
+                // Necessario per referenziare vue negli oggetti annidati
+                const vue = this;
+                let query = '';
+
+                // Richiedi gli ordini del locale
+                if (this.action == 0) {
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+
+                            SELECT ?localeNome WHERE{
+                                ?locale deliverydr:localeSituatoInCitta ?citta;
+                                    deliverydr:haNome ?localeNome.
+                                ?citta deliverydr:haNome "${this.secondSelection}".
+                            }`;
+                }
+
+                // Richiedi tutte le recensioni del locale
+                if (this.action == 1) {
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+
+                            SELECT ?localeNome ?pietanza WHERE {
+                                ?locale deliverydr:localeSituatoInCitta ?citta;
+                                            deliverydr:localeServePietanza ?pietanza;
+                                            deliverydr:haNome ?localeNome.
+                                ?pietanza deliverydr:pietanzaCompatibileConDisturbo
+                                            deliverydr:Celiachia,
+                                            deliverydr:AllergiaGlutine.
+                                ?citta deliverydr:haNome "${this.secondSelection}".
+                            }`;
+                }
+
+                // Richiedi le pietanze servite nel locale e il numero di ingredienti direttamente utilizzati
+                if (this.action == 2) {
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+
+                            SELECT ?ordine ?localeNome ?pietanza WHERE{
+                                ?ordinare deliverydr:ordinatoDa ?persona;
+                                    deliverydr:ordinareDalLocale ?locale.
+                                ?ordine deliverydr:ordineCreatoDaAzione ?ordinare;
+                                    deliverydr:ordineCompostoDaPietanza ?pietanza.
+                                ?locale deliverydr:haNome ?localeNome.
+                                ?persona deliverydr:haNome "${this.secondSelection}".
+                            }`;
+                }
+
+                // Effettua un'unica richiesta AJAX
+                $.ajax({
+                    url: "http://localhost:7200/repositories/deliverydoctor",
+                    type: "get",
+                    dataType: "text",
+                    data: {
+                        query: query
+                    },
+                    // Questo è possibile perchè il metodo che converte da CSV si adatta al numero di colonne restituite
+                    success: function (result) {
+                        console.log(result);
+
+                        // Ispirato da https://stackoverflow.com/a/61080978/3560579
+                        const csv2array = (str, delimiter = ',') => {
+                            const titles = str.slice(0, str.indexOf('\n')).trim().split(delimiter);
+                            const rawRows = str.slice(str.indexOf('\n') + 1).split(/\r?\n/);
+                            return {
+                                titles,
+                                rows: rawRows.map(row => row.split(delimiter))
+                            };
+                        };
+
+                        let data = csv2array(result);
+                        // Rimuovo l'ultima riga perchè contiene valori vuoti restituiti da GraphDB
+                        data.rows = data.rows.filter(row => row[0] !== '');
+
+                        console.log(data);
+                        vue.result = data;
+                    }
+                });
+
+
+            },
+            loadRequiredData() {
+                const vue = this;
+
+                let query = '';
+
+                if (this.action == 0 || this.action == 1) {
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+
+                            SELECT ?nome
+                            WHERE {
+                                ?c a deliverydr:Città;
+                                   deliverydr:haNome ?nome
+                            }`;
+                } else {
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+
+                            SELECT ?nome
+                            WHERE {
+                                ?p a deliverydr:Persona;
+                                   deliverydr:haNome ?nome
+                            }`;
+                }
+
+                $.ajax({
+                    url: "http://localhost:7200/repositories/deliverydoctor",
+                    type: 'get',
+                    dataType: "text",
+                    data: {
+                        query: query
+                    },
+                    success: function (result) {
+                        const arr = result.split(/\r?\n/);
+                        vue.names = arr.slice(1, arr.length - 1);
+                    }
+                });
+
+                this.runQuery();
+            }
+        }
+    }).mount('#app');
+</script>

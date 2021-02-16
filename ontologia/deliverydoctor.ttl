@@ -314,8 +314,7 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://www.w3.org/ns/prov#hadRole> ;
-         rdf:type owl:FunctionalProperty ,
-                  owl:AsymmetricProperty ,
+         rdf:type owl:AsymmetricProperty ,
                   owl:IrreflexiveProperty ;
          rdfs:domain :Persona ;
          rdfs:range <http://www.w3.org/ns/prov#Role> ;
@@ -905,7 +904,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                    ) ;
                                 rdf:type owl:Class
                               ] ;
-          rdfs:subClassOf :IngredienteVegano .
+          rdfs:subClassOf :IngredienteVegano ;
+          rdfs:comment "Sostanze deliberatamente aggiunte ai prodotti alimentari per svolgere determinate funzioni tecnologiche, ad esempio per colorare, dolcificare, conservare o migliorare l'aspetto, il sapore, il colore e il profumo."@it ,
+                       "Substances deliberately added to food products to perform certain technological functions, for example to color, sweeten, preserve or improve the appearance, flavor, color and aroma."@en ;
+          rdfs:label "Additive"@en ,
+                     "Additivo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -1126,7 +1129,11 @@ collectionentity:Collection rdf:type owl:Class ;
                                                     ) ;
                                  rdf:type owl:Class
                                ] ;
-           rdfs:subClassOf :IngredienteVegetariano .
+           rdfs:subClassOf :IngredienteVegetariano ;
+           rdfs:comment "Dairy product obtained from the acid or rennet coagulation of whole milk, partially or totally skimmed by coagulation of caseins."@en ,
+                        "Prodotto caseario ottenuto dalla coagulazione acida o presamica del latte intero, parzialmente o totalmente scremato per coagulazione delle caseine."@it ;
+           rdfs:label "Cheese"@en ,
+                      "Formaggio"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici
@@ -1467,6 +1474,15 @@ collectionentity:Collection rdf:type owl:Class ;
                      "Pietanza"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaComplessa
+:PietanzaComplessa rdf:type owl:Class ;
+                   rdfs:subClassOf :Pietanza ;
+                   rdfs:comment "Food Preparation that requires at least 10 ingredients"@en ,
+                                "Pietanza che richiede almeno 10 ingredienti per essere completata"@it ;
+                   rdfs:label "Complex Food Preparation"@en ,
+                              "Pietanza Complessa"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana
 :PietanzaNonVegetariana rdf:type owl:Class ;
                         owl:equivalentClass [ rdf:type owl:Restriction ;
@@ -1478,6 +1494,15 @@ collectionentity:Collection rdf:type owl:Class ;
                                      "Una Pietanza che usa almeno un ingrediente non vegetariano"@it ;
                         rdfs:label "Non Vegetarian Food Preparation"@en ,
                                    "Pietanza Non Vegetariana"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice
+:PietanzaSemplice rdf:type owl:Class ;
+                  rdfs:subClassOf :Pietanza ;
+                  rdfs:comment "Food Preparation that requires at most 3 ingredients"@en ,
+                               "Pietanza che richiede al più 3 ingredienti"@it ;
+                  rdfs:label "Pietanza Semplice"@it ,
+                             "Simple Food Preparation"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi
@@ -1826,6 +1851,7 @@ collectionentity:Collection rdf:type owl:Class ;
 :RuoloCliente rdf:type owl:Class ;
               owl:equivalentClass [ rdf:type owl:Class ;
                                     owl:oneOf ( :RuoloDelCliente
+                                                :RuoloDelRecensore
                                               )
                                   ] ;
               rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
@@ -1985,7 +2011,7 @@ foaf:Person rdf:type owl:Class ;
                  rdfs:comment "Viene definito aceto il liquido acido che è ottenuto grazie all'azione di batteri Gram-negativi del genere Acetobacter, che, in presenza di aria e acqua, ossidano l'etanolo contenuto nel vino."@it ,
                               "Vinegar is defined as the acidic liquid obtained thanks to the action of Gram-negative bacteria of the genus Acetobacter, which, in the presence of air and water, oxidize the ethanol contained in the wine."@en ;
                  skos:prefLabel "Aceto di Vino Bianco"@it ,
-                            "Wine Vinegar"@en .
+                                "Wine Vinegar"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
@@ -1995,7 +2021,16 @@ foaf:Person rdf:type owl:Class ;
                 rdfs:comment "Acido organico diprotico cristallino bianco."@it ,
                              "Crystalline organic acid that occurs naturally in many fruits"@en ;
                 skos:prefLabel "Acido tartarico"@it ,
-                           "Tartaric acid"@en .
+                               "Tartaric acid"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Acqua
+:Acqua rdf:type owl:NamedIndividual ,
+                :IngredienteVegano ;
+       rdfs:comment "Composto chimico più abbondante sulla terra, si trova in tutti gli ambienti ed è parte integrante di tutti gli organismi viventi."@it ,
+                    "The most abundant chemical compound on earth, it is found in all environments and is an integral part of all living organisms."@en ;
+       rdfs:label "Acqua"@it ,
+                  "Water"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -2047,7 +2082,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Legume often used to produce oil or as a paste for other preparations."@en ,
                        "Legume spesso utilizzato per produrre olio o come pasta per altre preparazioni."@it ;
           skos:prefLabel "Arachide"@it ,
-                     "Peanut"@en .
+                         "Peanut"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
@@ -2056,10 +2091,32 @@ foaf:Person rdf:type owl:Class ;
       :entitàWikitada wiki:Q6122 ;
       :haAbitanti 76164 ;
       :haNome "Asti" ;
-      rdfs:comment "Asti"@en ,
-                   "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
+      rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
                    "Italian town and capital of the Piedmontese province of the same name. Renowned for its food and wine events."@en ;
+      rdfs:label "Asti"@en ;
       skos:prefLabel "Asti"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana
+:Avigliana rdf:type owl:NamedIndividual ,
+                    :Città ;
+           :entitàWikitada :Q9008 ;
+           :haAbitanti "12623"^^xsd:positiveInteger ;
+           :haNome "Avigliana"^^xsd:string ;
+           rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
+           rdfs:label "Avigliana"@en ,
+                      "Avigliana"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresaKingyo
+:AvviareImpresaKingyo rdf:type owl:NamedIndividual ,
+                               :AvviareImpresa ;
+                      :avviareIlLocale :Kingyo ;
+                      :impresaAvviataDa :Ivan ;
+                      rdfs:comment "Activity concerning the start-up of the Kingyo restaurant"@en ,
+                                   "Attività che riguarda l'avvio del locale Kingyo"@it ;
+                      rdfs:label "Avviare Impresa Kingyo"@it ,
+                                 "Start Kingyo business"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico
@@ -2069,7 +2126,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Basil is a culinary herb of the family Lamiaceae (mints)."@en ,
                        "Il basilico è una pianta erbacea annuale, appartenente alla famiglia delle Lamiaceae, normalmente coltivata come pianta aromatica."@it ;
           skos:prefLabel "Basil"@en ,
-                     "Basilico"@it .
+                         "Basilico"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella
@@ -2087,7 +2144,7 @@ foaf:Person rdf:type owl:Class ;
              rdfs:comment "Basic sauce of Italian cuisine, composed of flour, butter, milk and flavored with nutmeg."@en ,
                           "Salsa base della cucina italiana, composta da farina, burro, latte e aromatizzata con noce moscata."@it ;
              skos:prefLabel "Bechamel"@en ,
-                        "Besciamella"@it .
+                            "Besciamella"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati
@@ -2121,7 +2178,25 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Preparazione di cucina e di pasticceria dolce, di dimensioni ridotte (5–10 cm) e di forma geometrica variamente decorata, solitamente cotta nel forno sino a perdere quasi ogni traccia di umidità."@it ,
                        "Sweet pastry, small in size (5-10 cm) and with a variously decorated geometric shape, usually baked in the oven until almost all traces of humidity are lost."@en ;
           skos:prefLabel "Biscotto"@it ,
-                     "Biscuit"@en .
+                         "Biscuit"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BrodoVegetale
+:BrodoVegetale rdf:type owl:NamedIndividual ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :ingredienteDerivatoDa ;
+                          owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
+                          owl:onClass :ingrediente
+                        ] ;
+               :entitàWikitada :Q42366457 ;
+               :ingredienteDerivatoDa :Acqua ,
+                                      :Carota ,
+                                      :Cipolla ,
+                                      :Sedano ;
+               rdfs:comment "It is obtained by cooking different vegetables: celery, carrot, onion, courgette and sometimes potato cooked in hot water."@en ,
+                            "Si ottiene dalla cottura di diverse verdure: sedano, carota, cipolla, zucchina e talvolta patata cotte in acqua calda."@it ;
+               rdfs:label "Brodo Vegetale"@it ,
+                          "Vegetable stock"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro
@@ -2136,7 +2211,7 @@ foaf:Person rdf:type owl:Class ;
        rdfs:comment "Fat part of the milk, separated from the buttermilk by a phase inversion process, deriving from the cream."@en ,
                     "Parte grassa del latte, separata dal latticello tramite un processo di inversione di fase, derivante dalla panna"@it ;
        skos:prefLabel "Burro"@it ,
-                  "Butter"@en .
+                      "Butter"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè
@@ -2161,7 +2236,7 @@ foaf:Person rdf:type owl:Class ;
                rdfs:comment "Polvere ricavata dalla macinatura del caffè in chicchi."@it ,
                             "Powder produced by grinding cofee beans."@en ;
                skos:prefLabel "Caffè macinato"@it ,
-                          "Ground coffee"@en .
+                              "Ground coffee"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant
@@ -2173,7 +2248,7 @@ foaf:Person rdf:type owl:Class ;
                       rdfs:comment "Luca's order for a cappuccino and a croissant at \"Dubai\"."@en ,
                                    "Ordine di un cappuccino e un croissant effettuato da Luca al \"Dubai\"."@it ;
                       skos:prefLabel "Capp&croiss order Luca @ Dubai"@en ,
-                                 "Ordine capp&croiss Luca @ Dubai"@it .
+                                     "Ordine capp&croiss Luca @ Dubai"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoSpeciale
@@ -2190,7 +2265,7 @@ foaf:Person rdf:type owl:Class ;
                     rdfs:comment "Cappuccino preparato con latte di riso, quindi senza lattosio."@it ,
                                  "Cappuccino prepared with rice milk, therefore lactose free."@en ;
                     skos:prefLabel "Cappuccino senza lattosio"@it ,
-                               "Lactose-free cappuccino"@en .
+                                   "Lactose-free cappuccino"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
@@ -2200,7 +2275,17 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Carne ricavata dal vitello."@it ,
                            "Meat made from calf."@en ;
               skos:prefLabel "Calf meat"@en ,
-                         "Carne di vitello"@it .
+                             "Carne di vitello"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota
+:Carota rdf:type owl:NamedIndividual ,
+                 :Ortaggio ;
+        :entitàWikitada :Q81 ;
+        rdfs:comment "Herbaceous plant with a green stem belonging to the Apiaceae family"@en ,
+                     "Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae"@it ;
+        rdfs:label "Carota"@it ,
+                   "Carrot"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
@@ -2220,10 +2305,11 @@ foaf:Person rdf:type owl:Class ;
                                          :Ciliegia ,
                                          :FormaggioCremoso ,
                                          :Zucchero ;
+                    :haNumeroIngredienti "4"^^xsd:positiveInteger ;
                     rdfs:comment "Cold dessert consisting of a base of biscuit dough on which rests a high layer of fresh cream cheese. On top, a cherry jam."@en ,
                                  "Dolce freddo composto da una base di pasta biscotto su cui poggia un alto strato di crema di formaggio fresco. In cima, una confettura alle ciliegie."@it ;
                     skos:prefLabel "Cheesecake alla ciliegia"@it ,
-                               "Cherry cheesecake"@en .
+                                   "Cherry cheesecake"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia
@@ -2234,7 +2320,29 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Il frutto del ciliegio, drupa di colore diverso secondo le varietà, ma per lo più rosso vivo."@it ,
                        "The fruit of the cherry tree, a drupe of different color according to the variety, but mostly bright red."@en ;
           skos:prefLabel "Cherry"@en ,
-                     "Ciliegia"@it .
+                         "Ciliegia"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla
+:Cipolla rdf:type owl:NamedIndividual ,
+                  :Ortaggio ;
+         :entitàWikitada :Q3406628 ;
+         rdfs:comment "Bulbous plant traditionally attributed to the Liliaceae family"@en ,
+                      "Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae"@it ;
+         rdfs:label "Cipolla"@it ,
+                    "Onion"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLorenzo
+:ConsegnaOrdineLorenzo rdf:type owl:NamedIndividual ,
+                                :Consegnare ;
+                       :consegnareAlCliente :Lorenzo ;
+                       :consegnareOrdine :OrdineZuppaMisoLorenzoKingyo ;
+                       :consegnatoDa :Federico ;
+                       rdfs:comment "Attività di consegna dell'ordine effettuato da Lorenzo presso il @ kingyo"@it ,
+                                    "Delivery activity of the order made by Lorenzo at the Kingyo"@en ;
+                       rdfs:label "Consegna Ordine Lorenzo"@it ,
+                                  "Delivery activity order Lorenzo"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLuca
@@ -2242,7 +2350,11 @@ foaf:Person rdf:type owl:Class ;
                              :Consegnare ;
                     :consegnareAlCliente :Luca ;
                     :consegnareOrdine :CappuccinoECroissant ;
-                    :consegnatoDa :Gianni .
+                    :consegnatoDa :Gianni ;
+                    rdfs:comment "Attività di consegna dell'ordine effettuato da Luca presso il Dubai"@it ,
+                                 "Delivery activity of the order made by Luca at the Dubai"@en ;
+                    rdfs:label "Consenga Ordine Luca"@it ,
+                               "Delivery activity order Luca"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
@@ -2258,11 +2370,12 @@ foaf:Person rdf:type owl:Class ;
                                 :FarinaGranoTenero ,
                                 :LievitoBirra ,
                                 :Zucchero ;
+           :haNumeroIngredienti "4"^^xsd:positiveInteger ;
            rdfs:comment "Il croissant è un prodotto da forno di origine austriaca, la cui versione di pasta sfoglia è stata sviluppata in Francia, e così chiamato per la forma di mezzaluna crescente."@it ,
                         "The croissant is a baked product of Austrian origin, whose puff pastry version was developed in France, and so named for the crescent shape."@en ;
            skos:prefLabel "Croissant"@en ,
-                      "Croissant"@fr ,
-                      "Croissant"@it .
+                          "Croissant"@fr ,
+                          "Croissant"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai
@@ -2304,11 +2417,20 @@ foaf:Person rdf:type owl:Class ;
                    rdfs:comment "Farina prodotta dalla macinazione del grano tenero. E' facilmente impastabile e ha una buona elasticità."@it ,
                                 "Flour produced by grinding soft wheat. It is easily kneaded and has good elasticity."@en ;
                    skos:prefLabel "Farina di grano tenero"@it ,
-                              "Wheat flour"@en .
+                                  "Wheat flour"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo
 :Favismo rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Federico
+:Federico rdf:type owl:NamedIndividual ,
+                   :Persona ;
+          rdfs:comment "A friend of the two creators of ontology"@en ,
+                       "Un amico dei due creatori dell'ontologia"@it ;
+          rdfs:label "Federico Torrielli"@en ,
+                     "Federico Torrielli"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso
@@ -2323,12 +2445,12 @@ foaf:Person rdf:type owl:Class ;
                   rdfs:comment "Formaggio tipo quark."@it ,
                                "Quark-like cheese."@en ;
                   skos:prefLabel "Creamy cheese"@en ,
-                             "Formaggio cremoso"@it .
+                                 "Formaggio cremoso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger
 :GalaxyBurger rdf:type owl:NamedIndividual ,
-                       :EsercizioAlimentare ;
+                       :Paninoteca ;
               :localeServePietanza :HamburgerLuna ;
               :localeSituatoInCitta :Asti ;
               :haNome "Galaxy Burger"^^xsd:string ;
@@ -2344,7 +2466,7 @@ foaf:Person rdf:type owl:Class ;
         rdfs:comment "Any person who performs the duty of delivery guy"@en ,
                      "Persona qualsiasi che svolge il compito di fattorino"@it ;
         skos:prefLabel "Gianni"@en ,
-                   "Gianni"@it .
+                       "Gianni"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2356,7 +2478,7 @@ foaf:Person rdf:type owl:Class ;
              rdfs:comment "Specie di frumento più impiegata al mondo nella panificazione e nella produzione di paste alimentari fresche."@it ,
                           "Wheat species most used in the world in baking and in the production of fresh pasta."@en ;
              skos:prefLabel "Grano tenero"@it ,
-                        "Wheat"@en .
+                            "Wheat"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna
@@ -2373,6 +2495,7 @@ foaf:Person rdf:type owl:Class ;
                                     :Maionese ,
                                     :Pane ,
                                     :Pomodoro ;
+               :haNumeroIngredienti "7"^^xsd:positiveInteger ;
                rdfs:comment "Edamer cheese embellishes the fassone hamburger, accompanied by salad and fresh tomato and garnished with mayonnaise and ketchup."@en ,
                             "Filante formaggio edamer impreziosisce l'hamburger di fassone, accompagnato da insalata e pomodoro fresco e guarnito con maionese e ketchup."@it ;
                skos:prefLabel "Luna (Hamburger)" .
@@ -2391,7 +2514,7 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Dough that, once risen and stretched, is used for the preparation of pizzas or fried."@en ,
                            "Impasto che, una volta lievitato e steso, viene usato per la preparazione di pizze o fritti."@it ;
               skos:prefLabel "Impasto per la Pizza"@it ,
-                         "Pizza dough"@en .
+                             "Pizza dough"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata
@@ -2401,7 +2524,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "L'insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite."@it ,
                        "The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned."@en ;
           skos:prefLabel "Insalata"@it ,
-                     "Salad"@en .
+                         "Salad"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio
@@ -2410,6 +2533,15 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio
 :IntolleranzaLattosio rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ivan
+:Ivan rdf:type owl:NamedIndividual ,
+               :Persona ;
+      rdfs:comment "A friend of the two creators of ontology"@en ,
+                   "Un amico dei due creatori dell'ontologia"@it ;
+      rdfs:label "Ivan Spada"@en ,
+                 "Ivan Spada"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup
@@ -2428,6 +2560,18 @@ foaf:Person rdf:type owl:Class ;
          skos:prefLabel "Ketchup" .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Kingyo
+:Kingyo rdf:type owl:NamedIndividual ,
+                 :Ristorante ;
+        :localeServePietanza :ZuppaDiMiso ;
+        :localeSituatoInCitta :Avigliana ;
+        :haNome "Kingyo"^^xsd:string ;
+        rdfs:comment "Ristorante di sushi ad Avigliana"@it ,
+                     "Sushi restaurant in Avigliana"@en ;
+        rdfs:label "Kingyo"@en ,
+                   "Kingyo"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lasagne
 :Lasagne rdf:type owl:NamedIndividual ,
                   [ rdf:type owl:Restriction ;
@@ -2441,7 +2585,7 @@ foaf:Person rdf:type owl:Class ;
          rdfs:comment "Particolare formato di impasto, ottenuto tagliando in grossi quadrati, o rettangoli, la sfoglia di pasta all'uovo."@it ,
                       "Particular shape of dough, obtained by cutting the sheet of egg pasta into large squares or rectangles."@en ;
          skos:prefLabel "Lasagne"@en ,
-                    "Lasagne"@it .
+                        "Lasagne"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno
@@ -2457,10 +2601,11 @@ foaf:Person rdf:type owl:Class ;
                                      :OlioExtraOliva ,
                                      :ParmigianoReggiano ,
                                      :SugoPomodoro ;
+                :haNumeroIngredienti "6"^^xsd:positiveInteger ;
                 rdfs:comment "Baked lasagna consists of a sheet of egg pasta, cut into roughly rectangular sheets which, once boiled and drained, are arranged in a variable sequence of layers, each of which separated by a filling that varies according to the different local traditions."@en ,
                              "Le lasagne al forno sono costituite da una sfoglia di pasta all'uovo, tagliata in fogli grossolanamente rettangolari che, una volta bollite e scolate, vengono disposte in una sequenza variabile di strati, ognuno dei quali separato da una farcitura che varia in relazione alle diverse tradizioni locali."@it ;
                 skos:prefLabel "Lasagne al forno"@it ,
-                           "Oven Lasagne"@en .
+                               "Oven Lasagne"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAsina
@@ -2470,7 +2615,7 @@ foaf:Person rdf:type owl:Class ;
             rdfs:comment "Donkey milk is the milk from the domesticated donkey."@en ,
                          "Il latte di asina è il latte prodotto dalla specie asinina."@it ;
             skos:prefLabel "Donkey milk"@en ,
-                       "Latte d'Asina"@it .
+                           "Latte d'Asina"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteBufala
@@ -2509,7 +2654,7 @@ foaf:Person rdf:type owl:Class ;
                rdfs:comment "Bevanda analcolica dolce realizzata mettendo in infusione in acqua le mandorle finemente tritate e spremendo poi le stesse per farne uscire tutto il succo"@it ,
                             "Sweet non-alcoholic drink made by infusing finely chopped almonds in water and then squeezing them to release all the juice"@en ;
                skos:prefLabel "Almond milk"@en ,
-                          "Latte di Mandorla"@it .
+                              "Latte di Mandorla"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca
@@ -2536,7 +2681,7 @@ foaf:Person rdf:type owl:Class ;
            rdfs:comment "Bevanda alimentare vegetale a base di riso."@it ,
                         "Plant milk made from rice."@en ;
            skos:prefLabel "Latte di Riso"@it ,
-                      "Rice Milk"@en .
+                          "Rice Milk"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteSoia
@@ -2552,7 +2697,7 @@ foaf:Person rdf:type owl:Class ;
            rdfs:comment "Latte vegetale a base di soia."@it ,
                         "Plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates."@en ;
            skos:prefLabel "Latte di Soia"@it ,
-                      "Soy milk"@en .
+                          "Soy milk"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra
@@ -2566,6 +2711,15 @@ foaf:Person rdf:type owl:Class ;
                              "Lievito di birra"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lorenzo
+:Lorenzo rdf:type owl:NamedIndividual ,
+                  :Persona ;
+         rdfs:comment "One of the two creators of this ontology"@en ,
+                      "Uno dei due creatori di questa ontologia"@it ;
+         rdfs:label "Lorenzo Sciandra"@en ,
+                    "Lorenzo Sciandra"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
 :Luca rdf:type owl:NamedIndividual ,
                :Persona ;
@@ -2573,7 +2727,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome."@it ,
                    "You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance)."@en ;
       skos:prefLabel "Luca"@en ,
-                 "Luca"@it .
+                     "Luca"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello
@@ -2588,7 +2742,7 @@ foaf:Person rdf:type owl:Class ;
                       rdfs:comment "Ground meat composed of calf meat."@en ,
                                    "Macinato ottenuto macinando carne di vitello."@it ;
                       skos:prefLabel "Ground calf meat"@en ,
-                                 "Macinato di carne di vitello"@it .
+                                     "Macinato di carne di vitello"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese
@@ -2616,7 +2770,28 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Edible seed grown from the almond tree."@en ,
                        "Seme commestibile del mandorlo."@it ;
           skos:prefLabel "Almond"@en ,
-                     "Mandorla"@it .
+                         "Mandorla"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Miso
+:Miso rdf:type owl:NamedIndividual ,
+               :Seme ;
+      rdfs:comment "Condimento derivato dai semi della soia gialla, di origine giapponese,"@it ,
+                   "Seasoning derived from yellow soybeans, of Japanese origin,"@en ;
+      rdfs:label "Miso"@en ,
+                 "Miso"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mondovì
+:Mondovì rdf:type owl:NamedIndividual ,
+                  :Città ;
+         :entitàWikitada :Q20188 ;
+         :haAbitanti "23000"^^xsd:positiveInteger ;
+         :haNome "Mondovì"^^xsd:string ;
+         rdfs:comment "Mondovì is an Italian town in the province of Cuneo in Piedmont."@en ,
+                      "Mondovì è un comune italiano della provincia di Cuneo in Piemonte."@it ;
+         rdfs:label "Mondovì"@en ,
+                    "Mondovì"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
@@ -2627,7 +2802,7 @@ foaf:Person rdf:type owl:Class ;
             rdfs:comment "La mozzarella è un latticino a pasta filata originario dell'Italia meridionale e prodotta da secoli anche in Italia centrale. Essendo prodotta con latte vaccino e non di bufala, è chiamata \"fior di latte\"."@it ,
                          "Mozzarella is a stretched curd dairy product originally from southern Italy and produced for centuries also in central Italy. Being produced with cow's milk and not buffalo's milk, it is called \"fior di latte\"."@en ;
             skos:prefLabel "Fior di latte Mozzarella cheese"@en ,
-                       "Mozzarella fior di latte"@it .
+                           "Mozzarella fior di latte"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Napples
@@ -2649,7 +2824,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Fruit of the hazel."@en ,
                        "Frutto del nocciolo."@it ;
           skos:prefLabel "Hazelnut"@en ,
-                     "Nocciola"@it .
+                         "Nocciola"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
@@ -2660,7 +2835,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Frutto degli alberi del genere Juglans, spesso riferito al Juglans regia."@it ,
                    "Nut of any tree of the genus Juglans, particularly the Persian or English walnut, Juglans regia."@en ;
       skos:prefLabel "Noce"@it ,
-                 "Walnut"@en .
+                     "Walnut"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#NoceMoscata
@@ -2670,7 +2845,21 @@ foaf:Person rdf:type owl:Class ;
              rdfs:comment "Seed or ground spice of several species of the genus Myristica (particularly, of Myristica fragrans)."@en ,
                           "Seme decorticato della Myristica fragrans."@it ;
              skos:prefLabel "Noce moscata"@it ,
-                        "Nutmeg"@en .
+                            "Nutmeg"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noir
+:Noir rdf:type owl:NamedIndividual ,
+               :Bar ;
+      :localeServePietanza :CappuccinoSpeciale ,
+                           :Croissant ,
+                           :Toast ;
+      :localeSituatoInCitta :Mondovì ;
+      :haNome "Noir Caffè"^^xsd:string ;
+      rdfs:comment "Bar located in the center of Mondovì"@en ,
+                   "Bar situato nel centro di Mondovì"@it ;
+      rdfs:label "Noir Caffè"@en ,
+                 "Noir Caffè"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi
@@ -2711,7 +2900,7 @@ foaf:Person rdf:type owl:Class ;
        rdfs:comment "Fruit of the olive tree used for food both directly, after adequate processing, and as a raw material for oil extraction."@en ,
                     "Frutto dell'ulivo usato a scopo alimentare sia direttamente, dopo adeguata trasformazione, sia come materia prima per l'estrazione dell'olio."@it ;
        skos:prefLabel "Oliva"@it ,
-                  "Olive"@en .
+                      "Olive"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinareDubai
@@ -2722,7 +2911,29 @@ foaf:Person rdf:type owl:Class ;
                rdfs:comment "L'ordine di Luca @ \"Dubai\""@it ,
                             "Luca's order @ \"Dubai\""@en ;
                skos:prefLabel "Luca Order Dubai"@en ,
-                          "Ordinazione Luca Dubai"@it .
+                              "Ordinazione Luca Dubai"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneLorenzoKingyo
+:OrdinazioneLorenzoKingyo rdf:type owl:NamedIndividual ,
+                                   :Ordinare ;
+                          :ordinareDalLocale :Kingyo ;
+                          :ordinatoDa :Lorenzo ;
+                          rdfs:comment "L'attività di ordinazione di Lorenzo al Kingyo"@it ;
+                          rdfs:label "Lorenzo Order Kingyo"@en ,
+                                     "Lorenzo's ordination activity at Kingyo"@en ,
+                                     "Ordinazione Lorenzo Kingyo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo
+:OrdineZuppaMisoLorenzoKingyo rdf:type owl:NamedIndividual ,
+                                       :Ordine ;
+                              :ordineCompostoDaPietanza :ZuppaDiMiso ;
+                              :ordineCreatoDaAzione :OrdinazioneLorenzoKingyo ;
+                              rdfs:comment "Order made by Lorenzo at Kingyo"@en ,
+                                           "Ordine effettuato da Lorenzo presso Kingyo"@it ;
+                              rdfs:label "Miso soup order Lorenzo @ Kingyo"@en ,
+                                         "Ordine Zuppa di Miso Lorenzo @ Kingyo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
@@ -2738,7 +2949,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Food product obtained from fermentation, from forming followed by leavening, and subsequent baking in the oven of a dough based on flour (normal or wholemeal) of cereals, water, packaged in different ways, enriched and frequently characterized by different ingredients depending on of the place and traditions where it is prepared."@en ,
                    "Prodotto alimentare ottenuto dalla fermentazione, dalla formatura a cui segue una lievitazione, e successiva cottura in forno di un impasto a base di farina (normale o integrale) di cereali, acqua, confezionato con diverse modalità, arricchito e caratterizzato frequentemente da ingredienti differenti a seconda del luogo e delle tradizioni dove viene preparato."@it ;
       skos:prefLabel "Bread"@en ,
-                 "Pane"@it .
+                     "Pane"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo
@@ -2753,7 +2964,7 @@ foaf:Person rdf:type owl:Class ;
                 rdfs:comment "Bread with sesame seeds sprinkled on the surface."@en ,
                              "Pagnotta con semi di sesamo sparsi sulla superficie."@it ;
                 skos:prefLabel "Bread with sesame seeds"@en ,
-                           "Pane con semi di sesamo"@it .
+                               "Pane con semi di sesamo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ParmigianoReggiano
@@ -2768,7 +2979,7 @@ foaf:Person rdf:type owl:Class ;
                     rdfs:comment "Formaggio a pasta dura DOP, prodotto con latte vaccino crudo, parzialmente scremato per affioramento, senza l'aggiunta di additivi."@it ,
                                  "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
                     skos:prefLabel "Parmigiano Reggiano"@it ,
-                               "Parmigiano-Reggiano"@en .
+                                   "Parmigiano-Reggiano"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
@@ -2779,7 +2990,7 @@ foaf:Person rdf:type owl:Class ;
             rdfs:comment "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@en ,
                          "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@it ;
             skos:prefLabel "Pistacchio"@it ,
-                       "Pistachio"@en .
+                           "Pistachio"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita
@@ -2794,6 +3005,7 @@ foaf:Person rdf:type owl:Class ;
                                       :Mozzarella ,
                                       :OlioExtraOliva ,
                                       :SugoPomodoro ;
+                 :haNumeroIngredienti "5"^^xsd:positiveInteger ;
                  rdfs:comment "La pizza Margherita è la tipica pizza napoletana, condita con pomodoro, mozzarella (tradizionalmente è usato il fior di latte, non quella di bufala), basilico fresco e olio d'oliva; è, assieme alla pizza marinara, la più popolare pizza italiana."@it ,
                               "Pizza Margherita is a typical Neapolitan pizza, made with San Marzano tomatoes, mozzarella cheese, fresh basil and extra-virgin olive oil."@en ;
                  skos:altLabel "Margherita"@it ;
@@ -2817,7 +3029,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Ingredient based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round."@en ,
                        "Ingrediente a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante."@it ;
           skos:prefLabel "Meatballs (raw)"@en ,
-                     "Polpette (crude)"@it .
+                         "Polpette (crude)"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo
@@ -2830,10 +3042,11 @@ foaf:Person rdf:type owl:Class ;
                 :frittoCon :OlioArachidi ;
                 :utilizzaIngrediente :Polpette ,
                                      :SugoPomodoro ;
+                :haNumeroIngredienti "3"^^xsd:positiveInteger ;
                 rdfs:comment "Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce."@en ,
                              "Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro."@it ;
                 skos:prefLabel "Meatballs"@en ,
-                           "Polpette"@it .
+                               "Polpette"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
@@ -2843,7 +3056,7 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."@it ,
                        "These are berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
           skos:prefLabel "Pomodoro"@it ,
-                     "Tomato"@en .
+                         "Tomato"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
@@ -2853,7 +3066,40 @@ foaf:Person rdf:type owl:Class ;
             rdfs:comment "Biennial herbaceous plant in temperate zones and annual in tropical ones."@en ,
                          "Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
             skos:prefLabel "Parsley"@en ,
-                       "Prezzemolo"@it .
+                           "Prezzemolo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ProsciuttoCotto
+:ProsciuttoCotto rdf:type owl:NamedIndividual ,
+                          :Carne ;
+                 rdfs:comment "Cooked ham is a typical Italian cured meat obtained by salting and cooking the pork leg"@en ,
+                              "Il prosciutto cotto è un salume tipico italiano ottenuto dalla salatura e cottura della coscia del maiale"@it ;
+                 rdfs:label "Ham"@en ,
+                            "Prosciutto Cotto"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q20188
+:Q20188 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q28298
+:Q28298 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q3406628
+:Q3406628 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q42366457
+:Q42366457 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q81
+:Q81 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q9008
+:Q9008 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
@@ -2865,7 +3111,7 @@ foaf:Person rdf:type owl:Class ;
                          rdfs:comment "Luca's review about his order at \"Dubai\""@en ,
                                       "Recensione di Luca per il suo ordine al \"Dubai\"."@it ;
                          skos:prefLabel "Luca's Review for \"Dubai\""@en ,
-                                    "Recensione Luca per \"Dubai\""@it .
+                                        "Recensione Luca per \"Dubai\""@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensireDubai
@@ -2876,7 +3122,7 @@ foaf:Person rdf:type owl:Class ;
                 rdfs:comment "Azione di recensione del \"Dubai\" da parte di Luca."@it ,
                              "Review action for \"Dubai\" made by Luca."@en ;
                 skos:prefLabel "Azione di recensire di Luca"@it ,
-                           "Luca's review action"@en .
+                               "Luca's review action"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
@@ -2886,7 +3132,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ,
                    "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ;
       skos:prefLabel "Rice"@en ,
-                 "Riso"@it .
+                     "Riso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RisottoSugo
@@ -2907,6 +3153,7 @@ foaf:Person rdf:type owl:Class ;
                       ] ;
              :utilizzaIngrediente :Riso ,
                                   :SugoPomodoro ;
+             :haNumeroIngredienti "2"^^xsd:positiveInteger ;
              rdfs:comment "Risotto fatto con riso e sugo di pomodoro."@it ,
                           "Risotto made with rice and tomato sauce."@en ;
              skos:altLabel "Risotto al pomodoro"@it ,
@@ -2921,7 +3168,7 @@ foaf:Person rdf:type owl:Class ;
                  rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
                               "Ruolo assunto da una persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
                  skos:prefLabel "Customer Role"@en ,
-                            "Ruolo Cliente"@it .
+                                "Ruolo Cliente"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelFattorino
@@ -2930,7 +3177,7 @@ foaf:Person rdf:type owl:Class ;
                    rdfs:comment "Role of a person that delivers one or more orders to customers of a food establishment."@en ,
                                 "Ruolo svolto da una persona nella consegna di uno o più ordini ai clienti di un esercizio alimentare."@it ;
                    skos:prefLabel "Delivery Guy Role"@en ,
-                              "Ruolo Fattorino"@it .
+                                  "Ruolo Fattorino"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelRecensore
@@ -2939,7 +3186,7 @@ foaf:Person rdf:type owl:Class ;
                    rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
                                 "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
                    skos:prefLabel "Reviewer Role"@en ,
-                              "Ruolo Recensore"@it .
+                                  "Ruolo Recensore"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelTitolare
@@ -2948,7 +3195,17 @@ foaf:Person rdf:type owl:Class ;
                   rdfs:comment "Role of a person who owns a food establishment"@en ,
                                "Ruolo di una persona che possiede un esercizio alimentare"@it ;
                   skos:prefLabel "Business Owner Role"@en ,
-                             "Ruolo Titolare Impresa"@it .
+                                 "Ruolo Titolare Impresa"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sedano
+:Sedano rdf:type owl:NamedIndividual ,
+                 :Ortaggio ;
+        :entitàWikitada :Q28298 ;
+        rdfs:comment "Celery is a biennial herbaceous species belonging to the Apiaceae family, native to the Mediterranean area"@en ,
+                     "Il sedano è una specie erbacea biennale appartenente alla famiglia delle Apiaceae, originaria della zona mediterranea"@it ;
+        rdfs:label "Celery"@en ,
+                   "Sedano"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
@@ -2959,7 +3216,7 @@ foaf:Person rdf:type owl:Class ;
         rdfs:comment "Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ,
                      "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ;
         skos:prefLabel "Sesame"@en ,
-                   "Sesamo"@it .
+                       "Sesamo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
@@ -2970,7 +3227,16 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ,
                    "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ;
       skos:prefLabel "Soia"@it ,
-                 "Soy"@en .
+                     "Soy"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano
+:Stefano rdf:type owl:NamedIndividual ,
+                  :Persona ;
+         rdfs:comment "One of the two co-authors of this ontology"@en ,
+                      "Uno dei due coautori di questa ontologia"@it ;
+         rdfs:label "Stefano Vittorio Porta"@en ,
+                    "Stefano Vittorio Porta"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
@@ -2985,7 +3251,24 @@ foaf:Person rdf:type owl:Class ;
               rdfs:comment "Salsa prodotta spremendo e cuocendo pomodori."@it ,
                            "Sauce made by cooking tomatoes."@en ;
               skos:prefLabel "Sugo di pomodoro"@it ,
-                         "Tomato sauce"@en .
+                             "Tomato sauce"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast
+:Toast rdf:type owl:NamedIndividual ,
+                [ rdf:type owl:Restriction ;
+                  owl:onProperty :utilizzaIngrediente ;
+                  owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
+                  owl:onClass :ingrediente
+                ] ;
+       :utilizzaIngrediente :Edam ,
+                            :Pane ,
+                            :ProsciuttoCotto ;
+       :haNumeroIngredienti "3"^^xsd:positiveInteger ;
+       rdfs:comment "Tipo di panino composto solamente da pane tostato con all'interno prosciutto cotto e formaggio"@it ,
+                    "Type of sandwich consisting only of toasted bread with ham and cheese inside"@en ;
+       rdfs:label "Toast"@en ,
+                  "Toast"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
@@ -2997,7 +3280,7 @@ foaf:Person rdf:type owl:Class ;
         rdfs:comment "Comune Italiano e capoluogo dell'omonima città metropolitana e della regione Piemonte. E' il terzo complesso economico-produttivo del Paese e costituisce uno dei maggiori poli universitari, artistici, turistici, scientifici e culturali d'Italia."@it ,
                      "Italian municipality and capital of the homonymous metropolitan city and of the Piedmont region. It is the third economic-productive complex in the country and is one of the major university, artistic, tourist, scientific and cultural centers in Italy."@en ;
         skos:prefLabel "Torino"@it ,
-                   "Turin"@en .
+                       "Turin"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
@@ -3007,7 +3290,7 @@ foaf:Person rdf:type owl:Class ;
              rdfs:comment "Egg produced by a hen."@en ,
                           "Uovo prodotto da una gallina."@it ;
              skos:prefLabel "Chicken egg"@en ,
-                        "Uovo di gallina"@it .
+                            "Uovo di gallina"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
@@ -3018,7 +3301,7 @@ foaf:Person rdf:type owl:Class ;
      rdfs:comment "Fruit of the vine, recovered from the bunch."@en ,
                   "Frutto della vite, recuperato dal grappolo."@it ;
      skos:prefLabel "Grapes"@en ,
-                "Uva"@it .
+                    "Uva"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ValutazionePositivaDubai
@@ -3028,7 +3311,7 @@ foaf:Person rdf:type owl:Class ;
                           rdfs:comment "La valutazione positiva di Luca riguardo il suo ordine al \"Dubai\""@it ,
                                        "Luca's positive rating about his order from \"Dubai\"."@en ;
                           skos:prefLabel "Positive Rating Luca \"Dubai\""@en ,
-                                     "Valutazione Positiva Luca \"Dubai\""@it .
+                                         "Valutazione Positiva Luca \"Dubai\""@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
@@ -3039,7 +3322,23 @@ foaf:Person rdf:type owl:Class ;
           rdfs:comment "Dolcificante utilizzato nell'ambito dell'industria alimentare, specialmente dolciaria e pasticciera."@it ,
                        "Sweetener used in the food industry, especially confectionery and pastry."@en ;
           skos:prefLabel "Sugar"@en ,
-                     "Zucchero"@it .
+                         "Zucchero"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso
+:ZuppaDiMiso rdf:type owl:NamedIndividual ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :utilizzaIngrediente ;
+                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                        owl:onClass :ingrediente
+                      ] ;
+             :utilizzaIngrediente :BrodoVegetale ,
+                                  :Miso ;
+             :haNumeroIngredienti "2"^^xsd:positiveInteger ;
+             rdfs:comment "La zuppa di miso è una zuppa tradizionale della cucina giapponese costituita sostanzialmente da brodo, in particolare dashi, mescolato con pasta di miso"@it ,
+                          "Miso soup is a traditional soup of Japanese cuisine consisting basically of broth, especially dashi, mixed with miso paste"@en ;
+             rdfs:label "Miso soup"@en ,
+                        "Zuppa Di Miso"@it .
 
 
 ###  http://www.wikidata.org/entity/Q10978
@@ -3285,9 +3584,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ;
-                 skos:altLabel "NCGS" ;
-                 skos:prefLabel "Non-celiac gluten sensitivity"@en .
+                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ,
+                                "Non-celiac gluten sensitivity"@en ;
+                 skos:altLabel "NCGS" .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
@@ -3330,13 +3629,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                     "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
                        skos:altLabel "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
-                                      "Fructose intollerance"@en .
+                       skos:prefLabel "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
@@ -3369,6 +3666,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 [ rdf:type owl:AllDifferent ;
   owl:distinctMembers ( :AcetoVinoBianco
                         :AcidoTartarico
+                        :Acqua
                         :AllergiaAdditivi
                         :AllergiaArachidi
                         :AllergiaCrostacei
@@ -3381,25 +3679,32 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaUova
                         :Arachide
                         :Asti
+                        :Avigliana
+                        :AvviareImpresaKingyo
                         :Basilico
                         :Besciamella
                         :BiscottiTritati
                         :Biscotto
+                        :BrodoVegetale
                         :Burro
                         :Caffè
                         :CaffèMacinato
                         :CappuccinoECroissant
                         :CappuccinoSpeciale
                         :CarneVitello
+                        :Carota
                         :Celiachia
                         :CheesecakeCiliegia
                         :Ciliegia
+                        :Cipolla
+                        :ConsegnaOrdineLorenzo
                         :ConsegnaOrdineLuca
                         :Croissant
                         :Dubai
                         :Edam
                         :FarinaGranoTenero
                         :Favismo
+                        :Federico
                         :FormaggioCremoso
                         :GalaxyBurger
                         :Gianni
@@ -3409,7 +3714,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Insalata
                         :IntolleranzaFruttosio
                         :IntolleranzaLattosio
+                        :Ivan
                         :Ketchup
+                        :Kingyo
                         :Lasagne
                         :LasagneAlForno
                         :LatteAsina
@@ -3420,19 +3727,25 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :LatteRiso
                         :LatteSoia
                         :LievitoBirra
+                        :Lorenzo
                         :Luca
                         :MacinatoCarneVitello
                         :Maionese
                         :Mandorla
+                        :Miso
+                        :Mondovì
                         :Mozzarella
                         :Napples
                         :Nocciola
                         :Noce
                         :NoceMoscata
+                        :Noir
                         :OlioArachidi
                         :OlioExtraOliva
                         :Oliva
                         :OrdinareDubai
+                        :OrdinazioneLorenzoKingyo
+                        :OrdineZuppaMisoLorenzoKingyo
                         :Pane
                         :PaneSemiSesamo
                         :ParmigianoReggiano
@@ -3442,18 +3755,80 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :PolpetteAlSugo
                         :Pomodoro
                         :Prezzemolo
+                        :ProsciuttoCotto
+                        :Q20188
+                        :Q28298
+                        :Q3406628
+                        :Q42366457
+                        :Q81
+                        :Q9008
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
                         :RisottoSugo
+                        :Sedano
                         :Sesamo
                         :Soia
+                        :Stefano
                         :SugoPomodoro
+                        :Toast
                         :Torino
                         :UovoGallina
                         :Uva
                         :ValutazionePositivaDubai
                         :Zucchero
+                        :ZuppaDiMiso
+                        wiki:Q10978
+                        wiki:Q10988133
+                        wiki:Q11002
+                        wiki:Q12000036
+                        wiki:Q1239497
+                        wiki:Q13266
+                        wiki:Q13400960
+                        wiki:Q14088
+                        wiki:Q1418287
+                        wiki:Q14959225
+                        wiki:Q15260613
+                        wiki:Q153697
+                        wiki:Q155922
+                        wiki:Q15645384
+                        wiki:Q1621080
+                        wiki:Q16571278
+                        wiki:Q167893
+                        wiki:Q178024
+                        wiki:Q178143
+                        wiki:Q184357
+                        wiki:Q192199
+                        wiki:Q194322
+                        wiki:Q196
+                        wiki:Q20638126
+                        wiki:Q208021
+                        wiki:Q209974
+                        wiki:Q2249305
+                        wiki:Q25284
+                        wiki:Q259642
+                        wiki:Q265878
+                        wiki:Q26882413
+                        wiki:Q34172
+                        wiki:Q3596097
+                        wiki:Q3621199
+                        wiki:Q3827309
+                        wiki:Q38859
+                        wiki:Q41354
+                        wiki:Q45422
+                        wiki:Q495
+                        wiki:Q5090
+                        wiki:Q578307
+                        wiki:Q597473
+                        wiki:Q6122
+                        wiki:Q61503220
+                        wiki:Q715187
+                        wiki:Q7802
+                        wiki:Q83165
+                        wiki:Q83193
+                        wiki:Q93165
+                        wiki:Q957434
+                        wiki:Q975953
                       )
 ] .
 
@@ -3475,28 +3850,78 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 :c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
-   rdfs:comment "Se una persona ha associato un nome con la data property generica haNome allora lo inferisce anche per la data property specifica di foaf"^^xsd:string ;
-   rdfs:label "Nome Proprio Persona"^^xsd:string ;
+   rdfs:comment "Se una pietanza richiede 10 o più ingredienti viene definita come complessa"^^xsd:string ;
+   rdfs:label "Pietanza Complessa"^^xsd:string ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNome ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :n
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Pietanza ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
                                                      ] ;
                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
-                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Persona ;
-                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNumeroIngredienti ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :n
                                                                 ] ;
-                                                      rdf:rest rdf:nil
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#greaterThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :n ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 10 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
                                                     ]
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
-                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> foaf:givenName ;
-                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
-                                                       <http://www.w3.org/2003/11/swrl#argument2> :n
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :PietanzaComplessa ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Se una pietanza richiede al più 3 ingredienti verrà classificata come semplice"^^xsd:string ;
+   rdfs:label "Pietanza Semplice"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :Pietanza ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNumeroIngredienti ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :n
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThanOrEqual> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first :n ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first 3 ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :PietanzaSemplice ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]
@@ -3644,11 +4069,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                                                                                       ] ;
                                                                             rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                                                                        rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
-                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#equal> ;
                                                                                                    <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
                                                                                                                                                 rdf:first :c ;
                                                                                                                                                 rdf:rest [ rdf:type rdf:List ;
-                                                                                                                                                           rdf:first 2 ;
+                                                                                                                                                           rdf:first 1 ;
                                                                                                                                                            rdf:rest rdf:nil
                                                                                                                                                          ]
                                                                                                                                               ]

@@ -1962,6 +1962,7 @@ foaf:Person rdf:type owl:Class ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :ingrediente
                           ] ;
+                 :entitàWikitada wiki:Q41354 ;
                  :ingredienteFermentatoDa :Uva ;
                  rdfs:comment "Viene definito aceto il liquido acido che è ottenuto grazie all'azione di batteri Gram-negativi del genere Acetobacter, che, in presenza di aria e acqua, ossidano l'etanolo contenuto nel vino."@it ,
                               "Vinegar is defined as the acidic liquid obtained thanks to the action of Gram-negative bacteria of the genus Acetobacter, which, in the presence of air and water, oxidize the ethanol contained in the wine."@en ;
@@ -1972,6 +1973,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
 :AcidoTartarico rdf:type owl:NamedIndividual ,
                          :Additivo ;
+                :entitàWikitada wiki:Q194322 ;
                 rdfs:comment "Acido organico diprotico cristallino bianco."@it ,
                              "Crystalline organic acid that occurs naturally in many fruits"@en ;
                 rdfs:label "Acido tartarico"@it ,
@@ -2021,6 +2023,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide
 :Arachide rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
+          :entitàWikitada wiki:Q3621199 ;
           :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
                                                :AllergiaFruttaSecca ;
           rdfs:comment "Legume often used to produce oil or as a paste for other preparations."@en ,
@@ -2035,14 +2038,16 @@ foaf:Person rdf:type owl:Class ;
       :entitàWikitada wiki:Q6122 ;
       :haAbitanti 76164 ;
       :haNome "Asti" ;
-      rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
+      rdfs:comment "Asti"@en ,
+                   "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
                    "Italian town and capital of the Piedmontese province of the same name. Renowned for its food and wine events."@en ;
-      rdfs:label "Asti" .
+      rdfs:label "Asti"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico
 :Basilico rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
+          :entitàWikitada wiki:Q38859 ;
           rdfs:comment "Basil is a culinary herb of the family Lamiaceae (mints)."@en ,
                        "Il basilico è una pianta erbacea annuale, appartenente alla famiglia delle Lamiaceae, normalmente coltivata come pianta aromatica."@it ;
           rdfs:label "Basil"@en ,
@@ -2056,6 +2061,7 @@ foaf:Person rdf:type owl:Class ;
                         owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                         owl:onClass :ingrediente
                       ] ;
+             :entitàWikitada wiki:Q209974 ;
              :ingredienteDerivatoDa :Burro ,
                                     :FarinaGranoTenero ,
                                     :LatteMucca ,
@@ -2089,6 +2095,7 @@ foaf:Person rdf:type owl:Class ;
                      owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                      owl:onClass :ingrediente
                    ] ;
+          :entitàWikitada wiki:Q13266 ;
           :ingredienteDerivatoDa :AcidoTartarico ,
                                  :FarinaGranoTenero ,
                                  :OlioArachidi ,
@@ -2106,6 +2113,7 @@ foaf:Person rdf:type owl:Class ;
                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                   owl:onClass :ingrediente
                 ] ;
+       :entitàWikitada wiki:Q34172 ;
        :ingredienteDerivatoDa :LatteMucca ;
        rdfs:comment "Fat part of the milk, separated from the buttermilk by a phase inversion process, deriving from the cream."@en ,
                     "Parte grassa del latte, separata dal latticello tramite un processo di inversione di fase, derivante dalla panna"@it ;
@@ -2116,6 +2124,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè
 :Caffè rdf:type owl:NamedIndividual ,
                 :FruttoCarnoso ;
+       :entitàWikitada wiki:Q153697 ;
        rdfs:comment "Fruit of the coffee plant, used to produce coffee-based drinks."@en ,
                     "Frutto della Coffea, utilizzato per la produzione di Caffè."@it ;
        skos:prefLabel "Caffè in chicchi"@it ,
@@ -2129,6 +2138,7 @@ foaf:Person rdf:type owl:Class ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
+               :entitàWikitada wiki:Q26882413 ;
                :ingredienteDerivatoDa :Caffè ;
                rdfs:comment "Polvere ricavata dalla macinatura del caffè in chicchi."@it ,
                             "Powder produced by grinding cofee beans."@en ;
@@ -2168,6 +2178,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
 :CarneVitello rdf:type owl:NamedIndividual ,
                        :Carne ;
+              :entitàWikitada wiki:Q957434 ;
               rdfs:comment "Carne ricavata dal vitello."@it ,
                            "Meat made from calf."@en ;
               rdfs:label "Calf meat"@en ,
@@ -2200,6 +2211,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia
 :Ciliegia rdf:type owl:NamedIndividual ,
                    :FruttoCarnoso ;
+          :entitàWikitada wiki:Q196 ;
           :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
           rdfs:comment "Il frutto del ciliegio, drupa di colore diverso secondo le varietà, ma per lo più rosso vivo."@it ,
                        "The fruit of the cherry tree, a drupe of different color according to the variety, but mostly bright red."@en ;
@@ -2253,6 +2265,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam
 :Edam rdf:type owl:NamedIndividual ;
+      :entitàWikitada wiki:Q597473 ;
       :ingredienteCoagulatoDa :LatteMucca ;
       rdfs:comment "Edam is a semi-hard cheese that originated in the Netherlands, traditionally sold in flat ended spheres with a pale yellow interior and a coat, or rind, of red paraffin wax."@en ,
                    "L'edam è un formaggio a base di latte vaccino con l'aggiunta di caglio animale tipico dei Paesi Bassi, venduto in forme dalla pasta giallo tenue e con una sottile protezione di cera rossastra."@it ;
@@ -2268,6 +2281,7 @@ foaf:Person rdf:type owl:Class ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass :ingrediente
                             ] ;
+                   :entitàWikitada wiki:Q2249305 ;
                    :ingredienteDerivatoDa :GranoTenero ;
                    rdfs:comment "Farina prodotta dalla macinazione del grano tenero. E' facilmente impastabile e ha una buona elasticità."@it ,
                                 "Flour produced by grinding soft wheat. It is easily kneaded and has good elasticity."@en ;
@@ -2286,6 +2300,7 @@ foaf:Person rdf:type owl:Class ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :ingrediente
                            ] ;
+                  :entitàWikitada wiki:Q259642 ;
                   :ingredienteCoagulatoDa :LatteMucca ;
                   rdfs:comment "Formaggio tipo quark."@it ,
                                "Quark-like cheese."@en ;
@@ -2313,6 +2328,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
 :GranoTenero rdf:type owl:NamedIndividual ,
                       :FruttoSecco ;
+             :entitàWikitada wiki:Q15645384 ;
              :ingredienteIncompatibileConDisturbo :AllergiaGlutine ,
                                                   :Celiachia ;
              rdfs:comment "Specie di frumento più impiegata al mondo nella panificazione e nella produzione di paste alimentari fresche."@it ,
@@ -2347,6 +2363,7 @@ foaf:Person rdf:type owl:Class ;
                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
+              :entitàWikitada wiki:Q178024 ;
               :ingredienteDerivatoDa :FarinaGranoTenero ,
                                      :LievitoBirra ;
               rdfs:comment "Dough that, once risen and stretched, is used for the preparation of pizzas or fried."@en ,
@@ -2358,6 +2375,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata
 :Insalata rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
+          :entitàWikitada wiki:Q83193 ;
           rdfs:comment "L'insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite."@it ,
                        "The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned."@en ;
           rdfs:label "Insalata"@it ,
@@ -2379,6 +2397,7 @@ foaf:Person rdf:type owl:Class ;
                     owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
                     owl:onClass :ingrediente
                   ] ;
+         :entitàWikitada wiki:Q178143 ;
          :ingredienteDerivatoDa :AcetoVinoBianco ,
                                 :Pomodoro ,
                                 :Zucchero ;
@@ -2394,6 +2413,7 @@ foaf:Person rdf:type owl:Class ;
                     owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                     owl:onClass :ingrediente
                   ] ;
+         :entitàWikitada wiki:Q3827309 ;
          :ingredienteDerivatoDa :FarinaGranoTenero ,
                                 :UovoGallina ;
          rdfs:comment "Particolare formato di impasto, ottenuto tagliando in grossi quadrati, o rettangoli, la sfoglia di pasta all'uovo."@it ,
@@ -2423,6 +2443,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAsina
 :LatteAsina rdf:type owl:NamedIndividual ;
+            :entitàWikitada wiki:Q1239497 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Donkey milk is the milk from the domesticated donkey."@en ,
                          "Il latte di asina è il latte prodotto dalla specie asinina."@it ;
@@ -2432,6 +2453,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteBufala
 :LatteBufala rdf:type owl:NamedIndividual ;
+             :entitàWikitada wiki:Q16571278 ;
              :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
              rdfs:comment "Latte di bufala di razza mediterranea italiana."@it ,
                           "Milk from Italian buffalos."@en ;
@@ -2443,6 +2465,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteCapra
 :LatteCapra rdf:type owl:NamedIndividual ;
+            :entitàWikitada wiki:Q1418287 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte generato dalle capre."@it ,
                          "Milk that comes from goats."@en ;
@@ -2459,6 +2482,7 @@ foaf:Person rdf:type owl:Class ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
+               :entitàWikitada wiki:Q975953 ;
                :ingredienteDerivatoDa :Mandorla ;
                rdfs:comment "Bevanda analcolica dolce realizzata mettendo in infusione in acqua le mandorle finemente tritate e spremendo poi le stesse per farne uscire tutto il succo"@it ,
                             "Sweet non-alcoholic drink made by infusing finely chopped almonds in water and then squeezing them to release all the juice"@en ;
@@ -2468,6 +2492,7 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca
 :LatteMucca rdf:type owl:NamedIndividual ;
+            :entitàWikitada wiki:Q10988133 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte ricavato dalla mungitura della vacca."@it ,
                          "Milk obtained from the milking of the cow."@en ;
@@ -2484,6 +2509,7 @@ foaf:Person rdf:type owl:Class ;
                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                       owl:onClass :ingrediente
                     ] ;
+           :entitàWikitada wiki:Q715187 ;
            :ingredienteDerivatoDa :Riso ;
            rdfs:comment "Bevanda alimentare vegetale a base di riso."@it ,
                         "Plant milk made from rice."@en ;
@@ -2499,6 +2525,7 @@ foaf:Person rdf:type owl:Class ;
                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                       owl:onClass :ingrediente
                     ] ;
+           :entitàWikitada wiki:Q192199 ;
            :ingredienteDerivatoDa :Soia ;
            rdfs:comment "Latte vegetale a base di soia."@it ,
                         "Plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates."@en ;
@@ -2509,6 +2536,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra
 :LievitoBirra rdf:type owl:NamedIndividual ,
                        :IngredienteVegano ;
+              :entitàWikitada wiki:Q45422 ;
               rdfs:comment "Lievito più importante nell'ambito dell'alimentazione umana. Il suo utilizzo è noto fin dall'antichità per la panificazione, la vinificazione e la produzione di birra."@it ,
                            "Most important yeast in human nutrition. Its use has been known since ancient times for bread making, wine making and beer production."@en ;
               skos:altLabel "Saccharomyces cerevisiae" ;
@@ -2533,6 +2561,7 @@ foaf:Person rdf:type owl:Class ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass :ingrediente
                                ] ;
+                      :entitàWikitada wiki:Q13400960 ;
                       :ingredienteDerivatoDa :CarneVitello ;
                       rdfs:comment "Ground meat composed of calf meat."@en ,
                                    "Macinato ottenuto macinando carne di vitello."@it ;
@@ -2547,6 +2576,7 @@ foaf:Person rdf:type owl:Class ;
                      owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                      owl:onClass :ingrediente
                    ] ;
+          :entitàWikitada wiki:Q167893 ;
           :ingredienteDerivatoDa :OlioExtraOliva ,
                                  :UovoGallina ;
           rdfs:comment "La maionese è una salsa cremosa e omogenea, generalmente di colore bianco o giallo pallido, che viene consumata fredda. Si tratta di un'emulsione stabile di olio vegetale frazionato in acqua, con tuorlo d'uovo e aromatizzato con aceto o succo di limone."@it ,
@@ -2559,6 +2589,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
+          :entitàWikitada wiki:Q184357 ;
           :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
           rdfs:comment "Edible seed grown from the almond tree."@en ,
                        "Seme commestibile del mandorlo."@it ;
@@ -2569,6 +2600,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
 :Mozzarella rdf:type owl:NamedIndividual ,
                      :ingrediente ;
+            :entitàWikitada wiki:Q14088 ;
             :ingredienteCoagulatoDa :LatteMucca ;
             rdfs:comment "La mozzarella è un latticino a pasta filata originario dell'Italia meridionale e prodotta da secoli anche in Italia centrale. Essendo prodotta con latte vaccino e non di bufala, è chiamata \"fior di latte\"."@it ,
                          "Mozzarella is a stretched curd dairy product originally from southern Italy and produced for centuries also in central Italy. Being produced with cow's milk and not buffalo's milk, it is called \"fior di latte\"."@en ;
@@ -2590,6 +2622,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
 :Nocciola rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
+          :entitàWikitada wiki:Q578307 ;
           :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
           rdfs:comment "Fruit of the hazel."@en ,
                        "Frutto del nocciolo."@it ;
@@ -2600,6 +2633,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
 :Noce rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
+      :entitàWikitada wiki:Q208021 ;
       :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
       rdfs:comment "Frutto degli alberi del genere Juglans, spesso riferito al Juglans regia."@it ,
                    "Nut of any tree of the genus Juglans, particularly the Persian or English walnut, Juglans regia."@en ;
@@ -2610,6 +2644,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#NoceMoscata
 :NoceMoscata rdf:type owl:NamedIndividual ,
                       :Seme ;
+             :entitàWikitada wiki:Q83165 ;
              rdfs:comment "Seed or ground spice of several species of the genus Myristica (particularly, of Myristica fragrans)."@en ,
                           "Seme decorticato della Myristica fragrans."@it ;
              rdfs:label "Noce moscata"@it ,
@@ -2623,6 +2658,7 @@ foaf:Person rdf:type owl:Class ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
+              :entitàWikitada wiki:Q265878 ;
               :ingredienteDerivatoDa :Arachide ;
               rdfs:comment "Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi."@it ,
                            "Vegetable oil that is obtained by pressure or by means of solvents from peanut seeds."@en ;
@@ -2638,6 +2674,7 @@ foaf:Person rdf:type owl:Class ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass :ingrediente
                          ] ;
+                :entitàWikitada wiki:Q93165 ;
                 :ingredienteDerivatoDa :Oliva ;
                 rdfs:comment "Olio d'oliva estratto con soli processi meccanici."@it ,
                              "Olive oil extracted only by mechanical means"@en ;
@@ -2648,6 +2685,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva
 :Oliva rdf:type owl:NamedIndividual ,
                 :FruttoCarnoso ;
+       :entitàWikitada wiki:Q1621080 ;
        rdfs:comment "Fruit of the olive tree used for food both directly, after adequate processing, and as a raw material for oil extraction."@en ,
                     "Frutto dell'ulivo usato a scopo alimentare sia direttamente, dopo adeguata trasformazione, sia come materia prima per l'estrazione dell'olio."@it ;
        rdfs:label "Oliva"@it ,
@@ -2672,6 +2710,7 @@ foaf:Person rdf:type owl:Class ;
                  owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                  owl:onClass :ingrediente
                ] ;
+      :entitàWikitada wiki:Q7802 ;
       :ingredienteDerivatoDa :FarinaGranoTenero ,
                              :LievitoBirra ;
       rdfs:comment "Food product obtained from fermentation, from forming followed by leavening, and subsequent baking in the oven of a dough based on flour (normal or wholemeal) of cereals, water, packaged in different ways, enriched and frequently characterized by different ingredients depending on of the place and traditions where it is prepared."@en ,
@@ -2702,6 +2741,7 @@ foaf:Person rdf:type owl:Class ;
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass :ingrediente
                              ] ;
+                    :entitàWikitada wiki:Q155922 ;
                     :ingredienteCoagulatoDa :LatteMucca ;
                     rdfs:comment "Formaggio a pasta dura DOP, prodotto con latte vaccino crudo, parzialmente scremato per affioramento, senza l'aggiunta di additivi."@it ,
                                  "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
@@ -2712,6 +2752,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
 :Pistacchio rdf:type owl:NamedIndividual ,
                      :FruttoSecco ;
+            :entitàWikitada wiki:Q14959225 ;
             :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
             rdfs:comment "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@en ,
                          "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@it ;
@@ -2776,6 +2817,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
+          :entitàWikitada wiki:Q20638126 ;
           rdfs:comment "Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."@it ,
                        "These are berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
           rdfs:label "Pomodoro"@it ,
@@ -2785,6 +2827,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
 :Prezzemolo rdf:type owl:NamedIndividual ,
                      :Ortaggio ;
+            :entitàWikitada wiki:Q25284 ;
             rdfs:comment "Biennial herbaceous plant in temperate zones and annual in tropical ones."@en ,
                          "Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
             rdfs:label "Parsley"@en ,
@@ -2817,6 +2860,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
 :Riso rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
+      :entitàWikitada wiki:Q5090 ;
       rdfs:comment "Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ,
                    "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ;
       rdfs:label "Rice"@en ,
@@ -2852,6 +2896,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
+        :entitàWikitada wiki:Q12000036 ;
         :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
         rdfs:comment "Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ,
                      "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ;
@@ -2862,6 +2907,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
 :Soia rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
+      :entitàWikitada wiki:Q61503220 ;
       :ingredienteIncompatibileConDisturbo :AllergiaSoia ;
       rdfs:comment "Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ,
                    "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ;
@@ -2876,6 +2922,7 @@ foaf:Person rdf:type owl:Class ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
+              :entitàWikitada wiki:Q3596097 ;
               :ingredienteDerivatoDa :Pomodoro ;
               rdfs:comment "Salsa prodotta spremendo e cuocendo pomodori."@it ,
                            "Sauce made by cooking tomatoes."@en ;
@@ -2898,6 +2945,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
 :UovoGallina rdf:type owl:NamedIndividual ,
                       :Uovo ;
+             :entitàWikitada wiki:Q15260613 ;
              rdfs:comment "Egg produced by a hen."@en ,
                           "Uovo prodotto da una gallina."@it ;
              rdfs:label "Chicken egg"@en ,
@@ -2907,6 +2955,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
 :Uva rdf:type owl:NamedIndividual ,
               :Infruttescenza ;
+     :entitàWikitada wiki:Q10978 ;
      :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
      rdfs:comment "Fruit of the vine, recovered from the bunch."@en ,
                   "Frutto della vite, recuperato dal grappolo."@it ;
@@ -2927,6 +2976,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
 :Zucchero rdf:type owl:NamedIndividual ,
                    :IngredienteVegano ;
+          :entitàWikitada wiki:Q11002 ;
           :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
           rdfs:comment "Dolcificante utilizzato nell'ambito dell'industria alimentare, specialmente dolciaria e pasticciera."@it ,
                        "Sweetener used in the food industry, especially confectionery and pastry."@en ;
@@ -2934,12 +2984,208 @@ foaf:Person rdf:type owl:Class ;
                      "Zucchero"@it .
 
 
+###  http://www.wikidata.org/entity/Q10978
+wiki:Q10978 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q10988133
+wiki:Q10988133 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q11002
+wiki:Q11002 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q12000036
+wiki:Q12000036 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1239497
+wiki:Q1239497 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q13266
+wiki:Q13266 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q13400960
+wiki:Q13400960 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q14088
+wiki:Q14088 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1418287
+wiki:Q1418287 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q14959225
+wiki:Q14959225 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q15260613
+wiki:Q15260613 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q153697
+wiki:Q153697 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q155922
+wiki:Q155922 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q15645384
+wiki:Q15645384 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q1621080
+wiki:Q1621080 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q16571278
+wiki:Q16571278 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q167893
+wiki:Q167893 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q178024
+wiki:Q178024 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q178143
+wiki:Q178143 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q184357
+wiki:Q184357 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q192199
+wiki:Q192199 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q194322
+wiki:Q194322 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q196
+wiki:Q196 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q20638126
+wiki:Q20638126 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q208021
+wiki:Q208021 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q209974
+wiki:Q209974 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q2249305
+wiki:Q2249305 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q25284
+wiki:Q25284 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q259642
+wiki:Q259642 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q265878
+wiki:Q265878 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q26882413
+wiki:Q26882413 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q34172
+wiki:Q34172 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3596097
+wiki:Q3596097 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3621199
+wiki:Q3621199 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3827309
+wiki:Q3827309 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q38859
+wiki:Q38859 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q41354
+wiki:Q41354 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q45422
+wiki:Q45422 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q495
 wiki:Q495 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q5090
+wiki:Q5090 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q578307
+wiki:Q578307 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q597473
+wiki:Q597473 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q6122
 wiki:Q6122 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q61503220
+wiki:Q61503220 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q715187
+wiki:Q715187 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q7802
+wiki:Q7802 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q83165
+wiki:Q83165 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q83193
+wiki:Q83193 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q93165
+wiki:Q93165 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q957434
+wiki:Q957434 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q975953
+wiki:Q975953 rdf:type owl:NamedIndividual .
 
 
 #################################################################

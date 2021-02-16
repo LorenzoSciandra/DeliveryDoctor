@@ -64,7 +64,7 @@
 
                 <!-- Sto usando il doppio = perchè il === NON FUNZIONA! -->
                 <!-- Questa prima tabella è per i risultati degli ingredienti -->
-                <div v-if="result != null && action == 0 && result.rows.length > 0">
+                <div v-if="result != null && result.rows.length > 0">
                     <table class="table table-striped table-hover">
                         <thead>
                         <tr>
@@ -78,21 +78,6 @@
                                      style="min-width: 200px"/>
                             </td>
                             <td v-for="el in row.slice(1)" class="align-middle">{{el}}</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- Questa seconda tabella è per i risultati della ricerca della posizione -->
-                <div v-else-if="result != null && action == 1 && result.rows.length > 0">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                        <tr>
-                            <th v-for="title in result.titles" scope="col">{{title}}</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr v-for="row in result.rows">
-                            <td v-for="el in row">{{el}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -153,27 +138,35 @@
                             WHERE {
                                 ?ingr skos:prefLabel "${this.secondSelection}"@it;
                                       rdfs:comment ?descrizioneBase.
+
+                                FILTER ( lang(?descrizioneBase) = "it" ).
+
                                 ?ingr deliverydr:entitàWikitada ?entità.
 
                                 SERVICE <https://query.wikidata.org/sparql> {
-                                    OPTIONAL {?entità <http://www.wikidata.org/prop/direct/P18> ?immagine.}
-                                    OPTIONAL {?entità schema:description ?informazioneExtra.}
+                                    OPTIONAL {?entità <http://www.wikidata.org/prop/direct/P18> ?img.}
+                                    OPTIONAL {?entità schema:description ?info.}
                                 }
-                                FILTER ( lang(?descrizioneBase) = "it" )
+
                                 FILTER ( lang(?informazioneExtra) = "it" )
+
+                                BIND(COALESCE(?img, "n/a") AS ?immagine).
+                                BIND(COALESCE(?info, "n/a") AS ?informazioneExtra).
                             }
+
                             LIMIT 1`;
                 }
 
                 // Ricerca locali in una Città con pietanza per celiaci
                 if (this.action == 1) {
                     query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
-                            SELECT ?coordinate
+                            SELECT ?img ?coordinate
                             WHERE {
                                 ?citta deliverydr:haNome "${this.secondSelection}";
                                        deliverydr:entitàWikitada ?ent
                                 SERVICE <https://query.wikidata.org/sparql> {
-                                    ?ent <http://www.wikidata.org/prop/direct/P625> ?coordinate .
+                                    ?ent <http://www.wikidata.org/prop/direct/P625> ?coordinate;
+                                         <http://www.wikidata.org/prop/direct/P18> ?img.
                                 }
                             }`;
                 }

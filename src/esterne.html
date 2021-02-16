@@ -63,7 +63,27 @@
                 </select>
 
                 <!-- Sto usando il doppio = perchè il === NON FUNZIONA! -->
-                <div v-if="result != null && result.rows.length > 0">
+                <!-- Questa prima tabella è per i risultati degli ingredienti -->
+                <div v-if="result != null && action == 0 && result.rows.length > 0">
+                    <table class="table table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th v-for="title in result.titles" scope="col">{{title}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr v-for="row in result.rows">
+                            <td class="align-middle">
+                                <img v-bind:src="row[0]" v-bind:alt="row[0]" class="img-fluid rounded-2"
+                                     style="min-width: 200px"/>
+                            </td>
+                            <td v-for="el in row.slice(1)" class="align-middle">{{el}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Questa seconda tabella è per i risultati della ricerca della posizione -->
+                <div v-else-if="result != null && action == 1 && result.rows.length > 0">
                     <table class="table table-striped table-hover">
                         <thead>
                         <tr>

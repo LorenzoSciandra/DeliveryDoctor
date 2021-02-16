@@ -138,15 +138,21 @@
                     success: function (result) {
                         console.log(result);
 
-                        // Ispirato da https://stackoverflow.com/a/61080978/3560579
-                        const csv2array = (str, delimiter = ',') => {
-                            const titles = str.slice(0, str.indexOf('\n')).trim().split(delimiter);
-                            const rawRows = str.slice(str.indexOf('\n') + 1).split(/\r?\n/);
-                            return {
-                                titles,
-                                rows: rawRows.map(row => row.split(delimiter))
-                            };
-                        };
+                        // Versione migliorata, utilizza una regex per recuperare correttamente le colonne.
+                        // In questo modo non vengono create più colonne se per caso ci sono delle virgole nel testo.
+                        // https://stackoverflow.com/a/52978163/3560579
+                        const csv2array = (str) => {
+                            const lineRegex = /((\\\n)|[^\n])+/g;
+                            const datumRegex = /,?(("(\\"|.)+?")|([^",][^,]*))?/g;
+                            const array2d = str.match(lineRegex).map((row) =>
+                                row.match(datumRegex).map((datum) => datum.replace(/^,?"?|"$/g, "").trim()),
+                            );
+
+                            const titles = array2d[0];
+                            const rows = array2d.slice(1);
+
+                            return {titles, rows}
+                        }
 
                         let data = csv2array(result);
                         // Rimuovo l'ultima riga perchè contiene valori vuoti restituiti da GraphDB

@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
+@prefix wiki: <http://www.wikidata.org/entity/> .
 @prefix schema: <http://schema.org/> .
 @prefix collectionentity: <http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#> .
 @prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
@@ -186,6 +187,17 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
                                 "Proprietà che collega un esercizio alimentare con la persona che l'ha recensito"@it ;
                    rdfs:label "E Stato Recensito Da"@it ,
                               "Has Been Reviewed By"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#entitàWikitada
+:entitàWikitada rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ,
+                         owl:InverseFunctionalProperty ;
+                rdfs:domain owl:Thing ;
+                rdfs:comment "L'entità corrispondente su Wikidata."@it ,
+                             "The corresponding entity on wikidata."@en ;
+                rdfs:label "Entità Wikidata"@it ,
+                           "Wikidata Entity"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#frittoCon
@@ -2020,6 +2032,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
 :Asti rdf:type owl:NamedIndividual ,
                :Città ;
+      :entitàWikitada wiki:Q6122 ;
       :haAbitanti 76164 ;
       :haNome "Asti" ;
       rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
@@ -2873,6 +2886,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
 :Torino rdf:type owl:NamedIndividual ,
                  :Città ;
+        :entitàWikitada wiki:Q495 ;
         :haAbitanti 2282000 ;
         :haNome "Torino"^^xsd:string ;
         rdfs:comment "Comune Italiano e capoluogo dell'omonima città metropolitana e della regione Piemonte. E' il terzo complesso economico-produttivo del Paese e costituisce uno dei maggiori poli universitari, artistici, turistici, scientifici e culturali d'Italia."@it ,
@@ -2918,6 +2932,14 @@ foaf:Person rdf:type owl:Class ;
                        "Sweetener used in the food industry, especially confectionery and pastry."@en ;
           rdfs:label "Sugar"@en ,
                      "Zucchero"@it .
+
+
+###  http://www.wikidata.org/entity/Q495
+wiki:Q495 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q6122
+wiki:Q6122 rdf:type owl:NamedIndividual .
 
 
 #################################################################
@@ -3004,11 +3026,11 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                     "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       skos:prefLabel "Fructose intollerance"@en .
+                       skos:altLabel "Hereditary fructose intolerance"@en ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
+                                      "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

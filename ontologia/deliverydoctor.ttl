@@ -67,6 +67,10 @@ vann:preferedNamespacePrefix rdf:type owl:AnnotationProperty .
 vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
 
 
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
 ###  http://www.w3.org/2004/02/skos/core#altLabel
 skos:altLabel rdf:type owl:AnnotationProperty .
 
@@ -310,6 +314,9 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haRuolo
 :haRuolo rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf <http://www.w3.org/ns/prov#hadRole> ;
+         rdf:type owl:FunctionalProperty ,
+                  owl:AsymmetricProperty ,
+                  owl:IrreflexiveProperty ;
          rdfs:domain :Persona ;
          rdfs:range <http://www.w3.org/ns/prov#Role> ;
          rdfs:comment "Property that connects a person to the role they play in the context of a particular activity"@en ,
@@ -718,7 +725,10 @@ schema:reviewBody rdf:type owl:DatatypeProperty ;
 :haNome rdf:type owl:DatatypeProperty ;
         rdfs:domain owl:Thing ;
         rdfs:range xsd:string ;
-        rdfs:label "Ha Nome"@it .
+        rdfs:comment "Data property generica usata per associare un nome a qualsiasi persona/oggetto che ne abbia uno"@it ,
+                     "Generic data property used to associate a name to any person / object that has one"@en ;
+        rdfs:label "Ha Nome"@it ,
+                   "Has Name"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
@@ -1040,10 +1050,6 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente
 :Cliente rdf:type owl:Class ;
-         owl:equivalentClass [ rdf:type owl:Restriction ;
-                               owl:onProperty :haRuolo ;
-                               owl:someValuesFrom :RuoloCliente
-                             ] ;
          rdfs:subClassOf :Persona ;
          rdfs:comment "Person who has consumed at least once at a certain food establishment"@en ,
                       "Persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
@@ -1083,12 +1089,17 @@ collectionentity:Collection rdf:type owl:Class ;
                                 "Food Establishment"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentareNonOttimo
+:EsercizioAlimentareNonOttimo rdf:type owl:Class ;
+                              rdfs:subClassOf :EsercizioAlimentare ;
+                              rdfs:comment "Esercizio alimentare con associata almeno una recensione con una sola stella"@it ,
+                                           "Food establishement with at least one single star review associated"@en ;
+                              rdfs:label "Esercizio Alimentare Non Ottimo"@it ,
+                                         "Not Great Food Establishment"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fattorino
 :Fattorino rdf:type owl:Class ;
-           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                 owl:onProperty :haRuolo ;
-                                 owl:someValuesFrom :RuoloFattorino
-                               ] ;
            rdfs:subClassOf :Persona ;
            rdfs:comment "La persona incaricata di consegnare un ordine ad un cliente."@it ,
                         "The person who delivers orders to customers"@en ;
@@ -1795,10 +1806,6 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensore
 :Recensore rdf:type owl:Class ;
-           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                 owl:onProperty :haRuolo ;
-                                 owl:someValuesFrom :RuoloRecensore
-                               ] ;
            rdfs:subClassOf :Cliente ;
            rdfs:comment "Person who has reviewed the food establishment tried, after a consummation"@en ,
                         "Persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
@@ -1817,8 +1824,11 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloCliente
 :RuoloCliente rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :RuoloDelCliente
+                                              )
+                                  ] ;
               rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
-              owl:disjointWith :RuoloTitolareImpresa ;
               rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
                            "Ruolo assunto da una persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
               rdfs:label "Customer Role"@en ,
@@ -1827,6 +1837,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloFattorino
 :RuoloFattorino rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :RuoloDelFattorino
+                                                )
+                                    ] ;
                 rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
                 rdfs:comment "Role of a person that delivers one or more orders to customers of a food establishment."@en ,
                              "Ruolo svolto da una persona nella consegna di uno o più ordini ai clienti di un esercizio alimentare."@it ;
@@ -1836,6 +1850,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloRecensore
 :RuoloRecensore rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Class ;
+                                      owl:oneOf ( :RuoloDelRecensore
+                                                )
+                                    ] ;
                 rdfs:subClassOf :RuoloCliente ;
                 rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
                              "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
@@ -1845,6 +1863,10 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloTitolareImpresa
 :RuoloTitolareImpresa rdf:type owl:Class ;
+                      owl:equivalentClass [ rdf:type owl:Class ;
+                                            owl:oneOf ( :RuoloDelTitolare
+                                                      )
+                                          ] ;
                       rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
                       rdfs:comment "Role of a person who owns a food establishment"@en ,
                                    "Ruolo di una persona che possiede un esercizio alimentare"@it ;
@@ -1879,10 +1901,6 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa
 :TitolareImpresa rdf:type owl:Class ;
-                 owl:equivalentClass [ rdf:type owl:Restriction ;
-                                       owl:onProperty :haRuolo ;
-                                       owl:someValuesFrom :RuoloTitolareImpresa
-                                     ] ;
                  rdfs:subClassOf :Persona ;
                  rdfs:comment "Person that owns a food establishment"@en ,
                               "Persona che possiede un esercizio alimentare"@it ;
@@ -2322,7 +2340,11 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni
 :Gianni rdf:type owl:NamedIndividual ,
                  :Persona ;
-        foaf:givenName "Gianni"^^xsd:string .
+        :haNome "Gianni"^^xsd:string ;
+        rdfs:comment "Any person who performs the duty of delivery guy"@en ,
+                     "Persona qualsiasi che svolge il compito di fattorino"@it ;
+        rdfs:label "Gianni"@en ,
+                   "Gianni"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
@@ -2547,7 +2569,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
 :Luca rdf:type owl:NamedIndividual ,
                :Persona ;
-      foaf:givenName "Luca" ;
+      :haNome "Luca"^^xsd:string ;
       rdfs:comment "Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome."@it ,
                    "You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance)."@en ;
       rdfs:label "Luca"@en ,
@@ -2893,6 +2915,42 @@ foaf:Person rdf:type owl:Class ;
                             "Risotto with tomato sauce"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelCliente
+:RuoloDelCliente rdf:type owl:NamedIndividual ,
+                          :RuoloCliente ;
+                 rdfs:comment "Role of a person who has consumed at least once at a certain food establishment"@en ,
+                              "Ruolo assunto da una persona che ha consumato almeno una volta presso un certo esercizio alimentare"@it ;
+                 rdfs:label "Customer Role"@en ,
+                            "Ruolo Cliente"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelFattorino
+:RuoloDelFattorino rdf:type owl:NamedIndividual ,
+                            :RuoloFattorino ;
+                   rdfs:comment "Role of a person that delivers one or more orders to customers of a food establishment."@en ,
+                                "Ruolo svolto da una persona nella consegna di uno o più ordini ai clienti di un esercizio alimentare."@it ;
+                   rdfs:label "Delivery Guy Role"@en ,
+                              "Ruolo Fattorino"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelRecensore
+:RuoloDelRecensore rdf:type owl:NamedIndividual ,
+                            :RuoloRecensore ;
+                   rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
+                                "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
+                   rdfs:label "Reviewer Role"@en ,
+                              "Ruolo Recensore"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelTitolare
+:RuoloDelTitolare rdf:type owl:NamedIndividual ,
+                           :RuoloTitolareImpresa ;
+                  rdfs:comment "Role of a person who owns a food establishment"@en ,
+                               "Ruolo di una persona che possiede un esercizio alimentare"@it ;
+                  rdfs:label "Business Owner Role"@en ,
+                             "Ruolo Titolare Impresa"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
@@ -3232,10 +3290,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  skos:prefLabel "Non-celiac gluten sensitivity"@en .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
-                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
-                rdfs:label "Nickel allergy"@en ,
-                           "Allergia al Nickel"@it .
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
+                rdfs:label "Allergia al Nickel"@it ,
+                           "Nickel allergy"@en ;
+                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -3272,7 +3330,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                     "Hereditary fructose intolerance"@en ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
                        skos:altLabel "Hereditary fructose intolerance"@en ;
                        skos:prefLabel "Intolleranza al Fruttosio"@it ,
@@ -3397,5 +3457,215 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                       )
 ] .
 
+
+#################################################################
+#    Rules
+#################################################################
+
+:x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:n rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:z rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:s rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+:c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Se una persona ha associato un nome con la data property generica haNome allora lo inferisce anche per la data property specifica di foaf"^^xsd:string ;
+   rdfs:label "Nome Proprio Persona"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haNome ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :n
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Persona ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> foaf:givenName ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :n
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che inferisce ad una persona il ruolo di cliente se ha fatto almeno un ordine"^^xsd:string ;
+   rdfs:label "Ruolo Cliente"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :RuoloCliente ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :ordinatoDa ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haRuolo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che inferisce ad una persona il ruolo di fattorino se ha fatto almeno una consegna"^^xsd:string ;
+   rdfs:label "Ruolo Fattorino"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :RuoloFattorino ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :consegnatoDa ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haRuolo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che inferisce ad una persona il ruolo di recensore se ha fatto almeno una recensione"^^xsd:string ;
+   rdfs:label "Ruolo Recensore"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :RuoloRecensore ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :recensitoDa ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haRuolo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Regola che inferisce ad una persona il ruolo di titolare impresa se ha avviato almeno una impresa"^^xsd:string ;
+   rdfs:label "Ruolo Titolare"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :RuoloTitolareImpresa ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :impresaAvviataDa ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :haRuolo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :z ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Se un locale riceve anche solo una recensione con solo 1 stella viene classificato come locale non ottimo"^^xsd:string ;
+   rdfs:label "Esercizio Alimentare Non Ottimo"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :recensioneCreataDaAzione ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> :recensireLocale ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> schema:reviewRating ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :s
+                                                                           ] ;
+                                                                 rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :possiedeStelle ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument1> :s ;
+                                                                                        <http://www.w3.org/2003/11/swrl#argument2> :c
+                                                                                      ] ;
+                                                                            rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                                       rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#lessThan> ;
+                                                                                                   <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                                                rdf:first :c ;
+                                                                                                                                                rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                                           rdf:first 2 ;
+                                                                                                                                                           rdf:rest rdf:nil
+                                                                                                                                                         ]
+                                                                                                                                              ]
+                                                                                                 ] ;
+                                                                                       rdf:rest rdf:nil
+                                                                                     ]
+                                                                          ]
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> :EsercizioAlimentareNonOttimo ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :z
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 ###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

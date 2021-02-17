@@ -4314,6 +4314,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
+                        :RisottoSugo
                         :Sedano
                         :Sesamo
                         :Soia
@@ -4325,6 +4326,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :UovoGallina
                         :Uva
                         :ValutazionePositivaDubai
+                        :ViaSantAnselmoTorino
                         :Zucchero
                         :ZuppaDiMiso
                         wiki:Q10978

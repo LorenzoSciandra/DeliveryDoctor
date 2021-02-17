@@ -450,8 +450,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn
-:localeSituatoIn rdf:type owl:ObjectProperty ,
-                          owl:FunctionalProperty ;
+:localeSituatoIn rdf:type owl:ObjectProperty ;
                  rdfs:domain :EsercizioAlimentare ;
                  rdfs:range :LuogoGeografico ;
                  rdfs:comment "Property that allows a food establishment to be geographically and uniquely localized"@en ,
@@ -526,6 +525,16 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                 rdfs:domain :Pietanza ;
                                 rdfs:range :Disturbo .
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#piazzaDellaCittà
+:piazzaDellaCittà rdf:type owl:ObjectProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain :Piazza ;
+                  rdfs:range :Città ;
+                  rdfs:comment "Property that connects the square to the city it belongs to"@en ,
+                  "Proprietà che collega la piazza alla città a cui appartiene"@it ;
+                  rdfs:label "Piazza Della Città"@it ,
+                  "Square of the City"@en .
+
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaIncompatibileConDisturbo
 :pietanzaIncompatibileConDisturbo rdf:type owl:ObjectProperty ;
@@ -546,7 +555,11 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaServitaInLocale
 :pietanzaServitaInLocale rdf:type owl:ObjectProperty ;
                          rdfs:domain :Pietanza ;
-                         rdfs:range :EsercizioAlimentare .
+                         rdfs:range :EsercizioAlimentare ;
+                         rdfs:comment "Property that connects the dish with the place where it is served"@en ,
+                                      "Proprietà che collega la pietanza con il locale in cui viene servita"@it ;
+                         rdfs:label "Food Preparation Served in Food Establishment"@en ,
+                                    "Pietanza Servita In Locale"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#recensioneCreataDaAzione
@@ -664,6 +677,17 @@ Per \"ingredienti indiretti\" si intendono tutti gli ingredienti non direttament
                                                "Utilizzato indirettamente in pietanza"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#viaDellaCittà
+:viaDellaCittà rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Via ;
+               rdfs:range :Città ;
+               rdfs:comment "Property that connects the street to the city it belongs to"@en ,
+                            "Proprietà che collega la via alla città a cui appartiene"@it ;
+               rdfs:label "City ​​Street"@en ,
+                          "Via Della Città"@it .
+
+
 ###  http://www.w3.org/ns/prov#hadRole
 <http://www.w3.org/ns/prov#hadRole> rdf:type owl:ObjectProperty ;
                                     rdfs:domain <http://www.w3.org/ns/prov#Agent> ;
@@ -728,6 +752,16 @@ schema:reviewBody rdf:type owl:DatatypeProperty ;
                      "Generic data property used to associate a name to any person / object that has one"@en ;
         rdfs:label "Ha Nome"@it ,
                    "Has Name"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroCivico
+:haNumeroCivico rdf:type owl:DatatypeProperty ;
+                rdfs:domain :EsercizioAlimentare ;
+                rdfs:range xsd:positiveInteger ;
+                rdfs:comment "Property that connects the food establishment with the street number in which it resides"@en ,
+                             "Proprietà che collega il locale con il numero civico della via/piazza in cui risiede"@it ;
+                rdfs:label "Ha Numero Civico"@it ,
+                           "Has street number"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroIngredienti
@@ -1921,7 +1955,6 @@ collectionentity:Collection rdf:type owl:Class ;
 :RuoloCliente rdf:type owl:Class ;
               owl:equivalentClass [ rdf:type owl:Class ;
                                     owl:oneOf ( :RuoloDelCliente
-                                                :RuoloDelRecensore
                                               )
                                   ] ;
               rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
@@ -1950,7 +1983,7 @@ collectionentity:Collection rdf:type owl:Class ;
                                       owl:oneOf ( :RuoloDelRecensore
                                                 )
                                     ] ;
-                rdfs:subClassOf :RuoloCliente ;
+                rdfs:subClassOf <http://www.w3.org/ns/prov#Role> ;
                 rdfs:comment "Role of a person who has reviewed the food establishment tried, after a consummation"@en ,
                              "Ruolo assunto da una persona che a seguito di una consumazione ha recensito l'esercizio alimentare provato"@it ;
                 rdfs:label "Reviewer Role"@en ,
@@ -2216,7 +2249,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana
 :Avigliana rdf:type owl:NamedIndividual ,
                     :Città ;
-           :entitàWikitada :Q9008 ;
+           :entitàWikitada wiki:Q9008 ;
            :haAbitanti "12623"^^xsd:positiveInteger ;
            :haNome "Avigliana"^^xsd:string ;
            rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
@@ -2327,7 +2360,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                           owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
-               :entitàWikitada :Q42366457 ;
+               :entitàWikitada wiki:Q42366457 ;
                :ingredienteDerivatoDa :Acqua ,
                                       :Carota ,
                                       :Cipolla ,
@@ -2431,7 +2464,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota
 :Carota rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada :Q81 ;
+        :entitàWikitada wiki:Q81 ;
         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
         rdfs:comment "Herbaceous plant with a green stem belonging to the Apiaceae family"@en ,
                      "Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae"@it ;
@@ -2505,7 +2538,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla
 :Cipolla rdf:type owl:NamedIndividual ,
                   :Ortaggio ;
-         :entitàWikitada :Q3406628 ;
+         :entitàWikitada wiki:Q3406628 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment "Bulbous plant traditionally attributed to the Liliaceae family"@en ,
                       "Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae"@it ;
@@ -2535,6 +2568,26 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                                  "Delivery activity of the order made by Luca at the Dubai"@en ;
                     skos:prefLabel "Consenga Ordine Luca"@it ,
                                    "Delivery activity order Luca"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CorsoSvizzeraTorino
+:CorsoSvizzeraTorino rdf:type owl:NamedIndividual ,
+                              :Via ;
+                     :viaDellaCittà :Torino ;
+                     rdfs:comment "Street that runs through a large part of Turin"@en ,
+                                  "Via che attraversa buona parte di Torino"@it ;
+                     rdfs:label "Corso Svizzera Torino"@it ,
+                                "Corso Svizzero Turin"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CorsoTorinoAvigliana
+:CorsoTorinoAvigliana rdf:type owl:NamedIndividual ,
+                               :Via ;
+                      :viaDellaCittà :Avigliana ;
+                      rdfs:comment "One of the streets of the city of Avigliana"@en ,
+                                   "Uno dei corsi della città di Avigliana"@it ;
+                      rdfs:label "Corso Torino Avigliana"@en ,
+                                 "Corso Torino Avigliana"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
@@ -2567,8 +2620,9 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                             :LasagneAlForno ,
                             :PolpetteAlSugo ,
                             :RisottoSugo ;
-       :localeSituatoInCitta :Torino ;
+       :localeSituatoIn :CorsoSvizzeraTorino ;
        :haNome "Dubai Coffee Lounge"^^xsd:string ;
+       :haNumeroCivico "185"^^xsd:positiveInteger ;
        rdfs:comment "Locale che funge sia da self-service, sia da bar, presente nel Piero della Francesca accanto al Dipartimento di Informatica."@it ,
                     "Place that serves as both a self-service and a bar, located in the Piero della Francesca next to the Department of Computer Science."@en ;
        skos:prefLabel "Dubai Coffee Lounge"^^xsd:string .
@@ -2660,8 +2714,9 @@ It is part of the set of legumes."""@en ;
 :GalaxyBurger rdf:type owl:NamedIndividual ,
                        :Paninoteca ;
               :localeServePietanza :HamburgerLuna ;
-              :localeSituatoInCitta :Asti ;
+              :localeSituatoIn :PiazzaStatutoAsti ;
               :haNome "Galaxy Burger"^^xsd:string ;
+              :haNumeroCivico "18"^^xsd:positiveInteger ;
               rdfs:comment "Food establishment that prepares hamburgers, located in the center of Asti"@en ,
                            "Hamburgeria situata in centro ad Asti."@it ;
               skos:prefLabel "Galaxy Burger"@it .
@@ -2773,8 +2828,9 @@ It is part of the set of legumes."""@en ;
 :Kingyo rdf:type owl:NamedIndividual ,
                  :Ristorante ;
         :localeServePietanza :ZuppaDiMiso ;
-        :localeSituatoInCitta :Avigliana ;
+        :localeSituatoIn :CorsoTorinoAvigliana ;
         :haNome "Kingyo"^^xsd:string ;
+        :haNumeroCivico "90"^^xsd:positiveInteger ;
         rdfs:comment "Ristorante di sushi ad Avigliana"@it ,
                      "Sushi restaurant in Avigliana"@en ;
         skos:prefLabel "Kingyo"@en ,
@@ -3045,7 +3101,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mondovì
 :Mondovì rdf:type owl:NamedIndividual ,
                   :Città ;
-         :entitàWikitada :Q20188 ;
+         :entitàWikitada wiki:Q20188 ;
          :haAbitanti "23000"^^xsd:positiveInteger ;
          :haNome "Mondovì"^^xsd:string ;
          rdfs:comment "Mondovì is an Italian town in the province of Cuneo in Piedmont."@en ,
@@ -3069,7 +3125,6 @@ It is part of the set of legumes."""@en ;
 :Napples rdf:type owl:NamedIndividual ,
                   :EsercizioAlimentare ;
          :localeServePietanza :PizzaMargherita ;
-         :localeSituatoInCitta :Torino ;
          :haNome "Napples"^^xsd:string ;
          rdfs:comment "Restaurant serving pizza and fried fish and seafood in a refined setting, with details related to the New York of yesteryear."@en ,
                       "Ristorante che serve pizza e fritture di mare e di terra in un ambiente curato, con dettagli legati alla New York d'altri tempi."@it ;
@@ -3113,11 +3168,10 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noir
 :Noir rdf:type owl:NamedIndividual ,
                :Bar ;
-      :localeServePietanza :CappuccinoSpeciale ,
-                           :Croissant ,
-                           :Toast ;
-      :localeSituatoInCitta :Mondovì ;
+      :localeServePietanza :Toast ;
+      :localeSituatoIn :PiazzaMartiriDellaLibertàMondovì ;
       :haNome "Noir Caffè"^^xsd:string ;
+      :haNumeroCivico "1"^^xsd:positiveInteger ;
       rdfs:comment "Bar located in the center of Mondovì"@en ,
                    "Bar situato nel centro di Mondovì"@it ;
       skos:prefLabel "Noir Caffè"@en ,
@@ -3293,6 +3347,26 @@ Pear is rich in simple sugars, especially fructose."""@en ;
                       "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a (pea) flower."@en ;
          skos:prefLabel "Pea"@en ,
                         "Pisello"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaMartiriDellaLibertàMondovì
+:PiazzaMartiriDellaLibertàMondovì rdf:type owl:NamedIndividual ,
+                                           :Piazza ;
+                                  :piazzaDellaCittà :Mondovì ;
+                                  rdfs:comment "Central square of the Breo district of Mondovì"@en ,
+                                               "Piazza centrale del rione breo di Mondovì"@it ;
+                                  rdfs:label "Piazza Martiri della Libertà Mondovì"@en ,
+                                             "Piazza Martiri della Libertà Mondovì"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaStatutoAsti
+:PiazzaStatutoAsti rdf:type owl:NamedIndividual ,
+                            :Piazza ;
+                   :piazzaDellaCittà :Asti ;
+                   rdfs:comment "Piazza in centro ad Asti"@it ,
+                                "Square in the center of Asti"@en ;
+                   rdfs:label "Piazza Statuto Asti"@en ,
+                              "Piazza Statuto Asti"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
@@ -3529,7 +3603,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sedano
 :Sedano rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada :Q28298 ;
+        :entitàWikitada wiki:Q28298 ;
         rdfs:comment "Celery is a biennial herbaceous species belonging to the Apiaceae family, native to the Mediterranean area"@en ,
                      "Il sedano è una specie erbacea biennale appartenente alla famiglia delle Apiaceae, originaria della zona mediterranea"@it ;
         skos:prefLabel "Celery"@en ,
@@ -3564,9 +3638,9 @@ Pear is rich in simple sugars, especially fructose."""@en ;
           :entitàWikitada wiki:Q36814998 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Lo spinacio è una pianta erbacea della famiglia delle Amaranthaceae, sottofamiglia delle Chenopodioideae. Può essere consumato cotto o crudo e il gusto differisce notevolmente; l'alto contenuto di ossalato può essere ridotto mediante cottura a vapore."@it ,
-                       """Spinach (Spinacia oleracea) is a leafy green flowering plant native to central and western Asia. 
-It is of the order Caryophyllales, family Amaranthaceae, subfamily Chenopodioideae. 
-Its leaves are a common edible vegetable consumed either fresh, or after storage using preservation techniques by canning, freezing, or dehydration. 
+                       """Spinach (Spinacia oleracea) is a leafy green flowering plant native to central and western Asia.
+It is of the order Caryophyllales, family Amaranthaceae, subfamily Chenopodioideae.
+Its leaves are a common edible vegetable consumed either fresh, or after storage using preservation techniques by canning, freezing, or dehydration.
 It may be eaten cooked or raw, and the taste differs considerably; the high oxalate content may be reduced by steaming."""@en ;
           skos:prefLabel "Spinach"@en ,
                          "Spinacio"@it .
@@ -3796,6 +3870,10 @@ wiki:Q195 rdf:type owl:NamedIndividual .
 wiki:Q196 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q20188
+wiki:Q20188 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q1996210
 wiki:Q1996210 rdf:type owl:NamedIndividual .
 
@@ -3848,6 +3926,14 @@ wiki:Q265878 rdf:type owl:NamedIndividual .
 wiki:Q26882413 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q28298
+wiki:Q28298 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3406628
+wiki:Q3406628 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q2746643
 wiki:Q2746643 rdf:type owl:NamedIndividual .
 
@@ -3894,6 +3980,10 @@ wiki:Q38859 rdf:type owl:NamedIndividual .
 
 ###  http://www.wikidata.org/entity/Q41354
 wiki:Q41354 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q42366457
+wiki:Q42366457 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q4287
@@ -3956,12 +4046,20 @@ wiki:Q74662248 rdf:type owl:NamedIndividual .
 wiki:Q7802 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q81
+wiki:Q81 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q83165
 wiki:Q83165 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q83193
 wiki:Q83193 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q9008
+wiki:Q9008 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q93165
@@ -4028,10 +4126,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  skos:altLabel "NCGS" .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
                 rdfs:label "Allergia al Nickel"@it ,
-                           "Nickel allergy"@en ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
+                           "Nickel allergy"@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -4147,6 +4245,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Cipolla
                         :ConsegnaOrdineLorenzo
                         :ConsegnaOrdineLuca
+                        :CorsoSvizzeraTorino
+                        :CorsoTorinoAvigliana
                         :Croissant
                         :Dubai
                         :Edam
@@ -4207,6 +4307,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Patata
                         :Pera
                         :Piselli
+                        :PiazzaMartiriDellaLibertàMondovì
+                        :PiazzaStatutoAsti
                         :Pistacchio
                         :PizzaMargherita
                         :Polpette
@@ -4214,16 +4316,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Pomodoro
                         :Prezzemolo
                         :ProsciuttoCotto
-                        :Q20188
-                        :Q28298
-                        :Q3406628
-                        :Q42366457
-                        :Q81
-                        :Q9008
-                        :RadiceLiquirizia
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
+                        :RadiceLiquirizia
                         :Sedano
                         :Sesamo
                         :Soia
@@ -4265,6 +4361,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q195
                         wiki:Q196
                         wiki:Q1996210
+                        wiki:Q20188
                         wiki:Q20638126
                         wiki:Q208008
                         wiki:Q208021
@@ -4280,6 +4377,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q2746643
                         wiki:Q27631426
                         wiki:Q29472543
+                        wiki:Q28298
+                        wiki:Q3406628
                         wiki:Q34172
                         wiki:Q35051
                         wiki:Q3596097
@@ -4290,6 +4389,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q38859
                         wiki:Q41354
                         wiki:Q4287
+                        wiki:Q42366457
                         wiki:Q45422
                         wiki:Q47722
                         wiki:Q495
@@ -4304,8 +4404,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q715187
                         wiki:Q74662248
                         wiki:Q7802
+                        wiki:Q81
                         wiki:Q83165
                         wiki:Q83193
+                        wiki:Q9008
                         wiki:Q93165
                         wiki:Q957434
                         wiki:Q961769
@@ -4321,15 +4423,50 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :x rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
-:n rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
-
 :y rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :z rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
+:n rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
 :s rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
 
 :c rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Se un locale è situato in una piazza allora sarà situato anche nella città a cui la piazza appartiene"^^xsd:string ;
+   rdfs:label "Locale Situato In Città2"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Piazza ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :piazzaDellaCittà ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Se una pietanza richiede 10 o più ingredienti viene definita come complessa"^^xsd:string ;
@@ -4516,6 +4653,41 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                                                        <http://www.w3.org/2003/11/swrl#propertyPredicate> :haRuolo ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :z ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> :x
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "Se un locale viene classificato come situato in una certa via, allora sarà ovviamente anche situato nella città a cui la via appartiene"^^xsd:string ;
+   rdfs:label "Locale Situato In Città1"^^xsd:string ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :y
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#classPredicate> :Via ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> :y
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#propertyPredicate> :viaDellaCittà ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument1> :y ;
+                                                                             <http://www.w3.org/2003/11/swrl#argument2> :z
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> :x ;
+                                                       <http://www.w3.org/2003/11/swrl#argument2> :z
                                                      ] ;
                                            rdf:rest rdf:nil
                                          ]

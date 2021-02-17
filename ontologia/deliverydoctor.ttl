@@ -1071,6 +1071,23 @@ collectionentity:Collection rdf:type owl:Class ;
                        "Deliver"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Crostaceo
+:Crostaceo rdf:type owl:Class ;
+           owl:equivalentClass [ owl:intersectionOf ( :Crostaceo
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :ingredienteIncompatibileConDisturbo ;
+                                                        owl:someValuesFrom :AllergiaCrostacei
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+           rdfs:subClassOf :FruttoDimare ;
+           rdfs:comment "Crustaceans form a large, diverse arthropod taxon which includes such animals as crabs, lobsters, crayfish, shrimps, prawns, krill, woodlice, and barnacles."@en ,
+                        "I crostacei costituiscono un subphylum degli Artropodi che comprende principalmente animali acquatici marini, sebbene siano ampiamente presenti anche nelle acque dolci e sia nota qualche specie terrestre."@it ;
+           rdfs:label "Crostaceo"@it ,
+                      "Crustacean"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo
 :Disturbo rdf:type owl:Class ;
           rdfs:comment "Class representing the various disorders that make intakes of certain foods incompatible or unwelcome for a person's health."@en ,
@@ -1176,6 +1193,23 @@ collectionentity:Collection rdf:type owl:Class ;
                           "Frutto Carnoso"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoDimare
+:FruttoDimare rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( :FruttoDimare
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :ingredienteIncompatibileConDisturbo ;
+                                                           owl:someValuesFrom :AllergiaFruttiDiMare
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:subClassOf :IngredienteNonVegetariano ;
+              rdfs:comment "In gastronomia, con il termine frutti di mare si indica un gruppo di alimenti di origine animale, derivati da organismi acquatici invertebrati (e quindi diversi dai pesci), che si catturano con modalità più simili alla raccolta della frutta che alla pesca."@it ,
+                           "Seafood is any form of sea life regarded as food by humans, prominently including fish and shellfish. Shellfish include various species of molluscs (e.g. bivalve molluscs such as clams, oysters, and mussels and cephalopods such as octopus and squid), crustaceans (e.g. shrimp, crabs, and lobster), and echinoderms (e.g. sea cucumbers and sea urchins)."@en ;
+              rdfs:label "Frutto di mare"@it ,
+                         "Seafood"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoSecco
 :FruttoSecco rdf:type owl:Class ;
              rdfs:subClassOf :FruttiSemplici ;
@@ -1187,6 +1221,14 @@ collectionentity:Collection rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fungo
 :Fungo rdf:type owl:Class ;
+       owl:equivalentClass [ owl:intersectionOf ( :Fungo
+                                                  [ rdf:type owl:Restriction ;
+                                                    owl:onProperty :ingredienteIncompatibileConDisturbo ;
+                                                    owl:someValuesFrom :AllergiaNickel
+                                                  ]
+                                                ) ;
+                             rdf:type owl:Class
+                           ] ;
        rdfs:subClassOf :IngredienteVegano ;
        rdfs:comment "Heterotrophic, saprophytic or parasitic plant organism, devoid of leaves, flowers, roots, usually of soft and spongy consistency."@en ,
                     "Organismo vegetale eterotrofo, saprofita o parassita, privo di foglie, di fiori, di radici, di consistenza generalmente molle e spugnosa."@it ;
@@ -1375,6 +1417,34 @@ collectionentity:Collection rdf:type owl:Class ;
                         "Large city with a heavily populated municipal area, economic and cultural center of a region or country, and often a hub for international communications."@en ;
            rdfs:label "Metropoli"@it ,
                       "Metropolis"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mollusco
+:Mollusco rdf:type owl:Class ;
+          rdfs:subClassOf :IngredienteNonVegetariano ;
+          rdfs:comment "I molluschi costituiscono il secondo phylum del regno animale per numero di specie dopo gli artropodi, con 85844 specie note. Sono animali primariamente marini, ma alcune specie hanno colonizzato le acque dolci come, ad esempio, i Bivalvi ed i Gasteropodi, ed alcune specie di questi ultimi si sono adattate anche all'ambiente terrestre."@it ,
+                       "Molluscs constitute the second phylum of the animal kingdom by number of species after arthropods, with 85844 known species. They are primarily marine animals, but some species have colonized fresh waters such as, for example, the Bivalves and the Gastropods, and some species of the latter have also adapted to the terrestrial environment."@en ;
+          rdfs:label "Mollusca"@en ,
+                     "Mollusco"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MolluscoMarino
+:MolluscoMarino rdf:type owl:Class ;
+                rdfs:subClassOf :FruttoDimare ,
+                                :Mollusco ;
+                rdfs:comment "Genere di mollusco che vive nell'acqua."@it ,
+                             "Kind of mollusca that lives in water."@en ;
+                rdfs:label "Aquatic mollusca"@en ,
+                           "Mollusco acquatico"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MolluscoTerrestre
+:MolluscoTerrestre rdf:type owl:Class ;
+                   rdfs:subClassOf :Mollusco ;
+                   rdfs:comment "Genere di mollusco che vive sulla terraferma."@it ,
+                                "Kind of mollusca that lives on land."@en ;
+                   rdfs:label "Mollusco terrestre"@it ,
+                              "Terrestrial mollusca"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordinare

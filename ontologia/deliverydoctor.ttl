@@ -520,20 +520,21 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti."
                                  "Ordine Creato Da Azione"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaCompatibileConDisturbo
-:pietanzaCompatibileConDisturbo rdf:type owl:ObjectProperty ;
-                                rdfs:domain :Pietanza ;
-                                rdfs:range :Disturbo .
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#piazzaDellaCittà
 :piazzaDellaCittà rdf:type owl:ObjectProperty ,
                            owl:FunctionalProperty ;
                   rdfs:domain :Piazza ;
                   rdfs:range :Città ;
                   rdfs:comment "Property that connects the square to the city it belongs to"@en ,
-                  "Proprietà che collega la piazza alla città a cui appartiene"@it ;
+                               "Proprietà che collega la piazza alla città a cui appartiene"@it ;
                   rdfs:label "Piazza Della Città"@it ,
-                  "Square of the City"@en .
+                             "Square of the City"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaCompatibileConDisturbo
+:pietanzaCompatibileConDisturbo rdf:type owl:ObjectProperty ;
+                                rdfs:domain :Pietanza ;
+                                rdfs:range :Disturbo .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaIncompatibileConDisturbo
@@ -2574,16 +2575,18 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 :CorsoSvizzeraTorino rdf:type owl:NamedIndividual ,
                               :Via ;
                      :viaDellaCittà :Torino ;
+                     :haNome "Corso Svizzera" ;
                      rdfs:comment "Street that runs through a large part of Turin"@en ,
                                   "Via che attraversa buona parte di Torino"@it ;
                      rdfs:label "Corso Svizzera Torino"@it ,
-                                "Corso Svizzero Turin"@en .
+                                "Corso Svizzera Turin"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CorsoTorinoAvigliana
 :CorsoTorinoAvigliana rdf:type owl:NamedIndividual ,
                                :Via ;
                       :viaDellaCittà :Avigliana ;
+                      :haNome "Corso Torino" ;
                       rdfs:comment "One of the streets of the city of Avigliana"@en ,
                                    "Uno dei corsi della città di Avigliana"@it ;
                       rdfs:label "Corso Torino Avigliana"@en ,
@@ -3125,7 +3128,9 @@ It is part of the set of legumes."""@en ;
 :Napples rdf:type owl:NamedIndividual ,
                   :EsercizioAlimentare ;
          :localeServePietanza :PizzaMargherita ;
+         :localeSituatoIn :ViaSantAnselmoTorino ;
          :haNome "Napples"^^xsd:string ;
+         :haNumeroCivico 36 ;
          rdfs:comment "Restaurant serving pizza and fried fish and seafood in a refined setting, with details related to the New York of yesteryear."@en ,
                       "Ristorante che serve pizza e fritture di mare e di terra in un ambiente curato, con dettagli legati alla New York d'altri tempi."@it ;
          skos:prefLabel "Napples"^^xsd:string .
@@ -3338,21 +3343,11 @@ Pear is rich in simple sugars, especially fructose."""@en ;
                      "Pera"@it .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli
-:Piselli rdf:type owl:NamedIndividual ,
-                  :Seme ;
-         :entitàWikitada wiki:Q29472543 ;
-         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
-         rdfs:comment "Il pisello secco è un alimento tradizionalmente importante in alcuni paesi, in particolare nel subcontinente indiano e in Etiopia, ma è relativamente in disuso come farinaceo e come fonte di proteine nella maggior parte dei paesi occidentali, dove è ormai principalmente coltivato per l'alimentazione animale o per l'esportazione. Dopo il XVII secolo, il pisello è divenuto un legume fresco popolare, la cui consumazione durante tutto l'anno è favorita dalle tecniche di conservazione e di surgelazione."@it ,
-                      "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a (pea) flower."@en ;
-         skos:prefLabel "Pea"@en ,
-                        "Pisello"@it .
-
-
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaMartiriDellaLibertàMondovì
 :PiazzaMartiriDellaLibertàMondovì rdf:type owl:NamedIndividual ,
                                            :Piazza ;
                                   :piazzaDellaCittà :Mondovì ;
+                                  :haNome "Piazza Martiri della Libertà" ;
                                   rdfs:comment "Central square of the Breo district of Mondovì"@en ,
                                                "Piazza centrale del rione breo di Mondovì"@it ;
                                   rdfs:label "Piazza Martiri della Libertà Mondovì"@en ,
@@ -3363,10 +3358,22 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 :PiazzaStatutoAsti rdf:type owl:NamedIndividual ,
                             :Piazza ;
                    :piazzaDellaCittà :Asti ;
+                   :haNome "Piazza Statuto" ;
                    rdfs:comment "Piazza in centro ad Asti"@it ,
-                                "Square in the center of Asti"@en ;
+                                "Square near the center of Asti"@en ;
                    rdfs:label "Piazza Statuto Asti"@en ,
                               "Piazza Statuto Asti"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli
+:Piselli rdf:type owl:NamedIndividual ,
+                  :Seme ;
+         :entitàWikitada wiki:Q29472543 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+         rdfs:comment "Il pisello secco è un alimento tradizionalmente importante in alcuni paesi, in particolare nel subcontinente indiano e in Etiopia, ma è relativamente in disuso come farinaceo e come fonte di proteine nella maggior parte dei paesi occidentali, dove è ormai principalmente coltivato per l'alimentazione animale o per l'esportazione. Dopo il XVII secolo, il pisello è divenuto un legume fresco popolare, la cui consumazione durante tutto l'anno è favorita dalle tecniche di conservazione e di surgelazione."@it ,
+                      "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a (pea) flower."@en ;
+         skos:prefLabel "Pea"@en ,
+                        "Pisello"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
@@ -3467,30 +3474,6 @@ Pear is rich in simple sugars, especially fructose."""@en ;
                                  "Currently it has been manually classified as a Non-Vegetarian Derivative Ingredient, however if a class that better specifies the derivation were to be introduced in the future, it would be worth updating this individual."@en ;
                  skos:prefLabel "Ham"@en ,
                                 "Prosciutto Cotto"@it .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q20188
-:Q20188 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q28298
-:Q28298 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q3406628
-:Q3406628 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q42366457
-:Q42366457 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q81
-:Q81 rdf:type owl:NamedIndividual .
-
-
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q9008
-:Q9008 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RadiceLiquirizia
@@ -3735,6 +3718,17 @@ It's a me!"""@it ;
                                          "Valutazione Positiva Luca \"Dubai\""@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ViaSantAnselmoTorino
+:ViaSantAnselmoTorino rdf:type owl:NamedIndividual ,
+                               :Via ;
+                      :viaDellaCittà :Torino ;
+                      :haNome "Via Sant'Anselmo" ;
+                      rdfs:comment "Strada vicina alla stazione ferroviaria di Torino Porta Nuova,"@it ,
+                                   "Street located near the Porta Nuova train station."@en ;
+                      skos:prefLabel "Sant'Anselmo Street Turin"@en ,
+                                     "Via Sant'Anselmo Torino"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
 :Zucchero rdf:type owl:NamedIndividual ,
                    :IngredienteVegano ;
@@ -3870,12 +3864,12 @@ wiki:Q195 rdf:type owl:NamedIndividual .
 wiki:Q196 rdf:type owl:NamedIndividual .
 
 
-###  http://www.wikidata.org/entity/Q20188
-wiki:Q20188 rdf:type owl:NamedIndividual .
-
-
 ###  http://www.wikidata.org/entity/Q1996210
 wiki:Q1996210 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q20188
+wiki:Q20188 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q20638126
@@ -3926,14 +3920,6 @@ wiki:Q265878 rdf:type owl:NamedIndividual .
 wiki:Q26882413 rdf:type owl:NamedIndividual .
 
 
-###  http://www.wikidata.org/entity/Q28298
-wiki:Q28298 rdf:type owl:NamedIndividual .
-
-
-###  http://www.wikidata.org/entity/Q3406628
-wiki:Q3406628 rdf:type owl:NamedIndividual .
-
-
 ###  http://www.wikidata.org/entity/Q2746643
 wiki:Q2746643 rdf:type owl:NamedIndividual .
 
@@ -3942,8 +3928,16 @@ wiki:Q2746643 rdf:type owl:NamedIndividual .
 wiki:Q27631426 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q28298
+wiki:Q28298 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q29472543
 wiki:Q29472543 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3406628
+wiki:Q3406628 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q34172
@@ -4121,15 +4115,15 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ,
-                                "Non-celiac gluten sensitivity"@en;
-                 skos:altLabel "NCGS" .
+                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ;
+                 skos:altLabel "NCGS" ;
+                 skos:prefLabel "Non-celiac gluten sensitivity"@en .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
-                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
                 rdfs:label "Allergia al Nickel"@it ,
-                           "Nickel allergy"@en .
+                           "Nickel allergy"@en ;
+                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -4165,12 +4159,12 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         "Favismo"@it .
 
 
-:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ,
-                                    "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
-                                     "Hereditary fructose intolerance"@en;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
-                                      "Fructose intollerance"@en .
+:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
+                       skos:altLabel "Hereditary fructose intolerance"@en ;
+                       skos:prefLabel "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
@@ -4306,9 +4300,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :ParmigianoReggiano
                         :Patata
                         :Pera
-                        :Piselli
                         :PiazzaMartiriDellaLibertàMondovì
                         :PiazzaStatutoAsti
+                        :Piselli
                         :Pistacchio
                         :PizzaMargherita
                         :Polpette
@@ -4316,10 +4310,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Pomodoro
                         :Prezzemolo
                         :ProsciuttoCotto
+                        :RadiceLiquirizia
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
-                        :RadiceLiquirizia
                         :Sedano
                         :Sesamo
                         :Soia
@@ -4376,8 +4370,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q26882413
                         wiki:Q2746643
                         wiki:Q27631426
-                        wiki:Q29472543
                         wiki:Q28298
+                        wiki:Q29472543
                         wiki:Q3406628
                         wiki:Q34172
                         wiki:Q35051
@@ -4388,8 +4382,8 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q3827309
                         wiki:Q38859
                         wiki:Q41354
-                        wiki:Q4287
                         wiki:Q42366457
+                        wiki:Q4287
                         wiki:Q45422
                         wiki:Q47722
                         wiki:Q495
@@ -4435,7 +4429,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Se un locale è situato in una piazza allora sarà situato anche nella città a cui la piazza appartiene"^^xsd:string ;
-   rdfs:label "Locale Situato In Città2"^^xsd:string ;
+   rdfs:label "Locale -> Piazza -> Città"^^xsd:string ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
@@ -4460,7 +4454,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoInCitta ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :x ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> :z
                                                      ] ;
@@ -4660,7 +4654,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 [ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
    rdfs:comment "Se un locale viene classificato come situato in una certa via, allora sarà ovviamente anche situato nella città a cui la via appartiene"^^xsd:string ;
-   rdfs:label "Locale Situato In Città1"^^xsd:string ;
+   rdfs:label "Locale -> Via -> Città"^^xsd:string ;
    rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
    <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
@@ -4685,7 +4679,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                                          ] ;
    <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
                                            rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
-                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoIn ;
+                                                       <http://www.w3.org/2003/11/swrl#propertyPredicate> :localeSituatoInCitta ;
                                                        <http://www.w3.org/2003/11/swrl#argument1> :x ;
                                                        <http://www.w3.org/2003/11/swrl#argument2> :z
                                                      ] ;

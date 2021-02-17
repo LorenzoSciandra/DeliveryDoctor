@@ -2029,7 +2029,7 @@ foaf:Person rdf:type owl:Class ;
                 :IngredienteVegano ;
        rdfs:comment "Composto chimico più abbondante sulla terra, si trova in tutti gli ambienti ed è parte integrante di tutti gli organismi viventi."@it ,
                     "The most abundant chemical compound on earth, it is found in all environments and is an integral part of all living organisms."@en ;
-       rdfs:label "Acqua"@it ,
+       skos:prefLabel "Acqua"@it ,
                   "Water"@en .
 
 
@@ -2093,8 +2093,8 @@ foaf:Person rdf:type owl:Class ;
       :haNome "Asti" ;
       rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
                    "Italian town and capital of the Piedmontese province of the same name. Renowned for its food and wine events."@en ;
-      rdfs:label "Asti"@en ;
-      skos:prefLabel "Asti"@it .
+      skos:prefLabel "Asti"@en ,
+                     "Asti"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana
@@ -2104,7 +2104,7 @@ foaf:Person rdf:type owl:Class ;
            :haAbitanti "12623"^^xsd:positiveInteger ;
            :haNome "Avigliana"^^xsd:string ;
            rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
-           rdfs:label "Avigliana"@en ,
+           skos:prefLabel "Avigliana"@en ,
                       "Avigliana"@it .
 
 
@@ -2115,7 +2115,7 @@ foaf:Person rdf:type owl:Class ;
                       :impresaAvviataDa :Ivan ;
                       rdfs:comment "Activity concerning the start-up of the Kingyo restaurant"@en ,
                                    "Attività che riguarda l'avvio del locale Kingyo"@it ;
-                      rdfs:label "Avviare Impresa Kingyo"@it ,
+                      skos:prefLabel "Avviare Impresa Kingyo"@it ,
                                  "Start Kingyo business"@en .
 
 
@@ -2195,7 +2195,7 @@ foaf:Person rdf:type owl:Class ;
                                       :Sedano ;
                rdfs:comment "It is obtained by cooking different vegetables: celery, carrot, onion, courgette and sometimes potato cooked in hot water."@en ,
                             "Si ottiene dalla cottura di diverse verdure: sedano, carota, cipolla, zucchina e talvolta patata cotte in acqua calda."@it ;
-               rdfs:label "Brodo Vegetale"@it ,
+               skos:prefLabel "Brodo Vegetale"@it ,
                           "Vegetable stock"@en .
 
 
@@ -2284,7 +2284,7 @@ foaf:Person rdf:type owl:Class ;
         :entitàWikitada :Q81 ;
         rdfs:comment "Herbaceous plant with a green stem belonging to the Apiaceae family"@en ,
                      "Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae"@it ;
-        rdfs:label "Carota"@it ,
+        skos:prefLabel "Carota"@it ,
                    "Carrot"@en .
 
 
@@ -2329,7 +2329,7 @@ foaf:Person rdf:type owl:Class ;
          :entitàWikitada :Q3406628 ;
          rdfs:comment "Bulbous plant traditionally attributed to the Liliaceae family"@en ,
                       "Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae"@it ;
-         rdfs:label "Cipolla"@it ,
+         skos:prefLabel "Cipolla"@it ,
                     "Onion"@en .
 
 
@@ -2341,7 +2341,7 @@ foaf:Person rdf:type owl:Class ;
                        :consegnatoDa :Federico ;
                        rdfs:comment "Attività di consegna dell'ordine effettuato da Lorenzo presso il @ kingyo"@it ,
                                     "Delivery activity of the order made by Lorenzo at the Kingyo"@en ;
-                       rdfs:label "Consegna Ordine Lorenzo"@it ,
+                       skos:prefLabel "Consegna Ordine Lorenzo"@it ,
                                   "Delivery activity order Lorenzo"@en .
 
 
@@ -2353,7 +2353,7 @@ foaf:Person rdf:type owl:Class ;
                     :consegnatoDa :Gianni ;
                     rdfs:comment "Attività di consegna dell'ordine effettuato da Luca presso il Dubai"@it ,
                                  "Delivery activity of the order made by Luca at the Dubai"@en ;
-                    rdfs:label "Consenga Ordine Luca"@it ,
+                    skos:prefLabel "Consenga Ordine Luca"@it ,
                                "Delivery activity order Luca"@en .
 
 
@@ -2429,7 +2429,7 @@ foaf:Person rdf:type owl:Class ;
                    :Persona ;
           rdfs:comment "A friend of the two creators of ontology"@en ,
                        "Un amico dei due creatori dell'ontologia"@it ;
-          rdfs:label "Federico Torrielli"@en ,
+          skos:prefLabel "Federico Torrielli"@en ,
                      "Federico Torrielli"@it .
 
 
@@ -2540,7 +2540,7 @@ foaf:Person rdf:type owl:Class ;
                :Persona ;
       rdfs:comment "A friend of the two creators of ontology"@en ,
                    "Un amico dei due creatori dell'ontologia"@it ;
-      rdfs:label "Ivan Spada"@en ,
+      skos:prefLabel "Ivan Spada"@en ,
                  "Ivan Spada"@it .
 
 
@@ -2568,7 +2568,7 @@ foaf:Person rdf:type owl:Class ;
         :haNome "Kingyo"^^xsd:string ;
         rdfs:comment "Ristorante di sushi ad Avigliana"@it ,
                      "Sushi restaurant in Avigliana"@en ;
-        rdfs:label "Kingyo"@en ,
+        skos:prefLabel "Kingyo"@en ,
                    "Kingyo"@it .
 
 
@@ -2716,7 +2716,7 @@ foaf:Person rdf:type owl:Class ;
                   :Persona ;
          rdfs:comment "One of the two creators of this ontology"@en ,
                       "Uno dei due creatori di questa ontologia"@it ;
-         rdfs:label "Lorenzo Sciandra"@en ,
+         skos:prefLabel "Lorenzo Sciandra"@en ,
                     "Lorenzo Sciandra"@it .
 
 
@@ -2778,7 +2778,7 @@ foaf:Person rdf:type owl:Class ;
                :Seme ;
       rdfs:comment "Condimento derivato dai semi della soia gialla, di origine giapponese,"@it ,
                    "Seasoning derived from yellow soybeans, of Japanese origin,"@en ;
-      rdfs:label "Miso"@en ,
+      skos:prefLabel "Miso"@en ,
                  "Miso"@it .
 
 
@@ -2790,7 +2790,7 @@ foaf:Person rdf:type owl:Class ;
          :haNome "Mondovì"^^xsd:string ;
          rdfs:comment "Mondovì is an Italian town in the province of Cuneo in Piedmont."@en ,
                       "Mondovì è un comune italiano della provincia di Cuneo in Piemonte."@it ;
-         rdfs:label "Mondovì"@en ,
+         skos:prefLabel "Mondovì"@en ,
                     "Mondovì"@it .
 
 
@@ -2858,7 +2858,7 @@ foaf:Person rdf:type owl:Class ;
       :haNome "Noir Caffè"^^xsd:string ;
       rdfs:comment "Bar located in the center of Mondovì"@en ,
                    "Bar situato nel centro di Mondovì"@it ;
-      rdfs:label "Noir Caffè"@en ,
+      skos:prefLabel "Noir Caffè"@en ,
                  "Noir Caffè"@it .
 
 
@@ -2920,7 +2920,7 @@ foaf:Person rdf:type owl:Class ;
                           :ordinareDalLocale :Kingyo ;
                           :ordinatoDa :Lorenzo ;
                           rdfs:comment "L'attività di ordinazione di Lorenzo al Kingyo"@it ;
-                          rdfs:label "Lorenzo Order Kingyo"@en ,
+                          skos:prefLabel "Lorenzo Order Kingyo"@en ,
                                      "Lorenzo's ordination activity at Kingyo"@en ,
                                      "Ordinazione Lorenzo Kingyo"@it .
 
@@ -2932,7 +2932,7 @@ foaf:Person rdf:type owl:Class ;
                               :ordineCreatoDaAzione :OrdinazioneLorenzoKingyo ;
                               rdfs:comment "Order made by Lorenzo at Kingyo"@en ,
                                            "Ordine effettuato da Lorenzo presso Kingyo"@it ;
-                              rdfs:label "Miso soup order Lorenzo @ Kingyo"@en ,
+                              skos:prefLabel "Miso soup order Lorenzo @ Kingyo"@en ,
                                          "Ordine Zuppa di Miso Lorenzo @ Kingyo"@it .
 
 
@@ -3074,7 +3074,7 @@ foaf:Person rdf:type owl:Class ;
                           :Carne ;
                  rdfs:comment "Cooked ham is a typical Italian cured meat obtained by salting and cooking the pork leg"@en ,
                               "Il prosciutto cotto è un salume tipico italiano ottenuto dalla salatura e cottura della coscia del maiale"@it ;
-                 rdfs:label "Ham"@en ,
+                 skos:prefLabel "Ham"@en ,
                             "Prosciutto Cotto"@it .
 
 
@@ -3204,7 +3204,7 @@ foaf:Person rdf:type owl:Class ;
         :entitàWikitada :Q28298 ;
         rdfs:comment "Celery is a biennial herbaceous species belonging to the Apiaceae family, native to the Mediterranean area"@en ,
                      "Il sedano è una specie erbacea biennale appartenente alla famiglia delle Apiaceae, originaria della zona mediterranea"@it ;
-        rdfs:label "Celery"@en ,
+        skos:prefLabel "Celery"@en ,
                    "Sedano"@it .
 
 
@@ -3235,7 +3235,7 @@ foaf:Person rdf:type owl:Class ;
                   :Persona ;
          rdfs:comment "One of the two co-authors of this ontology"@en ,
                       "Uno dei due coautori di questa ontologia"@it ;
-         rdfs:label "Stefano Vittorio Porta"@en ,
+         skos:prefLabel "Stefano Vittorio Porta"@en ,
                     "Stefano Vittorio Porta"@it .
 
 
@@ -3267,7 +3267,7 @@ foaf:Person rdf:type owl:Class ;
        :haNumeroIngredienti "3"^^xsd:positiveInteger ;
        rdfs:comment "Tipo di panino composto solamente da pane tostato con all'interno prosciutto cotto e formaggio"@it ,
                     "Type of sandwich consisting only of toasted bread with ham and cheese inside"@en ;
-       rdfs:label "Toast"@en ,
+       skos:prefLabel "Toast"@en ,
                   "Toast"@it .
 
 
@@ -3337,7 +3337,7 @@ foaf:Person rdf:type owl:Class ;
              :haNumeroIngredienti "2"^^xsd:positiveInteger ;
              rdfs:comment "La zuppa di miso è una zuppa tradizionale della cucina giapponese costituita sostanzialmente da brodo, in particolare dashi, mescolato con pasta di miso"@it ,
                           "Miso soup is a traditional soup of Japanese cuisine consisting basically of broth, especially dashi, mixed with miso paste"@en ;
-             rdfs:label "Miso soup"@en ,
+             skos:prefLabel "Miso soup"@en ,
                         "Zuppa Di Miso"@it .
 
 

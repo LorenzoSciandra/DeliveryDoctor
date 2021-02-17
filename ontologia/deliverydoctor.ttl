@@ -2100,7 +2100,19 @@ foaf:Person rdf:type owl:Class ;
        rdfs:comment "Composto chimico più abbondante sulla terra, si trova in tutti gli ambienti ed è parte integrante di tutti gli organismi viventi."@it ,
                     "The most abundant chemical compound on earth, it is found in all environments and is an integral part of all living organisms."@en ;
        skos:prefLabel "Acqua"@it ,
-                  "Water"@en .
+                      "Water"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Albicocca
+:Albicocca rdf:type owl:NamedIndividual ,
+                    :FruttoCarnoso ;
+           :entitàWikitada wiki:Q3733836 ;
+           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+           rdfs:comment """An apricot is a fruit of several species in the genus Prunus (stone fruits).
+Usually, an apricot is from the species P. armeniaca, but the fruits of the other species in Prunus sect. Armeniaca are also called apricots."""@en ,
+                        "L'albicocca è il frutto dell'albicocco, appartiene alla famiglia delle Rosacee e al genere prunus, cui appartengono anche ciliegia, prugna, mandorla, pesca."@it ;
+           skos:prefLabel "Albicocca"@it ,
+                          "Apricot"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi
@@ -2148,11 +2160,34 @@ foaf:Person rdf:type owl:Class ;
                    :FruttoSecco ;
           :entitàWikitada wiki:Q3621199 ;
           :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
-                                               :AllergiaFruttaSecca ;
+                                               :AllergiaFruttaSecca ,
+                                               :AllergiaNickel ;
           rdfs:comment "Legume often used to produce oil or as a paste for other preparations."@en ,
                        "Legume spesso utilizzato per produrre olio o come pasta per altre preparazioni."@it ;
           skos:prefLabel "Arachide"@it ,
                          "Peanut"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Aragosta
+:Aragosta rdf:type owl:NamedIndividual ,
+                   :Crostaceo ;
+          :entitàWikitada wiki:Q61864890 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+          rdfs:comment "I nefropidi sono una famiglia di crostacei decapodi marini."@it ,
+                       "Lobsters are a family (Nephropidae, sometimes also Homeridae) of large marine crustaceans."@en ;
+          skos:prefLabel "Aragosta"@it ,
+                         "Lobster"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asparago
+:Asparago rdf:type owl:NamedIndividual ,
+                   :Ortaggio ;
+          :entitàWikitada wiki:Q23041045 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+          rdfs:comment "Asparagus, or garden asparagus, folk name sparrow grass, scientific name Asparagus officinalis, is a perennial flowering plant species in the genus Asparagus. Its young shoots are used as a spring vegetable."@en ,
+                       "L'asparago è una pianta erbacea e perenne che cresce fino a 100–150 cm di altezza, con steli robusti con fogliame molto ramificato."@it ;
+          skos:prefLabel "Asparago"@it ,
+                         "Asparagus"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
@@ -2167,6 +2202,17 @@ foaf:Person rdf:type owl:Class ;
                      "Asti"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avena
+:Avena rdf:type owl:NamedIndividual ,
+                :Seme ;
+       :entitàWikitada wiki:Q12104 ;
+       :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+       rdfs:comment "L'avena comune è una specie di pianta spermatofita monocotiledone appartenente alla famiglia Poaceae"@it ,
+                    "The oat, sometimes called the common oat, is a species of cereal grain grown for its seed, which is known by the same name"@en ;
+       skos:prefLabel "Avena"@it ,
+                      "Oat"@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana
 :Avigliana rdf:type owl:NamedIndividual ,
                     :Città ;
@@ -2175,7 +2221,18 @@ foaf:Person rdf:type owl:Class ;
            :haNome "Avigliana"^^xsd:string ;
            rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
            skos:prefLabel "Avigliana"@en ,
-                      "Avigliana"@it .
+                          "Avigliana"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avocado
+:Avocado rdf:type owl:NamedIndividual ,
+                  :FruttoCarnoso ;
+         :entitàWikitada wiki:Q961769 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+         rdfs:comment "Avocado, fruit of the homonymous plant, is a pear-shaped drupe, 7 to 20 centimeters long and with a weight that can vary from 100 to 1000 g. It has a large central seed 3–5 cm in diameter. The pulp is yellow-green or pale yellow, the epicarp (or peel) can be green or aubergine, smooth or wrinkled."@en ,
+                      "L'avocado, frutto dell'omonima pianta, è una drupa a forma di pera, lunga dai 7 ai 20 centimetri e con un peso che può variare dai 100 ai 1000 g. Presenta un grosso seme centrale di 3–5 cm di diametro. La polpa è di colore giallo verde o giallo pallido, l'epicarpo (o buccia) può essere di colore verde o melanzana, liscio o rugoso."@it ;
+         skos:prefLabel "Avocado"@en ,
+                        "Avocado"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresaKingyo
@@ -2186,7 +2243,7 @@ foaf:Person rdf:type owl:Class ;
                       rdfs:comment "Activity concerning the start-up of the Kingyo restaurant"@en ,
                                    "Attività che riguarda l'avvio del locale Kingyo"@it ;
                       skos:prefLabel "Avviare Impresa Kingyo"@it ,
-                                 "Start Kingyo business"@en .
+                                     "Start Kingyo business"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico
@@ -2251,6 +2308,18 @@ foaf:Person rdf:type owl:Class ;
                          "Biscuit"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Broccolo
+:Broccolo rdf:type owl:NamedIndividual ,
+                   :Ortaggio ;
+          :entitàWikitada wiki:Q47722 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+          rdfs:comment "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable."@en ,
+                       "Il broccolo, chiamato anche cavolo broccolo, è una varietà di Brassica oleracea, la grande famiglia di piante conosciute comunemente come cavoli e che comprende numerose varietà molto diverse di aspetto. I broccoli rientrano nel gruppo di piante di cui non vengono mangiate le foglie bensì le infiorescenze non ancora mature."@it ;
+          skos:altLabel "Cavolo broccolo"@it ;
+          skos:prefLabel "Broccoli"@en ,
+                         "Broccolo"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BrodoVegetale
 :BrodoVegetale rdf:type owl:NamedIndividual ,
                         [ rdf:type owl:Restriction ;
@@ -2266,7 +2335,7 @@ foaf:Person rdf:type owl:Class ;
                rdfs:comment "It is obtained by cooking different vegetables: celery, carrot, onion, courgette and sometimes potato cooked in hot water."@en ,
                             "Si ottiene dalla cottura di diverse verdure: sedano, carota, cipolla, zucchina e talvolta patata cotte in acqua calda."@it ;
                skos:prefLabel "Brodo Vegetale"@it ,
-                          "Vegetable stock"@en .
+                              "Vegetable stock"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro
@@ -2282,6 +2351,17 @@ foaf:Person rdf:type owl:Class ;
                     "Parte grassa del latte, separata dal latticello tramite un processo di inversione di fase, derivante dalla panna"@it ;
        skos:prefLabel "Burro"@it ,
                       "Butter"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cacao
+:Cacao rdf:type owl:NamedIndividual ,
+                :FruttoCarnoso ;
+       :entitàWikitada wiki:Q208008 ;
+       :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+       rdfs:comment "Seed commonly used for chocolate production."@en ,
+                    "Seme comunemente utilizzato per la produzione di cioccolato."@it ;
+       skos:prefLabel "Cacao"@it ,
+                      "Cocoa"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè
@@ -2352,10 +2432,23 @@ foaf:Person rdf:type owl:Class ;
 :Carota rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
         :entitàWikitada :Q81 ;
+        :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
         rdfs:comment "Herbaceous plant with a green stem belonging to the Apiaceae family"@en ,
                      "Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae"@it ;
         skos:prefLabel "Carota"@it ,
-                   "Carrot"@en .
+                       "Carrot"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cavolo
+:Cavolo rdf:type owl:NamedIndividual ,
+                 :Ortaggio ;
+        :entitàWikitada wiki:Q35051 ;
+        :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+        rdfs:comment "Cabbage (comprising several cultivars of Brassica oleracea) is a leafy green, red (purple), or white (pale green) biennial plant grown as an annual vegetable crop for its dense-leaved heads. It is descended from the wild cabbage (B. oleracea var. oleracea), and belongs to the \"cole crops\" or brassicas, meaning it is closely related to broccoli and cauliflower (var. botrytis); Brussels sprouts (var. gemmifera); and Savoy cabbage (var. sabauda)."@en ,
+                     "Il cavolo cappuccio (Brassica oleracea var. capitata L.) è una pianta biennale, varietà di Brassica oleracea. Ha la caratteristica di avere le foglie esterne lisce, concave e serrate, che racchiudono le foglie più giovani in modo da formare una palla compatta detta \"testa\" o \"cappuccio\"."@it ;
+        skos:altLabel "Cavolo cappuccio"@it ;
+        skos:prefLabel "Cabbage"@en ,
+                       "Cavolo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia
@@ -2393,14 +2486,31 @@ foaf:Person rdf:type owl:Class ;
                          "Ciliegia"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cioccolato
+:Cioccolato rdf:type owl:NamedIndividual ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :ingredienteDerivatoDa ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :ingrediente
+                     ] ;
+            :entitàWikitada wiki:Q195 ;
+            :ingredienteDerivatoDa :Cacao ;
+            :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+            rdfs:comment "Chocolate is a preparation of roasted and ground cacao seeds that is made in the form of a liquid, paste, or in a block, which may also be used as a flavoring ingredient in other foods. The earliest signs of use are associated with Olmec sites (within what would become Mexico’s post-colonial territory) suggesting consumption of chocolate beverages, dating from the 19th century BC."@en ,
+                         "Il cioccolato, o cioccolata (specie se fusa o da spalmare), è un alimento derivato dai semi dell'albero del cacao, ampiamente diffuso e consumato in tutto il mondo. Il termine \"cioccolata\" viene utilizzato come sinonimo di \"cioccolato\" oppure per indicare una bevanda liquida a base di polvere di semi di cacao, nell'uso occidentale contemporaneo invariabilmente con l'aggiunta di zucchero (al contrario di come veniva consumato il cacao in bevande salate e speziate nelle culture precolombiane)."@it ;
+            skos:prefLabel "Chocolate"@en ,
+                           "Cioccolato"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla
 :Cipolla rdf:type owl:NamedIndividual ,
                   :Ortaggio ;
          :entitàWikitada :Q3406628 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment "Bulbous plant traditionally attributed to the Liliaceae family"@en ,
                       "Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae"@it ;
          skos:prefLabel "Cipolla"@it ,
-                    "Onion"@en .
+                        "Onion"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLorenzo
@@ -2412,7 +2522,7 @@ foaf:Person rdf:type owl:Class ;
                        rdfs:comment "Attività di consegna dell'ordine effettuato da Lorenzo presso il @ kingyo"@it ,
                                     "Delivery activity of the order made by Lorenzo at the Kingyo"@en ;
                        skos:prefLabel "Consegna Ordine Lorenzo"@it ,
-                                  "Delivery activity order Lorenzo"@en .
+                                      "Delivery activity order Lorenzo"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ConsegnaOrdineLuca
@@ -2424,7 +2534,7 @@ foaf:Person rdf:type owl:Class ;
                     rdfs:comment "Attività di consegna dell'ordine effettuato da Luca presso il Dubai"@it ,
                                  "Delivery activity of the order made by Luca at the Dubai"@en ;
                     skos:prefLabel "Consenga Ordine Luca"@it ,
-                               "Delivery activity order Luca"@en .
+                                   "Delivery activity order Luca"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
@@ -2475,6 +2585,19 @@ foaf:Person rdf:type owl:Class ;
                      "Edamer"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fagiolo
+:Fagiolo rdf:type owl:NamedIndividual ,
+                  :Seme ;
+         :entitàWikitada wiki:Q74662248 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+         rdfs:comment """Il fagiolo è il seme commestibile di diverse cultivar della pianta del fagiolo comune (Phaseolus vulgaris), utilizzato come verdura.
+Fa parte dell'insieme dei legumi."""@it ,
+                      """The bean is the edible seed of several cultivars of the common bean plant (Phaseolus vulgaris), used as a vegetable.
+It is part of the set of legumes."""@en ;
+         skos:prefLabel "Bean"@en ,
+                        "Fagiolo"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero
 :FarinaGranoTenero rdf:type owl:NamedIndividual ,
                             [ rdf:type owl:Restriction ;
@@ -2497,10 +2620,25 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Federico
 :Federico rdf:type owl:NamedIndividual ,
                    :Persona ;
-          rdfs:comment "A friend of the two creators of ontology"@en ,
-                       "Un amico dei due creatori dell'ontologia"@it ;
+          rdfs:comment """A friend of the two creators of ontology.
+
+<<Dank diabetic friend>>"""@en ,
+                       """Un amico dei due creatori dell'ontologia.
+
+<<Dank diabetic friend>>"""@it ;
           skos:prefLabel "Federico Torrielli"@en ,
-                     "Federico Torrielli"@it .
+                         "Federico Torrielli"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fico
+:Fico rdf:type owl:NamedIndividual ,
+               :Infruttescenza ;
+      :entitàWikitada wiki:Q2746643 ;
+      :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+      rdfs:comment "Infructescence of the homonymous plant."@en ,
+                   "Infruttescenza della pianta omonima."@it ;
+      skos:prefLabel "Fico"@it ,
+                     "Fig"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso
@@ -2591,6 +2729,7 @@ foaf:Person rdf:type owl:Class ;
 :Insalata rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
           :entitàWikitada wiki:Q83193 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "L'insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite."@it ,
                        "The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned."@en ;
           skos:prefLabel "Insalata"@it ,
@@ -2611,7 +2750,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "A friend of the two creators of ontology"@en ,
                    "Un amico dei due creatori dell'ontologia"@it ;
       skos:prefLabel "Ivan Spada"@en ,
-                 "Ivan Spada"@it .
+                     "Ivan Spada"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup
@@ -2639,7 +2778,7 @@ foaf:Person rdf:type owl:Class ;
         rdfs:comment "Ristorante di sushi ad Avigliana"@it ,
                      "Sushi restaurant in Avigliana"@en ;
         skos:prefLabel "Kingyo"@en ,
-                   "Kingyo"@it .
+                       "Kingyo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lasagne
@@ -2770,10 +2909,22 @@ foaf:Person rdf:type owl:Class ;
                           "Soy milk"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lenticchia
+:Lenticchia rdf:type owl:NamedIndividual ,
+                     :Seme ;
+            :entitàWikitada wiki:Q61505177 ;
+            :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+            rdfs:comment "Seme dell'omonima pianta, dalla caratteristica forma a lente leggermente bombata. Il colore dei semi varia secondo le varietà da pallido (verde chiaro, biondo, rosa) a più scuro (verde scuro, bruno, violaceo)."@it ;
+            skos:prefLabel "Lenticchia"@it ,
+                           "Lentil"@en ,
+                           "Seed of the homonymous plant, with a characteristic slightly rounded lens shape. The color of the seeds varies according to the variety from pale (light green, blond, pink) to darker (dark green, brown, purple)."@en .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra
 :LievitoBirra rdf:type owl:NamedIndividual ,
                        :IngredienteVegano ;
               :entitàWikitada wiki:Q45422 ;
+              :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
               rdfs:comment "Lievito più importante nell'ambito dell'alimentazione umana. Il suo utilizzo è noto fin dall'antichità per la panificazione, la vinificazione e la produzione di birra."@it ,
                            "Most important yeast in human nutrition. Its use has been known since ancient times for bread making, wine making and beer production."@en ;
               skos:altLabel "Saccharomyces cerevisiae" ;
@@ -2787,7 +2938,7 @@ foaf:Person rdf:type owl:Class ;
          rdfs:comment "One of the two creators of this ontology"@en ,
                       "Uno dei due creatori di questa ontologia"@it ;
          skos:prefLabel "Lorenzo Sciandra"@en ,
-                    "Lorenzo Sciandra"@it .
+                        "Lorenzo Sciandra"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca
@@ -2832,24 +2983,63 @@ foaf:Person rdf:type owl:Class ;
                          "Mayonnaise"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mais
+:Mais rdf:type owl:NamedIndividual ,
+               :FruttoSecco ;
+      :entitàWikitada wiki:Q25618328 ;
+      :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+      rdfs:comment "Il mais è una pianta erbacea annuale della famiglia delle Poaceae, tribù delle Maydeae: addomesticato dalle popolazioni indigene in Messico centrale in tempi preistorici circa 10.000 anni fa, è uno dei più importanti cereali, largamente coltivato sia nelle regioni tropicali sia in quelle temperate, in quest'ultimo caso a ciclo primavera-estate."@it ,
+                   "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of the plant produces pollen inflorescences and separate ovuliferous inflorescences called ears that yield kernels or seeds, which are fruits."@en ;
+      skos:altLabel "Granoturco"@it ,
+                    "Maize"@en ;
+      skos:prefLabel "Corn"@en ,
+                     "Mais"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
           :entitàWikitada wiki:Q184357 ;
-          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
+                                               :AllergiaNickel ;
           rdfs:comment "Edible seed grown from the almond tree."@en ,
                        "Seme commestibile del mandorlo."@it ;
           skos:prefLabel "Almond"@en ,
                          "Mandorla"@it .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Margarina
+:Margarina rdf:type owl:NamedIndividual ,
+                    :IngredienteVeganoDerivato ;
+           :entitàWikitada wiki:Q4287 ;
+           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+           rdfs:comment "La margarina è un grasso alimentare, costituito da due fasi: una lipidica (oli e grassi) e una acquosa intimamente mescolate. Come il burro è una emulsione, cioè una dispersione di un fluido sotto forma di minutissime goccioline (acqua) in un altro fluido non miscibile (olio). A tale emulsione possono essere poi aggiunti alcuni ingredienti minori per stabilizzare e migliorare il prodotto finale, come sale, emulsionanti, siero di latte o latte scremato, coloranti, conservanti o aromi."@it ,
+                        "Margarine is a spread used for flavoring, baking and cooking. It is most often used as an inexpensive butter substitute. It was named oleomargarine from Latin for oleum (olive oil) and Greek margarite (pearl indicating luster) but was later named margarine."@en ;
+           owl:versionInfo "Attualmente è stata classificata manualmente come Ingrediente Vegano Derivato, tuttavia se in futuro dovesse essere introdotto un \"Olio Vegetale\", converrebbe aggiornare questo individuo."@it ,
+                           "Currently it has been manually classified as a Vegan Derived Ingredient, however if a \"Vegetable Oil\" were to be introduced in the future, it would be worth updating this individual."@en ;
+           skos:prefLabel "Margarina"@it ,
+                          "Margarine"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mirtillo
+:Mirtillo rdf:type owl:NamedIndividual ,
+                   :FruttoCarnoso ;
+          :entitàWikitada wiki:Q60708120 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+          rdfs:comment "Bilberries, or occasionally European blueberries, are a primarily Eurasian species of low-growing shrubs in the genus Vaccinium (family Ericaceae), bearing edible, dark blue berries. The species most often referred to is Vaccinium myrtillus L., but there are several other closely related species."@en ,
+                       "Il mirtillo è il nome comune dato alla bacca di colore blu, ottenuta da diverse varietà della sezione Myrtillus del genere Vaccinium e inclusa nella categoria dei frutti di bosco."@it ;
+          skos:prefLabel "Bilberry"@en ,
+                         "Mirtillo"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Miso
-:Miso rdf:type owl:NamedIndividual ,
-               :Seme ;
+:Miso rdf:type owl:NamedIndividual ;
+      :entitàWikitada wiki:Q235169 ;
+      :ingredienteFermentatoDa :Soia ;
       rdfs:comment "Condimento derivato dai semi della soia gialla, di origine giapponese,"@it ,
-                   "Seasoning derived from yellow soybeans, of Japanese origin,"@en ;
+                   "Seasoning derived from yellow soybeans, of Japanese origin."@en ;
       skos:prefLabel "Miso"@en ,
-                 "Miso"@it .
+                     "Miso"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mondovì
@@ -2861,7 +3051,7 @@ foaf:Person rdf:type owl:Class ;
          rdfs:comment "Mondovì is an Italian town in the province of Cuneo in Piedmont."@en ,
                       "Mondovì è un comune italiano della provincia di Cuneo in Piemonte."@it ;
          skos:prefLabel "Mondovì"@en ,
-                    "Mondovì"@it .
+                        "Mondovì"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
@@ -2890,7 +3080,8 @@ foaf:Person rdf:type owl:Class ;
 :Nocciola rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
           :entitàWikitada wiki:Q578307 ;
-          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+          :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
+                                               :AllergiaNickel ;
           rdfs:comment "Fruit of the hazel."@en ,
                        "Frutto del nocciolo."@it ;
           skos:prefLabel "Hazelnut"@en ,
@@ -2901,7 +3092,8 @@ foaf:Person rdf:type owl:Class ;
 :Noce rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
       :entitàWikitada wiki:Q208021 ;
-      :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
+      :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
+                                           :AllergiaNickel ;
       rdfs:comment "Frutto degli alberi del genere Juglans, spesso riferito al Juglans regia."@it ,
                    "Nut of any tree of the genus Juglans, particularly the Persian or English walnut, Juglans regia."@en ;
       skos:prefLabel "Noce"@it ,
@@ -2929,7 +3121,7 @@ foaf:Person rdf:type owl:Class ;
       rdfs:comment "Bar located in the center of Mondovì"@en ,
                    "Bar situato nel centro di Mondovì"@it ;
       skos:prefLabel "Noir Caffè"@en ,
-                 "Noir Caffè"@it .
+                     "Noir Caffè"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi
@@ -2991,8 +3183,8 @@ foaf:Person rdf:type owl:Class ;
                           :ordinatoDa :Lorenzo ;
                           rdfs:comment "L'attività di ordinazione di Lorenzo al Kingyo"@it ;
                           skos:prefLabel "Lorenzo Order Kingyo"@en ,
-                                     "Lorenzo's ordination activity at Kingyo"@en ,
-                                     "Ordinazione Lorenzo Kingyo"@it .
+                                         "Lorenzo's ordination activity at Kingyo"@en ,
+                                         "Ordinazione Lorenzo Kingyo"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo
@@ -3003,7 +3195,22 @@ foaf:Person rdf:type owl:Class ;
                               rdfs:comment "Order made by Lorenzo at Kingyo"@en ,
                                            "Ordine effettuato da Lorenzo presso Kingyo"@it ;
                               skos:prefLabel "Miso soup order Lorenzo @ Kingyo"@en ,
-                                         "Ordine Zuppa di Miso Lorenzo @ Kingyo"@it .
+                                             "Ordine Zuppa di Miso Lorenzo @ Kingyo"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ostrica
+:Ostrica rdf:type owl:NamedIndividual ,
+                  :MolluscoMarino ;
+         :entitàWikitada wiki:Q1996210 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+         rdfs:comment """L'ostrica è un genere di molluschi bivalvi dalla conchiglia tondeggiante ricoperta di lamelle squamose ondulate.
+Le due valve sono disuguali e quella inferiore, a cui è ancorato l'animale, è più grande e incavata della superiore. Il mollusco ha corpo di forma tondeggiante, con i margini dei due lembi del mantello frangiati. Vive in tutti i mari d'Europa a bassa profondità, abbarbicata alle rocce o ad altri corpi solidi.
+Alcune ostriche, principalmente le specie dei mari orientali, producono perle. È molto apprezzata nella cucina mediterranea."""@it ,
+                      """The oyster is a genus of bivalve molluscs with a rounded shell covered with wavy scaly gills.
+The two valves are unequal and the lower one, to which the animal is anchored, is larger and hollow than the upper one. The mollusk has a rounded body, with the margins of the two edges of the mantle fringed. It lives in all the seas of Europe at low depth, clinging to rocks or other solid bodies.
+Some oysters, mainly eastern sea species, produce pearls. It is very popular in Mediterranean cuisine."""@en ;
+         skos:prefLabel "Ostrica"@it ,
+                        "Oyster"@en .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane
@@ -3050,6 +3257,42 @@ foaf:Person rdf:type owl:Class ;
                                  "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
                     skos:prefLabel "Parmigiano Reggiano"@it ,
                                    "Parmigiano-Reggiano"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata
+:Patata rdf:type owl:NamedIndividual ,
+                 :Ortaggio ;
+        :entitàWikitada wiki:Q16587531 ;
+        :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+        rdfs:comment "La patata è un tubero commestibile ottenuto dalle piante della specie Solanum tuberosum, molto utilizzato a scopo alimentare previa cottura."@it ,
+                     "The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself is a perennial in the nightshade family, Solanaceae."@en ;
+        skos:prefLabel "Patata"@it ,
+                       "Potato"@en .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pera
+:Pera rdf:type owl:NamedIndividual ,
+               :Frutto ;
+      :entitàWikitada wiki:Q13099586 ;
+      :ingredienteIncompatibileConDisturbo :AllergiaNickel ,
+                                           :IntolleranzaFruttosio ;
+      rdfs:comment """Con il termine pera si intende il falso frutto delle piante del genere Pyrus a cui appartengono molte specie differenti. Alcune delle specie producono frutti eduli e vengono perciò coltivate, quella più diffusa è la specie Pyrus communis.
+La pera è ricca di zuccheri semplici, specialmente fruttosio."""@it ,
+                   """The term pear refers to the false fruit of the plants of the genus Pyrus to which many different species belong. Some of the species produce edible fruits and are therefore cultivated, the most common being the Pyrus communis species.
+Pear is rich in simple sugars, especially fructose."""@en ;
+      skos:prefLabel "Pear"@en ,
+                     "Pera"@it .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli
+:Piselli rdf:type owl:NamedIndividual ,
+                  :Seme ;
+         :entitàWikitada wiki:Q29472543 ;
+         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+         rdfs:comment "Il pisello secco è un alimento tradizionalmente importante in alcuni paesi, in particolare nel subcontinente indiano e in Etiopia, ma è relativamente in disuso come farinaceo e come fonte di proteine nella maggior parte dei paesi occidentali, dove è ormai principalmente coltivato per l'alimentazione animale o per l'esportazione. Dopo il XVII secolo, il pisello è divenuto un legume fresco popolare, la cui consumazione durante tutto l'anno è favorita dalle tecniche di conservazione e di surgelazione."@it ,
+                      "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a (pea) flower."@en ;
+         skos:prefLabel "Pea"@en ,
+                        "Pisello"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
@@ -3123,6 +3366,7 @@ foaf:Person rdf:type owl:Class ;
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
           :entitàWikitada wiki:Q20638126 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."@it ,
                        "These are berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
           skos:prefLabel "Pomodoro"@it ,
@@ -3141,11 +3385,14 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ProsciuttoCotto
 :ProsciuttoCotto rdf:type owl:NamedIndividual ,
-                          :Carne ;
+                          :IngredienteNonVegetarianoDerivato ;
+                 :entitàWikitada wiki:Q96761025 ;
                  rdfs:comment "Cooked ham is a typical Italian cured meat obtained by salting and cooking the pork leg"@en ,
                               "Il prosciutto cotto è un salume tipico italiano ottenuto dalla salatura e cottura della coscia del maiale"@it ;
+                 owl:versionInfo "Attualmente è stato classificato manualmente come Ingrediente Non Vegetariano Derivato, tuttavia se in futuro dovesse essere introdotta una classe che specifica meglio la derivazione, converrebbe aggiornare questo individuo."@it ,
+                                 "Currently it has been manually classified as a Non-Vegetarian Derivative Ingredient, however if a class that better specifies the derivation were to be introduced in the future, it would be worth updating this individual."@en ;
                  skos:prefLabel "Ham"@en ,
-                            "Prosciutto Cotto"@it .
+                                "Prosciutto Cotto"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q20188
@@ -3170,6 +3417,17 @@ foaf:Person rdf:type owl:Class ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Q9008
 :Q9008 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RadiceLiquirizia
+:RadiceLiquirizia rdf:type owl:NamedIndividual ,
+                           :IngredienteVegano ;
+                  :entitàWikitada wiki:Q27631426 ;
+                  :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+                  rdfs:comment "Radice ottenuta dalla Glycyrrhiza glabra."@it ,
+                               "Root obtained from Glycyrrhiza glabra."@en ;
+                  skos:prefLabel "Liquorice root"@en ,
+                                 "Radice di liquirizia"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai
@@ -3275,7 +3533,7 @@ foaf:Person rdf:type owl:Class ;
         rdfs:comment "Celery is a biennial herbaceous species belonging to the Apiaceae family, native to the Mediterranean area"@en ,
                      "Il sedano è una specie erbacea biennale appartenente alla famiglia delle Apiaceae, originaria della zona mediterranea"@it ;
         skos:prefLabel "Celery"@en ,
-                   "Sedano"@it .
+                       "Sedano"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
@@ -3300,13 +3558,32 @@ foaf:Person rdf:type owl:Class ;
                      "Soy"@en .
 
 
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Spinacio
+:Spinacio rdf:type owl:NamedIndividual ,
+                   :Ortaggio ;
+          :entitàWikitada wiki:Q36814998 ;
+          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
+          rdfs:comment "Lo spinacio è una pianta erbacea della famiglia delle Amaranthaceae, sottofamiglia delle Chenopodioideae. Può essere consumato cotto o crudo e il gusto differisce notevolmente; l'alto contenuto di ossalato può essere ridotto mediante cottura a vapore."@it ,
+                       """Spinach (Spinacia oleracea) is a leafy green flowering plant native to central and western Asia. 
+It is of the order Caryophyllales, family Amaranthaceae, subfamily Chenopodioideae. 
+Its leaves are a common edible vegetable consumed either fresh, or after storage using preservation techniques by canning, freezing, or dehydration. 
+It may be eaten cooked or raw, and the taste differs considerably; the high oxalate content may be reduced by steaming."""@en ;
+          skos:prefLabel "Spinach"@en ,
+                         "Spinacio"@it .
+
+
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano
 :Stefano rdf:type owl:NamedIndividual ,
                   :Persona ;
-         rdfs:comment "One of the two co-authors of this ontology"@en ,
-                      "Uno dei due coautori di questa ontologia"@it ;
+         foaf:givenName "Stefano Vittorio Porta" ;
+         rdfs:comment """One of the two co-authors of this ontology.
+
+It's a me!"""@en ,
+                      """Uno dei due coautori di questa ontologia.
+
+It's a me!"""@it ;
          skos:prefLabel "Stefano Vittorio Porta"@en ,
-                    "Stefano Vittorio Porta"@it .
+                        "Stefano Vittorio Porta"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro
@@ -3338,7 +3615,7 @@ foaf:Person rdf:type owl:Class ;
        rdfs:comment "Tipo di panino composto solamente da pane tostato con all'interno prosciutto cotto e formaggio"@it ,
                     "Type of sandwich consisting only of toasted bread with ham and cheese inside"@en ;
        skos:prefLabel "Toast"@en ,
-                  "Toast"@it .
+                      "Toast"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
@@ -3408,7 +3685,7 @@ foaf:Person rdf:type owl:Class ;
              rdfs:comment "La zuppa di miso è una zuppa tradizionale della cucina giapponese costituita sostanzialmente da brodo, in particolare dashi, mescolato con pasta di miso"@it ,
                           "Miso soup is a traditional soup of Japanese cuisine consisting basically of broth, especially dashi, mixed with miso paste"@en ;
              skos:prefLabel "Miso soup"@en ,
-                        "Zuppa Di Miso"@it .
+                            "Zuppa Di Miso"@it .
 
 
 ###  http://www.wikidata.org/entity/Q10978
@@ -3427,8 +3704,16 @@ wiki:Q11002 rdf:type owl:NamedIndividual .
 wiki:Q12000036 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q12104
+wiki:Q12104 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q1239497
 wiki:Q1239497 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q13099586
+wiki:Q13099586 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q13266
@@ -3475,6 +3760,10 @@ wiki:Q1621080 rdf:type owl:NamedIndividual .
 wiki:Q16571278 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q16587531
+wiki:Q16587531 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q167893
 wiki:Q167893 rdf:type owl:NamedIndividual .
 
@@ -3499,12 +3788,24 @@ wiki:Q192199 rdf:type owl:NamedIndividual .
 wiki:Q194322 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q195
+wiki:Q195 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q196
 wiki:Q196 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q1996210
+wiki:Q1996210 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q20638126
 wiki:Q20638126 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q208008
+wiki:Q208008 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q208021
@@ -3519,8 +3820,20 @@ wiki:Q209974 rdf:type owl:NamedIndividual .
 wiki:Q2249305 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q23041045
+wiki:Q23041045 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q235169
+wiki:Q235169 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q25284
 wiki:Q25284 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q25618328
+wiki:Q25618328 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q259642
@@ -3535,8 +3848,24 @@ wiki:Q265878 rdf:type owl:NamedIndividual .
 wiki:Q26882413 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q2746643
+wiki:Q2746643 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q27631426
+wiki:Q27631426 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q29472543
+wiki:Q29472543 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q34172
 wiki:Q34172 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q35051
+wiki:Q35051 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q3596097
@@ -3545,6 +3874,14 @@ wiki:Q3596097 rdf:type owl:NamedIndividual .
 
 ###  http://www.wikidata.org/entity/Q3621199
 wiki:Q3621199 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q36814998
+wiki:Q36814998 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q3733836
+wiki:Q3733836 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q3827309
@@ -3559,8 +3896,16 @@ wiki:Q38859 rdf:type owl:NamedIndividual .
 wiki:Q41354 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q4287
+wiki:Q4287 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q45422
 wiki:Q45422 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q47722
+wiki:Q47722 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q495
@@ -3579,6 +3924,10 @@ wiki:Q578307 rdf:type owl:NamedIndividual .
 wiki:Q597473 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q60708120
+wiki:Q60708120 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q6122
 wiki:Q6122 rdf:type owl:NamedIndividual .
 
@@ -3587,8 +3936,20 @@ wiki:Q6122 rdf:type owl:NamedIndividual .
 wiki:Q61503220 rdf:type owl:NamedIndividual .
 
 
+###  http://www.wikidata.org/entity/Q61505177
+wiki:Q61505177 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q61864890
+wiki:Q61864890 rdf:type owl:NamedIndividual .
+
+
 ###  http://www.wikidata.org/entity/Q715187
 wiki:Q715187 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q74662248
+wiki:Q74662248 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q7802
@@ -3609,6 +3970,14 @@ wiki:Q93165 rdf:type owl:NamedIndividual .
 
 ###  http://www.wikidata.org/entity/Q957434
 wiki:Q957434 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q961769
+wiki:Q961769 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q96761025
+wiki:Q96761025 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q975953
@@ -3655,7 +4024,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
                  skos:prefLabel "Sensibilità non celiaca al Glutine"@it ,
-                                "Non-celiac gluten sensitivity"@en ;
+                                "Non-celiac gluten sensitivity"@en;
                  skos:altLabel "NCGS" .
 
 
@@ -3698,12 +4067,12 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         "Favismo"@it .
 
 
-:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
-                       rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
-                       skos:altLabel "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Fructose intollerance"@en .
+:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ,
+                                    "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ,
+                                     "Hereditary fructose intolerance"@en;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
+                                      "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;
@@ -3737,6 +4106,7 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
   owl:distinctMembers ( :AcetoVinoBianco
                         :AcidoTartarico
                         :Acqua
+                        :Albicocca
                         :AllergiaAdditivi
                         :AllergiaArachidi
                         :AllergiaCrostacei
@@ -3748,33 +4118,43 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :AllergiaSoia
                         :AllergiaUova
                         :Arachide
+                        :Aragosta
+                        :Asparago
                         :Asti
+                        :Avena
                         :Avigliana
+                        :Avocado
                         :AvviareImpresaKingyo
                         :Basilico
                         :Besciamella
                         :BiscottiTritati
                         :Biscotto
+                        :Broccolo
                         :BrodoVegetale
                         :Burro
+                        :Cacao
                         :Caffè
                         :CaffèMacinato
                         :CappuccinoECroissant
                         :CappuccinoSpeciale
                         :CarneVitello
                         :Carota
+                        :Cavolo
                         :Celiachia
                         :CheesecakeCiliegia
                         :Ciliegia
+                        :Cioccolato
                         :Cipolla
                         :ConsegnaOrdineLorenzo
                         :ConsegnaOrdineLuca
                         :Croissant
                         :Dubai
                         :Edam
+                        :Fagiolo
                         :FarinaGranoTenero
                         :Favismo
                         :Federico
+                        :Fico
                         :FormaggioCremoso
                         :GalaxyBurger
                         :Gianni
@@ -3796,12 +4176,16 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :LatteMucca
                         :LatteRiso
                         :LatteSoia
+                        :Lenticchia
                         :LievitoBirra
                         :Lorenzo
                         :Luca
                         :MacinatoCarneVitello
                         :Maionese
+                        :Mais
                         :Mandorla
+                        :Margarina
+                        :Mirtillo
                         :Miso
                         :Mondovì
                         :Mozzarella
@@ -3816,9 +4200,13 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :OrdinareDubai
                         :OrdinazioneLorenzoKingyo
                         :OrdineZuppaMisoLorenzoKingyo
+                        :Ostrica
                         :Pane
                         :PaneSemiSesamo
                         :ParmigianoReggiano
+                        :Patata
+                        :Pera
+                        :Piselli
                         :Pistacchio
                         :PizzaMargherita
                         :Polpette
@@ -3832,13 +4220,14 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         :Q42366457
                         :Q81
                         :Q9008
+                        :RadiceLiquirizia
                         :RecensionePositivaDubai
                         :RecensireDubai
                         :Riso
-                        :RisottoSugo
                         :Sedano
                         :Sesamo
                         :Soia
+                        :Spinacio
                         :Stefano
                         :SugoPomodoro
                         :Toast
@@ -3852,7 +4241,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q10988133
                         wiki:Q11002
                         wiki:Q12000036
+                        wiki:Q12104
                         wiki:Q1239497
+                        wiki:Q13099586
                         wiki:Q13266
                         wiki:Q13400960
                         wiki:Q14088
@@ -3864,40 +4255,61 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         wiki:Q15645384
                         wiki:Q1621080
                         wiki:Q16571278
+                        wiki:Q16587531
                         wiki:Q167893
                         wiki:Q178024
                         wiki:Q178143
                         wiki:Q184357
                         wiki:Q192199
                         wiki:Q194322
+                        wiki:Q195
                         wiki:Q196
+                        wiki:Q1996210
                         wiki:Q20638126
+                        wiki:Q208008
                         wiki:Q208021
                         wiki:Q209974
                         wiki:Q2249305
+                        wiki:Q23041045
+                        wiki:Q235169
                         wiki:Q25284
+                        wiki:Q25618328
                         wiki:Q259642
                         wiki:Q265878
                         wiki:Q26882413
+                        wiki:Q2746643
+                        wiki:Q27631426
+                        wiki:Q29472543
                         wiki:Q34172
+                        wiki:Q35051
                         wiki:Q3596097
                         wiki:Q3621199
+                        wiki:Q36814998
+                        wiki:Q3733836
                         wiki:Q3827309
                         wiki:Q38859
                         wiki:Q41354
+                        wiki:Q4287
                         wiki:Q45422
+                        wiki:Q47722
                         wiki:Q495
                         wiki:Q5090
                         wiki:Q578307
                         wiki:Q597473
+                        wiki:Q60708120
                         wiki:Q6122
                         wiki:Q61503220
+                        wiki:Q61505177
+                        wiki:Q61864890
                         wiki:Q715187
+                        wiki:Q74662248
                         wiki:Q7802
                         wiki:Q83165
                         wiki:Q83193
                         wiki:Q93165
                         wiki:Q957434
+                        wiki:Q961769
+                        wiki:Q96761025
                         wiki:Q975953
                       )
 ] .

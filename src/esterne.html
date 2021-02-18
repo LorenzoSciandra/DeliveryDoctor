@@ -268,7 +268,8 @@
                         console.log(result);
                         /*
                         Il risultato dal database è un oggetto del tipo
-                        {head: {
+                        {
+                            head: {
                                 vars: String[]
                             },
                             results: {
@@ -280,23 +281,7 @@
 
                         L'idea è di iterare sui bindings e mapparli ad array dei valori identificati da head.
                          */
-
-                        const values = result.results.bindings.map(item => {
-                            let values = [];
-
-                            result.head.vars.forEach(title => {
-                                values.push(item[title].value);
-                            });
-
-                            return values;
-                        });
-
-                        let vv = [];
-
-                        values.forEach(el => vv.push(el[0]));
-
-                        vue.names = vv;
-
+                        vue.names = GraphDBJsonToArray(result.head.vars, result.results.bindings).map(el => el[0].value);
                     }
                 });
             }

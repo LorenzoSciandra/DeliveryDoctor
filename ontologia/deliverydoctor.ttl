@@ -193,8 +193,8 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
                               "Has Been Reviewed By"@en .
 
 
-###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#entitàWikitada
-:entitàWikitada rdf:type owl:ObjectProperty ,
+###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#entitaWikidata
+:entitaWikidata rdf:type owl:ObjectProperty ,
                          owl:FunctionalProperty ,
                          owl:InverseFunctionalProperty ;
                 rdfs:domain owl:Thing ;
@@ -2110,7 +2110,7 @@ foaf:Person rdf:type owl:Class ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :ingrediente
                           ] ;
-                 :entitàWikitada wiki:Q41354 ;
+                 :entitaWikidata wiki:Q41354 ;
                  :ingredienteFermentatoDa :Uva ;
                  rdfs:comment "Viene definito aceto il liquido acido che è ottenuto grazie all'azione di batteri Gram-negativi del genere Acetobacter, che, in presenza di aria e acqua, ossidano l'etanolo contenuto nel vino."@it ,
                               "Vinegar is defined as the acidic liquid obtained thanks to the action of Gram-negative bacteria of the genus Acetobacter, which, in the presence of air and water, oxidize the ethanol contained in the wine."@en ;
@@ -2121,7 +2121,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcidoTartarico
 :AcidoTartarico rdf:type owl:NamedIndividual ,
                          :Additivo ;
-                :entitàWikitada wiki:Q194322 ;
+                :entitaWikidata wiki:Q194322 ;
                 rdfs:comment "Acido organico diprotico cristallino bianco."@it ,
                              "Crystalline organic acid that occurs naturally in many fruits"@en ;
                 skos:prefLabel "Acido tartarico"@it ,
@@ -2131,6 +2131,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Acqua
 :Acqua rdf:type owl:NamedIndividual ,
                 :IngredienteVegano ;
+       :entitaWikidata wiki:Q7892 ;
        rdfs:comment "Composto chimico più abbondante sulla terra, si trova in tutti gli ambienti ed è parte integrante di tutti gli organismi viventi."@it ,
                     "The most abundant chemical compound on earth, it is found in all environments and is an integral part of all living organisms."@en ;
        skos:prefLabel "Acqua"@it ,
@@ -2140,7 +2141,7 @@ foaf:Person rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Albicocca
 :Albicocca rdf:type owl:NamedIndividual ,
                     :FruttoCarnoso ;
-           :entitàWikitada wiki:Q3733836 ;
+           :entitaWikidata wiki:Q3733836 ;
            :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
            rdfs:comment """An apricot is a fruit of several species in the genus Prunus (stone fruits).
 Usually, an apricot is from the species P. armeniaca, but the fruits of the other species in Prunus sect. Armeniaca are also called apricots."""@en ,
@@ -2192,7 +2193,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide
 :Arachide rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
-          :entitàWikitada wiki:Q3621199 ;
+          :entitaWikidata wiki:Q3621199 ;
           :ingredienteIncompatibileConDisturbo :AllergiaArachidi ,
                                                :AllergiaFruttaSecca ,
                                                :AllergiaNickel ;
@@ -2205,7 +2206,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Aragosta
 :Aragosta rdf:type owl:NamedIndividual ,
                    :Crostaceo ;
-          :entitàWikitada wiki:Q61864890 ;
+          :entitaWikidata wiki:Q61864890 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "I nefropidi sono una famiglia di crostacei decapodi marini."@it ,
                        "Lobsters are a family (Nephropidae, sometimes also Homeridae) of large marine crustaceans."@en ;
@@ -2216,7 +2217,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asparago
 :Asparago rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q23041045 ;
+          :entitaWikidata wiki:Q23041045 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Asparagus, or garden asparagus, folk name sparrow grass, scientific name Asparagus officinalis, is a perennial flowering plant species in the genus Asparagus. Its young shoots are used as a spring vegetable."@en ,
                        "L'asparago è una pianta erbacea e perenne che cresce fino a 100–150 cm di altezza, con steli robusti con fogliame molto ramificato."@it ;
@@ -2227,7 +2228,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti
 :Asti rdf:type owl:NamedIndividual ,
                :Città ;
-      :entitàWikitada wiki:Q6122 ;
+      :entitaWikidata wiki:Q6122 ;
       :haAbitanti 76164 ;
       :haNome "Asti" ;
       rdfs:comment "Comune Italiano e capoluogo dell'omonima provincia piemontese. Rinomata per i vini e le manifestazioni enogastronomiche."@it ,
@@ -2239,7 +2240,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avena
 :Avena rdf:type owl:NamedIndividual ,
                 :Seme ;
-       :entitàWikitada wiki:Q12104 ;
+       :entitaWikidata wiki:Q12104 ;
        :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
        rdfs:comment "L'avena comune è una specie di pianta spermatofita monocotiledone appartenente alla famiglia Poaceae"@it ,
                     "The oat, sometimes called the common oat, is a species of cereal grain grown for its seed, which is known by the same name"@en ;
@@ -2250,7 +2251,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana
 :Avigliana rdf:type owl:NamedIndividual ,
                     :Città ;
-           :entitàWikitada wiki:Q9008 ;
+           :entitaWikidata wiki:Q9008 ;
            :haAbitanti "12623"^^xsd:positiveInteger ;
            :haNome "Avigliana"^^xsd:string ;
            rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
@@ -2261,7 +2262,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avocado
 :Avocado rdf:type owl:NamedIndividual ,
                   :FruttoCarnoso ;
-         :entitàWikitada wiki:Q961769 ;
+         :entitaWikidata wiki:Q961769 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment "Avocado, fruit of the homonymous plant, is a pear-shaped drupe, 7 to 20 centimeters long and with a weight that can vary from 100 to 1000 g. It has a large central seed 3–5 cm in diameter. The pulp is yellow-green or pale yellow, the epicarp (or peel) can be green or aubergine, smooth or wrinkled."@en ,
                       "L'avocado, frutto dell'omonima pianta, è una drupa a forma di pera, lunga dai 7 ai 20 centimetri e con un peso che può variare dai 100 ai 1000 g. Presenta un grosso seme centrale di 3–5 cm di diametro. La polpa è di colore giallo verde o giallo pallido, l'epicarpo (o buccia) può essere di colore verde o melanzana, liscio o rugoso."@it ;
@@ -2283,7 +2284,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico
 :Basilico rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q38859 ;
+          :entitaWikidata wiki:Q38859 ;
           rdfs:comment "Basil is a culinary herb of the family Lamiaceae (mints)."@en ,
                        "Il basilico è una pianta erbacea annuale, appartenente alla famiglia delle Lamiaceae, normalmente coltivata come pianta aromatica."@it ;
           skos:prefLabel "Basil"@en ,
@@ -2297,7 +2298,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                         owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                         owl:onClass :ingrediente
                       ] ;
-             :entitàWikitada wiki:Q209974 ;
+             :entitaWikidata wiki:Q209974 ;
              :ingredienteDerivatoDa :Burro ,
                                     :FarinaGranoTenero ,
                                     :LatteMucca ,
@@ -2331,7 +2332,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                      owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                      owl:onClass :ingrediente
                    ] ;
-          :entitàWikitada wiki:Q13266 ;
+          :entitaWikidata wiki:Q13266 ;
           :ingredienteDerivatoDa :AcidoTartarico ,
                                  :FarinaGranoTenero ,
                                  :OlioArachidi ,
@@ -2345,7 +2346,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Broccolo
 :Broccolo rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q47722 ;
+          :entitaWikidata wiki:Q47722 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Broccoli is an edible green plant in the cabbage family whose large flowering head, stalk and small associated leaves are eaten as a vegetable."@en ,
                        "Il broccolo, chiamato anche cavolo broccolo, è una varietà di Brassica oleracea, la grande famiglia di piante conosciute comunemente come cavoli e che comprende numerose varietà molto diverse di aspetto. I broccoli rientrano nel gruppo di piante di cui non vengono mangiate le foglie bensì le infiorescenze non ancora mature."@it ;
@@ -2361,7 +2362,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                           owl:qualifiedCardinality "4"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
-               :entitàWikitada wiki:Q42366457 ;
+               :entitaWikidata wiki:Q42366457 ;
                :ingredienteDerivatoDa :Acqua ,
                                       :Carota ,
                                       :Cipolla ,
@@ -2379,7 +2380,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                   owl:onClass :ingrediente
                 ] ;
-       :entitàWikitada wiki:Q34172 ;
+       :entitaWikidata wiki:Q34172 ;
        :ingredienteDerivatoDa :LatteMucca ;
        rdfs:comment "Fat part of the milk, separated from the buttermilk by a phase inversion process, deriving from the cream."@en ,
                     "Parte grassa del latte, separata dal latticello tramite un processo di inversione di fase, derivante dalla panna"@it ;
@@ -2390,7 +2391,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cacao
 :Cacao rdf:type owl:NamedIndividual ,
                 :FruttoCarnoso ;
-       :entitàWikitada wiki:Q208008 ;
+       :entitaWikidata wiki:Q208008 ;
        :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
        rdfs:comment "Seed commonly used for chocolate production."@en ,
                     "Seme comunemente utilizzato per la produzione di cioccolato."@it ;
@@ -2401,7 +2402,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè
 :Caffè rdf:type owl:NamedIndividual ,
                 :FruttoCarnoso ;
-       :entitàWikitada wiki:Q153697 ;
+       :entitaWikidata wiki:Q153697 ;
        rdfs:comment "Fruit of the coffee plant, used to produce coffee-based drinks."@en ,
                     "Frutto della Coffea, utilizzato per la produzione di Caffè."@it ;
        skos:prefLabel "Caffè in chicchi"@it ,
@@ -2415,7 +2416,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
-               :entitàWikitada wiki:Q26882413 ;
+               :entitaWikidata wiki:Q26882413 ;
                :ingredienteDerivatoDa :Caffè ;
                rdfs:comment "Polvere ricavata dalla macinatura del caffè in chicchi."@it ,
                             "Powder produced by grinding cofee beans."@en ;
@@ -2455,7 +2456,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello
 :CarneVitello rdf:type owl:NamedIndividual ,
                        :Carne ;
-              :entitàWikitada wiki:Q957434 ;
+              :entitaWikidata wiki:Q957434 ;
               rdfs:comment "Carne ricavata dal vitello."@it ,
                            "Meat made from calf."@en ;
               skos:prefLabel "Calf meat"@en ,
@@ -2465,7 +2466,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota
 :Carota rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada wiki:Q81 ;
+        :entitaWikidata wiki:Q81 ;
         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
         rdfs:comment "Herbaceous plant with a green stem belonging to the Apiaceae family"@en ,
                      "Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae"@it ;
@@ -2476,7 +2477,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cavolo
 :Cavolo rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada wiki:Q35051 ;
+        :entitaWikidata wiki:Q35051 ;
         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
         rdfs:comment "Cabbage (comprising several cultivars of Brassica oleracea) is a leafy green, red (purple), or white (pale green) biennial plant grown as an annual vegetable crop for its dense-leaved heads. It is descended from the wild cabbage (B. oleracea var. oleracea), and belongs to the \"cole crops\" or brassicas, meaning it is closely related to broccoli and cauliflower (var. botrytis); Brussels sprouts (var. gemmifera); and Savoy cabbage (var. sabauda)."@en ,
                      "Il cavolo cappuccio (Brassica oleracea var. capitata L.) è una pianta biennale, varietà di Brassica oleracea. Ha la caratteristica di avere le foglie esterne lisce, concave e serrate, che racchiudono le foglie più giovani in modo da formare una palla compatta detta \"testa\" o \"cappuccio\"."@it ;
@@ -2512,7 +2513,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia
 :Ciliegia rdf:type owl:NamedIndividual ,
                    :FruttoCarnoso ;
-          :entitàWikitada wiki:Q196 ;
+          :entitaWikidata wiki:Q196 ;
           :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
           rdfs:comment "Il frutto del ciliegio, drupa di colore diverso secondo le varietà, ma per lo più rosso vivo."@it ,
                        "The fruit of the cherry tree, a drupe of different color according to the variety, but mostly bright red."@en ;
@@ -2527,7 +2528,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                        owl:onClass :ingrediente
                      ] ;
-            :entitàWikitada wiki:Q195 ;
+            :entitaWikidata wiki:Q195 ;
             :ingredienteDerivatoDa :Cacao ;
             :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
             rdfs:comment "Chocolate is a preparation of roasted and ground cacao seeds that is made in the form of a liquid, paste, or in a block, which may also be used as a flavoring ingredient in other foods. The earliest signs of use are associated with Olmec sites (within what would become Mexico’s post-colonial territory) suggesting consumption of chocolate beverages, dating from the 19th century BC."@en ,
@@ -2539,7 +2540,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla
 :Cipolla rdf:type owl:NamedIndividual ,
                   :Ortaggio ;
-         :entitàWikitada wiki:Q3406628 ;
+         :entitaWikidata wiki:Q3406628 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment "Bulbous plant traditionally attributed to the Liliaceae family"@en ,
                       "Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae"@it ;
@@ -2633,7 +2634,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam
 :Edam rdf:type owl:NamedIndividual ;
-      :entitàWikitada wiki:Q597473 ;
+      :entitaWikidata wiki:Q597473 ;
       :ingredienteCoagulatoDa :LatteMucca ;
       rdfs:comment "Edam is a semi-hard cheese that originated in the Netherlands, traditionally sold in flat ended spheres with a pale yellow interior and a coat, or rind, of red paraffin wax."@en ,
                    "L'edam è un formaggio a base di latte vaccino con l'aggiunta di caglio animale tipico dei Paesi Bassi, venduto in forme dalla pasta giallo tenue e con una sottile protezione di cera rossastra."@it ;
@@ -2645,7 +2646,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fagiolo
 :Fagiolo rdf:type owl:NamedIndividual ,
                   :Seme ;
-         :entitàWikitada wiki:Q74662248 ;
+         :entitaWikidata wiki:Q74662248 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment """Il fagiolo è il seme commestibile di diverse cultivar della pianta del fagiolo comune (Phaseolus vulgaris), utilizzato come verdura.
 Fa parte dell'insieme dei legumi."""@it ,
@@ -2662,7 +2663,7 @@ It is part of the set of legumes."""@en ;
                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                               owl:onClass :ingrediente
                             ] ;
-                   :entitàWikitada wiki:Q2249305 ;
+                   :entitaWikidata wiki:Q2249305 ;
                    :ingredienteDerivatoDa :GranoTenero ;
                    rdfs:comment "Farina prodotta dalla macinazione del grano tenero. E' facilmente impastabile e ha una buona elasticità."@it ,
                                 "Flour produced by grinding soft wheat. It is easily kneaded and has good elasticity."@en ;
@@ -2691,7 +2692,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fico
 :Fico rdf:type owl:NamedIndividual ,
                :Infruttescenza ;
-      :entitàWikitada wiki:Q2746643 ;
+      :entitaWikidata wiki:Q2746643 ;
       :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
       rdfs:comment "Infructescence of the homonymous plant."@en ,
                    "Infruttescenza della pianta omonima."@it ;
@@ -2706,7 +2707,7 @@ It is part of the set of legumes."""@en ;
                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                              owl:onClass :ingrediente
                            ] ;
-                  :entitàWikitada wiki:Q259642 ;
+                  :entitaWikidata wiki:Q259642 ;
                   :ingredienteCoagulatoDa :LatteMucca ;
                   rdfs:comment "Formaggio tipo quark."@it ,
                                "Quark-like cheese."@en ;
@@ -2739,7 +2740,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero
 :GranoTenero rdf:type owl:NamedIndividual ,
                       :FruttoSecco ;
-             :entitàWikitada wiki:Q15645384 ;
+             :entitaWikidata wiki:Q15645384 ;
              :ingredienteIncompatibileConDisturbo :AllergiaGlutine ,
                                                   :Celiachia ;
              rdfs:comment "Specie di frumento più impiegata al mondo nella panificazione e nella produzione di paste alimentari fresche."@it ,
@@ -2775,7 +2776,7 @@ It is part of the set of legumes."""@en ;
                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
-              :entitàWikitada wiki:Q178024 ;
+              :entitaWikidata wiki:Q178024 ;
               :ingredienteDerivatoDa :FarinaGranoTenero ,
                                      :LievitoBirra ;
               rdfs:comment "Dough that, once risen and stretched, is used for the preparation of pizzas or fried."@en ,
@@ -2787,7 +2788,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata
 :Insalata rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q83193 ;
+          :entitaWikidata wiki:Q83193 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "L'insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite."@it ,
                        "The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned."@en ;
@@ -2820,7 +2821,7 @@ It is part of the set of legumes."""@en ;
                     owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
                     owl:onClass :ingrediente
                   ] ;
-         :entitàWikitada wiki:Q178143 ;
+         :entitaWikidata wiki:Q178143 ;
          :ingredienteDerivatoDa :AcetoVinoBianco ,
                                 :Pomodoro ,
                                 :Zucchero ;
@@ -2849,7 +2850,7 @@ It is part of the set of legumes."""@en ;
                     owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                     owl:onClass :ingrediente
                   ] ;
-         :entitàWikitada wiki:Q3827309 ;
+         :entitaWikidata wiki:Q3827309 ;
          :ingredienteDerivatoDa :FarinaGranoTenero ,
                                 :UovoGallina ;
          rdfs:comment "Particolare formato di impasto, ottenuto tagliando in grossi quadrati, o rettangoli, la sfoglia di pasta all'uovo."@it ,
@@ -2880,7 +2881,7 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteAsina
 :LatteAsina rdf:type owl:NamedIndividual ;
-            :entitàWikitada wiki:Q1239497 ;
+            :entitaWikidata wiki:Q1239497 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Donkey milk is the milk from the domesticated donkey."@en ,
                          "Il latte di asina è il latte prodotto dalla specie asinina."@it ;
@@ -2890,7 +2891,7 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteBufala
 :LatteBufala rdf:type owl:NamedIndividual ;
-             :entitàWikitada wiki:Q16571278 ;
+             :entitaWikidata wiki:Q16571278 ;
              :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
              rdfs:comment "Latte di bufala di razza mediterranea italiana."@it ,
                           "Milk from Italian buffalos."@en ;
@@ -2902,7 +2903,7 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteCapra
 :LatteCapra rdf:type owl:NamedIndividual ;
-            :entitàWikitada wiki:Q1418287 ;
+            :entitaWikidata wiki:Q1418287 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte generato dalle capre."@it ,
                          "Milk that comes from goats."@en ;
@@ -2919,7 +2920,7 @@ It is part of the set of legumes."""@en ;
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onClass :ingrediente
                         ] ;
-               :entitàWikitada wiki:Q975953 ;
+               :entitaWikidata wiki:Q975953 ;
                :ingredienteDerivatoDa :Mandorla ;
                rdfs:comment "Bevanda analcolica dolce realizzata mettendo in infusione in acqua le mandorle finemente tritate e spremendo poi le stesse per farne uscire tutto il succo"@it ,
                             "Sweet non-alcoholic drink made by infusing finely chopped almonds in water and then squeezing them to release all the juice"@en ;
@@ -2929,7 +2930,7 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca
 :LatteMucca rdf:type owl:NamedIndividual ;
-            :entitàWikitada wiki:Q10988133 ;
+            :entitaWikidata wiki:Q10988133 ;
             :ingredienteIncompatibileConDisturbo :IntolleranzaLattosio ;
             rdfs:comment "Latte ricavato dalla mungitura della vacca."@it ,
                          "Milk obtained from the milking of the cow."@en ;
@@ -2946,7 +2947,7 @@ It is part of the set of legumes."""@en ;
                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                       owl:onClass :ingrediente
                     ] ;
-           :entitàWikitada wiki:Q715187 ;
+           :entitaWikidata wiki:Q715187 ;
            :ingredienteDerivatoDa :Riso ;
            rdfs:comment "Bevanda alimentare vegetale a base di riso."@it ,
                         "Plant milk made from rice."@en ;
@@ -2962,7 +2963,7 @@ It is part of the set of legumes."""@en ;
                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                       owl:onClass :ingrediente
                     ] ;
-           :entitàWikitada wiki:Q192199 ;
+           :entitaWikidata wiki:Q192199 ;
            :ingredienteDerivatoDa :Soia ;
            rdfs:comment "Latte vegetale a base di soia."@it ,
                         "Plant-based drink produced by soaking and grinding soybeans, boiling the mixture, and filtering out remaining particulates."@en ;
@@ -2973,7 +2974,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lenticchia
 :Lenticchia rdf:type owl:NamedIndividual ,
                      :Seme ;
-            :entitàWikitada wiki:Q61505177 ;
+            :entitaWikidata wiki:Q61505177 ;
             :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
             rdfs:comment "Seme dell'omonima pianta, dalla caratteristica forma a lente leggermente bombata. Il colore dei semi varia secondo le varietà da pallido (verde chiaro, biondo, rosa) a più scuro (verde scuro, bruno, violaceo)."@it ;
             skos:prefLabel "Lenticchia"@it ,
@@ -2984,7 +2985,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra
 :LievitoBirra rdf:type owl:NamedIndividual ,
                        :IngredienteVegano ;
-              :entitàWikitada wiki:Q45422 ;
+              :entitaWikidata wiki:Q45422 ;
               :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
               rdfs:comment "Lievito più importante nell'ambito dell'alimentazione umana. Il suo utilizzo è noto fin dall'antichità per la panificazione, la vinificazione e la produzione di birra."@it ,
                            "Most important yeast in human nutrition. Its use has been known since ancient times for bread making, wine making and beer production."@en ;
@@ -3019,7 +3020,7 @@ It is part of the set of legumes."""@en ;
                                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                  owl:onClass :ingrediente
                                ] ;
-                      :entitàWikitada wiki:Q13400960 ;
+                      :entitaWikidata wiki:Q13400960 ;
                       :ingredienteDerivatoDa :CarneVitello ;
                       rdfs:comment "Ground meat composed of calf meat."@en ,
                                    "Macinato ottenuto macinando carne di vitello."@it ;
@@ -3034,7 +3035,7 @@ It is part of the set of legumes."""@en ;
                      owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                      owl:onClass :ingrediente
                    ] ;
-          :entitàWikitada wiki:Q167893 ;
+          :entitaWikidata wiki:Q167893 ;
           :ingredienteDerivatoDa :OlioExtraOliva ,
                                  :UovoGallina ;
           rdfs:comment "La maionese è una salsa cremosa e omogenea, generalmente di colore bianco o giallo pallido, che viene consumata fredda. Si tratta di un'emulsione stabile di olio vegetale frazionato in acqua, con tuorlo d'uovo e aromatizzato con aceto o succo di limone."@it ,
@@ -3047,7 +3048,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mais
 :Mais rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :entitàWikitada wiki:Q25618328 ;
+      :entitaWikidata wiki:Q25618328 ;
       :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
       rdfs:comment "Il mais è una pianta erbacea annuale della famiglia delle Poaceae, tribù delle Maydeae: addomesticato dalle popolazioni indigene in Messico centrale in tempi preistorici circa 10.000 anni fa, è uno dei più importanti cereali, largamente coltivato sia nelle regioni tropicali sia in quelle temperate, in quest'ultimo caso a ciclo primavera-estate."@it ,
                    "Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of the plant produces pollen inflorescences and separate ovuliferous inflorescences called ears that yield kernels or seeds, which are fruits."@en ;
@@ -3060,7 +3061,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mandorla
 :Mandorla rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
-          :entitàWikitada wiki:Q184357 ;
+          :entitaWikidata wiki:Q184357 ;
           :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
                                                :AllergiaNickel ;
           rdfs:comment "Edible seed grown from the almond tree."@en ,
@@ -3072,7 +3073,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Margarina
 :Margarina rdf:type owl:NamedIndividual ,
                     :IngredienteVeganoDerivato ;
-           :entitàWikitada wiki:Q4287 ;
+           :entitaWikidata wiki:Q4287 ;
            :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
            rdfs:comment "La margarina è un grasso alimentare, costituito da due fasi: una lipidica (oli e grassi) e una acquosa intimamente mescolate. Come il burro è una emulsione, cioè una dispersione di un fluido sotto forma di minutissime goccioline (acqua) in un altro fluido non miscibile (olio). A tale emulsione possono essere poi aggiunti alcuni ingredienti minori per stabilizzare e migliorare il prodotto finale, come sale, emulsionanti, siero di latte o latte scremato, coloranti, conservanti o aromi."@it ,
                         "Margarine is a spread used for flavoring, baking and cooking. It is most often used as an inexpensive butter substitute. It was named oleomargarine from Latin for oleum (olive oil) and Greek margarite (pearl indicating luster) but was later named margarine."@en ;
@@ -3085,7 +3086,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mirtillo
 :Mirtillo rdf:type owl:NamedIndividual ,
                    :FruttoCarnoso ;
-          :entitàWikitada wiki:Q60708120 ;
+          :entitaWikidata wiki:Q60708120 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Bilberries, or occasionally European blueberries, are a primarily Eurasian species of low-growing shrubs in the genus Vaccinium (family Ericaceae), bearing edible, dark blue berries. The species most often referred to is Vaccinium myrtillus L., but there are several other closely related species."@en ,
                        "Il mirtillo è il nome comune dato alla bacca di colore blu, ottenuta da diverse varietà della sezione Myrtillus del genere Vaccinium e inclusa nella categoria dei frutti di bosco."@it ;
@@ -3100,7 +3101,7 @@ It is part of the set of legumes."""@en ;
                  owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                  owl:onClass :ingrediente
                ] ;
-      :entitàWikitada wiki:Q235169 ;
+      :entitaWikidata wiki:Q235169 ;
       :ingredienteFermentatoDa :Soia ;
       rdfs:comment "Condimento derivato dai semi della soia gialla, di origine giapponese,"@it ,
                    "Seasoning derived from yellow soybeans, of Japanese origin."@en ;
@@ -3111,7 +3112,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mondovì
 :Mondovì rdf:type owl:NamedIndividual ,
                   :Città ;
-         :entitàWikitada wiki:Q20188 ;
+         :entitaWikidata wiki:Q20188 ;
          :haAbitanti "23000"^^xsd:positiveInteger ;
          :haNome "Mondovì"^^xsd:string ;
          rdfs:comment "Mondovì is an Italian town in the province of Cuneo in Piedmont."@en ,
@@ -3128,7 +3129,7 @@ It is part of the set of legumes."""@en ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                        owl:onClass :ingrediente
                      ] ;
-            :entitàWikitada wiki:Q14088 ;
+            :entitaWikidata wiki:Q14088 ;
             :ingredienteCoagulatoDa :LatteMucca ;
             rdfs:comment "La mozzarella è un latticino a pasta filata originario dell'Italia meridionale e prodotta da secoli anche in Italia centrale. Essendo prodotta con latte vaccino e non di bufala, è chiamata \"fior di latte\"."@it ,
                          "Mozzarella is a stretched curd dairy product originally from southern Italy and produced for centuries also in central Italy. Being produced with cow's milk and not buffalo's milk, it is called \"fior di latte\"."@en ;
@@ -3151,7 +3152,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Nocciola
 :Nocciola rdf:type owl:NamedIndividual ,
                    :FruttoSecco ;
-          :entitàWikitada wiki:Q578307 ;
+          :entitaWikidata wiki:Q578307 ;
           :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
                                                :AllergiaNickel ;
           rdfs:comment "Fruit of the hazel."@en ,
@@ -3163,7 +3164,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Noce
 :Noce rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :entitàWikitada wiki:Q208021 ;
+      :entitaWikidata wiki:Q208021 ;
       :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ,
                                            :AllergiaNickel ;
       rdfs:comment "Frutto degli alberi del genere Juglans, spesso riferito al Juglans regia."@it ,
@@ -3175,7 +3176,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#NoceMoscata
 :NoceMoscata rdf:type owl:NamedIndividual ,
                       :Seme ;
-             :entitàWikitada wiki:Q83165 ;
+             :entitaWikidata wiki:Q83165 ;
              rdfs:comment "Seed or ground spice of several species of the genus Myristica (particularly, of Myristica fragrans)."@en ,
                           "Seme decorticato della Myristica fragrans."@it ;
              skos:prefLabel "Noce moscata"@it ,
@@ -3202,7 +3203,7 @@ It is part of the set of legumes."""@en ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
-              :entitàWikitada wiki:Q265878 ;
+              :entitaWikidata wiki:Q265878 ;
               :ingredienteDerivatoDa :Arachide ;
               rdfs:comment "Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi."@it ,
                            "Vegetable oil that is obtained by pressure or by means of solvents from peanut seeds."@en ;
@@ -3218,7 +3219,7 @@ It is part of the set of legumes."""@en ;
                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                            owl:onClass :ingrediente
                          ] ;
-                :entitàWikitada wiki:Q93165 ;
+                :entitaWikidata wiki:Q93165 ;
                 :ingredienteDerivatoDa :Oliva ;
                 rdfs:comment "Olio d'oliva estratto con soli processi meccanici."@it ,
                              "Olive oil extracted only by mechanical means"@en ;
@@ -3229,7 +3230,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva
 :Oliva rdf:type owl:NamedIndividual ,
                 :FruttoCarnoso ;
-       :entitàWikitada wiki:Q1621080 ;
+       :entitaWikidata wiki:Q1621080 ;
        rdfs:comment "Fruit of the olive tree used for food both directly, after adequate processing, and as a raw material for oil extraction."@en ,
                     "Frutto dell'ulivo usato a scopo alimentare sia direttamente, dopo adeguata trasformazione, sia come materia prima per l'estrazione dell'olio."@it ;
        skos:prefLabel "Oliva"@it ,
@@ -3272,7 +3273,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ostrica
 :Ostrica rdf:type owl:NamedIndividual ,
                   :MolluscoMarino ;
-         :entitàWikitada wiki:Q1996210 ;
+         :entitaWikidata wiki:Q1996210 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment """L'ostrica è un genere di molluschi bivalvi dalla conchiglia tondeggiante ricoperta di lamelle squamose ondulate.
 Le due valve sono disuguali e quella inferiore, a cui è ancorato l'animale, è più grande e incavata della superiore. Il mollusco ha corpo di forma tondeggiante, con i margini dei due lembi del mantello frangiati. Vive in tutti i mari d'Europa a bassa profondità, abbarbicata alle rocce o ad altri corpi solidi.
@@ -3291,7 +3292,7 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
                  owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
                  owl:onClass :ingrediente
                ] ;
-      :entitàWikitada wiki:Q7802 ;
+      :entitaWikidata wiki:Q7802 ;
       :ingredienteDerivatoDa :FarinaGranoTenero ,
                              :LievitoBirra ;
       rdfs:comment "Food product obtained from fermentation, from forming followed by leavening, and subsequent baking in the oven of a dough based on flour (normal or wholemeal) of cereals, water, packaged in different ways, enriched and frequently characterized by different ingredients depending on of the place and traditions where it is prepared."@en ,
@@ -3322,7 +3323,7 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                owl:onClass :ingrediente
                              ] ;
-                    :entitàWikitada wiki:Q155922 ;
+                    :entitaWikidata wiki:Q155922 ;
                     :ingredienteCoagulatoDa :LatteMucca ;
                     rdfs:comment "Formaggio a pasta dura DOP, prodotto con latte vaccino crudo, parzialmente scremato per affioramento, senza l'aggiunta di additivi."@it ,
                                  "Hard PDO cheese, produced with raw cow's milk, partially skimmed by surfacing, without the addition of additives."@en ;
@@ -3333,7 +3334,7 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata
 :Patata rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada wiki:Q16587531 ;
+        :entitaWikidata wiki:Q16587531 ;
         :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
         rdfs:comment "La patata è un tubero commestibile ottenuto dalle piante della specie Solanum tuberosum, molto utilizzato a scopo alimentare previa cottura."@it ,
                      "The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself is a perennial in the nightshade family, Solanaceae."@en ;
@@ -3344,7 +3345,7 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pera
 :Pera rdf:type owl:NamedIndividual ,
                :Frutto ;
-      :entitàWikitada wiki:Q13099586 ;
+      :entitaWikidata wiki:Q13099586 ;
       :ingredienteIncompatibileConDisturbo :AllergiaNickel ,
                                            :IntolleranzaFruttosio ;
       rdfs:comment """Con il termine pera si intende il falso frutto delle piante del genere Pyrus a cui appartengono molte specie differenti. Alcune delle specie producono frutti eduli e vengono perciò coltivate, quella più diffusa è la specie Pyrus communis.
@@ -3380,7 +3381,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli
 :Piselli rdf:type owl:NamedIndividual ,
                   :Seme ;
-         :entitàWikitada wiki:Q29472543 ;
+         :entitaWikidata wiki:Q29472543 ;
          :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
          rdfs:comment "Il pisello secco è un alimento tradizionalmente importante in alcuni paesi, in particolare nel subcontinente indiano e in Etiopia, ma è relativamente in disuso come farinaceo e come fonte di proteine nella maggior parte dei paesi occidentali, dove è ormai principalmente coltivato per l'alimentazione animale o per l'esportazione. Dopo il XVII secolo, il pisello è divenuto un legume fresco popolare, la cui consumazione durante tutto l'anno è favorita dalle tecniche di conservazione e di surgelazione."@it ,
                       "The pea is most commonly the small spherical seed or the seed-pod of the pod fruit Pisum sativum. Each pod contains several peas, which can be green or yellow. Botanically, pea pods are fruit, since they contain seeds and develop from the ovary of a (pea) flower."@en ;
@@ -3391,7 +3392,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio
 :Pistacchio rdf:type owl:NamedIndividual ,
                      :FruttoSecco ;
-            :entitàWikitada wiki:Q14959225 ;
+            :entitaWikidata wiki:Q14959225 ;
             :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
             rdfs:comment "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@en ,
                          "Frutto dell'omonima pianta di colore verde vivo sotto una buccia viola."@it ;
@@ -3458,7 +3459,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro
 :Pomodoro rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q20638126 ;
+          :entitaWikidata wiki:Q20638126 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Si tratta di bacche dal caratteristico colore rosso, largamente utilizzate in ambito alimentare in molti Paesi del mondo."@it ,
                        "These are berries with a characteristic red color, widely used in the food sector in many countries of the world."@en ;
@@ -3469,7 +3470,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo
 :Prezzemolo rdf:type owl:NamedIndividual ,
                      :Ortaggio ;
-            :entitàWikitada wiki:Q25284 ;
+            :entitaWikidata wiki:Q25284 ;
             rdfs:comment "Biennial herbaceous plant in temperate zones and annual in tropical ones."@en ,
                          "Pianta erbacea biennale nelle zone temperate e annuale in quelle tropicali."@it ;
             skos:prefLabel "Parsley"@en ,
@@ -3479,7 +3480,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ProsciuttoCotto
 :ProsciuttoCotto rdf:type owl:NamedIndividual ,
                           :IngredienteNonVegetarianoDerivato ;
-                 :entitàWikitada wiki:Q96761025 ;
+                 :entitaWikidata wiki:Q96761025 ;
                  rdfs:comment "Cooked ham is a typical Italian cured meat obtained by salting and cooking the pork leg"@en ,
                               "Il prosciutto cotto è un salume tipico italiano ottenuto dalla salatura e cottura della coscia del maiale"@it ;
                  owl:versionInfo "Attualmente è stato classificato manualmente come Ingrediente Non Vegetariano Derivato, tuttavia se in futuro dovesse essere introdotta una classe che specifica meglio la derivazione, converrebbe aggiornare questo individuo."@it ,
@@ -3491,7 +3492,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RadiceLiquirizia
 :RadiceLiquirizia rdf:type owl:NamedIndividual ,
                            :IngredienteVegano ;
-                  :entitàWikitada wiki:Q27631426 ;
+                  :entitaWikidata wiki:Q27631426 ;
                   :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
                   rdfs:comment "Radice ottenuta dalla Glycyrrhiza glabra."@it ,
                                "Root obtained from Glycyrrhiza glabra."@en ;
@@ -3525,7 +3526,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso
 :Riso rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :entitàWikitada wiki:Q5090 ;
+      :entitaWikidata wiki:Q5090 ;
       rdfs:comment "Alimento costituito dalla cariosside prodotta da diverse piante dei generi Oryza e Zizania, opportunamente lavorata."@it ,
                    "Food consisting of the caryopsis produced by various plants of the genera Oryza and Zizania, suitably processed."@en ;
       skos:prefLabel "Rice"@en ,
@@ -3598,7 +3599,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sedano
 :Sedano rdf:type owl:NamedIndividual ,
                  :Ortaggio ;
-        :entitàWikitada wiki:Q28298 ;
+        :entitaWikidata wiki:Q28298 ;
         rdfs:comment "Celery is a biennial herbaceous species belonging to the Apiaceae family, native to the Mediterranean area"@en ,
                      "Il sedano è una specie erbacea biennale appartenente alla famiglia delle Apiaceae, originaria della zona mediterranea"@it ;
         skos:prefLabel "Celery"@en ,
@@ -3608,7 +3609,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo
 :Sesamo rdf:type owl:NamedIndividual ,
                  :Seme ;
-        :entitàWikitada wiki:Q12000036 ;
+        :entitaWikidata wiki:Q12000036 ;
         :ingredienteIncompatibileConDisturbo :AllergiaFruttaSecca ;
         rdfs:comment "Piccoli semi, bianchi o neri, a seconda delle varietà. Spesso utilizzati in altre preparazioni."@it ,
                      "Small seeds, white or black, depending on the variety. Often used in other preparations."@en ;
@@ -3619,7 +3620,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia
 :Soia rdf:type owl:NamedIndividual ,
                :FruttoSecco ;
-      :entitàWikitada wiki:Q61503220 ;
+      :entitaWikidata wiki:Q61503220 ;
       :ingredienteIncompatibileConDisturbo :AllergiaSoia ;
       rdfs:comment "Legume largamente utilizzato. Può essere consumato intero, oppure macinato. I germogli sono spesso utilizzati in piatti di cucina orientale."@it ,
                    "Widely used legume. It can be eaten whole or ground. Sprouts are often used in oriental cuisine."@en ;
@@ -3630,7 +3631,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Spinacio
 :Spinacio rdf:type owl:NamedIndividual ,
                    :Ortaggio ;
-          :entitàWikitada wiki:Q36814998 ;
+          :entitaWikidata wiki:Q36814998 ;
           :ingredienteIncompatibileConDisturbo :AllergiaNickel ;
           rdfs:comment "Lo spinacio è una pianta erbacea della famiglia delle Amaranthaceae, sottofamiglia delle Chenopodioideae. Può essere consumato cotto o crudo e il gusto differisce notevolmente; l'alto contenuto di ossalato può essere ridotto mediante cottura a vapore."@it ,
                        """Spinach (Spinacia oleracea) is a leafy green flowering plant native to central and western Asia.
@@ -3662,7 +3663,7 @@ It's a me!"""@it ;
                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                          owl:onClass :ingrediente
                        ] ;
-              :entitàWikitada wiki:Q3596097 ;
+              :entitaWikidata wiki:Q3596097 ;
               :ingredienteDerivatoDa :Pomodoro ;
               rdfs:comment "Salsa prodotta spremendo e cuocendo pomodori."@it ,
                            "Sauce made by cooking tomatoes."@en ;
@@ -3690,7 +3691,7 @@ It's a me!"""@it ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Torino
 :Torino rdf:type owl:NamedIndividual ,
                  :Città ;
-        :entitàWikitada wiki:Q495 ;
+        :entitaWikidata wiki:Q495 ;
         :haAbitanti 2282000 ;
         :haNome "Torino"^^xsd:string ;
         rdfs:comment "Comune Italiano e capoluogo dell'omonima città metropolitana e della regione Piemonte. E' il terzo complesso economico-produttivo del Paese e costituisce uno dei maggiori poli universitari, artistici, turistici, scientifici e culturali d'Italia."@it ,
@@ -3702,7 +3703,7 @@ It's a me!"""@it ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina
 :UovoGallina rdf:type owl:NamedIndividual ,
                       :Uovo ;
-             :entitàWikitada wiki:Q15260613 ;
+             :entitaWikidata wiki:Q15260613 ;
              rdfs:comment "Egg produced by a hen."@en ,
                           "Uovo prodotto da una gallina."@it ;
              skos:prefLabel "Chicken egg"@en ,
@@ -3712,7 +3713,7 @@ It's a me!"""@it ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva
 :Uva rdf:type owl:NamedIndividual ,
               :Infruttescenza ;
-     :entitàWikitada wiki:Q10978 ;
+     :entitaWikidata wiki:Q10978 ;
      :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
      rdfs:comment "Fruit of the vine, recovered from the bunch."@en ,
                   "Frutto della vite, recuperato dal grappolo."@it ;
@@ -3744,7 +3745,7 @@ It's a me!"""@it ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero
 :Zucchero rdf:type owl:NamedIndividual ,
                    :IngredienteVegano ;
-          :entitàWikitada wiki:Q11002 ;
+          :entitaWikidata wiki:Q11002 ;
           :ingredienteIncompatibileConDisturbo :IntolleranzaFruttosio ;
           rdfs:comment "Dolcificante utilizzato nell'ambito dell'industria alimentare, specialmente dolciaria e pasticciera."@it ,
                        "Sweetener used in the food industry, especially confectionery and pastry."@en ;
@@ -4050,6 +4051,10 @@ wiki:Q74662248 rdf:type owl:NamedIndividual .
 
 ###  http://www.wikidata.org/entity/Q7802
 wiki:Q7802 rdf:type owl:NamedIndividual .
+
+
+###  http://www.wikidata.org/entity/Q7892
+wiki:Q7892 rdf:type owl:NamedIndividual .
 
 
 ###  http://www.wikidata.org/entity/Q81

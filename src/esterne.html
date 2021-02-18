@@ -114,6 +114,30 @@
 </body>
 </html>
 <script>
+    /*
+     Mappa ogni riga dei risultati ad un array, i cui valori saranno gli oggetti restituiti da
+     GraphDB; in questo modo abbiamo molte informazioni utili:
+     type: per sapere di cosa si tratta; questo rende possibile la creazione di tabelle
+           dinamiche, che vengono costruite in funzione dei dati e che quindi non richiedono
+           più che i dati si adattino alla tabella. I possibili valori che ho osservato per
+           ora sono 'uri' e 'literal'.
+     value: il valore restituito (essendo un JSON aspettiamoci che rimanga sempre una "stringa",
+            se sicuramente in funzione del type potremmo convertirlo nell'effettivo valore!
+     xml:lang: identificativo ISO 639-1 per la lingua del valore.
+
+     Se una certa colonna non esiste per una riga, creiamo un record fittizio.
+    */
+    const GraphDBJsonToArray = (columnNames, rows, defaultValue = 'n/a') => {
+        return rows.map(rowElement => {
+            return columnNames.map(column => {
+                if (rowElement.hasOwnProperty(column))
+                    return rowElement[column];
+                else
+                    return {type: 'null', value: defaultValue};
+            })
+        });
+    };
+
     Vue.createApp({
         data() {
             return {
@@ -198,34 +222,9 @@
                         console.log(result);
 
                         // Versione finale. Questa usa i bindings delle colonne recuperate dai risultati json.
-                        /*
-                         Mappa ogni riga dei risultati ad un array, i cui valori saranno gli oggetti restituiti da
-                         GraphDB; in questo modo abbiamo molte informazioni utili:
-                         type: per sapere di cosa si tratta; questo rende possibile la creazione di tabelle
-                               dinamiche, che vengono costruite in funzione dei dati e che quindi non richiedono
-                               più che i dati si adattino alla tabella. I possibili valori che ho osservato per
-                               ora sono 'uri' e 'literal'.
-                         value: il valore restituito (essendo un JSON aspettiamoci che rimanga sempre una "stringa",
-                                se sicuramente in funzione del type potremmo convertirlo nell'effettivo valore!
-                         xml:lang: identificativo ISO 639-1 per la lingua del valore.
-
-                         Se una certa colonna non esiste per una riga, creiamo un record fittizio.
-                        */
-
-                        const GraphDBJsontoArray = (columnNames, rows, defaultValue = 'n/a') => {
-                            return rows.map(rowElement => {
-                                return columnNames.map(column => {
-                                    if (rowElement.hasOwnProperty(column))
-                                        return rowElement[column];
-                                    else
-                                        return {type: 'null', value: defaultValue};
-                                })
-                            });
-                        };
-
                         vue.result = {
                             titles: result.head.vars,
-                            rows: GraphDBJsontoArray(result.head.vars, result.results.bindings)
+                            rows: GraphDBJsonToArray(result.head.vars, result.results.bindings)
                         };
                     }
                 });

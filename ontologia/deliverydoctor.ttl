@@ -2677,6 +2677,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Federico
 :Federico rdf:type owl:NamedIndividual ,
                    :Persona ;
+          foaf:givenName "Federico Torrielli" ;
           rdfs:comment """A friend of the two creators of ontology.
 
 <<Dank diabetic friend>>"""@en ,
@@ -2805,6 +2806,7 @@ It is part of the set of legumes."""@en ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ivan
 :Ivan rdf:type owl:NamedIndividual ,
                :Persona ;
+      foaf:givenName "Ivan Spada" ;
       rdfs:comment "A friend of the two creators of ontology"@en ,
                    "Un amico dei due creatori dell'ontologia"@it ;
       skos:prefLabel "Ivan Spada"@en ,
@@ -3092,7 +3094,12 @@ It is part of the set of legumes."""@en ;
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Miso
-:Miso rdf:type owl:NamedIndividual ;
+:Miso rdf:type owl:NamedIndividual ,
+               [ rdf:type owl:Restriction ;
+                 owl:onProperty :ingredienteDerivatoDa ;
+                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                 owl:onClass :ingrediente
+               ] ;
       :entitàWikitada wiki:Q235169 ;
       :ingredienteFermentatoDa :Soia ;
       rdfs:comment "Condimento derivato dai semi della soia gialla, di origine giapponese,"@it ,
@@ -3115,7 +3122,12 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mozzarella
 :Mozzarella rdf:type owl:NamedIndividual ,
-                     :ingrediente ;
+                     :ingrediente ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :ingredienteDerivatoDa ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :ingrediente
+                     ] ;
             :entitàWikitada wiki:Q14088 ;
             :ingredienteCoagulatoDa :LatteMucca ;
             rdfs:comment "La mozzarella è un latticino a pasta filata originario dell'Italia meridionale e prodotta da secoli anche in Italia centrale. Essendo prodotta con latte vaccino e non di bufala, è chiamata \"fior di latte\"."@it ,
@@ -4115,14 +4127,14 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ,
-                                "Non-celiac gluten sensitivity"@en ;
-                 skos:altLabel "NCGS" .
+                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ;
+                 skos:altLabel "NCGS" ;
+                 skos:prefLabel "Non-celiac gluten sensitivity"@en .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
-                rdfs:label "Allergia al Nickel"@it ,
-                           "Nickel allergy"@en ;
+                rdfs:label "Nickel allergy"@en ,
+                           "Allergia al Nickel"@it ;
                 rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
 
 
@@ -4162,9 +4174,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
                        skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
                        skos:altLabel "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Fructose intollerance"@en .
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
+                                      "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

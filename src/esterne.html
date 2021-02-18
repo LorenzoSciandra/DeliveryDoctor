@@ -74,8 +74,9 @@
                         <tbody>
                         <tr v-for="row in result.rows">
                             <td class="align-middle">
-                                <img v-bind:src="row[0]" v-bind:alt="row[0]" class="img-fluid rounded-2"
-                                     style="min-width: 200px"/>
+                                <img v-if="row[0] != 'n/a'" v-bind:src="row[0]" v-bind:alt="row[0]"
+                                     class="img-fluid rounded-2" style="min-width: 200px"/>
+                                <p v-else>{{row[0]}}</p>
                             </td>
                             <td v-for="el in row.slice(1)" class="align-middle">{{el}}</td>
                         </tr>
@@ -115,7 +116,7 @@
             this.loadRequiredData();
         },
         methods: {
-            runQuery() {
+            runQuery: function () {
                 if (this.secondSelection === '') {
                     console.log("NO SELECTION");
                     return;
@@ -141,17 +142,19 @@
 
                                 FILTER ( lang(?descrizioneBase) = "it" ).
 
-                                ?ingr deliverydr:entitàWikitada ?entità.
+                                OPTIONAL {
+                                    ?ingr deliverydr:entitaWikidata ?entita.
 
-                                SERVICE <https://query.wikidata.org/sparql> {
-                                    OPTIONAL {?entità <http://www.wikidata.org/prop/direct/P18> ?img.}
-                                    OPTIONAL {?entità schema:description ?info.}
+                                    SERVICE <https://query.wikidata.org/sparql> {
+                                        OPTIONAL {?entita <http://www.wikidata.org/prop/direct/P18> ?img.}
+                                        OPTIONAL {?entita schema:description ?info.}
+                                    }
+
+                                    FILTER ( lang(?informazioneExtra) = "it" )
+
+                                    BIND(COALESCE(?img, "n/a") AS ?immagine).
+                                    BIND(COALESCE(?info, "n/a") AS ?informazioneExtra).
                                 }
-
-                                FILTER ( lang(?informazioneExtra) = "it" )
-
-                                BIND(COALESCE(?img, "n/a") AS ?immagine).
-                                BIND(COALESCE(?info, "n/a") AS ?informazioneExtra).
                             }
 
                             LIMIT 1`;
@@ -163,7 +166,7 @@
                             SELECT ?img ?coordinate
                             WHERE {
                                 ?citta deliverydr:haNome "${this.secondSelection}";
-                                       deliverydr:entitàWikitada ?ent
+                                       deliverydr:entitaWikidata ?ent
                                 SERVICE <https://query.wikidata.org/sparql> {
                                     ?ent <http://www.wikidata.org/prop/direct/P625> ?coordinate;
                                          <http://www.wikidata.org/prop/direct/P18> ?img.
@@ -175,7 +178,7 @@
                 $.ajax({
                     url: "http://localhost:7200/repositories/deliverydoctor",
                     type: "get",
-                    dataType: "text",
+                    dataType: "json",
                     data: {
                         query: query
                     },
@@ -183,28 +186,25 @@
                     success: function (result) {
                         console.log(result);
 
-                        // Versione migliorata, utilizza una regex per recuperare correttamente le colonne.
-                        // In questo modo non vengono create più colonne se per caso ci sono delle virgole nel testo.
-                        // https://stackoverflow.com/a/52978163/3560579
-                        const csv2array = (str) => {
-                            const lineRegex = /((\\\n)|[^\n])+/g;
-                            const datumRegex = /,?(("(\\"|.)+?")|([^",][^,]*))?/g;
-                            const array2d = str.match(lineRegex).map((row) =>
-                                row.match(datumRegex).map((datum) => datum.replace(/^,?"?|"$/g, "").trim()),
-                            );
+                        // Versione finale (forse). Questa usa i bindings delle colonne recuperate dai risultati json.
+                        const values = result.results.bindings.map(item => {
+                            let values = [];
 
-                            const titles = array2d[0];
-                            const rows = array2d.slice(1);
+                            // probabilmente migliorabile qui, senza usare un forEach.
+                            result.head.vars.forEach(title => {
+                                if (item.hasOwnProperty(title))
+                                    values.push(item[title].value);
+                                else
+                                    values.push("n/a");
+                            });
 
-                            return {titles, rows}
-                        }
+                            return values;
+                        });
 
-                        let data = csv2array(result);
-                        // Rimuovo l'ultima riga perchè contiene valori vuoti restituiti da GraphDB
-                        data.rows = data.rows.filter(row => row[0] !== '');
-
-                        console.log(data);
-                        vue.result = data;
+                        vue.result = {
+                            titles: result.head.vars,
+                            rows: values
+                        };
                     }
                 });
 
@@ -239,13 +239,43 @@
                 $.ajax({
                     url: "http://localhost:7200/repositories/deliverydoctor",
                     type: 'get',
-                    dataType: "text",
+                    dataType: "json",
                     data: {
                         query: query
                     },
                     success: function (result) {
-                        const arr = result.split(/\r?\n/);
-                        vue.names = arr.slice(1, arr.length - 1);
+                        console.log(result);
+                        /*
+                        Il risultato dal database è un oggetto del tipo
+                        {head: {
+                                vars: String[]
+                            },
+                            results: {
+                                bindings: Array{
+                                    vars...{..., value: String}
+                                }
+                            }
+                        }
+
+                        L'idea è di iterare sui bindings e mapparli ad array dei valori identificati da head.
+                         */
+
+                        const values = result.results.bindings.map(item => {
+                            let values = [];
+
+                            result.head.vars.forEach(title => {
+                                values.push(item[title].value);
+                            });
+
+                            return values;
+                        });
+
+                        let vv = [];
+
+                        values.forEach(el => vv.push(el[0]));
+
+                        vue.names = vv;
+
                     }
                 });
             }

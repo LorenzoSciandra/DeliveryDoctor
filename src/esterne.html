@@ -73,12 +73,23 @@
                         </thead>
                         <tbody>
                         <tr v-for="row in result.rows">
-                            <td class="align-middle">
-                                <img v-if="row[0] != 'n/a'" v-bind:src="row[0]" v-bind:alt="row[0]"
-                                     class="img-fluid rounded-2" style="min-width: 200px"/>
-                                <p v-else>{{row[0]}}</p>
+                            <td v-for="colEl in row" class="align-middle">
+                                <!-- Visualizza il testo se si tratta di testo -->
+                                <p v-if="colEl.type === 'literal' || colEl.type === 'null'">
+                                    {{colEl.value}}
+                                </p>
+
+                                <!-- Visualizza un'immagine se si tratta di un uri -->
+                                <img v-else-if="colEl.type === 'uri'"
+                                     v-bind:src="colEl.value"
+                                     v-bind:alt="colEl.value"
+                                     class="img-fluid rounded-2"
+                                     style="min-width: 250px"
+                                />
+
+                                <!-- Caso base -->
+                                <p v-else class="text-danger">Formato dei dati ({{colEl.type}}) sconosciuto.</p>
                             </td>
-                            <td v-for="el in row.slice(1)" class="align-middle">{{el}}</td>
                         </tr>
                         </tbody>
                     </table>
@@ -187,18 +198,23 @@
                         console.log(result);
 
                         // Versione finale (forse). Questa usa i bindings delle colonne recuperate dai risultati json.
-                        const values = result.results.bindings.map(item => {
-                            let values = [];
+                        /*
+                         Mappa ogni riga dei risultati ad un array, i cui valori saranno gli oggetti restituiti da
+                         GraphDB; in questo modo abbiamo molte informazioni utili:
+                         type: per sapere di cosa si tratta; questo rende possibile la creazione di tabelle
+                               dinamiche, che vengono costruite in funzione dei dati e che quindi non richiedono
+                               più che i dati si adattino alla tabella. I possibili valori che ho osservato per
+                               ora sono 'uri' e 'literal'.
+                         value: il valore restituito (essendo un JSON aspettiamoci che rimanga sempre una "stringa",
+                                se sicuramente in funzione del type potremmo convertirlo nell'effettivo valore!
+                         xml:lang: identificativo ISO 639-1 per la lingua del valore.
 
-                            // probabilmente migliorabile qui, senza usare un forEach.
-                            result.head.vars.forEach(title => {
-                                if (item.hasOwnProperty(title))
-                                    values.push(item[title].value);
-                                else
-                                    values.push("n/a");
+                         Se una certa colonna non esiste per una riga, creiamo un record fittizio.
+                        */
+                        const values = result.results.bindings.map(rowRes => {
+                            return result.head.vars.map(colName => {
+                                return rowRes.hasOwnProperty(colName) ? rowRes[colName] : {type: 'null', value: 'n/a'};
                             });
-
-                            return values;
                         });
 
                         vue.result = {

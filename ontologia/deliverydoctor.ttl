@@ -1547,7 +1547,7 @@ collectionentity:Collection rdf:type owl:Class ;
                                                 ) ;
                              rdf:type owl:Class
                            ] ;
-       rdfs:subClassOf :Carne ;
+       rdfs:subClassOf :IngredienteNonVegetariano ;
        rdfs:comment "Any edible part derived directly from a fish"@en ,
                     "Qualsiasi parte commestibile derivata direttamente da un pesce"@it ;
        rdfs:label "Fish"@en ,
@@ -4137,10 +4137,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                  skos:prefLabel "Non-celiac gluten sensitivity"@en .
 
 
-:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ;
+:AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
+                             "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en ;
                 rdfs:label "Nickel allergy"@en ,
-                           "Allergia al Nickel"@it ;
-                rdfs:comment "Allergy involving an immune reaction following contact with materials or the intake of food containing nickel."@en .
+                           "Allergia al Nickel"@it .
 
 
 :AllergiaPesce rdfs:comment "Anaphylactic reaction due to the consumption of fish."@en ;
@@ -4178,10 +4178,10 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
                        skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
                        rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
                        skos:altLabel "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
-                                      "Fructose intollerance"@en .
+                       skos:prefLabel "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

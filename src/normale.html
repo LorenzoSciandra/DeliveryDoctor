@@ -222,7 +222,8 @@
                             WHERE {
                                 ?p a deliverydr:Persona;
                                    deliverydr:haNome ?nome
-                            }`;
+                            }
+                            ORDER BY ?nome`;
                 }
 
                 $.ajax({

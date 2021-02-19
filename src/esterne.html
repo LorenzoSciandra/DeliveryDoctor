@@ -254,7 +254,8 @@
                             WHERE {
                                 ?c a deliverydr:Città;
                                    deliverydr:haNome ?nome
-                            }`;
+                            }
+                            ORDER BY ?nome`;
                 }
 
                 $.ajax({

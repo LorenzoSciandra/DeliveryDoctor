@@ -176,7 +176,8 @@
                             WHERE {
                                 ?p a deliverydr:Persona;
                                    deliverydr:haNome ?nome
-                            }`;
+                            }
+                            ORDER BY ?nome`;
 
                 $.ajax({
                     url: "http://localhost:7200/repositories/deliverydoctor",

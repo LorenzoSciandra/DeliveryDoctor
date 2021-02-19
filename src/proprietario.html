@@ -234,7 +234,8 @@
                                 WHERE {
                                     ?locale a deliverydr:EsercizioAlimentare;
                                             deliverydr:haNome ?nomeLocale.
-                                }`
+                                }
+                                ORDER BY ?nomeLocale`
                     },
                     success: function (result) {
                         const arr = result.split(/\r?\n/);

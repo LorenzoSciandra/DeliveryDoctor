@@ -836,6 +836,18 @@ Una preparazione eredita tutte le incompatibilità degli ingredienti che la comp
     
 
 
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#simileEntitaWikidata -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#simileEntitaWikidata">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:comment xml:lang="en">Property indicating that a certain entity is similar (i.e. not exactly the same) to a Wikidata entity.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Proprietà che indica che una certa entità è simile (cioè non coincide esattamente) ad un&apos;entità di Wikidata.</rdfs:comment>
+        <rdfs:label xml:lang="en">Similar to Wikidata entity</rdfs:label>
+        <rdfs:label xml:lang="it">Simile ad Entità Wikidata</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente">
@@ -4939,7 +4951,9 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
         <ingredienteFermentatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="it">Viene definito aceto il liquido acido che è ottenuto grazie all&apos;azione di batteri Gram-negativi del genere Acetobacter, che, in presenza di aria e acqua, ossidano l&apos;etanolo contenuto nel vino.</rdfs:comment>
         <rdfs:comment xml:lang="en">Vinegar is defined as the acidic liquid obtained thanks to the action of Gram-negative bacteria of the genus Acetobacter, which, in the presence of air and water, oxidize the ethanol contained in the wine.</rdfs:comment>
@@ -5034,6 +5048,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Biscotto"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
     </owl:Class>
     
@@ -5070,6 +5085,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
     </owl:Class>
     
@@ -5106,6 +5122,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -5156,8 +5173,10 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ostrica"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata"/>
+        <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pera"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli"/>
+        <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RadiceLiquirizia"/>
@@ -5165,9 +5184,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RisottoSugo"/>
@@ -5214,6 +5236,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
@@ -5236,8 +5259,10 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <rdfs:comment xml:lang="en">Legume often used to produce oil or as a paste for other preparations.</rdfs:comment>
         <rdfs:comment xml:lang="it">Legume spesso utilizzato per produrre olio o come pasta per altre preparazioni.</rdfs:comment>
@@ -5369,6 +5394,23 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdfs:comment xml:lang="it">Attività che riguarda l&apos;avvio del locale Kingyo</rdfs:comment>
         <skos:prefLabel xml:lang="it">Avviare Impresa Kingyo</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Start Kingyo business</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bacon -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bacon">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carne"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteNonVegetariano"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q11106"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
+        <rdfs:comment xml:lang="en">Bacon is a type of salt-cured pork made from various cuts, typically from the pork belly or from the less fatty back cuts.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Salume di suino preparato con la pancia dell&apos;animale, oppure con la lonza comprensiva di parte della pancetta.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">Bacon</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Bacon</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -5690,6 +5732,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q159774"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CaffèMacinato"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteRiso"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Caffè"/>
@@ -5710,9 +5753,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q957434"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
@@ -5732,9 +5777,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BrodoVegetale"/>
+        <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q81"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso"/>
         <rdfs:comment xml:lang="en">Herbaceous plant with a green stem belonging to the Apiaceae family</rdfs:comment>
         <rdfs:comment xml:lang="it">Pianta erbacea dal fusto di colore verde appartenente alla famiglia delle Apiaceae</rdfs:comment>
@@ -5780,6 +5828,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -5827,6 +5876,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q215348"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ciliegia"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FormaggioCremoso"/>
@@ -5905,9 +5955,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ortaggio"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BrodoVegetale"/>
+        <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q3406628"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso"/>
         <rdfs:comment xml:lang="en">Bulbous plant traditionally attributed to the Liliaceae family</rdfs:comment>
         <rdfs:comment xml:lang="it">Pianta bulbosa tradizionalmente attribuita alla famiglia delle Liliaceae</rdfs:comment>
@@ -6005,6 +6058,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q207832"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
@@ -6080,8 +6134,10 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteCoagulatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
         <rdfs:comment xml:lang="en">Edam is a semi-hard cheese that originated in the Netherlands, traditionally sold in flat ended spheres with a pale yellow interior and a coat, or rind, of red paraffin wax.</rdfs:comment>
@@ -6102,8 +6158,10 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q74662248"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
-        <rdfs:comment xml:lang="it">Il fagiolo è il seme commestibile di diverse cultivar della pianta del fagiolo comune (Phaseolus vulgaris), utilizzato come verdura. Fa parte dell&apos;insieme dei legumi.</rdfs:comment>
-        <rdfs:comment xml:lang="en">The bean is the edible seed of several cultivars of the common bean plant (Phaseolus vulgaris), used as a vegetable. It is part of the set of legumes.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Il fagiolo è il seme commestibile di diverse cultivar della pianta del fagiolo comune (Phaseolus vulgaris), utilizzato come verdura.
+Fa parte dell&apos;insieme dei legumi.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The bean is the edible seed of several cultivars of the common bean plant (Phaseolus vulgaris), used as a vegetable.
+It is part of the set of legumes.</rdfs:comment>
         <skos:prefLabel xml:lang="en">Bean</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Fagiolo</skos:prefLabel>
     </owl:NamedIndividual>
@@ -6138,6 +6196,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -6146,6 +6205,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -6251,7 +6311,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Paninoteca"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <haRicevutoOrdineDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano"/>
+        <localeGestisceOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy"/>
+        <localeServePietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <localeServePietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <localeServePietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <localeServePietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <localeSituatoIn rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti"/>
         <localeSituatoIn rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaStatutoAsti"/>
         <localeSituatoInCitta rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Asti"/>
@@ -6301,6 +6366,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -6309,6 +6375,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
@@ -6319,6 +6386,77 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdfs:comment xml:lang="en">Wheat species most used in the world in baking and in the production of fresh pasta.</rdfs:comment>
         <skos:prefLabel xml:lang="it">Grano tenero</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Wheat</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">8</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcetoVinoBianco"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bacon"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
+        <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q6663"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bacon"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#MacinatoCarneVitello"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcetoVinoBianco"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">8</haNumeroIngredienti>
+        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">8</size>
+        <rdfs:comment xml:lang="it">Gustoso Bacon croccante e filante formaggio Edamer per valorizzare uno squisito hamburger, accompagnato da insalata e pomodoro fresco e guarnito con maionese e ketchup.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Tasty crunchy Bacon and stringy Edamer cheese to enhance an exquisite hamburger, accompanied by salad and fresh tomato and garnished with mayonnaise and ketchup.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">Big Bang (Hamburger)</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Big Bang (Hamburger)</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -6362,6 +6500,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q6663"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ketchup"/>
@@ -6386,6 +6525,49 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdfs:comment xml:lang="en">Edamer cheese embellishes the fassone hamburger, accompanied by salad and fresh tomato and garnished with mayonnaise and ketchup.</rdfs:comment>
         <rdfs:comment xml:lang="it">Filante formaggio edamer impreziosisce l&apos;hamburger di fassone, accompagnato da insalata e pomodoro fresco e guarnito con maionese e ketchup.</rdfs:comment>
         <skos:prefLabel>Luna (Hamburger)</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+            </owl:Restriction>
+        </rdf:type>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mais"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q6663"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mais"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</haNumeroIngredienti>
+        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</size>
+        <rdfs:comment xml:lang="it">Hamburger vegano composto da mais, carote, cipolle e peperoni, con insalata e pomodoro fresco.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Vegan burger consisting of corn, carrots, onions and peppers, with salad and fresh tomato.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">Vega (Hamburger)</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Vega (Hamburger)</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -6431,8 +6613,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q83193"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <rdfs:comment xml:lang="it">L&apos;insalata indica genericamente diversi vegetali commestibili le cui foglie si possono mangiare crude e variamente condite.</rdfs:comment>
         <rdfs:comment xml:lang="en">The salad generically indicates various edible vegetables whose leaves can be eaten raw and variously seasoned.</rdfs:comment>
         <skos:prefLabel xml:lang="it">Insalata</skos:prefLabel>
@@ -6458,6 +6644,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
     </owl:Class>
     
@@ -6483,6 +6670,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <disturboLimitaAssunzioneDiIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <disturboLimitaConsumazioneDiPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -6536,7 +6724,9 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="it">Il ketchup è una salsa agrodolce a base di pomodoro, di origine asiatica e tradizionalmente utilizzata per accompagnare patatine fritte e altri fritti, oppure per insaporire panini farciti.</rdfs:comment>
         <rdfs:comment xml:lang="en">Ketchup is a tomato-based sweet and sour sauce of Asian origin and traditionally used to accompany fries and other fried foods, or to flavor stuffed sandwiches.</rdfs:comment>
@@ -6615,6 +6805,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q20034"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Burro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello"/>
@@ -6758,6 +6949,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -6765,6 +6957,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -6864,12 +7057,14 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q45422"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -6951,9 +7146,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q13400960"/>
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
@@ -6983,7 +7180,9 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva"/>
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="it">La maionese è una salsa cremosa e omogenea, generalmente di colore bianco o giallo pallido, che viene consumata fredda. Si tratta di un&apos;emulsione stabile di olio vegetale frazionato in acqua, con tuorlo d&apos;uovo e aromatizzato con aceto o succo di limone.</rdfs:comment>
         <rdfs:comment xml:lang="en">Mayonnaise is a smooth, creamy sauce, generally white or pale yellow in color, which is eaten cold. It is a stable emulsion of vegetable oil fractionated in water, with egg yolk and flavored with vinegar or lemon juice</rdfs:comment>
@@ -7003,8 +7202,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+        <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q25618328"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <rdfs:comment xml:lang="it">Il mais è una pianta erbacea annuale della famiglia delle Poaceae, tribù delle Maydeae: addomesticato dalle popolazioni indigene in Messico centrale in tempi preistorici circa 10.000 anni fa, è uno dei più importanti cereali, largamente coltivato sia nelle regioni tropicali sia in quelle temperate, in quest&apos;ultimo caso a ciclo primavera-estate.</rdfs:comment>
         <rdfs:comment xml:lang="en">Maize, also known as corn, is a cereal grain first domesticated by indigenous peoples in southern Mexico about 10,000 years ago. The leafy stalk of the plant produces pollen inflorescences and separate ovuliferous inflorescences called ears that yield kernels or seeds, which are fruits.</rdfs:comment>
         <skos:altLabel xml:lang="it">Granoturco</skos:altLabel>
@@ -7279,7 +7481,9 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <rdfs:comment xml:lang="it">Olio vegetale che si ricava per pressione o per mezzo di solventi dai semi di arachidi.</rdfs:comment>
@@ -7310,11 +7514,13 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Maionese"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q93165"/>
         <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="it">Olio d&apos;oliva estratto con soli processi meccanici.</rdfs:comment>
         <rdfs:comment xml:lang="en">Olive oil extracted only by mechanical means</rdfs:comment>
@@ -7335,9 +7541,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioExtraOliva"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q1621080"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -7379,6 +7587,35 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <skos:prefLabel xml:lang="en">Lorenzo Order Kingyo</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Lorenzo&apos;s ordination activity at Kingyo</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Ordinazione Lorenzo Kingyo</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordinare"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <ordinareDalLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <ordinatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano"/>
+        <prov:used rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <prov:wasAssociatedWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano"/>
+        <rdfs:comment xml:lang="it">Azione di ordine di Stefano</rdfs:comment>
+        <rdfs:comment xml:lang="en">Stefano&apos;s order action</rdfs:comment>
+        <rdfs:label xml:lang="it">Ordinazione Stefano Galaxy Burger</rdfs:label>
+        <rdfs:label xml:lang="en">Stefano&apos;s order action @ Dubai</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ordine"/>
+        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <ordineCompostoDaPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <ordineCreatoDaAzione rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy"/>
+        <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy"/>
     </owl:NamedIndividual>
     
 
@@ -7446,10 +7683,12 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Toast"/>
@@ -7486,6 +7725,7 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q7802"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
@@ -7537,10 +7777,76 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q16587531"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
         <rdfs:comment xml:lang="it">La patata è un tubero commestibile ottenuto dalle piante della specie Solanum tuberosum, molto utilizzato a scopo alimentare previa cottura.</rdfs:comment>
         <rdfs:comment xml:lang="en">The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself is a perennial in the nightshade family, Solanaceae.</rdfs:comment>
         <skos:prefLabel xml:lang="it">Patata</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Potato</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte">
+        <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#utilizzaIngrediente"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+            </owl:Restriction>
+        </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q152088"/>
+        <frittoCon rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
+        <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
+        <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata"/>
+        <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide"/>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</haNumeroIngredienti>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</haNumeroIngredienti>
+        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</size>
+        <rdfs:comment xml:lang="en">French fries, or simply fries (North American English), chips (British and Commonwealth English, Hiberno-English), finger chips (Indian English), or French-fried potatoes, are batonnet or allumette-cut deep-fried potatoes.
+French fries are served hot, either soft or crispy, and are generally eaten as part of lunch or dinner or by themselves as a snack, and they commonly appear on the menus of diners, fast food restaurants, pubs, and bars. They are usually salted and, depending on the country, may be served with ketchup, vinegar, mayonnaise, tomato sauce, or other local specialties. Fries can be topped more heavily, as in the dishes of poutine or chili cheese fries. Chips can be made from sweet potatoes instead of potatoes. A baked variant, oven chips, uses less oil or no oil.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Le patate fritte (chiamate familiarmente anche patatine o patatine fritte) sono un alimento a base di patate tagliate a fette di forma allungata e fritte in vari modi nei diversi paesi: in Belgio si usa il sego bovino &quot;Blanc de bœuf&quot; in una speciale friggitrice, ma in generale sono gli oli vegetali (anche di arachidi) i più diffusi; in Italia e Spagna le patate sono cotte anche al forno fino a quando non assumono la caratteristica croccantezza, e poi servite.</rdfs:comment>
+        <skos:altLabel xml:lang="en">French fries</skos:altLabel>
+        <skos:altLabel xml:lang="it">Patate fritte</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Fries</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Patatine fritte</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttiSemplici"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Frutto"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FruttoCarnoso"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+        <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q1548030"/>
+        <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <rdfs:comment xml:lang="it">Il peperone è il nome comune dato alla bacca ottenuta da alcune varietà della specie Capsicum annuum e utilizzata come verdura.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The bell pepper (also known as sweet pepper, pepper or capsicum) is the fruit of plants in the Grossum cultivar group of the species Capsicum annuum.</rdfs:comment>
+        <skos:prefLabel xml:lang="en">Bell pepper</skos:prefLabel>
+        <skos:prefLabel xml:lang="it">Peperone</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -7653,6 +7959,7 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q500724"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
@@ -7687,6 +7994,37 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <skos:altLabel xml:lang="it">Margherita</skos:altLabel>
         <skos:prefLabel xml:lang="en">Margherita Pizza</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Pizza Margherita</skos:prefLabel>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteDerivato"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegano"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVeganoDerivato"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetariano"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IngredienteVegetarianoDerivato"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingredienteDerivatoDa"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
+            </owl:Restriction>
+        </rdf:type>
+        <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota"/>
+        <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cipolla"/>
+        <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Mais"/>
+        <ingredienteDerivatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
+        <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <rdfs:comment xml:lang="en">A dough that can be used as a hamburger meatball.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Un impasto utilizzabile come polpetta per hamburger.</rdfs:comment>
+        <skos:prefLabel xml:lang="it">Polpetta vegana</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Vegan meatball</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -7741,6 +8079,7 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q4831844"/>
         <frittoCon rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CarneVitello"/>
@@ -7778,8 +8117,9 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</haNumeroIngredienti>
         <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</haNumeroIngredienti>
-        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</size>
+        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</size>
         <rdfs:comment xml:lang="en">Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce.</rdfs:comment>
         <rdfs:comment xml:lang="it">Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d&apos;uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro.</rdfs:comment>
         <skos:prefLabel xml:lang="en">Meatballs</skos:prefLabel>
@@ -7799,12 +8139,17 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q20638126"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RisottoSugo"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
@@ -7976,6 +8321,7 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai"/>
+        <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q208105"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso"/>
         <utilizzaIngrediente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
@@ -8127,10 +8473,16 @@ It may be eaten cooked or raw, and the taste differs considerably; the high oxal
     <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano -->
 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Stefano">
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+        <haFattoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy"/>
+        <haOrdinatoDalLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
+        <haOrdinatoPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <haRuolo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelCliente"/>
+        <prov:hadRole rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelCliente"/>
         <schema:Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stefano Vittorio Porta</schema:Name>
         <haNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stefano Vittorio Porta</haNome>
         <foaf:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stefano Vittorio Porta</foaf:givenName>
@@ -8196,6 +8548,7 @@ It&apos;s a me!</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q7811415"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Edam"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#FarinaGranoTenero"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
@@ -8215,12 +8568,13 @@ It&apos;s a me!</rdfs:comment>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
         <utilizzaIngredienteIndirettamente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra"/>
+        <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</haNumeroIngredienti>
         <haNumeroIngredienti rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</haNumeroIngredienti>
-        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</size>
+        <size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</size>
         <rdfs:comment xml:lang="it">Tipo di panino composto solamente da pane tostato con all&apos;interno prosciutto cotto e formaggio</rdfs:comment>
         <rdfs:comment xml:lang="en">Type of sandwich consisting only of toasted bread with ham and cheese inside</rdfs:comment>
-        <skos:prefLabel xml:lang="en">Toast</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Toast</skos:prefLabel>
+        <skos:prefLabel xml:lang="en">Toast sandwich</skos:prefLabel>
     </owl:NamedIndividual>
     
 
@@ -8256,9 +8610,11 @@ It&apos;s a me!</rdfs:comment>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q15260613"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
@@ -8281,7 +8637,9 @@ It&apos;s a me!</rdfs:comment>
         <componeIngredienteDerivato rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AcetoVinoBianco"/>
         <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q10978"/>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="en">Fruit of the vine, recovered from the bunch.</rdfs:comment>
         <rdfs:comment xml:lang="it">Frutto della vite, recuperato dal grappolo.</rdfs:comment>
@@ -8334,10 +8692,12 @@ It&apos;s a me!</rdfs:comment>
         <ingredienteIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
+        <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <isMemberOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
         <utilizzatoInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia"/>
+        <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
         <utilizzatoIndirettamenteInPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <rdfs:comment xml:lang="it">Dolcificante utilizzato nell&apos;ambito dell&apos;industria alimentare, specialmente dolciaria e pasticciera.</rdfs:comment>
         <rdfs:comment xml:lang="en">Sweetener used in the food industry, especially confectionery and pastry.</rdfs:comment>
@@ -8363,6 +8723,7 @@ It&apos;s a me!</rdfs:comment>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ingrediente"/>
             </owl:Restriction>
         </rdf:type>
+        <entitaWikidata rdf:resource="http://www.wikidata.org/entity/Q471866"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Acqua"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BrodoVegetale"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Carota"/>
@@ -8405,6 +8766,12 @@ It&apos;s a me!</rdfs:comment>
     <!-- http://www.wikidata.org/entity/Q11002 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q11002"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q11106 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q11106"/>
     
 
 
@@ -8462,6 +8829,12 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q152088 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q152088"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q15260613 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q15260613"/>
@@ -8474,6 +8847,12 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q1548030 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q1548030"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q155922 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q155922"/>
@@ -8483,6 +8862,12 @@ It&apos;s a me!</rdfs:comment>
     <!-- http://www.wikidata.org/entity/Q15645384 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q15645384"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q159774 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q159774"/>
     
 
 
@@ -8558,6 +8943,12 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q20034 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q20034"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q20188 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q20188"/>
@@ -8567,6 +8958,12 @@ It&apos;s a me!</rdfs:comment>
     <!-- http://www.wikidata.org/entity/Q20638126 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q20638126"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q207832 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q207832"/>
     
 
 
@@ -8582,9 +8979,21 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q208105 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q208105"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q209974 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q209974"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q215348 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q215348"/>
     
 
 
@@ -8738,15 +9147,33 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q471866 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q471866"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q47722 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q47722"/>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q4831844 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q4831844"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q495 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q495"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q500724 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q500724"/>
     
 
 
@@ -8798,6 +9225,12 @@ It&apos;s a me!</rdfs:comment>
     
 
 
+    <!-- http://www.wikidata.org/entity/Q6663 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q6663"/>
+    
+
+
     <!-- http://www.wikidata.org/entity/Q715187 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q715187"/>
@@ -8813,6 +9246,12 @@ It&apos;s a me!</rdfs:comment>
     <!-- http://www.wikidata.org/entity/Q7802 -->
 
     <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q7802"/>
+    
+
+
+    <!-- http://www.wikidata.org/entity/Q7811415 -->
+
+    <owl:NamedIndividual rdf:about="http://www.wikidata.org/entity/Q7811415"/>
     
 
 
@@ -8966,9 +9405,9 @@ It&apos;s a me!</rdfs:comment>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio">
         <rdfs:comment xml:lang="en">Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others.</rdfs:comment>
         <skos:altLabel xml:lang="it">Deficit di Fruttosio 1,6-difosfatasi</skos:altLabel>
-        <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
         <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
+        <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
         <skos:prefLabel xml:lang="en">Fructose intollerance</skos:prefLabel>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio">
@@ -9030,6 +9469,7 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avigliana"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Avocado"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AvviareImpresaKingyo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Bacon"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Basilico"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Besciamella"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#BiscottiTritati"/>
@@ -9066,7 +9506,9 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GranoTenero"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ImpastoPizza"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Insalata"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
@@ -9106,18 +9548,23 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinareDubai"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneLorenzoKingyo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Ostrica"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ParmigianoReggiano"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pera"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaMartiriDellaLibertàMondovì"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PiazzaStatutoAsti"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piselli"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pistacchio"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Polpette"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo"/>
             <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
@@ -9145,6 +9592,7 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q10978"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q10988133"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q11002"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q11106"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q12000036"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q12104"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1239497"/>
@@ -9154,10 +9602,13 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q14088"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1418287"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q14959225"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q152088"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15260613"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q153697"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1548030"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q155922"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q15645384"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q159774"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1621080"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q16571278"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q16587531"/>
@@ -9170,11 +9621,15 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q195"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q196"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q1996210"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q20034"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q20188"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q20638126"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q207832"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q208008"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q208021"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q208105"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q209974"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q215348"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q2249305"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q23041045"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q235169"/>
@@ -9200,8 +9655,11 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q42366457"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q4287"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q45422"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q471866"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q47722"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q4831844"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q495"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q500724"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q5090"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q578307"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q597473"/>
@@ -9210,9 +9668,12 @@ It&apos;s a me!</rdfs:comment>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q61503220"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q61505177"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q61864890"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q6663"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q715187"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q74662248"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q7802"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q7811415"/>
+            <rdf:Description rdf:about="http://www.wikidata.org/entity/Q7892"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q81"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q83165"/>
             <rdf:Description rdf:about="http://www.wikidata.org/entity/Q83193"/>

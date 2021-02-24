@@ -7092,6 +7092,9 @@ It is part of the set of legumes.</rdfs:comment>
         <haOrdinatoPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso"/>
         <haRuolo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelCliente"/>
         <prov:hadRole rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelCliente"/>
+        <schema:Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lorenzo Sciandra</schema:Name>
+        <haNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lorenzo Sciandra</haNome>
+        <foaf:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Lorenzo Sciandra</foaf:givenName>
         <rdfs:comment xml:lang="en">One of the two creators of this ontology</rdfs:comment>
         <rdfs:comment xml:lang="it">Uno dei due creatori di questa ontologia</rdfs:comment>
         <skos:prefLabel xml:lang="en">Lorenzo Sciandra</skos:prefLabel>

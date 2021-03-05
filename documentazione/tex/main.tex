@@ -127,7 +127,7 @@ L'idea è nata pensando all'offerta sempre più diffusa dei servizi di consegna 
 Infatti, date le restrizioni sanitarie vigenti, un numero in costante aumento di imprese di ristorazione sta ricorrendo a servizi di consegne a domicilio, non solo nelle grandi città, ma anche in centri urbani di più modeste dimensioni\footnote{\url{https://www.ilsole24ore.com/art/coronavirus-e-boom-spesa-online-consegna-domicilio-AD3rKdC}} \footnote{\url{https://www.repubblica.it/economia/rapporti/osserva-italia/trend/2020/10/16/news/cresce_la_passione_per_il_cibo_a_domicilio-270779771/}}.\newline
 Esistono svariati servizi (alcuni dei quali molto rinomati e popolari) che fungono da mediatore tra la proposta dei locali e la richiesta dei clienti. 
 Tuttavia, nessuno sembra fare affidamento ad una gestione semantica dei propri dati, preferendo piuttosto dei sistemi più standard.\newline
-L'idea di creare un'ontologia comune che modelli correttamente questo dominio potrebbe quindi risultare utile per offrire uno strumento particolare e potente, in grado di facilitare la gestione per tutte le parti e migliorare le possibili applicazioni.\newline
+L'idea di creare un'ontologia comune che modelli correttamente questo dominio potrebbe quindi risultare utile per offrire uno strumento potente, in grado di facilitare la gestione per tutte le parti e migliorare le possibili applicazioni.\newline
 Un secondo punto cruciale riguarda gli allergeni: tra le varie piattaforme di delivery esistenti da noi provate, nessuna permette di filtrare i locali con la precisione che pensavamo di offrire (in funzione degli allergeni presenti nelle pietanze proposte\footnote{Si veda ad esempio Just Eat: \url{https://www.justeat.it/help/article/115001318051/cosa-faccio-se-sono-allergico-a-qualcosa}} o dell'alimentazione corrispondente).
 Questi criteri di ricerca sono stati da noi tenuti in considerazione durante la modellazione.
 
@@ -136,7 +136,7 @@ Questi criteri di ricerca sono stati da noi tenuti in considerazione durante la 
 \subsection{Finalità}
 Lo scopo dell'ontologia riguarda un'ipotetica piattaforma di delivery che possa permettere a dei locali di esporsi facilmente con le proprie proposte a un insieme di utenti a cui intendono rivolgersi per saziare le proprie esigenze alimentari. 
 Il tutto attraverso una struttura su cui sia facile effettuare reasoning, per  inferire pietanze incompatibili o meno con diete (veganismo, vegetarianismo) o con intolleranze ed allergie (come la celiachia, l'intolleranza al lattosio o il favismo).\newline 
-Con l'ontologia, una volta effettuato reasoning, gli utenti potranno quindi filtrare i piatti non solo in base alla città o alla tipologia di locale, ma anche a seconda della presenza o meno di piatti conformi a diete e disturbi o facendo riferimento a precedenti recensioni.\newline
+Con l'ontologia, una volta effettuato reasoning, gli utenti potranno quindi filtrare i piatti non solo in base alla città o alla tipologia di locale, ma anche a seconda della presenza o meno di conformità a diete e disturbi o facendo riferimento a precedenti recensioni.\newline
 La nostra intenzione è di sfruttare il più possibile le potenzialità del reasoning, in modo da ridurre al minimo indispensabile il tempo e i dati necessari da introdurre manualmente per il funzionamento dell'ontologia.\newline
 Seguono due mockup dell'ipotetica piattaforma di delivery immaginata:
 \label{sec:mockupFinali}
@@ -173,12 +173,12 @@ I task principali che l'ontologia punta a rendere effettuabili sono:
 Il dominio, collocato nell'ambito dei servizi di consegna, ha come fine la rappresentazione di Locali, Pietanze, Ingredienti, Disturbi alimentari e Persone.\newline
 Queste cinque classi principali sono correlate tra di loro:
 \begin{itemize}
-    \item Le pietanze sono composte da vari ingredienti, oppure ne utilizzano alcuni come mezzo per la cottura (ad esempio frittura). Inoltre ereditano dagli ingredienti che le compongono le \textbf{incompatibilità} con gli stessi disturbi alimentari;
-    \item Gli ingredienti possono essere composti a loro volta da altri ingredienti, e in questo modo è possibile descrivere precisamente la composizione delle pietanze. In modo simile alle pietanze, anche gli ingredienti ereditano dagli ingredienti di cui sono composti le \textbf{incompatibilità} con i disturbi alimentari indicati o inferiti;
-    \item Multipli Locali possono servire le stesse pietanze. Inoltre, le Persone possono piazzare ordini (consegnati da altre Persone), pubblicare recensioni riguardo un certo ordine e aprire nuovi Locali.
+    \item Le pietanze sono \textit{composte da} vari ingredienti, oppure ne utilizzano alcuni come mezzo per la cottura (ad esempio frittura). Inoltre ereditano dagli ingredienti che le compongono le \textbf{incompatibilità} con gli stessi disturbi alimentari;
+    \item Gli ingredienti possono essere \textit{derivati} a loro volta da altri ingredienti, e in questo modo è possibile descrivere precisamente la composizione delle pietanze. In modo simile alle pietanze, anche gli ingredienti ereditano dagli ingredienti da cui sono derivati le \textbf{incompatibilità} con i disturbi alimentari specificati o inferiti;
+    \item Multipli Locali possono \textit{servire} le stesse pietanze. Inoltre, le Persone possono \textit{piazzare ordini} (che saranno \textit{consegnati} da altre Persone), \textit{pubblicare recensioni} riguardo un certo ordine e \textit{aprire nuovi Locali}.
 \end{itemize}
 \subsection{Fonti}
-In modo da poter rappresentare adeguatamente il dominio, ci siamo basati prevalentemente su siti web.\newline
+In modo da poter rappresentare adeguatamente il dominio, ci siamo basati prevalentemente su diversi siti web.\newline
 Per gli allergeni, abbiamo fatto affidamento a:
 \begin{itemize}
     \item "\href{https://it.wikipedia.org/wiki/Allergeni_alimentari}{Allergeni alimentari}", su \textit{Wikipedia};
@@ -204,14 +204,14 @@ Cominciamo mostrando siti noti che offrono servizi di delivery, da cui abbiamo i
     \includegraphics[width=12cm]{files/justEat.png}
     \caption{Alcuni locali elencati su Just Eat nelle vicinanze del Dipartimento}
 \end{figure}
-Come è possibile notare, i filtri che un utente può applicare si allontanano da quelle che sono le nostre idee. I locali vengono infatti filtrati solamente in base al tipo di cucina che offrono, alle stelle associate e alla presenza o meno della consegna gratuita. Non vi è alcun tipo di riferimento a diete o allergie.\newline
+Come è possibile notare, i filtri che un utente può applicare si allontanano da quelle che sono le nostre idee per l'ontologia. I locali vengono infatti filtrati solamente in base al tipo di cucina che offrono, alle stelle associate e alla presenza o meno della consegna gratuita. Non vi è alcun tipo di riferimento a diete o allergie.\newline
 Spostiamoci ora su Glovo che sembra avvicinarsi di più alle nostre intenzioni:
 \begin{figure}[H]
     \centering
     \includegraphics[width=12cm]{files/glovo.png}
     \caption{Alcuni locali registrati per il comune di Torino}
 \end{figure}
-\`{E} possibile notare come Glovo presenti alcune delle nostre idee.\newline
+\`{E} possibile notare come Glovo condivida alcune delle nostre idee.\newline
 In primo luogo è data la possibilità di filtrare i locali in base alla città senza essere costretti, a differenza di Just Eat, a specificare un indirizzo in particolare. In secondo luogo, è possibile filtrare i ristoranti in una città anche in base alla dieta (è disponibile tuttavia solo quella Vegetariana) e all'attributo "senza glutine". Manca però in questo caso la possibilità di filtrare i locali in base alle valutazioni degli utenti e la scelta delle diete/allergie come criteri sono molto scarsi. \newline
 La piattaforma da noi immaginata presenta il meglio dei criteri di questi due siti, ampliandoli: la possibilità di scremare i risultati in base ad un ricco catalogo di allergie e diete senza però trascurare l'importanza delle recensioni dei clienti che avvalorano o meno un locale.
 \par 
@@ -247,6 +247,10 @@ A partire dalle classi \textbf{Activity, Entity, Agent} e \textbf{Role} abbiamo 
     \item \textbf{Agente}, colui che fa l'azione;
     \item \textbf{Ruolo}, il compito svolto dalla persona nell'\texttt{Activity} ed entità che identifica elementi creati o usati nel corso dell'azione.
 \end{itemize}
+
+Per quanto riguarda l'allineamento con le varie risorse esterne abbiamo usato \textit{rdfs:subClassOf} e \textit{owl:equivalentClass} con questo criterio: là dove la nostra gerarchia si discostava da quella esterna abbiamo usato \textbf{owl:equivalentClass} per collegare le classi che rappresentavano lo stesso concetto (riguardo il caso del nostro utilizzo di Schema.org).
+\newline
+Dove invece c'era il bisogno di introdurre classi più specifiche di quelle presenti e in cui poteva risultare utile usufruire della struttura delle relazioni della risorsa esterna abbiamo usato \textbf{rdfs:subClassOf} (come nel caso di Provenance).
 
 \section{LODE}
 Al momento della progettazione di Delivery Doctor, il progetto \href{https://github.com/essepuntato/LODE}{LODE} sviluppato da Silvio Peroni presenta alcuni problemi tecnici, e spesso il servizio online è irraggiungibile. Per poter ottenere una documentazione completa dell'ontologia è stato quindi utilizzata un'alternativa che imita in tutto e per tutto LODE: \href{https://github.com/RDFLib/pyLODE}{pyLODE}. Si tratta di un'implementazione in python, utilizzabile in locale.\newline
@@ -297,13 +301,14 @@ Una copia aggiornata della documentazione è disponibile sul \href{https://loren
 Per visionare l'ontologia in formato Turtle rimandiamo il lettore alla \href{https://lorenzosciandra.github.io/ProgettoModSem/}{pagina del progetto}.
 
 \section{Queries SPARQL}
-Suddivideremo questa sezione in 4 parti: la prima contenente l'interazione e quindi le queries di un untente normale, la seconda per l'utente proprietario di un esercizio alimentare, la terza riguardano invece l'interazione di un fattorino e l'ultima parte sarà dedicata alle queries dirette verso risorse ontologiche esterne.
+Suddivideremo questa sezione in 5 parti: la prima contenente l'interazione e quindi le queries di un untente normale, la seconda per l'utente proprietario di un esercizio alimentare, la terza riguardano invece l'interazione di un fattorino e la quarta sarà dedicata alle queries dirette verso risorse ontologiche esterne.
+Nella parte finale sono mostrate delle semplici queries di utilità.
 
 \subsection{Utente Normale}
 Il flusso d'interazione dell'utente generico Luca riguarderà l'iniziale ricerca dei locali nella sua città, Torino, per poi filtrare i risultati sulla base degli esercizi alimentari che dispongono di almeno una pietanza compatibile con la celiachia. Terminerà l'interazione visionando tutti gli ordini compiuti.
 \begin{figure}[H]
     \centering
-         \includegraphics[width=9cm]{files/lucaInterazione.png}
+         \includegraphics[width=7cm]{files/lucaInterazione.png}
     \caption{Interazione tra Luca e la piattaforma}
 \end{figure}
 
@@ -371,6 +376,7 @@ Come possiamo notare dall'insieme dei locali verrà escluso Napples che nella no
 Supponiamo ora che il nostro utente Luca voglia vedere lo storico degli ordini che ha effettuato.
 \begin{lstlisting}[language=SPARQL]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX deliverydr:
 <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 
@@ -380,7 +386,7 @@ SELECT ?ordine ?localeNome ?pietanza WHERE{
     ?ordine deliverydr:ordineCreatoDaAzione ?ordinare;
         deliverydr:ordineCompostoDaPietanza ?pietanza.
     ?locale deliverydr:haNome ?localeNome.
-    ?persona deliverydr:haNome "Luca".
+    ?persona foaf:givenName "Luca".
 }
 \end{lstlisting}
 \begin{tabularx}{\textwidth} { 
@@ -563,6 +569,7 @@ Per l'interazione con l'utente adibito alle consegne degli ordini, vediamo una t
 
 \begin{lstlisting}[language=SPARQL]
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX deliverydr:
 <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 
@@ -573,7 +580,7 @@ SELECT ?consegna ?ordine ?localeNome ?destinatario WHERE{
     ?ordine deliverydr:ordineCreatoDaAzione ?ordinare.
     ?ordinare deliverydr:ordinareDalLocale ?locale.
     ?locale deliverydr:haNome ?localeNome.
-    ?persona deliverydr:haNome "Gianni".
+    ?persona foaf:givenName "Gianni".
 }
 \end{lstlisting}
 \begin{tabularx}{\textwidth} { 
@@ -612,7 +619,7 @@ PREFIX deliverydr:
 
 SELECT ?immagine ?descrizioneBase ?informazioneExtra
 WHERE {
-    ?ingr skos:prefLabel "${this.secondSelection}"@it;
+    ?ingr skos:prefLabel "Besciamella";
           rdfs:comment ?descrizioneBase.
 
     FILTER ( lang(?descrizioneBase) = "it" ).
@@ -669,7 +676,7 @@ PREFIX deliverydr:
 SELECT ?img ?coordinate
 WHERE {
     ?citta deliverydr:haNome "Torino";
-           deliverydr:entitaWikidata ?ent
+           deliverydr:entitaWikidata ?ent.
     SERVICE <https://query.wikidata.org/sparql> {
         ?ent <http://www.wikidata.org/prop/direct/P625> ?coordinate;
              <http://www.wikidata.org/prop/direct/P18> ?img.
@@ -724,13 +731,14 @@ ORDER BY ?nome
 \newline
 Per ottenere tutti i nomi delle persone presenti nell'ontologia:
 \begin{lstlisting}[language=SPARQL]
+PREFIX foaf: <http://xmlns.com/foaf/0.1/>
 PREFIX deliverydr: 
 <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
 
 SELECT ?nome
 WHERE {
     ?p a deliverydr:Persona;
-       deliverydr:haNome ?nome
+       foaf:givenName ?nome
 }
 ORDER BY ?nome
 \end{lstlisting}
@@ -745,11 +753,11 @@ ORDER BY ?nome
  \hline
  \textit{Ivan Spada} \\
  \hline
+ \textit{Lorenzo Sciandra} \\
+ \hline    
  \textit{Luca} \\
  \hline
  \textit{Stefano Vittorio Porta} \\
- \hline
- \textit{Lorenzo Sciandra} \\
 \hline
 \end{tabularx}
 \newline
@@ -775,16 +783,15 @@ ORDER BY ?nomeLocale
  \hline
  \textit{Galaxy Burger} \\
  \hline
- \textit{Napples} \\
- \hline
  \textit{Kingyo} \\
+ \hline
+ \textit{Napples} \\
  \hline
  \textit{Noir Caffè} \\
 \hline
 \end{tabularx}
 \newline
 \newline
-
 Infine, per ottenere i nomi di tutti gli ingredienti inseriti nell'ontologia:
 \begin{lstlisting}[language=SPARQL]
 PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
@@ -818,7 +825,7 @@ ORDER BY ?nome
 
 \newpage
 \section{Applicazione Client}
-Il client è stato realizzato usando HTML5, Bootstrap 5, Vue.js e JQuery. Per la grafica abbiamo preso ispirazione dai \hyperref[sec:mockupFinali]{figure 1 e 2} in cui immaginavamo un mockup dell'ipotetica applicazione finale.
+Il client è stato realizzato usando HTML5, Bootstrap 5, Vue.js e JQuery. Per la grafica abbiamo preso ispirazione dalle \hyperref[sec:mockupFinali]{figure 1 e 2} in cui immaginavamo un mockup dell'ipotetica applicazione finale.
 \newline
 Il client si presenta quindi con una prima pagina html dedicata allo smistamento verso le 4 pagine che daranno la possibilità di eseguire le query introdotte nella selezione precedente, suddivise in base all'utente. 
 % https://tex.stackexchange.com/a/16584/232428
@@ -841,7 +848,7 @@ Nel caso in cui non fosse selezionato nessun parametro nella seconda select, avr
     \makebox[\textwidth][c]{\includegraphics[width=15cm]{files/utenteNormale2.png}}
     \caption{Risultati della query di ricerca di locali con pietanze senza glutine a Torino}
 \end{figure}
-Una volta scelto un valore per entrambe le dropdown, Vue si accorgerà di questo cambiamento ed eseguirà automaticamente la query. I risultati vengono richiesti al server GraphDB in formato CSV e, una volta ricevuti, saranno prima parsificati e successivamente inseriti in una tabella costruita dinamicamente grazie a Vue.js.
+Una volta scelto un valore per entrambe le dropdown, Vue si accorgerà di questo cambiamento ed eseguirà automaticamente la query. I risultati vengono richiesti al server GraphDB in formato CSV e JSON a seconda della complessità dei dati richiesti e, una volta ricevuti, saranno prima parsificati e successivamente inseriti in una tabella costruita dinamicamente grazie a Vue.js.
 \section{Regole SWRL}
 In questa sezione sarà presentata la base delle regole SWRL usate nel progetto. Vediamo come prime regole quelle che riguardano i ruoli assunti dalle persone. Le 4 regole che abbiamo usato per definire correttamente il ruolo di una persona si basano sulle seguenti considerazioni:
 \begin{itemize}

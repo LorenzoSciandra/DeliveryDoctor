@@ -18,10 +18,11 @@
                                                                 <http://purl.org/dc/elements/1.1/creator> "Lorenzo Sciandra"^^xsd:string ,
                                                                                                           "Stefano Vittorio Porta"^^xsd:string ;
                                                                 <http://purl.org/dc/elements/1.1/date> "2020-12-29T18:30:10"^^xsd:dateTime ;
-                                                                <http://purl.org/dc/elements/1.1/description> "Ontologia che tratta esercizi alimentari, pietanze servite ed interazione con utenti al fine dell'ordine, consegna e consumo di queste in precisi luoghi geografici."@it ;
-                                                                <http://purl.org/dc/elements/1.1/language> "italiano"^^xsd:string ;
+                                                                <http://purl.org/dc/elements/1.1/description> "Ontologia che tratta esercizi alimentari, pietanze servite ed interazione con utenti al fine dell'ordine, consegna e consumo di queste in precisi luoghi geografici."@it ,
+                                                                                                              "Ontology that deals with food exercises, dishes served and interaction with users for the purpose of ordering, delivery and consumption of these in specific geographic locations."@en ;
+                                                                <http://purl.org/dc/elements/1.1/language> "it-it"@en ;
                                                                 <http://purl.org/dc/elements/1.1/subject> "food delivery"^^xsd:string ,
-                                                                                                          "ontology"^^xsd:string ;
+                                                                                                          "food delivery and allergies"@en ;
                                                                 <http://purl.org/dc/elements/1.1/title> "Delivery Doctor"^^xsd:string ;
                                                                 vann:preferedNamespacePrefix "deliverydr"^^xsd:string ;
                                                                 vann:preferredNamespaceUri "http://www.semanticweb.org/progettomodsem2020/deliverydoctor"^^xsd:string ;
@@ -3354,7 +3355,11 @@ It is part of the set of legumes."""@en ;
 :OrdineHamburgerStefanoGalaxy rdf:type owl:NamedIndividual ,
                                        :Ordine ;
                               :ordineCompostoDaPietanza :HamburgerLuna ;
-                              :ordineCreatoDaAzione :OrdinazioneStefanoGalaxy .
+                              :ordineCreatoDaAzione :OrdinazioneStefanoGalaxy ;
+                              rdfs:comment "Order made by Stefano at Galaxy Burger"@en ,
+                                           "Ordine effettuato da Stefano al Galaxy Burger."@it ;
+                              rdfs:label "Order for Hamburger Stefano @ Galaxy"@en ,
+                                         "Ordine Hamburger Stefano @ Galaxy"@it .
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo

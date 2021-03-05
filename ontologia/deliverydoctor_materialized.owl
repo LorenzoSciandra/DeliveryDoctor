@@ -21,9 +21,10 @@
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stefano Vittorio Porta</dc:creator>
         <dc:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2020-12-29T18:30:10</dc:date>
         <dc:description xml:lang="it">Ontologia che tratta esercizi alimentari, pietanze servite ed interazione con utenti al fine dell&apos;ordine, consegna e consumo di queste in precisi luoghi geografici.</dc:description>
-        <dc:language rdf:datatype="http://www.w3.org/2001/XMLSchema#string">italiano</dc:language>
+        <dc:description xml:lang="en">Ontology that deals with food exercises, dishes served and interaction with users for the purpose of ordering, delivery and consumption of these in specific geographic locations.</dc:description>
+        <dc:language xml:lang="en">it-it</dc:language>
         <dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food delivery</dc:subject>
-        <dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ontology</dc:subject>
+        <dc:subject xml:lang="en">food delivery and allergies</dc:subject>
         <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Delivery Doctor</dc:title>
         <vann:preferedNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deliverydr</vann:preferedNamespacePrefix>
         <vann:preferredNamespaceUri rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.semanticweb.org/progettomodsem2020/deliverydoctor</vann:preferredNamespaceUri>
@@ -123,6 +124,10 @@
     <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#starRating -->
 
     <rdfs:Datatype rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#starRating">
+        <rdfs:comment xml:lang="en">Classic evaluation system that allows you to assign a numerical value, even fractional, ranging from 1 to 5 inclusive</rdfs:comment>
+        <rdfs:comment xml:lang="it">Classico sistema di valutazione che permette di assegnare un valore numerico, anche frazionario, che va da 1 a 5 compreso</rdfs:comment>
+        <rdfs:label xml:lang="en">Star Rating</rdfs:label>
+        <rdfs:label xml:lang="it">Valutazione a Stelle</rdfs:label>
         <owl:equivalentClass>
             <rdfs:Datatype>
                 <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
@@ -572,7 +577,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
                 <owl:inverseOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ordineCreatoDaAzione"/>
             </rdf:Description>
         </owl:propertyChainAxiom>
-        <rdfs:comment xml:lang="en">Property that links the room to the orders they have managed</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property that links the food establishment to the orders they have managed</rdfs:comment>
         <rdfs:comment xml:lang="it">Proprietà che collega il locale agli ordini che hanno gestito</rdfs:comment>
         <rdfs:label xml:lang="en">Food Establishment Handles Order</rdfs:label>
         <rdfs:label xml:lang="it">Locale Gestisce Ordine</rdfs:label>
@@ -593,7 +598,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
         </owl:propertyChainAxiom>
         <rdfs:comment xml:lang="it">Property chain che collega direttamente l&apos;esercizio alimentare alle recensioni che ha ricevuto</rdfs:comment>
         <rdfs:comment xml:lang="en">Property chain that links the food establishment directly to the reviews it has received</rdfs:comment>
-        <rdfs:label xml:lang="en">Local Has Review</rdfs:label>
+        <rdfs:label xml:lang="en">Food Establishment Has Review</rdfs:label>
         <rdfs:label xml:lang="it">Locale Ha Recensione</rdfs:label>
     </owl:ObjectProperty>
     
@@ -605,7 +610,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
         <owl:inverseOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaServitaInLocale"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
-        <rdfs:comment xml:lang="en">Property that associates a room with the dishes it serves.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Property that associates a food establishment with the dishes it serves.</rdfs:comment>
         <rdfs:comment xml:lang="it">Proprietà che associa un locale alle pietanze che serve.</rdfs:comment>
         <rdfs:label xml:lang="en">Food Establishment serves Food Preparation</rdfs:label>
         <rdfs:label xml:lang="it">Locale serve pietanza</rdfs:label>
@@ -620,7 +625,7 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
         <rdfs:range rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LuogoGeografico"/>
         <rdfs:comment xml:lang="en">Property that allows a food establishment to be geographically and uniquely localized</rdfs:comment>
         <rdfs:comment xml:lang="it">Proprietà che permette di localizzare geograficamente ed univocamente un esercizio alimentare</rdfs:comment>
-        <rdfs:label xml:lang="en">Local Located In</rdfs:label>
+        <rdfs:label xml:lang="en">Food Establishment Located In</rdfs:label>
         <rdfs:label xml:lang="it">Locale Situato In</rdfs:label>
     </owl:ObjectProperty>
     
@@ -632,6 +637,9 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
         <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#localeSituatoIn"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Città"/>
+        <rdfs:comment xml:lang="en">Property that connects a food establishment with the city in which it is located</rdfs:comment>
+        <rdfs:comment xml:lang="it">Proprietà che collega un locale con la città nella quale si trova</rdfs:comment>
+        <rdfs:label xml:lang="en">Food Establishment located in City</rdfs:label>
         <rdfs:label xml:lang="it">Locale Situato In Citta</rdfs:label>
     </owl:ObjectProperty>
     
@@ -724,6 +732,10 @@ La proprietà è ereditata dagli ingredienti derivanti da multipli ingredienti.<
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#pietanzaCompatibileConDisturbo">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <rdfs:comment xml:lang="en">Property that connects a food preparation with the disorders with which it is compatible.</rdfs:comment>
+        <rdfs:comment xml:lang="it">Proprietà che collega una pietanza con i disturbi con i quali risulta compatibile.</rdfs:comment>
+        <rdfs:label xml:lang="en">Food Preparation Compatible with Disorder</rdfs:label>
+        <rdfs:label xml:lang="it">Pietanza Compatibile Con Disturbo</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -6343,6 +6355,7 @@ It is part of the set of legumes.</rdfs:comment>
         <prov:hadRole rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelFattorino"/>
         <schema:Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gianni</schema:Name>
         <haNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gianni</haNome>
+        <foaf:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Gianni</foaf:givenName>
         <rdfs:comment xml:lang="en">Any person who performs the duty of delivery guy</rdfs:comment>
         <rdfs:comment xml:lang="it">Persona qualsiasi che svolge il compito di fattorino</rdfs:comment>
         <skos:prefLabel xml:lang="en">Gianni</skos:prefLabel>
@@ -7124,6 +7137,7 @@ It is part of the set of legumes.</rdfs:comment>
         <prov:hadRole rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelRecensore"/>
         <schema:Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luca</schema:Name>
         <haNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luca</haNome>
+        <foaf:givenName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Luca</foaf:givenName>
         <rdfs:comment xml:lang="it">Potresti pensare che si tratti di un nostro amico, ma a quanto pare a Lorenzo è venuto in mente (a caso) questo nome.</rdfs:comment>
         <rdfs:comment xml:lang="en">You may think that this is a friend of ours, but apparently Lorenzo came up with this name (by chance).</rdfs:comment>
         <skos:prefLabel xml:lang="en">Luca</skos:prefLabel>
@@ -7619,6 +7633,10 @@ It is part of the set of legumes.</rdfs:comment>
         <ordineCompostoDaPietanza rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna"/>
         <ordineCreatoDaAzione rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy"/>
         <prov:wasGeneratedBy rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdinazioneStefanoGalaxy"/>
+        <rdfs:comment xml:lang="en">Order made by Stefano at Galaxy Burger</rdfs:comment>
+        <rdfs:comment xml:lang="it">Ordine effettuato da Stefano al Galaxy Burger.</rdfs:comment>
+        <rdfs:label xml:lang="en">Order for Hamburger Stefano @ Galaxy</rdfs:label>
+        <rdfs:label xml:lang="it">Ordine Hamburger Stefano @ Galaxy</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -9368,8 +9386,8 @@ It&apos;s a me!</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel">
         <rdfs:comment xml:lang="it">Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all&apos;assunzione di cibo contenente nickel.</rdfs:comment>
-        <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
         <rdfs:label xml:lang="it">Allergia al Nickel</rdfs:label>
+        <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
         <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce">
@@ -9408,8 +9426,8 @@ It&apos;s a me!</rdfs:comment>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio">
         <rdfs:comment xml:lang="en">Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others.</rdfs:comment>
         <skos:altLabel xml:lang="it">Deficit di Fruttosio 1,6-difosfatasi</skos:altLabel>
-        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
+        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
         <skos:prefLabel xml:lang="en">Fructose intollerance</skos:prefLabel>
     </rdf:Description>

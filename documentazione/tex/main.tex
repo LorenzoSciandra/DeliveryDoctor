@@ -248,7 +248,7 @@ A partire dalle classi \textbf{Activity, Entity, Agent} e \textbf{Role} abbiamo 
     \item \textbf{Ruolo}, il compito svolto dalla persona nell'\texttt{Activity} ed entità che identifica elementi creati o usati nel corso dell'azione.
 \end{itemize}
 
-Per quanto riguarda l'allineamento con le varie risorse esterne abbiamo usato \textit{rdfs:subClassOf} e \textit{owl:equivalentClass} con questo criterio: là dove la nostra gerarchia si discostava da quella esterna abbiamo usato \textbf{owl:equivalentClass} per collegare le classi che rappresentavano lo stesso concetto (riguardo il caso del nostro utilizzo di Schema.org).
+Per quanto riguarda l'allineamento con le varie risorse esterne abbiamo usato \textit{rdfs:subClassOf} e \textit{owl:equivalentClass} con questo criterio: là dove la nostra gerarchia si discostava da quella esterna abbiamo usato \textbf{owl:equivalentClass} per collegare le classi che rappresentavano lo stesso concetto (riguarda il caso del nostro utilizzo di Schema.org).
 \newline
 Dove invece c'era il bisogno di introdurre classi più specifiche di quelle presenti e in cui poteva risultare utile usufruire della struttura delle relazioni della risorsa esterna abbiamo usato \textbf{rdfs:subClassOf} (come nel caso di Provenance).
 
@@ -271,7 +271,7 @@ Una copia aggiornata della documentazione è disponibile sul \href{https://loren
         \caption{ODP Set}
     \end{figure}
     Abbiamo quindi definito la Pietanza come sussunta a Set ed usato la object property ereditata "hasMember" per la definizione delle nuove proprietà "utilizza ingrediente" e "utilizza indirettamente l'ingrediente" che collegano direttamente la pietanza con gli ingredienti di cui è composta.
-    \newline
+    \par
     Mostriamo ora due esempi tratti da Graph DB composti da un insieme di triple e dal Visual graph ad esse associato.
     \newline
     Partiamo dall'ordine effettuato da un utente generico Luca presso il Dubai Coffee Lounge:

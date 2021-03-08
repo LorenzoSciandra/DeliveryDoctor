@@ -1138,8 +1138,23 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/D55.0">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/E73"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/E74.10"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/K90.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/K90.41"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/L23.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.010"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:Class>
     
 
@@ -1149,15 +1164,24 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E73">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/K90.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/K90.41"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/L23.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.010"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.013"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
     </owl:Class>
     
 
@@ -1167,13 +1191,18 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
     <owl:Class rdf:about="http://purl.bioontology.org/ontology/ICD10CM/E74.10">
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.010"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.013"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
     </owl:Class>
     
 
@@ -1184,14 +1213,20 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/L23.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.010"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.013"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:Class>
     
 
@@ -1202,14 +1237,20 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <owl:equivalentClass rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/L23.0"/>
+        <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.010"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.013"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:Class>
     
 
@@ -1245,12 +1286,19 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.012"/>
         <owl:disjointWith rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.013"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:Class>
     
 
@@ -1269,7 +1317,9 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:Class>
@@ -1784,13 +1834,19 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.018"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -1808,11 +1864,17 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -1855,10 +1917,15 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.018"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -1902,6 +1969,8 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -1961,7 +2030,9 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.bioontology.org/ontology/ICD10CM/Z91.018"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
@@ -1981,6 +2052,7 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
@@ -2164,6 +2236,8 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -2565,6 +2639,8 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Disturbo"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
     </owl:NamedIndividual>
     
 
@@ -5724,8 +5800,15 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoSpeciale">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
@@ -5740,8 +5823,17 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CaffèMacinato"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteRiso"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Riso"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Dubai"/>
         <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q159774"/>
@@ -5856,6 +5948,8 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
@@ -5878,8 +5972,12 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
@@ -6059,6 +6157,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
@@ -6077,8 +6180,15 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LatteMucca"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
@@ -6409,6 +6519,12 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
         <rdf:type>
             <owl:Restriction>
@@ -6436,6 +6552,14 @@ It is part of the set of legumes.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
@@ -6480,6 +6604,12 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
         <rdf:type>
             <owl:Restriction>
@@ -6506,6 +6636,14 @@ It is part of the set of legumes.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Uva"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Zucchero"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
@@ -6548,6 +6686,15 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
@@ -6565,6 +6712,18 @@ It is part of the set of legumes.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Peperone"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpettaVegana"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
         <simileEntitaWikidata rdf:resource="http://www.wikidata.org/entity/Q6663"/>
@@ -6810,6 +6969,12 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
         <rdf:type>
             <owl:Restriction>
@@ -6834,6 +6999,14 @@ It is part of the set of legumes.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
@@ -7727,6 +7900,13 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
@@ -7742,6 +7922,15 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LievitoBirra"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pane"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sesamo"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
@@ -7814,6 +8003,13 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
@@ -7829,6 +8025,16 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Arachide"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OlioArachidi"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Patata"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
@@ -7971,6 +8177,13 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
     <owl:NamedIndividual rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita">
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
         <rdf:type>
@@ -7992,6 +8205,15 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Oliva"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pomodoro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
@@ -8092,6 +8314,10 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaNonVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaSoia"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
         <rdf:type>
             <owl:Restriction>
@@ -8116,6 +8342,12 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Prezzemolo"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#SugoPomodoro"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#UovoGallina"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
@@ -8143,6 +8375,7 @@ Pear is rich in simple sugars, especially fructose.</rdfs:comment>
         <size rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</size>
         <rdfs:comment xml:lang="en">Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce.</rdfs:comment>
         <rdfs:comment xml:lang="it">Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d&apos;uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro.</rdfs:comment>
+        <skos:altLabel xml:lang="it">Polpette al sugo</skos:altLabel>
         <skos:prefLabel xml:lang="en">Meatballs</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Polpette</skos:prefLabel>
     </owl:NamedIndividual>
@@ -8734,6 +8967,14 @@ It&apos;s a me!</rdfs:comment>
         <rdf:type rdf:resource="http://www.ontologydesignpatterns.org/cp/owl/collectionentity.owl#Collection"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pietanza"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSemplice"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaAdditivi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaArachidi"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFave"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaFruttaSecca"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaGlutine"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaLattosio"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaMare"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaSenzaUova"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PietanzaVegetariana"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Set"/>
@@ -8752,6 +8993,17 @@ It&apos;s a me!</rdfs:comment>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Miso"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Sedano"/>
         <hasMember rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Soia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaAdditivi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaArachidi"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaCrostacei"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttaSecca"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaFruttiDiMare"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaGlutine"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaUova"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Celiachia"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Favismo"/>
+        <pietanzaCompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel"/>
         <pietanzaIncompatibileConDisturbo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaSoia"/>
         <pietanzaServitaInLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Kingyo"/>
@@ -9387,8 +9639,8 @@ It&apos;s a me!</rdfs:comment>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel">
         <rdfs:comment xml:lang="it">Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all&apos;assunzione di cibo contenente nickel.</rdfs:comment>
         <rdfs:label xml:lang="it">Allergia al Nickel</rdfs:label>
-        <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
         <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
+        <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce">
         <rdfs:comment xml:lang="en">Anaphylactic reaction due to the consumption of fish.</rdfs:comment>
@@ -9426,9 +9678,9 @@ It&apos;s a me!</rdfs:comment>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio">
         <rdfs:comment xml:lang="en">Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others.</rdfs:comment>
         <skos:altLabel xml:lang="it">Deficit di Fruttosio 1,6-difosfatasi</skos:altLabel>
-        <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
-        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
+        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
+        <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
         <skos:prefLabel xml:lang="en">Fructose intollerance</skos:prefLabel>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio">

@@ -2469,8 +2469,15 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoSpeciale
 :CappuccinoSpeciale rdf:type owl:NamedIndividual ,
+                             :PietanzaSenzaAdditivi ,
+                             :PietanzaSenzaArachidi ,
+                             :PietanzaSenzaFave ,
+                             :PietanzaSenzaFruttaSecca ,
                              :PietanzaSenzaGlutine ,
                              :PietanzaSenzaLattosio ,
+                             :PietanzaSenzaMare ,
+                             :PietanzaSenzaSoia ,
+                             :PietanzaSenzaUova ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :utilizzaIngrediente ;
                                owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
@@ -2524,6 +2531,8 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CheesecakeCiliegia
 :CheesecakeCiliegia rdf:type owl:NamedIndividual ,
+                             :PietanzaSenzaFave ,
+                             :PietanzaSenzaMare ,
                              :PietanzaSenzaSoia ,
                              :PietanzaSenzaUova ,
                              [ rdf:type owl:Restriction ;
@@ -2629,6 +2638,11 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Croissant
 :Croissant rdf:type owl:NamedIndividual ,
+                    :PietanzaSenzaAdditivi ,
+                    :PietanzaSenzaArachidi ,
+                    :PietanzaSenzaFave ,
+                    :PietanzaSenzaFruttaSecca ,
+                    :PietanzaSenzaMare ,
                     :PietanzaSenzaSoia ,
                     :PietanzaSenzaUova ,
                     [ rdf:type owl:Restriction ;
@@ -2788,6 +2802,12 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerBigBang
 :HamburgerBigBang rdf:type owl:NamedIndividual ,
+                           :PietanzaSenzaAdditivi ,
+                           :PietanzaSenzaArachidi ,
+                           :PietanzaSenzaFave ,
+                           :PietanzaSenzaFruttaSecca ,
+                           :PietanzaSenzaMare ,
+                           :PietanzaSenzaSoia ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :utilizzaIngrediente ;
                              owl:qualifiedCardinality "8"^^xsd:nonNegativeInteger ;
@@ -2811,6 +2831,12 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerLuna
 :HamburgerLuna rdf:type owl:NamedIndividual ,
+                        :PietanzaSenzaAdditivi ,
+                        :PietanzaSenzaArachidi ,
+                        :PietanzaSenzaFave ,
+                        :PietanzaSenzaFruttaSecca ,
+                        :PietanzaSenzaMare ,
+                        :PietanzaSenzaSoia ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :utilizzaIngrediente ;
                           owl:qualifiedCardinality "7"^^xsd:nonNegativeInteger ;
@@ -2832,6 +2858,15 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#HamburgerVega
 :HamburgerVega rdf:type owl:NamedIndividual ,
+                        :PietanzaSenzaAdditivi ,
+                        :PietanzaSenzaArachidi ,
+                        :PietanzaSenzaFave ,
+                        :PietanzaSenzaFruttaSecca ,
+                        :PietanzaSenzaGlutine ,
+                        :PietanzaSenzaLattosio ,
+                        :PietanzaSenzaMare ,
+                        :PietanzaSenzaSoia ,
+                        :PietanzaSenzaUova ,
                         [ rdf:type owl:Restriction ;
                           owl:onProperty :utilizzaIngrediente ;
                           owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
@@ -2940,6 +2975,12 @@ It is part of the set of legumes."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#LasagneAlForno
 :LasagneAlForno rdf:type owl:NamedIndividual ,
+                         :PietanzaSenzaAdditivi ,
+                         :PietanzaSenzaArachidi ,
+                         :PietanzaSenzaFave ,
+                         :PietanzaSenzaFruttaSecca ,
+                         :PietanzaSenzaMare ,
+                         :PietanzaSenzaSoia ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :utilizzaIngrediente ;
                            owl:qualifiedCardinality "6"^^xsd:nonNegativeInteger ;
@@ -3406,6 +3447,13 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PaneSemiSesamo
 :PaneSemiSesamo rdf:type owl:NamedIndividual ,
+                         :PietanzaSenzaAdditivi ,
+                         :PietanzaSenzaArachidi ,
+                         :PietanzaSenzaFave ,
+                         :PietanzaSenzaLattosio ,
+                         :PietanzaSenzaMare ,
+                         :PietanzaSenzaSoia ,
+                         :PietanzaSenzaUova ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :utilizzaIngrediente ;
                            owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
@@ -3448,6 +3496,13 @@ Some oysters, mainly eastern sea species, produce pearls. It is very popular in 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PatateFritte
 :PatateFritte rdf:type owl:NamedIndividual ,
+                       :PietanzaSenzaAdditivi ,
+                       :PietanzaSenzaFave ,
+                       :PietanzaSenzaGlutine ,
+                       :PietanzaSenzaLattosio ,
+                       :PietanzaSenzaMare ,
+                       :PietanzaSenzaSoia ,
+                       :PietanzaSenzaUova ,
                        [ rdf:type owl:Restriction ;
                          owl:onProperty :utilizzaIngrediente ;
                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
@@ -3537,6 +3592,13 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PizzaMargherita
 :PizzaMargherita rdf:type owl:NamedIndividual ,
+                          :PietanzaSenzaAdditivi ,
+                          :PietanzaSenzaArachidi ,
+                          :PietanzaSenzaFave ,
+                          :PietanzaSenzaFruttaSecca ,
+                          :PietanzaSenzaMare ,
+                          :PietanzaSenzaSoia ,
+                          :PietanzaSenzaUova ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :utilizzaIngrediente ;
                             owl:qualifiedCardinality "5"^^xsd:nonNegativeInteger ;
@@ -3594,6 +3656,10 @@ Pear is rich in simple sugars, especially fructose."""@en ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PolpetteAlSugo
 :PolpetteAlSugo rdf:type owl:NamedIndividual ,
+                         :PietanzaSenzaAdditivi ,
+                         :PietanzaSenzaFave ,
+                         :PietanzaSenzaMare ,
+                         :PietanzaSenzaSoia ,
                          [ rdf:type owl:Restriction ;
                            owl:onProperty :utilizzaIngrediente ;
                            owl:qualifiedCardinality "3"^^xsd:nonNegativeInteger ;
@@ -3606,6 +3672,7 @@ Pear is rich in simple sugars, especially fructose."""@en ;
                 :haNumeroIngredienti "3"^^xsd:positiveInteger ;
                 rdfs:comment "Fried dish based on meat, vegetables or fish, spices and herbs mixed in egg yolks, flour and breadcrumbs. Usually round. Served with lots of tomato sauce."@en ,
                              "Pietanza fritta a base di carne, verdure o pesce, spezie e aromi impastati in tuorli d'uovo, farina e pangrattato, dalla forma tondeggiante. Servite con abbondante sugo di pomodoro."@it ;
+                skos:altLabel "Polpette al sugo"@it ;
                 skos:prefLabel "Meatballs"@en ,
                                "Polpette"@it .
 
@@ -3911,6 +3978,14 @@ It's a me!"""@it ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#ZuppaDiMiso
 :ZuppaDiMiso rdf:type owl:NamedIndividual ,
+                      :PietanzaSenzaAdditivi ,
+                      :PietanzaSenzaArachidi ,
+                      :PietanzaSenzaFave ,
+                      :PietanzaSenzaFruttaSecca ,
+                      :PietanzaSenzaGlutine ,
+                      :PietanzaSenzaLattosio ,
+                      :PietanzaSenzaMare ,
+                      :PietanzaSenzaUova ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :utilizzaIngrediente ;
                         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
@@ -4385,12 +4460,12 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         "Favismo"@it .
 
 
-:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
-                       rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
-                       skos:prefLabel "Intolleranza al Fruttosio"@it ;
-                       skos:altLabel "Hereditary fructose intolerance"@en ;
-                       skos:prefLabel "Fructose intollerance"@en .
+:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ,
+                                    "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+                       skos:prefLabel "Intolleranza al Fruttosio"@it ,
+                                      "Fructose intollerance"@en;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it,
+                                     "Hereditary fructose intolerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

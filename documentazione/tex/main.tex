@@ -124,7 +124,7 @@ Durante l'analisi abbiamo prestato particolare attenzione alla gestione di alcun
     \item Le varie Attività collegate agli Esercizi alimentari ed effettuate da Persone, come Ordini, Consegne, Recensione e Amministrazione.
 \end{itemize}
 L'idea è nata pensando all'offerta sempre più diffusa dei servizi di consegna a domicilio.
-Infatti, date le restrizioni sanitarie vigenti, un numero in costante aumento di imprese di ristorazione sta ricorrendo a servizi di consegne a domicilio, non solo nelle grandi città, ma anche in centri urbani di più modeste dimensioni\footnote{\url{https://www.ilsole24ore.com/art/coronavirus-e-boom-spesa-online-consegna-domicilio-AD3rKdC}} \footnote{\url{https://www.repubblica.it/economia/rapporti/osserva-italia/trend/2020/10/16/news/cresce_la_passione_per_il_cibo_a_domicilio-270779771/}}.\newline
+Infatti, date le restrizioni sanitarie vigenti, un numero in costante aumento di imprese di ristorazione sta ricorrendo a servizi di consegne a domicilio, non solo nelle grandi città, ma anche in centri urbani di più modeste dimensioni\footnote{Articolo de "Il Sole 24 ore": \url{https://www.ilsole24ore.com/art/coronavirus-e-boom-spesa-online-consegna-domicilio-AD3rKdC}} \footnote{Articolo de "la Repubblica": \url{https://www.repubblica.it/economia/rapporti/osserva-italia/trend/2020/10/16/news/cresce_la_passione_per_il_cibo_a_domicilio-270779771/}}.\newline
 Esistono svariati servizi (alcuni dei quali molto rinomati e popolari) che fungono da mediatore tra la proposta dei locali e la richiesta dei clienti. 
 Tuttavia, nessuno sembra fare affidamento ad una gestione semantica dei propri dati, preferendo piuttosto dei sistemi più standard.\newline
 L'idea di creare un'ontologia comune che modelli correttamente questo dominio potrebbe quindi risultare utile per offrire uno strumento potente, in grado di facilitare la gestione per tutte le parti e migliorare le possibili applicazioni.\newline
@@ -858,36 +858,36 @@ In questa sezione sarà presentata la base delle regole SWRL usate nel progetto.
     \item se un individuo ha avviato almeno un'impresa allora avrà il Ruolo Titolare.
 \end{itemize}
 \begin{lstlisting}[language=SPARQL]
-    RuoloCliente(?x) ^ ordinatoDa(?y, ?z) -> haRuolo(?z, ?x)
+RuoloCliente(?x) ^ ordinatoDa(?y, ?z) -> haRuolo(?z, ?x)
     
-    RuoloFattorino(?x) ^ consegnatoDa(?y, ?z) -> haRuolo(?z, ?x)
+RuoloFattorino(?x) ^ consegnatoDa(?y, ?z) -> haRuolo(?z, ?x)
     
-    RuoloRecensore(?x) ^ recensitoDa(?y, ?z) -> haRuolo(?z, ?x)
+RuoloRecensore(?x) ^ recensitoDa(?y, ?z) -> haRuolo(?z, ?x)
     
-    RuoloTitolareImpresa(?x) ^ impresaAvviataDa(?y, ?z) -> 
+RuoloTitolareImpresa(?x) ^ impresaAvviataDa(?y, ?z) -> 
                                                         haRuolo(?z, ?x)
 \end{lstlisting}
 Passiamo ora alla regola SWRL che classifica un locale come Esercizio Alimentare Non Ottimo nel momento in cui questo abbia associato anche una sola recensione con una stella.
 \begin{lstlisting}[language=SPARQL]
-    recensioneCreataDaAzione(?x, ?y) ^ recensireLocale(?y, ?z) ^
-    schema:reviewRating(?x, ?s) ^ possiedeStelle(?s, ?c) ^
-    swrlb:equal(?c, 1) -> EsercizioAlimentareNonOttimo(?z)
+recensioneCreataDaAzione(?x, ?y) ^ recensireLocale(?y, ?z) ^
+schema:reviewRating(?x, ?s) ^ possiedeStelle(?s, ?c) ^
+swrlb:equal(?c, 1) -> EsercizioAlimentareNonOttimo(?z)
 \end{lstlisting}
 Mostriamo ora le 2 regole usate per classificare le pietanze in base al numero di ingredienti di cui necessitano. Classificheremo una pietanza come semplice nel caso in cui richiedesse al più 3 ingredienti, mentre sarà considerata complessa nel momento in cui necessitasse di almeno 10.
 \begin{lstlisting}[language=SPARQL]
-    Pietanza(?x) ^ haNumeroIngredienti(?x, ?n) ^ 
+Pietanza(?x) ^ haNumeroIngredienti(?x, ?n) ^ 
             swrlb:lessThanOrEqual(?n, 3) -> PietanzaSemplice(?x)
     
-    Pietanza(?x) ^ haNumeroIngredienti(?x, ?n) ^ 
-           swrlb:greaterThanOrEqual(?n, 10) -> PietanzaComplessa(?x)
+Pietanza(?x) ^ haNumeroIngredienti(?x, ?n) ^ 
+          swrlb:greaterThanOrEqual(?n, 10) -> PietanzaComplessa(?x)
 \end{lstlisting}
 \newpage
 Concludiamo con 2 regole che permettono di inferire il fatto che un locale sia situato in una determinata città a partire dal fatto che sia situato in una sua via, o in una sua piazza.
 \begin{lstlisting}[language=SPARQL]
-    localeSituatoIn(?x, ?y) ^ Via(?y) ^ viaDellaCitta(?y, ?z) ->
+localeSituatoIn(?x, ?y) ^ Via(?y) ^ viaDellaCitta(?y, ?z) ->
                                                 localeSituatoIn(?x, ?z)
     
-    localeSituatoIn(?x, ?y) ^ Piazza(?y) ^ piazzaDellaCitta(?y, ?z)
+localeSituatoIn(?x, ?y) ^ Piazza(?y) ^ piazzaDellaCitta(?y, ?z)
                                             -> localeSituatoIn(?x, ?z)
 \end{lstlisting}
 \section{Allegati Full Size}

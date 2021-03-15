@@ -9633,14 +9633,14 @@ It&apos;s a me!</rdfs:comment>
         <rdfs:comment xml:lang="en">A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy.</rdfs:comment>
         <rdfs:comment xml:lang="it">Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell&apos;allergia al grano.</rdfs:comment>
         <skos:prefLabel xml:lang="it">Sensibilità non celiaca al Glutine</skos:prefLabel>
-        <skos:prefLabel xml:lang="en">Non-celiac gluten sensitivity</skos:prefLabel>
         <skos:altLabel>NCGS</skos:altLabel>
+        <skos:prefLabel xml:lang="en">Non-celiac gluten sensitivity</skos:prefLabel>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel">
         <rdfs:comment xml:lang="it">Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all&apos;assunzione di cibo contenente nickel.</rdfs:comment>
-        <rdfs:label xml:lang="it">Allergia al Nickel</rdfs:label>
-        <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
         <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
+        <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
+        <rdfs:label xml:lang="it">Allergia al Nickel</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce">
         <rdfs:comment xml:lang="en">Anaphylactic reaction due to the consumption of fish.</rdfs:comment>
@@ -9679,8 +9679,8 @@ It&apos;s a me!</rdfs:comment>
         <rdfs:comment xml:lang="en">Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others.</rdfs:comment>
         <skos:altLabel xml:lang="it">Deficit di Fruttosio 1,6-difosfatasi</skos:altLabel>
         <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
-        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
+        <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Fructose intollerance</skos:prefLabel>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaLattosio">

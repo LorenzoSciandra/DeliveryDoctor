@@ -21,7 +21,7 @@
                                                                 <http://purl.org/dc/elements/1.1/description> "Ontologia che tratta esercizi alimentari, pietanze servite ed interazione con utenti al fine dell'ordine, consegna e consumo di queste in precisi luoghi geografici."@it ,
                                                                                                               "Ontology that deals with food exercises, dishes served and interaction with users for the purpose of ordering, delivery and consumption of these in specific geographic locations."@en ;
                                                                 <http://purl.org/dc/elements/1.1/language> "it-it"@en ;
-                                                                <http://purl.org/dc/elements/1.1/subject> "food delivery"^^xsd:string ,
+                                                                <http://purl.org/dc/elements/1.1/subject> "consegna di cibo e allergie"@it ,
                                                                                                           "food delivery and allergies"@en ;
                                                                 <http://purl.org/dc/elements/1.1/title> "Delivery Doctor"^^xsd:string ;
                                                                 vann:preferedNamespacePrefix "deliverydr"^^xsd:string ;
@@ -135,7 +135,7 @@ schema:reviewRating rdf:type owl:ObjectProperty ;
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareAlCliente
 :consegnareAlCliente rdf:type owl:ObjectProperty ;
-                     rdfs:subPropertyOf <http://www.w3.org/ns/prov#used> ;
+                     rdfs:subPropertyOf <http://www.w3.org/ns/prov#wasAssociatedWith> ;
                      rdf:type owl:FunctionalProperty ;
                      rdfs:domain :Consegnare ;
                      rdfs:range :Cliente ;
@@ -777,7 +777,8 @@ schema:reviewBody rdf:type owl:DatatypeProperty ;
 
 
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroCivico
-:haNumeroCivico rdf:type owl:DatatypeProperty ;
+:haNumeroCivico rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
                 rdfs:domain :EsercizioAlimentare ;
                 rdfs:range xsd:positiveInteger ;
                 rdfs:comment "Property that connects the food establishment with the street number in which it resides"@en ,
@@ -1550,8 +1551,7 @@ collectionentity:Collection rdf:type owl:Class ;
 ###  http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona
 :Persona rdf:type owl:Class ;
          owl:equivalentClass foaf:Person ;
-         rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ,
-                         <http://www.w3.org/ns/prov#Entity> ;
+         rdfs:subClassOf <http://www.w3.org/ns/prov#Agent> ;
          rdfs:comment "Individual of the human species"@en ,
                       "Individuo della specie umana."@it ;
          rdfs:label "Person"@en ,
@@ -2275,7 +2275,8 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
            :entitaWikidata wiki:Q9008 ;
            :haAbitanti "12623"^^xsd:positiveInteger ;
            :haNome "Avigliana"^^xsd:string ;
-           rdfs:comment "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
+           rdfs:comment "Avigliana is an Italian town in the metropolitan city of Turin in Piedmont."@en ,
+                        "Avigliana è un comune italiano della città metropolitana di Torino in Piemonte."@it ;
            skos:prefLabel "Avigliana"@en ,
                           "Avigliana"@it .
 
@@ -4416,9 +4417,9 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
 
 :AllergiaGlutine rdfs:comment "A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy."@en ,
                               "Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell'allergia al grano."@it ;
-                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ;
-                 skos:altLabel "NCGS" ;
-                 skos:prefLabel "Non-celiac gluten sensitivity"@en .
+                 skos:prefLabel "Sensibilità non celiaca al Glutine"@it ,
+                                "Non-celiac gluten sensitivity"@en ;
+                 skos:altLabel "NCGS" .
 
 
 :AllergiaNickel rdfs:comment "Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all'assunzione di cibo contenente nickel."@it ,
@@ -4460,12 +4461,12 @@ collectionentity:hasMember rdfs:comment "The link to the members of a Set"^^xsd:
                         "Favismo"@it .
 
 
-:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ,
-                                    "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+:IntolleranzaFruttosio rdfs:comment "Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others."@en ;
+                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it ;
+                       rdfs:comment "Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell'ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri."@it ;
+                       skos:altLabel "Hereditary fructose intolerance"@en ;
                        skos:prefLabel "Intolleranza al Fruttosio"@it ,
-                                      "Fructose intollerance"@en;
-                       skos:altLabel "Deficit di Fruttosio 1,6-difosfatasi"@it,
-                                     "Hereditary fructose intolerance"@en .
+                                      "Fructose intollerance"@en .
 
 
 :IntolleranzaLattosio rdfs:label "Lactose intolerance"@en ;

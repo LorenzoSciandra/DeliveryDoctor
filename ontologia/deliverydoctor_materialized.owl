@@ -23,7 +23,7 @@
         <dc:description xml:lang="it">Ontologia che tratta esercizi alimentari, pietanze servite ed interazione con utenti al fine dell&apos;ordine, consegna e consumo di queste in precisi luoghi geografici.</dc:description>
         <dc:description xml:lang="en">Ontology that deals with food exercises, dishes served and interaction with users for the purpose of ordering, delivery and consumption of these in specific geographic locations.</dc:description>
         <dc:language xml:lang="en">it-it</dc:language>
-        <dc:subject rdf:datatype="http://www.w3.org/2001/XMLSchema#string">food delivery</dc:subject>
+        <dc:subject xml:lang="it">consegna di cibo e allergie</dc:subject>
         <dc:subject xml:lang="en">food delivery and allergies</dc:subject>
         <dc:title rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Delivery Doctor</dc:title>
         <vann:preferedNamespacePrefix rdf:datatype="http://www.w3.org/2001/XMLSchema#string">deliverydr</vann:preferedNamespacePrefix>
@@ -197,7 +197,7 @@
     <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareAlCliente -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#consegnareAlCliente">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasAssociatedWith"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Consegnare"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente"/>
@@ -1061,6 +1061,7 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
     <!-- http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroCivico -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#haNumeroCivico">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#EsercizioAlimentare"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
         <rdfs:comment xml:lang="en">Property that connects the food establishment with the street number in which it resides</rdfs:comment>
@@ -3961,7 +3962,6 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
     <owl:Class rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Pesce"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Piazza"/>
         <owl:disjointWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#PuntoRiferimentoOEdificioStorico"/>
@@ -5002,7 +5002,6 @@ Per &quot;ingredienti indiretti&quot; si intendono tutti gli ingredienti non dir
 
     <owl:Class rdf:about="http://xmlns.com/foaf/0.1/Person">
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
     </owl:Class>
     
 
@@ -5443,6 +5442,7 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <schema:Name rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avigliana</schema:Name>
         <haAbitanti rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">12623</haAbitanti>
         <haNome rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Avigliana</haNome>
+        <rdfs:comment xml:lang="en">Avigliana is an Italian town in the metropolitan city of Turin in Piedmont.</rdfs:comment>
         <rdfs:comment xml:lang="it">Avigliana è un comune italiano della città metropolitana di Torino in Piemonte.</rdfs:comment>
         <skos:prefLabel xml:lang="en">Avigliana</skos:prefLabel>
         <skos:prefLabel xml:lang="it">Avigliana</skos:prefLabel>
@@ -6088,9 +6088,9 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <consegnareAlCliente rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lorenzo"/>
         <consegnareOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo"/>
         <consegnatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Federico"/>
-        <prov:used rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lorenzo"/>
         <prov:used rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo"/>
         <prov:wasAssociatedWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Federico"/>
+        <prov:wasAssociatedWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Lorenzo"/>
         <rdfs:comment xml:lang="it">Attività di consegna dell&apos;ordine effettuato da Lorenzo presso il @ kingyo</rdfs:comment>
         <rdfs:comment xml:lang="en">Delivery activity of the order made by Lorenzo at the Kingyo</rdfs:comment>
         <skos:prefLabel xml:lang="it">Consegna Ordine Lorenzo</skos:prefLabel>
@@ -6108,8 +6108,8 @@ Usually, an apricot is from the species P. armeniaca, but the fruits of the othe
         <consegnareOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant"/>
         <consegnatoDa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni"/>
         <prov:used rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant"/>
-        <prov:used rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca"/>
         <prov:wasAssociatedWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Gianni"/>
+        <prov:wasAssociatedWith rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Luca"/>
         <rdfs:comment xml:lang="it">Attività di consegna dell&apos;ordine effettuato da Luca presso il Dubai</rdfs:comment>
         <rdfs:comment xml:lang="en">Delivery activity of the order made by Luca at the Dubai</rdfs:comment>
         <skos:prefLabel xml:lang="it">Consenga Ordine Luca</skos:prefLabel>
@@ -6359,7 +6359,6 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fattorino"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haConsegnatoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo"/>
         <haRuolo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelFattorino"/>
@@ -6458,7 +6457,6 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Fattorino"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haConsegnatoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant"/>
         <haRuolo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelFattorino"/>
@@ -6858,7 +6856,6 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#TitolareImpresa"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haAvviatoImpresa rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Kingyo"/>
         <haRuolo rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RuoloDelTitolare"/>
@@ -7271,7 +7268,6 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haFattoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineZuppaMisoLorenzoKingyo"/>
         <haOrdinatoDalLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Kingyo"/>
@@ -7296,7 +7292,6 @@ It is part of the set of legumes.</rdfs:comment>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Recensore"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haFattoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#CappuccinoECroissant"/>
         <haFattoRecensione rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#RecensionePositivaDubai"/>
@@ -8730,7 +8725,6 @@ It may be eaten cooked or raw, and the taste differs considerably; the high oxal
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Cliente"/>
         <rdf:type rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#Persona"/>
         <rdf:type rdf:resource="http://www.w3.org/ns/prov#Agent"/>
-        <rdf:type rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
         <haFattoOrdine rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#OrdineHamburgerStefanoGalaxy"/>
         <haOrdinatoDalLocale rdf:resource="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#GalaxyBurger"/>
@@ -9633,14 +9627,14 @@ It&apos;s a me!</rdfs:comment>
         <rdfs:comment xml:lang="en">A possible syndrome in which people develop a variety of intestinal and / or extraintestinal symptoms that improve when gluten is removed from the diet, after ruling out the possibility of celiac disease and wheat allergy.</rdfs:comment>
         <rdfs:comment xml:lang="it">Una possibile sindrome in cui le persone sviluppano una varietà di sintomi intestinali e/o extraintestinali che migliorano quando il glutine è rimosso dalla dieta, dopo aver escluso la possibilità di celiachia e dell&apos;allergia al grano.</rdfs:comment>
         <skos:prefLabel xml:lang="it">Sensibilità non celiaca al Glutine</skos:prefLabel>
-        <skos:altLabel>NCGS</skos:altLabel>
         <skos:prefLabel xml:lang="en">Non-celiac gluten sensitivity</skos:prefLabel>
+        <skos:altLabel>NCGS</skos:altLabel>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaNickel">
         <rdfs:comment xml:lang="it">Allergia che comporta una reazione immunitaria in seguito al contatto con materiali o all&apos;assunzione di cibo contenente nickel.</rdfs:comment>
         <rdfs:comment xml:lang="en">Allergy involving an immune reaction following contact with materials or the intake of food containing nickel.</rdfs:comment>
-        <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
         <rdfs:label xml:lang="it">Allergia al Nickel</rdfs:label>
+        <rdfs:label xml:lang="en">Nickel allergy</rdfs:label>
     </rdf:Description>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#AllergiaPesce">
         <rdfs:comment xml:lang="en">Anaphylactic reaction due to the consumption of fish.</rdfs:comment>
@@ -9678,8 +9672,8 @@ It&apos;s a me!</rdfs:comment>
     <rdf:Description rdf:about="http://www.semanticweb.org/progettomodsem2020/deliverydoctor#IntolleranzaFruttosio">
         <rdfs:comment xml:lang="en">Metabolic dysfunction resulting in severe hypoglycemia and lactic acidosis during prolonged fasting or following ingestion of food, medicines or other containing fructose, sucrose, sorbitol, xylitol and others.</rdfs:comment>
         <skos:altLabel xml:lang="it">Deficit di Fruttosio 1,6-difosfatasi</skos:altLabel>
-        <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
         <rdfs:comment xml:lang="it">Disfunzione metabolica che comporta gravi ipoglicemie e acidosi lattica in occasione di digiuni prolungati o a seguito dell&apos;ingestione di cibo, medicinali o altro contenente fruttosio, saccarosio, sorbitolo, xilitolo e altri.</rdfs:comment>
+        <skos:altLabel xml:lang="en">Hereditary fructose intolerance</skos:altLabel>
         <skos:prefLabel xml:lang="it">Intolleranza al Fruttosio</skos:prefLabel>
         <skos:prefLabel xml:lang="en">Fructose intollerance</skos:prefLabel>
     </rdf:Description>

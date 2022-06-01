@@ -1,4 +1,2 @@
-Progetto di modellazione concettuale del web semantico, laurea magistrale in informatica, Torino.
-Creazione di ontologia, client che interroga graphDB e documentazione di tutto il processo.
-
-Per vedere il progetto: [DeliveryDoctor](https://lorenzosciandra.github.io/ProgettoModSem/) 
+Conceptual modeling project of the semantic web, master's degree in computer science, Turin. Creation of a medical-food ontology, client that queries graphDB and documentation of the whole process.
+To see the project: [DeliveryDoctor](https://lorenzosciandra.github.io/ProgettoModSem/) 

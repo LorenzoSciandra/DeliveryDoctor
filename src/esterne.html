@@ -167,7 +167,7 @@
                 if (this.action == 0) {
                     query = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
                             PREFIX schema: <http://schema.org/>
-                            PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                            PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
                             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
                             SELECT ?immagine ?descrizioneBase ?informazioneExtra
@@ -197,7 +197,7 @@
 
                 // Ricerca locali in una Città con pietanza per celiaci
                 if (this.action == 1) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
                             SELECT ?img ?coordinate
                             WHERE {
                                 ?citta deliverydr:haNome "${this.secondSelection}";
@@ -238,7 +238,7 @@
 
                 if (this.action == 0) {
                     query = `PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                            PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                            PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?nome
                             WHERE {
@@ -248,7 +248,7 @@
                             }
                             ORDER BY ?nome`;
                 } else {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?nome
                             WHERE {

@@ -117,7 +117,7 @@
                 // Necessario per referenziare vue negli oggetti annidati
                 const vue = this;
                 let query = `PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                            PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                            PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?consegna ?ordine ?localeNome ?destinatario WHERE{
                                 ?consegna deliverydr:consegnareAlCliente ?destinatario;
@@ -170,7 +170,7 @@
             loadRequiredData() {
                 const vue = this;
 
-                let query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                let query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?nome
                             WHERE {

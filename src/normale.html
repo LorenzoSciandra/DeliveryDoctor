@@ -125,7 +125,7 @@
 
                 // Ricerca locali in una Città
                 if (this.action == 0) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?localeNome WHERE{
                                 ?locale deliverydr:localeSituatoInCitta ?citta;
@@ -136,7 +136,7 @@
 
                 // Ricerca locali in una Città con pietanza per celiaci
                 if (this.action == 1) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?localeNome ?pietanza WHERE {
                                 ?locale deliverydr:localeSituatoInCitta ?citta;
@@ -151,7 +151,7 @@
 
                 // Riepilogo di tutti gli ordini effettuati
                 if (this.action == 2) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?ordine ?localeNome ?pietanza WHERE{
                                 ?ordinare deliverydr:ordinatoDa ?persona;
@@ -208,7 +208,7 @@
                 let query = '';
 
                 if (this.action == 0 || this.action == 1) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?nome
                             WHERE {
@@ -216,7 +216,7 @@
                                    deliverydr:haNome ?nome
                             }`;
                 } else {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                             SELECT ?nome
                             WHERE {

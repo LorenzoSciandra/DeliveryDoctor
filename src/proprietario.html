@@ -127,7 +127,7 @@
 
                 // Richiedi gli ordini del locale
                 if (this.action == 0) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                                 SELECT ?ordine ?persona ?pietanza WHERE {
                                     ?locale deliverydr:haNome "${this.selectedFoodEstablishment}".
@@ -141,7 +141,7 @@
                 // Richiedi tutte le recensioni del locale
                 if (this.action == 1) {
                     query = `PREFIX schema: <http://schema.org/>
-                                PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                                PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                                 SELECT ?persona ?testo ?stelle WHERE {
                                     ?locale deliverydr:haNome "${this.selectedFoodEstablishment}".
@@ -156,7 +156,7 @@
 
                 // Richiedi le pietanze servite nel locale e il numero di ingredienti direttamente utilizzati
                 if (this.action == 2) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                                 SELECT ?pietanza (count(DISTINCT ?ingrediente) AS ?numero_ingredienti)
                                 WHERE {
@@ -169,7 +169,7 @@
 
                 // Richiedi le pietanze servite nel locale e il numero di ingredienti direttamente ed indirettamente utilizzati
                 if (this.action == 3) {
-                    query = `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                    query = `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
 
                                 SELECT ?pietanza (COUNT(DISTINCT ?ingrediente) AS ?numero_ingredienti)
                                 WHERE {
@@ -229,7 +229,7 @@
                     type: 'get',
                     dataType: "text",
                     data: {
-                        query: `PREFIX deliverydr: <http://www.semanticweb.org/progettomodsem2020/deliverydoctor#>
+                        query: `PREFIX deliverydr: <http://www.semanticweb.org/DeliveryDoctor/deliverydoctor#>
                                 SELECT ?nomeLocale
                                 WHERE {
                                     ?locale a deliverydr:EsercizioAlimentare;
